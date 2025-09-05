@@ -25,6 +25,7 @@ interface EventDataCollectionSettings {
     smart_defaults: boolean;
     minimum_importance_threshold: number;
   };
+  user_intervention_timeout: number;
 }
 
 interface EventDataCollectionProps {
@@ -260,6 +261,31 @@ export default function EventDataCollection({ settings, onSettingsChange }: Even
                 </select>
               </div>
             </div>
+          </div>
+
+          {/* User Intervention Section */}
+          <div className="space-y-3">
+            <h3 className="text-sm font-medium text-muted-foreground">User Intervention</h3>
+            <div className="flex items-center justify-between">
+              <label htmlFor="intervention-timeout" className="text-sm">
+                Wait Time for User Choice (seconds)
+              </label>
+              <input
+                type="number"
+                id="intervention-timeout"
+                min="1"
+                max="60"
+                value={localSettings.user_intervention_timeout}
+                onChange={(e) =>
+                  updateSettings({ user_intervention_timeout: parseInt(e.target.value) || 10 })
+                }
+                className="w-20 px-2 py-1 text-sm border rounded"
+              />
+            </div>
+            <p className="text-xs text-muted-foreground">
+              How long the bot waits for you to manually select an event choice before proceeding automatically.
+              When the bot encounters an unknown event, it will pause and give you time to make the choice manually.
+            </p>
           </div>
         </>
       )}

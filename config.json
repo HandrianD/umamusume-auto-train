@@ -40,6 +40,8 @@
     "wit",
     "guts"
   ],
+  "priority_weight": "MEDIUM",
+  "priority_weights": [1.0, 0.8, 0.6, 0.4, 0.2],
   "minimum_mood": "GOOD",
   "maximum_failure": 25,
   "prioritize_g1_race": false,
@@ -61,6 +63,12 @@
       "Professor of Curvature",
       "Swinging Maestro"
     ]
+  },
+  "energy_management": {
+    "enabled": true,
+    "never_rest_energy": 70,
+    "skip_training_energy": 30,
+    "skip_infirmary_unless_missing_energy": true
   },
   "event_data_collection": {
     "enabled": true,
@@ -85,6 +93,7 @@
       "personal_learning": true,
       "smart_defaults": true,
       "minimum_importance_threshold": 3
-    }
+    },
+    "user_intervention_timeout": 10
   }
 }

@@ -5,7 +5,7 @@ from PIL import ImageGrab
 pyautogui.useImageNotFoundException(False)
 
 import core.state as state
-from core.state import check_support_card, check_failure, check_turn, check_mood, check_current_year, check_criteria, check_skill_pts
+from core.state import check_support_card, check_failure, check_turn, check_mood, check_current_year, check_criteria, check_skill_pts, check_energy, get_current_energy_level
 from core.logic import do_something
 from core.ocr import extract_text
 from utils.constants import MOOD_LIST, SCREEN_BOTTOM_REGION, CHOICE_AREA_REGION
@@ -2046,8 +2046,17 @@ def career_lobby():
     # Career lobby logic starts here
     if matches.get("infirmary"):
       if is_btn_active(matches["infirmary"][0]):
-        click(boxes=matches["infirmary"][0], text="[INFO] Character debuffed, going to infirmary.")
-        continue
+        # Energy-aware infirmary decision
+        if state.ENERGY_DETECTION_ENABLED and state.SKIP_INFIRMARY_UNLESS_MISSING_ENERGY:
+          energy_level = get_current_energy_level()
+          if energy_level > state.SKIP_TRAINING_ENERGY:
+            print(f"[INFO] Character debuffed, but energy is sufficient ({energy_level}% > {state.SKIP_TRAINING_ENERGY}%). Skipping infirmary.")
+          else:
+            click(boxes=matches["infirmary"][0], text="[INFO] Character debuffed and energy low, going to infirmary.")
+            continue
+        else:
+          click(boxes=matches["infirmary"][0], text="[INFO] Character debuffed, going to infirmary.")
+          continue
 
     mood = check_mood()
     mood_index = MOOD_LIST.index(mood)
@@ -2056,10 +2065,18 @@ def career_lobby():
     year = check_current_year()
     criteria = check_criteria()
     year_parts = year.split(" ")
+    
+    # Check energy level if detection is enabled
+    energy_info = ""
+    if state.ENERGY_DETECTION_ENABLED:
+      energy_level, energy_numeric = check_energy()
+      energy_info = f"Energy: {energy_level} ({energy_numeric}%)"
 
     print("\n=======================================================================================\n")
     print(f"Year: {year}")
     print(f"Mood: {mood}")
+    if energy_info:
+      print(f"{energy_info}")
     print(f"Turn: {turn}\n")
 
     # URA SCENARIO

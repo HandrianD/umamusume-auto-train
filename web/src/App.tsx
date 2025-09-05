@@ -14,6 +14,9 @@ import Mood from "./components/Mood";
 import FailChance from "./components/FailChance";
 import PrioritizeG1 from "./components/PrioritizeG1";
 import EventDataCollection from "./components/EventDataCollection";
+import EnergyManagement from "./components/EnergyManagement";
+import PriorityWeight from "./components/PriorityWeight";
+import PriorityWeights from "./components/PriorityWeights";
 import type { Character, SupportCard, Scenario } from "./types";
 
 
@@ -56,7 +59,22 @@ function App() {
         smart_defaults: true,
         minimum_importance_threshold: 3,
       },
+      user_intervention_timeout: 10,
     }
+  );
+  const [energyManagement, setEnergyManagement] = useState(
+    (activeConfig as any)?.energy_management || (config as any).energy_management || {
+      enabled: true,
+      never_rest_energy: 70,
+      skip_training_energy: 30,
+      skip_infirmary_unless_missing_energy: true,
+    }
+  );
+  const [priorityWeight, setPriorityWeight] = useState<string>(
+    (activeConfig as any)?.priority_weight || (config as any).priority_weight || "NONE"
+  );
+  const [priorityWeights, setPriorityWeights] = useState<number[]>(
+    (activeConfig as any)?.priority_weights || (config as any).priority_weights || [1.0, 1.0, 1.0, 1.0, 1.0]
   );
 
   console.log('Config loaded:', defaultConfig);
@@ -106,7 +124,16 @@ function App() {
           smart_defaults: true,
           minimum_importance_threshold: 3,
         },
+        user_intervention_timeout: 10,
       });
+      setEnergyManagement((activeConfig as any).energy_management || {
+        enabled: true,
+        never_rest_energy: 70,
+        skip_training_energy: 30,
+        skip_infirmary_unless_missing_energy: true,
+      });
+      setPriorityWeight((activeConfig as any).priority_weight || "NONE");
+      setPriorityWeights((activeConfig as any).priority_weights || [1.0, 1.0, 1.0, 1.0, 1.0]);
     }
   }, [activeIndex, activeConfig]);
 
@@ -154,6 +181,9 @@ function App() {
         card ? { id: card.id, name: card.name } : null
       ),
       event_data_collection: eventDataCollectionSettings,
+      energy_management: energyManagement,
+      priority_weight: priorityWeight,
+      priority_weights: priorityWeights,
     };
     
     // Save to localStorage preset (with full data)
@@ -173,6 +203,9 @@ function App() {
       scenario: selectedScenario,
       support_cards: selectedSupportCards,
       event_data_collection: eventDataCollectionSettings,
+      energy_management: energyManagement,
+      priority_weight: priorityWeight,
+      priority_weights: priorityWeights,
     };
     savePreset(fullConfig);
     
@@ -228,27 +261,47 @@ function App() {
           </button>
         </div>
 
-        {/* Main 2x2 Grid Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Top Left: Character & Scenario Selection */}
-          <div className="bg-white rounded-lg border p-6 shadow-sm">
-            <h3 className="text-xl font-semibold mb-4 text-gray-800">Character & Scenario Selection</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <CharacterSelector
-                selectedCharacter={selectedCharacter}
-                onSelectCharacter={setSelectedCharacter}
-              />
-              <ScenarioSelector
-                selectedScenario={selectedScenario}
-                onSelectScenario={setSelectedScenario}
-              />
+        {/* Main Layout */}
+        <div className="space-y-8">
+          {/* Top Section: Character & Scenario Selection + Support Cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Left: Character & Scenario Selection */}
+            <div className="bg-white rounded-lg border p-6 shadow-sm">
+              <h3 className="text-xl font-semibold mb-4 text-gray-800">Character & Scenario Selection</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <CharacterSelector
+                  selectedCharacter={selectedCharacter}
+                  onSelectCharacter={setSelectedCharacter}
+                />
+                <ScenarioSelector
+                  selectedScenario={selectedScenario}
+                  onSelectScenario={setSelectedScenario}
+                />
+              </div>
+            </div>
+
+            {/* Right: Support Card Selection */}
+            <div className="bg-white rounded-lg border p-6 shadow-sm">
+              <h3 className="text-xl font-semibold mb-4 text-gray-800">Support Cards</h3>
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+                {selectedSupportCards.map((_, index) => (
+                  <SupportCardSelector
+                    key={index}
+                    selectedCard={selectedSupportCards[index]}
+                    onSelectCard={handleSelectSupportCard(index)}
+                    cardIndex={index}
+                  />
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Top Right: Training Configuration */}
+          {/* Middle Section: Training Configuration */}
           <div className="bg-white rounded-lg border p-6 shadow-sm">
-            <h3 className="text-xl font-semibold mb-4 text-gray-800">Training Configuration</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <h3 className="text-xl font-semibold mb-6 text-gray-800">Training Configuration</h3>
+            
+            {/* Basic Training Settings */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
               <PriorityStat
                 priorityStat={priorityStat}
                 setPriorityStat={setPriorityStat}
@@ -266,24 +319,24 @@ function App() {
                 setFail={setMaximumFailure}
               />
             </div>
-          </div>
 
-          {/* Bottom Left: Support Card Selection */}
-          <div className="bg-white rounded-lg border p-6 shadow-sm">
-            <h3 className="text-xl font-semibold mb-4 text-gray-800">Support Cards</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {selectedSupportCards.map((_, index) => (
-                <SupportCardSelector
-                  key={index}
-                  selectedCard={selectedSupportCards[index]}
-                  onSelectCard={handleSelectSupportCard(index)}
-                  cardIndex={index}
+            {/* Priority Weight System */}
+            <div className="border-t pt-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <PriorityWeight
+                  priorityWeight={priorityWeight}
+                  onPriorityWeightChange={setPriorityWeight}
                 />
-              ))}
+                <PriorityWeights
+                  priorityWeights={priorityWeights}
+                  onPriorityWeightsChange={setPriorityWeights}
+                  priorityWeight={priorityWeight}
+                />
+              </div>
             </div>
           </div>
 
-          {/* Bottom Right: Race Settings and Data Collection */}
+          {/* Bottom Section: Race Settings & Data Collection */}
           <div className="bg-white rounded-lg border p-6 shadow-sm">
             <h3 className="text-xl font-semibold mb-4 text-gray-800">Race Settings & Data Collection</h3>
             <div className="space-y-6">
@@ -336,6 +389,13 @@ function App() {
                 <EventDataCollection
                   settings={eventDataCollectionSettings}
                   onSettingsChange={setEventDataCollectionSettings}
+                />
+              </div>
+              
+              <div className="border-t pt-4">
+                <EnergyManagement
+                  energyManagement={energyManagement}
+                  setEnergyManagement={setEnergyManagement}
                 />
               </div>
             </div>

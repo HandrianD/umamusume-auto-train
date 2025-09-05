@@ -9,7 +9,7 @@ from utils.screenshot import capture_region, enhanced_screenshot
 from core.ocr import extract_text, extract_number
 from core.recognizer import match_template
 
-from utils.constants import SUPPORT_CARD_ICON_REGION, MOOD_REGION, TURN_REGION, FAILURE_REGION, YEAR_REGION, MOOD_LIST, CRITERIA_REGION, SKILL_PTS_REGION
+from utils.constants import SUPPORT_CARD_ICON_REGION, MOOD_REGION, TURN_REGION, FAILURE_REGION, YEAR_REGION, MOOD_LIST, CRITERIA_REGION, SKILL_PTS_REGION, ENERGY_REGION, ENERGY_LIST
 
 is_bot_running = False
 
@@ -18,6 +18,9 @@ PRIORITIZE_G1_RACE = None
 IS_AUTO_BUY_SKILL = None
 SKILL_PTS_CHECK = None
 PRIORITY_STAT = None
+PRIORITY_WEIGHT = None
+PRIORITY_WEIGHTS = None
+PRIORITY_EFFECTS_LIST = None
 MAX_FAILURE = None
 STAT_CAPS = None
 SKILL_LIST = None
@@ -28,12 +31,18 @@ SCENARIO_DATA = None
 EVENT_DATA_COLLECTION = None
 USER_INTERVENTION_TIMEOUT = None
 
+# Energy Management Configuration
+NEVER_REST_ENERGY = None
+SKIP_TRAINING_ENERGY = None
+SKIP_INFIRMARY_UNLESS_MISSING_ENERGY = None
+ENERGY_DETECTION_ENABLED = None
+
 def load_config():
   with open("config.json", "r", encoding="utf-8") as file:
     return json.load(file)
 
 def reload_config():
-  global PRIORITY_STAT, MINIMUM_MOOD, MAX_FAILURE, PRIORITIZE_G1_RACE, CANCEL_CONSECUTIVE_RACE, STAT_CAPS, IS_AUTO_BUY_SKILL, SKILL_PTS_CHECK, SKILL_LIST, CHARACTER_DATA, SUPPORT_CARDS_DATA, SCENARIO_DATA, EVENT_DATA_COLLECTION, USER_INTERVENTION_TIMEOUT
+  global PRIORITY_STAT, MINIMUM_MOOD, MAX_FAILURE, PRIORITIZE_G1_RACE, CANCEL_CONSECUTIVE_RACE, STAT_CAPS, IS_AUTO_BUY_SKILL, SKILL_PTS_CHECK, SKILL_LIST, CHARACTER_DATA, SUPPORT_CARDS_DATA, SCENARIO_DATA, EVENT_DATA_COLLECTION, USER_INTERVENTION_TIMEOUT, NEVER_REST_ENERGY, SKIP_TRAINING_ENERGY, SKIP_INFIRMARY_UNLESS_MISSING_ENERGY, ENERGY_DETECTION_ENABLED, PRIORITY_WEIGHT, PRIORITY_WEIGHTS, PRIORITY_EFFECTS_LIST
   config = load_config()
 
   PRIORITY_STAT = config["priority_stat"]
@@ -45,6 +54,13 @@ def reload_config():
   IS_AUTO_BUY_SKILL = config["skill"]["is_auto_buy_skill"]
   SKILL_PTS_CHECK = config["skill"]["skill_pts_check"]
   SKILL_LIST = config["skill"]["skill_list"]
+
+  # Load energy management settings
+  energy_config = config.get("energy_management", {})
+  ENERGY_DETECTION_ENABLED = energy_config.get("enabled", False)
+  NEVER_REST_ENERGY = energy_config.get("never_rest_energy", 70)
+  SKIP_TRAINING_ENERGY = energy_config.get("skip_training_energy", 30)
+  SKIP_INFIRMARY_UNLESS_MISSING_ENERGY = energy_config.get("skip_infirmary_unless_missing_energy", True)
 
   # Load event data collection settings
   EVENT_DATA_COLLECTION = config.get("event_data_collection", {
@@ -77,6 +93,20 @@ def reload_config():
   # Load user intervention timeout (default 10 seconds)
   event_data = config.get("event_data_collection", {})
   USER_INTERVENTION_TIMEOUT = event_data.get("user_intervention_timeout", 10)
+
+  # Load priority weight settings
+  PRIORITY_WEIGHT = config.get("priority_weight", "NONE")
+  PRIORITY_WEIGHTS = config.get("priority_weights", [1.0, 1.0, 1.0, 1.0, 1.0])
+  
+  # Define priority effects list based on priority weight level
+  if PRIORITY_WEIGHT == "HEAVY":
+    PRIORITY_EFFECTS_LIST = [1.5, 1.2, 1.0, 0.7, 0.4]
+  elif PRIORITY_WEIGHT == "MEDIUM":
+    PRIORITY_EFFECTS_LIST = PRIORITY_WEIGHTS
+  elif PRIORITY_WEIGHT == "LIGHT":
+    PRIORITY_EFFECTS_LIST = [1.2, 1.1, 1.0, 0.9, 0.8]
+  else:  # NONE
+    PRIORITY_EFFECTS_LIST = [1.0, 1.0, 1.0, 1.0, 1.0]
 
   # Load character data
   CHARACTER_DATA = None
@@ -349,6 +379,62 @@ def check_mood():
 
   print(f"[WARNING] Mood not recognized: {mood_text}")
   return "UNKNOWN"
+
+def check_energy():
+  """
+  Detect current energy level of the character
+  Returns energy level as a string and numeric value (0-100)
+  """
+  if not ENERGY_DETECTION_ENABLED:
+    return "UNKNOWN", 50  # Default to middle value if detection disabled
+    
+  try:
+    energy_img = capture_region(ENERGY_REGION)
+    energy_text = extract_text(energy_img).upper()
+    
+    # Try to extract numeric energy value first
+    energy_number = extract_number(energy_img)
+    if energy_number is not None and 0 <= energy_number <= 100:
+      # Classify energy level based on numeric value
+      if energy_number >= 80:
+        energy_level = "FULL"
+      elif energy_number >= 60:
+        energy_level = "HIGH" 
+      elif energy_number >= 40:
+        energy_level = "NORMAL"
+      elif energy_number >= 20:
+        energy_level = "LOW"
+      else:
+        energy_level = "EMPTY"
+      
+      print(f"[ENERGY] Detected energy: {energy_level} ({energy_number}%)")
+      return energy_level, energy_number
+    
+    # Fallback to text-based detection
+    for known_energy in ENERGY_LIST:
+      if known_energy in energy_text:
+        # Convert text to approximate numeric value
+        energy_numeric = {
+          "FULL": 90, "HIGH": 70, "NORMAL": 50, "LOW": 30, "EMPTY": 10, "UNKNOWN": 50
+        }.get(known_energy, 50)
+        
+        print(f"[ENERGY] Detected energy (text): {known_energy} (~{energy_numeric}%)")
+        return known_energy, energy_numeric
+    
+    print(f"[WARNING] Energy not recognized: {energy_text}")
+    return "UNKNOWN", 50
+    
+  except Exception as e:
+    print(f"[ERROR] Failed to check energy: {e}")
+    return "UNKNOWN", 50
+
+def get_current_energy_level():
+  """
+  Get current energy level as numeric value (0-100)
+  Convenience function for energy-based decisions
+  """
+  _, energy_value = check_energy()
+  return energy_value
 
 # Character and Support Card Event Functions
 
