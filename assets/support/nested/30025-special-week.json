@@ -1,0 +1,178 @@
+{
+  "support_id": "30025-special-week",
+  "scraped_at": "2025-09-06 02:37:14",
+  "summary": {
+    "english_events": 5,
+    "japanese_events": 5,
+    "combined_events": 5,
+    "total_categories": 2
+  },
+  "data": {
+    "english": {
+      "events": [
+        {
+          "category": "Chain Events",
+          "events": [
+            {
+              "name": "(❯) Someday, I'll Be Just Like Her!",
+              "effects": [
+                "Energy +10\nSpeed +5"
+              ]
+            },
+            {
+              "name": "(❯❯) Just a Little Closer",
+              "effects": [
+                "Top Option: Energy -10 Speed +15 Special Week bond +5",
+                "Middle Option: Energy -10 Skill points +20 Special Week bond +5",
+                "Bottom Option: Energy -10 Shake It Out hint +1 Special Week bond +5"
+              ]
+            },
+            {
+              "name": "(❯❯❯) Forms of Aspiration",
+              "effects": [
+                "or: Energy +10 Speed +10 Skill points +10 Gourmand hint +3"
+              ]
+            }
+          ]
+        },
+        {
+          "category": "Random Events",
+          "events": [
+            {
+              "name": "Watch Where You're Going!",
+              "effects": [
+                "Top Option: Extra Tank hint +1 Special Week bond +5",
+                "Bottom Option: Guts +15 Special Week bond +5"
+              ]
+            },
+            {
+              "name": "So Many Options!",
+              "effects": [
+                "Top Option: Energy +10 Mood +1 Special Week bond +5",
+                "Bottom Option: Energy -10 Stamina +15 Skill points +15 Special Week bond +5"
+              ]
+            }
+          ]
+        }
+      ],
+      "total_events": 5
+    },
+    "japanese": {
+      "events": [
+        {
+          "category": "Chain Events",
+          "events": [
+            {
+              "name": "(❯) Someday, I'll Be Just Like Her!",
+              "options": [
+                "Energy +10\nSpeed +5"
+              ]
+            },
+            {
+              "name": "(❯❯) Just a Little Closer",
+              "options": [
+                "Top Option: Energy -10 Speed +15 Special Week bond +5",
+                "Middle Option: Energy -10 Skill points +20 Special Week bond +5",
+                "Bottom Option: Energy -10 Shake It Out hint +1 Special Week bond +5"
+              ]
+            },
+            {
+              "name": "(❯❯❯) Forms of Aspiration",
+              "options": [
+                "or: Energy +10 Speed +10 Skill points +10 Gourmand hint +3"
+              ]
+            }
+          ]
+        },
+        {
+          "category": "Random Events",
+          "events": [
+            {
+              "name": "Watch Where You're Going!",
+              "options": [
+                "Top Option: Extra Tank hint +1 Special Week bond +5",
+                "Bottom Option: Guts +15 Special Week bond +5"
+              ]
+            },
+            {
+              "name": "So Many Options!",
+              "options": [
+                "Top Option: Energy +10 Mood +1 Special Week bond +5",
+                "Bottom Option: Energy -10 Stamina +15 Skill points +15 Special Week bond +5"
+              ]
+            }
+          ]
+        }
+      ],
+      "total_events": 5
+    },
+    "combined": {
+      "events": [
+        {
+          "category": "Chain Events",
+          "events": [
+            {
+              "name": "(❯) Someday, I'll Be Just Like Her!",
+              "effects": [
+                "Energy +10\nSpeed +5"
+              ],
+              "options": [
+                "Energy +10\nSpeed +5"
+              ]
+            },
+            {
+              "name": "(❯❯) Just a Little Closer",
+              "effects": [
+                "Top Option: Energy -10 Speed +15 Special Week bond +5",
+                "Middle Option: Energy -10 Skill points +20 Special Week bond +5",
+                "Bottom Option: Energy -10 Shake It Out hint +1 Special Week bond +5"
+              ],
+              "options": [
+                "Top Option: Energy -10 Speed +15 Special Week bond +5",
+                "Middle Option: Energy -10 Skill points +20 Special Week bond +5",
+                "Bottom Option: Energy -10 Shake It Out hint +1 Special Week bond +5"
+              ]
+            },
+            {
+              "name": "(❯❯❯) Forms of Aspiration",
+              "effects": [
+                "or: Energy +10 Speed +10 Skill points +10 Gourmand hint +3"
+              ],
+              "options": [
+                "or: Energy +10 Speed +10 Skill points +10 Gourmand hint +3"
+              ]
+            }
+          ]
+        },
+        {
+          "category": "Random Events",
+          "events": [
+            {
+              "name": "Watch Where You're Going!",
+              "effects": [
+                "Top Option: Extra Tank hint +1 Special Week bond +5",
+                "Bottom Option: Guts +15 Special Week bond +5"
+              ],
+              "options": [
+                "Top Option: Extra Tank hint +1 Special Week bond +5",
+                "Bottom Option: Guts +15 Special Week bond +5"
+              ]
+            },
+            {
+              "name": "So Many Options!",
+              "effects": [
+                "Top Option: Energy +10 Mood +1 Special Week bond +5",
+                "Bottom Option: Energy -10 Stamina +15 Skill points +15 Special Week bond +5"
+              ],
+              "options": [
+                "Top Option: Energy +10 Mood +1 Special Week bond +5",
+                "Bottom Option: Energy -10 Stamina +15 Skill points +15 Special Week bond +5"
+              ]
+            }
+          ]
+        }
+      ],
+      "total_events": 5
+    }
+  }
+}

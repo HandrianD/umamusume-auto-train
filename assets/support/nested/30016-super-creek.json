@@ -1,0 +1,63 @@
+{
+  "support_id": "30016-super-creek",
+  "scraped_at": "2025-09-06 03:17:04",
+  "data": {
+    "english": {
+      "events": [
+        {
+          "category": "Chain Events",
+          "events": [
+            {
+              "name": "(❯) Freshly Made in Ample Amounts",
+              "type": "no_choice",
+              "effects": "Energy +10\nStamina +5"
+            },
+            {
+              "name": "(❯❯) The Taste of Warmth",
+              "type": "no_choice",
+              "effects": "Stamina +5\nPower +5"
+            },
+            {
+              "name": "(❯❯❯) Have a Second Helping!",
+              "type": "no_choice",
+              "effects": "Stamina +10\nPower +5\nSwinging Maestro hint +1"
+            }
+          ]
+        },
+        {
+          "category": "Random Events",
+          "events": [
+            {
+              "name": "Leave it to Me to Help Out! ♪",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Energy +15 Super Creek bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Stamina +10 Super Creek bond +5"
+                }
+              ]
+            },
+            {
+              "name": "Leave it to Me to Be Considerate! ♪",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Deep Breaths hint +1 Super Creek bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Energy +10 Stamina +5 Super Creek bond +5"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

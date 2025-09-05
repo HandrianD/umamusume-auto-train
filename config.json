@@ -1,24 +1,58 @@
 {
+  "character": {
+    "id": "100901",
+    "name": "Daiwa Scarlet"
+  },
+  "scenario": {
+    "id": "ura-finals",
+    "name": "URA Finals"
+  },
+  "support_cards": [
+    {
+      "id": "30028",
+      "name": "Kitasan Black"
+    },
+    {
+      "id": "20008",
+      "name": "Manhattan Cafe"
+    },
+    {
+      "id": "30016",
+      "name": "Super Creek"
+    },
+    {
+      "id": "30025",
+      "name": "Special Week"
+    },
+    {
+      "id": "20023",
+      "name": "Sweep Tosho"
+    },
+    {
+      "id": "30041",
+      "name": "Mejiro Dober"
+    }
+  ],
   "priority_stat": [
     "spd",
     "sta",
-    "wit",
     "pwr",
+    "wit",
     "guts"
   ],
-  "minimum_mood": "NORMAL",
-  "maximum_failure": 15,
+  "minimum_mood": "GOOD",
+  "maximum_failure": 25,
   "prioritize_g1_race": false,
   "cancel_consecutive_race": true,
   "stat_caps": {
-    "spd": 1100,
-    "sta": 1000,
-    "pwr": 1000,
-    "guts": 500,
-    "wit": 1000
+    "spd": 1200,
+    "sta": 800,
+    "pwr": 800,
+    "guts": 350,
+    "wit": 400
   },
   "skill": {
-    "is_auto_buy_skill": true,
+    "is_auto_buy_skill": false,
     "skill_pts_check": 400,
     "skill_list": [
       "Concentration",
@@ -27,5 +61,30 @@
       "Professor of Curvature",
       "Swinging Maestro"
     ]
+  },
+  "event_data_collection": {
+    "enabled": true,
+    "event_types": {
+      "character_events": true,
+      "support_card_events": true,
+      "random_events": true,
+      "special_events": true
+    },
+    "data_to_collect": {
+      "stat_changes": true,
+      "mood_changes": true,
+      "skill_gains": true,
+      "training_efficiency": true
+    },
+    "context_tracking": {
+      "current_stats": true,
+      "support_cards": true,
+      "training_year": true
+    },
+    "learning_features": {
+      "personal_learning": true,
+      "smart_defaults": true,
+      "minimum_importance_threshold": 3
+    }
   }
 }

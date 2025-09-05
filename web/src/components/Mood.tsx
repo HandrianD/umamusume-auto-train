@@ -9,10 +9,12 @@ type Props = {
 export default function Mood({ minimumMood, setMood }: Props) {
   return (
     <div className="w-fit px-4">
-      <label htmlFor="mood" className="flex gap-2 items-center">
-        <span className="text-xl">Minimum Mood</span>
+      <div className="flex flex-col gap-2">
+        <label htmlFor="mood" className="text-xl font-medium">
+          Minimum Mood
+        </label>
         <Select value={minimumMood} onValueChange={(val) => setMood(val)}>
-          <SelectTrigger className="w-28">
+          <SelectTrigger className="w-28 ml-4">
             <SelectValue placeholder="Mood" />
           </SelectTrigger>
           <SelectContent>
@@ -23,7 +25,7 @@ export default function Mood({ minimumMood, setMood }: Props) {
             ))}
           </SelectContent>
         </Select>
-      </label>
+      </div>
     </div>
   );
 }

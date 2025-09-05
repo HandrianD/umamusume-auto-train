@@ -1,0 +1,39 @@
+{
+  "scenario_id": "project-larc",
+  "name": "Project L'Arc",
+  "events_with_choices": [
+    {
+      "name": "With",
+      "conditions": ["Triggers in Classic Class, January 1"],
+      "note": "Depending on your choice, a different 'Trust <From X>' event will trigger later. The order of choices in this event is inconsistent, so you must match by name.",
+      "choices": [
+        {"option": "Mei Satake", "effects": ["Trust<From Speed>"]},
+        {"option": "El Condor Pasa", "effects": ["Trust<From Condor>"]},
+        {"option": "Sirius Symboli", "effects": ["Trust<From Sirius>"]},
+        {"option": "Manhattan Cafe", "effects": ["Trust<From Cafe>"]},
+        {"option": "Satono Diamond", "effects": ["Trust<From Diamond>"]},
+        {"option": "Nakayama Festa", "effects": ["Trust<From Festa>"]},
+        {"option": "Gold Ship", "effects": ["Trust<From Ship>"]},
+        {"option": "Tap Dance City", "effects": ["Trust<From Tap>"]},
+        {"option": "Orfevre", "effects": ["Trust<From Orfevre>"]},
+        {"option": "Blast Onepiece", "effects": ["Trust<From Blast>"]}
+      ]
+    }
+  ],
+  "events_without_choices": [
+    {"name": "代表交流戦第4戦の後に・発揮", "conditions": ["Win the 4th L'Arc Representative Exhibition Race", "Triggers in Senior Class, June 2"], "effects": ["Aptitude Points +100", "All stats +10", "Skill points +40", "Sorry, Gotta Go! hint +1"]},
+    {"name": "ロマンを求めて", "conditions": ["Win the Prix de l'Arc de Triomphe", "Triggers in Senior Class, October 1"], "effects": ["If Win the Prix de l'Arc de Triomphe twice: All stats +30, Skill points +60, Dreaming of the Peak hint +3", "If Win the Prix de l'Arc de Triomphe: All stats +25, Skill points +60, Dreaming of the Peak hint +1"]},
+    {"name": "凱旋門賞の後に・勝利", "conditions": ["Win the Prix de l'Arc de Triomphe (Year 2)"], "effects": ["Aptitude Points +80", "All stats +7", "Skill points +50", "Standard Distance ○ hint +1", "Longchamp Racecourse ○ hint +1", "Fall Runner ○ hint +1"]},
+    {"name": "フォワ賞の後に・勝利", "conditions": ["Win the Prix Foy"], "effects": ["Aptitude Points +100", "All stats +7", "Skill points +40", "Bearer of Hope hint +1"]},
+    {"name": "Trust<From Condor>", "conditions": ["Pick the respective character's choice in the 'With' event", "Triggers in Senior Class, June 2"], "effects": ["Mood +1", "All stats +10", "If El Condor Pasa is scenario-linked: It's On! hint +1", "In other cases: Ramp Up hint +1"]},
+    {"name": "Trust<From Festa>", "conditions": ["Pick the respective character's choice in the 'With' event", "Triggers in Senior Class, June 2"], "effects": ["Mood +1", "All stats +10", "If Nakayama Festa is scenario-linked: Gamester hint +1", "In other cases: Questionable Strategy hint +1"]},
+    {"name": "Trust<From Ship>", "conditions": ["Pick the respective character's choice in the 'With' event", "Triggers in Senior Class, June 2"], "effects": ["Mood +1", "All stats +10", "If Gold Ship is scenario-linked: Prepared to Die hint +1", "In other cases: All That There Is hint +1"]},
+    {"name": "Trust<From Diamond>", "conditions": ["Pick the respective character's choice in the 'With' event", "Triggers in Senior Class, June 2"], "effects": ["Mood +1", "All stats +10", "If Satono Diamond is scenario-linked: Center Stage hint +1", "In other cases: Prudent Positioning hint +1"]},
+    {"name": "Trust<From Cafe>", "conditions": ["Pick the respective character's choice in the 'With' event", "Triggers in Senior Class, June 2"], "effects": ["Mood +1", "All stats +10", "If Manhattan Cafe is scenario-linked: Innate Experience hint +1", "In other cases: Inside Scoop hint +1"]},
+    {"name": "Trust<From Sirius>", "conditions": ["Pick the respective character's choice in the 'With' event", "Triggers in Senior Class, June 2"], "effects": ["Mood +1", "All stats +10", "If Sirius Symboli is scenario-linked: Photon Flash hint +1", "In other cases: Medium Straightaways ○ hint +1"]},
+    {"name": "Trust<From Tap>", "conditions": ["Pick the respective character's choice in the 'With' event", "Triggers in Senior Class, June 2"], "effects": ["Mood +1", "All stats +10", "If Tap Dance City is scenario-linked: Miraculous Step hint +1", "In other cases: Soft Step hint +1"]},
+    {"name": "Trust<From Speed>", "conditions": ["Pick the respective character's choice in the 'With' event", "Triggers in Senior Class, June 2"], "effects": ["Mood +1", "All stats +10", "If Mei Satake is scenario-linked: Child of Longchamp hint +1", "In other cases: Longchamp Racecourse ○ hint +1"]},
+    {"name": "Trust<From Orfevre>", "conditions": ["Pick the respective character's choice in the 'With' event", "Triggers in Senior Class, June 2"], "effects": ["Mood +1", "All stats +10", "If Orfevre is scenario-linked: Overwhelming Pressure hint +1", "In other cases: Pressure hint +1"]},
+    {"name": "Trust<From Blast>", "conditions": ["Pick the respective character's choice in the 'With' event", "Triggers in Senior Class, June 2"], "effects": ["Mood +1", "All stats +10", "If Blast Onepiece is scenario-linked: Lightning Step hint +1", "In other cases: Thunderbolt Step hint +1"]}
+  ]
+}

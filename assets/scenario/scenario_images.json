@@ -1,0 +1,44 @@
+[
+  {
+    "scenario_id": "ura-finals",
+    "name": "URA Finals",
+    "image_url": "https://gametora.com/images/umamusume/scenarios/bnr_ico_001.png",
+    "image_file": "ura-finals.png"
+  },
+  {
+    "scenario_id": "aoharu-hai",
+    "name": "Aoharu Hai",
+    "image_url": "https://gametora.com/images/umamusume/scenarios/bnr_ico_002.png",
+    "image_file": "aoharu-hai.png"
+  },
+  {
+    "scenario_id": "make-a-new-track",
+    "name": "Make a New Track",
+    "image_url": "https://gametora.com/images/umamusume/scenarios/bnr_ico_004.png",
+    "image_file": "make-a-new-track.png"
+  },
+  {
+    "scenario_id": "grand-live",
+    "name": "Grand Live",
+    "image_url": "https://gametora.com/images/umamusume/scenarios/bnr_ico_003.png",
+    "image_file": "grand-live.png"
+  },
+  {
+    "scenario_id": "grand-masters",
+    "name": "Grand Masters",
+    "image_url": "https://gametora.com/images/umamusume/scenarios/bnr_ico_005.png",
+    "image_file": "grand-masters.png"
+  },
+  {
+    "scenario_id": "project-larc",
+    "name": "Project L'Arc",
+    "image_url": "https://gametora.com/images/umamusume/scenarios/bnr_ico_006.png",
+    "image_file": "project-larc.png"
+  },
+  {
+    "scenario_id": "uaf-ready-go",
+    "name": "U.A.F. Ready GO!",
+    "image_url": "https://gametora.com/images/umamusume/scenarios/bnr_ico_007.png",
+    "image_file": "uaf-ready-go.png"
+  }
+]

@@ -1,0 +1,77 @@
+{
+  "events": [
+    {
+      "event_text": "test event text",
+      "choice_made": 1,
+      "outcome": {
+        "stat_gains": {
+          "speed": 5
+        }
+      }
+    },
+    {
+      "session_id": "e1b9a9cc",
+      "timestamp": "2025-09-05T22:40:08.518916",
+      "event_text": "Support Card Event Paying It Forward",
+      "detected_choices": [],
+      "choice_made": 4,
+      "character": "Daiwa Scarlet",
+      "support_cards": [],
+      "current_stats": {},
+      "current_mood": "Normal",
+      "current_year": "1st",
+      "event_type": "support",
+      "user_intervention": true,
+      "outcome": {}
+    },
+    {
+      "session_id": "0963e738",
+      "timestamp": "2025-09-06T01:13:03.837914",
+      "event_text": "Victoryl",
+      "detected_choices": [],
+      "choice_made": 4,
+      "character": "Daiwa Scarlet",
+      "support_cards": [],
+      "current_stats": {},
+      "current_mood": "Normal",
+      "current_year": "1st",
+      "event_type": "character",
+      "user_intervention": true,
+      "outcome": {}
+    },
+    {
+      "session_id": "40efd83d",
+      "timestamp": "2025-09-06T01:18:15.452607",
+      "event_text": "New Year's Resolutions",
+      "detected_choices": [],
+      "choice_made": 4,
+      "character": "Daiwa Scarlet",
+      "support_cards": [],
+      "current_stats": {},
+      "current_mood": "Normal",
+      "current_year": "1st",
+      "event_type": "character",
+      "user_intervention": true,
+      "outcome": {}
+    },
+    {
+      "session_id": "0ea33607",
+      "timestamp": "2025-09-06T01:54:14.252005",
+      "event_text": "Get Well Soonl",
+      "detected_choices": [],
+      "choice_made": 4,
+      "character": "Daiwa Scarlet",
+      "support_cards": [],
+      "current_stats": {},
+      "current_mood": "Normal",
+      "current_year": "1st",
+      "event_type": "character",
+      "user_intervention": true,
+      "outcome": {}
+    }
+  ],
+  "metadata": {
+    "total_events": 5,
+    "last_updated": "2025-09-06T01:54:14.254005"
+  }
+}

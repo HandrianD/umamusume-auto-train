@@ -1,0 +1,43 @@
+{
+  "scenario_id": "aoharu-hai",
+  "name": "Aoharu Hai",
+  "events_with_choices": [
+    {
+      "name": "A Team at Last",
+      "note": "You can only choose a name if the related character is scenario-linked.",
+      "choices": [
+        {"option": "HOP CHEERS (Taiki Shuttle)"},
+        {"option": "ハレノヒ・ランナーズ [Sunny Day Runners] (Matikanefukukitaru)"},
+        {"option": "にんじんぷりん [Carrot Pudding] (Haru Urara)"},
+        {"option": "ブルームス [Blooms] (Rice Shower)"},
+        {"option": "キャロッツ [Carrots]"}
+      ]
+    }
+  ],
+  "events_without_choices": [
+    {
+      "name": "A Present from Director Akikawa!",
+      "conditions": ["After successfully finishing the training. Skill hint reward depends on the team name."],
+      "effects": ["All stats +10", "Skill points +50"],
+      "team_rewards": {
+        "HOP CHEERS (Taiki Shuttle)": ["Mile Maven hint +1"],
+        "ハレノヒ・ランナーズ (Matikanefukukitaru)": ["Clairvoyance hint +1"],
+        "にんじんぷりん (Haru Urara)": ["Indomitable hint +1"],
+        "ブルームス (Rice Shower)": ["Cooldown hint +1"],
+        "キャロッツ": ["No Stopping Me! hint +1"]
+      }
+    },
+    {
+      "name": "Team Power Increased: The Greatest Gift",
+      "conditions": ["When your overall team rank reaches S"],
+      "effects": ["All stats +5", "It's On! hint +1"],
+      "linked": {"training a scenario link character": ["All stats +6", "It's On! hint +3"]}
+    },
+    {"name": "All Together! Say Cheese!", "effects": ["Speed +10"], "linked": {"Taiki Shuttle is scenario-linked": ["Speed +20", "Skill points +10"]}},
+    {"name": "A Happy Ending for the Team", "effects": ["Stamina +10"], "linked": {"Rice Shower is scenario-linked": ["Stamina +20", "Skill points +10"]}},
+    {"name": "A Cheer Song for the Team!", "effects": ["Guts +10"], "linked": {"Haru Urara is scenario-linked": ["Guts +20", "Skill points +10"]}},
+    {"name": "Team Trouble?", "effects": ["Wisdom +10"], "linked": {"Matikanefukukitaru is scenario-linked": ["Wisdom +20", "Skill points +10"]}},
+    {"name": "A Secret Side of Kashimoto", "effects": ["Wisdom +10"], "linked": {"Riko Kashimoto is scenario-linked": ["Wisdom +20", "Skill points +10"]}},
+    {"name": "A Surprising Side of Kashimoto", "effects": ["Energy +10"], "linked": {"Riko Kashimoto is scenario-linked": ["Energy +15", "Mood +1"]}}
+  ]
+}

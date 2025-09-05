@@ -1,0 +1,26 @@
+{
+  "scenario_id": "grand-live",
+  "name": "Grand Live",
+  "events_with_choices": [
+    {"name": "提案ッ！新曲プロデュース！", "choices": [
+      {"option": "Top Option", "effects": ["Passion +20", "Yayoi Akikawa bond +10"]},
+      {"option": "Bottom Option", "effects": ["Mental +20", "Yayoi Akikawa bond +10"]}
+    ]},
+    {"name": "集まれ！のど自慢", "choices": [
+      {"option": "Top Option", "effects": ["Energy +15"]},
+      {"option": "Bottom Option", "effects": ["Passion +20"]}
+    ]},
+    {"name": "できることから", "choices": [
+      {"option": "Top Option", "effects": ["Energy +10"]},
+      {"option": "Bottom Option", "effects": ["Guts +10"]}
+    ]},
+    {"name": "あなたと私をつなげるライブ", "choices": [
+      {"option": "Option 1", "effects": ["If Smart Falcon is scenario-linked: Full Speed Ahead! hint +1", "If not scenario-linked: At Full Speed hint +1"]},
+      {"option": "Option 2", "effects": ["If Mihono Bourbon is scenario-linked: Concentration hint +1", "If not scenario-linked: Focus hint +1"]},
+      {"option": "Option 3", "effects": ["If Silence Suzuka is scenario-linked: Trackblazer hint +1", "If not scenario-linked: Rosy Outlook hint +1"]},
+      {"option": "Option 4", "effects": ["If Agnes Tachyon is scenario-linked: Prepared to Die hint +1", "If not scenario-linked: All That There Is hint +1"]},
+      {"option": "Option 5", "effects": ["Lane Legerdemain hint +1"]}
+    ]}
+  ],
+  "events_without_choices": []
+}

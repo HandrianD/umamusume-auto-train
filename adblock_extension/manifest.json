@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "Uma Musume Ad Blocker",
+  "version": "1.0",
+  "description": "Blocks ads on gametora.com for better scraping",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "*://*/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  }
+}

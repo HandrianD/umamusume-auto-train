@@ -1,0 +1,131 @@
+{
+  "scenario_id": "make-a-new-track",
+  "name": "Make a New Track",
+  "events_with_choices": [
+    {"name": "『全力』＆『普通』ダイエット！", "choices": [
+      {"option": "Top Option", "effects": ["Stamina +6", "Guts +6"]},
+      {"option": "Bottom Option", "effects": ["Fighter hint +1"]}
+    ]},
+    {"name": "『退学』を賭けた勝負", "choices": [
+      {"option": "Top Option", "effects": ["Stamina +6", "Wisdom +6"]},
+      {"option": "Bottom Option", "effects": ["Triple 7s hint +1"]}
+    ]},
+    {"name": "ふたりと宿根草", "choices": [
+      {"option": "Top Option", "effects": ["Speed +6", "Power +6"]},
+      {"option": "Bottom Option", "effects": ["Standing By hint +1"]}
+    ]},
+    {"name": "ひとり暮らしの生活", "choices": [
+      {"option": "Top Option", "effects": ["Power +6", "Guts +6"]},
+      {"option": "Bottom Option", "effects": ["Ramp Up hint +1"]}
+    ]},
+    {"name": "じいちゃん子たちの集い", "choices": [
+      {"option": "Top Option", "effects": ["Stamina +6", "Wisdom +6"]},
+      {"option": "Bottom Option", "effects": ["Prepared to Pass hint +1"]}
+    ]},
+    {"name": "アグネスデジタル、爆発す", "choices": [
+      {"option": "Top Option", "effects": ["Mood +1"]},
+      {"option": "Bottom Option", "effects": ["Uma Stan hint +1"]}
+    ]},
+    {"name": "アルダンからは逃げ切れない", "choices": [
+      {"option": "Top Option", "effects": ["Speed +6", "Guts +6"]},
+      {"option": "Bottom Option", "effects": ["Front Runner Straightaways ○ hint +1"]}
+    ]},
+    {"name": "タマモのゲームセンター奮闘記", "choices": [
+      {"option": "Top Option", "effects": ["Guts +6", "Wisdom +6"]},
+      {"option": "Bottom Option", "effects": ["Unyielding Spirit hint +1"]}
+    ]},
+    {"name": "パワフル最強シンデレラ！", "choices": [
+      {"option": "Top Option", "effects": ["Mood +1"]},
+      {"option": "Bottom Option", "effects": ["Prudent Positioning hint +1"]}
+    ]},
+    {"name": "ヴィクトリー倶楽部、参上！", "choices": [
+      {"option": "Top Option", "effects": ["Stamina +6", "Wisdom +6"]},
+      {"option": "Bottom Option", "effects": ["Sprint Straightaways ○ hint +1"]}
+    ]},
+    {"name": "ゴルシちゃん主催！人狼は誰だ！？", "choices": [
+      {"option": "Top Option", "effects": ["Power +6", "Wisdom +6"]},
+      {"option": "Bottom Option", "effects": ["Studious hint +1"]}
+    ]},
+    {"name": "ドキドキフルーツフェス", "choices": [
+      {"option": "Top Option", "effects": ["Stamina +6", "Power +6"]},
+      {"option": "Bottom Option", "effects": ["Front Runner Straightaways ○ hint +1"]}
+    ]},
+    {"name": "タイキとパールと外国語", "choices": [
+      {"option": "Top Option", "effects": ["Speed +6", "Wisdom +6"]},
+      {"option": "Bottom Option", "effects": ["Sympathy hint +1"]}
+    ]},
+    {"name": "ブライアンがヤキモチ？", "choices": [
+      {"option": "Top Option", "effects": ["All stats +4"]},
+      {"option": "Bottom Option", "effects": ["Steadfast hint +1"]}
+    ]},
+    {"name": "ベガとスピカ", "choices": [
+      {"option": "Top Option", "effects": ["Speed +6", "Wisdom +6"]},
+      {"option": "Bottom Option", "effects": ["Fast-Paced hint +1"]}
+    ]},
+    {"name": "マーベラス売りの少女", "choices": [
+      {"option": "Top Option", "effects": ["Energy +10"]},
+      {"option": "Bottom Option", "effects": ["Hydrate hint +1"]}
+    ]},
+    {"name": "マルゼンさんへの気持ち", "choices": [
+      {"option": "Top Option", "effects": ["Skill points +24"]},
+      {"option": "Bottom Option", "effects": ["Shifting Gears hint +1"]}
+    ]},
+    {"name": "ワールドワイド・ウインディ", "choices": [
+      {"option": "Top Option", "effects": ["Speed +6", "Guts +6"]},
+      {"option": "Bottom Option", "effects": ["Masterful Gambit hint +1"]}
+    ]},
+    {"name": "カワイイを守りたい！", "choices": [
+      {"option": "Top Option", "effects": ["Stamina +6", "Power +6"]},
+      {"option": "Bottom Option", "effects": ["Trick (Front) hint +1"]}
+    ]},
+    {"name": "サプライズ大作戦！", "choices": [
+      {"option": "Top Option", "effects": ["Mood +1"]},
+      {"option": "Bottom Option", "effects": ["Trick (Front) hint +1"]}
+    ]},
+    {"name": "ゴルシを治せ！？", "choices": [
+      {"option": "Top Option", "effects": ["Speed +6", "Power +6"]},
+      {"option": "Bottom Option", "effects": ["Disorient hint +1"]}
+    ]},
+    {"name": "凸凹コンビ", "choices": [
+      {"option": "Top Option", "effects": ["Power +6", "Guts +6"]},
+      {"option": "Bottom Option", "effects": ["Sprinting Gear hint +1"]}
+    ]},
+    {"name": "委員たちの井戸端会議", "choices": [
+      {"option": "Top Option", "effects": ["Speed +6", "Power +6"]},
+      {"option": "Bottom Option", "effects": ["Passing Pro hint +1"]}
+    ]},
+    {"name": "家族（？）でショッピング！", "choices": [
+      {"option": "Top Option", "effects": ["Skill points +24"]},
+      {"option": "Bottom Option", "effects": ["Deep Breaths hint +1"]}
+    ]},
+    {"name": "意外な美化委員", "choices": [
+      {"option": "Top Option", "effects": ["Power +6", "Wisdom +6"]},
+      {"option": "Bottom Option", "effects": ["Pace Strategy hint +1"]}
+    ]},
+    {"name": "同じ傘の下で", "choices": [
+      {"option": "Top Option", "effects": ["Speed +6", "Guts +6"]},
+      {"option": "Bottom Option", "effects": ["Rainy Days ○ hint +1"]}
+    ]},
+    {"name": "甘えたがりのお年頃", "choices": [
+      {"option": "Top Option", "effects": ["Speed +6", "Wisdom +6"]},
+      {"option": "Bottom Option", "effects": ["Murmur hint +1"]}
+    ]},
+    {"name": "怖くないって怖いです", "choices": [
+      {"option": "Top Option", "effects": ["Stamina +6", "Guts +6"]},
+      {"option": "Bottom Option", "effects": ["Levelheaded hint +1"]}
+    ]},
+    {"name": "名探偵のボクにお任せ！", "choices": [
+      {"option": "Top Option", "effects": ["Speed +6", "Stamina +6"]},
+      {"option": "Bottom Option", "effects": ["Nimble Navigator hint +1"]}
+    ]},
+    {"name": "目が離せないお嬢様たち", "choices": [
+      {"option": "Top Option", "effects": ["Guts +6", "Wisdom +6"]},
+      {"option": "Bottom Option", "effects": ["Go with the Flow hint +1"]}
+    ]},
+    {"name": "語り合いたい！", "choices": [
+      {"option": "Top Option", "effects": ["Stamina +6", "Guts +6"]},
+      {"option": "Bottom Option", "effects": ["Shake It Out hint +1"]}
+    ]}
+  ],
+  "events_without_choices": []
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "scenario_id": "ura-finals",
+    "name": "URA Finals",
+    "image": "/images/umamusume/scenarios/bnr_ico_001.png"
+  },
+  {
+    "scenario_id": "aoharu-hai",
+    "name": "Aoharu Hai",
+    "image": "/images/umamusume/scenarios/bnr_ico_002.png"
+  },
+  {
+    "scenario_id": "make-a-new-track",
+    "name": "Make a New Track",
+    "image": "/images/umamusume/scenarios/bnr_ico_004.png"
+  },
+  {
+    "scenario_id": "grand-live",
+    "name": "Grand Live",
+    "image": "/images/umamusume/scenarios/bnr_ico_003.png"
+  },
+  {
+    "scenario_id": "grand-masters",
+    "name": "Grand Masters",
+    "image": "/images/umamusume/scenarios/bnr_ico_005.png"
+  },
+  {
+    "scenario_id": "project-larc",
+    "name": "Project L'Arc",
+    "image": "/images/umamusume/scenarios/bnr_ico_006.png"
+  },
+  {
+    "scenario_id": "uaf-ready-go",
+    "name": "U.A.F. Ready GO!",
+    "image": "/images/umamusume/scenarios/bnr_ico_007.png"
+  }
+]

@@ -1,0 +1,58 @@
+{
+  "support_id": "20008-manhattan-cafe",
+  "scraped_at": "2025-09-06 03:16:44",
+  "data": {
+    "english": {
+      "events": [
+        {
+          "category": "Chain Events",
+          "events": [
+            {
+              "name": "(❯) Invitation on a Rainy Day",
+              "type": "no_choice",
+              "effects": "Energy +15\nSkill points +15"
+            },
+            {
+              "name": "(❯❯) Invitation on a Stormy Day",
+              "type": "no_choice",
+              "effects": "Stamina +15\nStudious hint +1\nManhattan Cafe bond +5"
+            }
+          ]
+        },
+        {
+          "category": "Random Events",
+          "events": [
+            {
+              "name": "Solo Nighttime Run",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Stamina +10 Manhattan Cafe bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Energy +10 Stamina +5 Manhattan Cafe bond +5"
+                }
+              ]
+            },
+            {
+              "name": "A Taste of Silence",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Stamina +5 Skill points +15 Manhattan Cafe bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Non-Standard Distance ○ hint +1 Manhattan Cafe bond +5"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

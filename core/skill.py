@@ -7,8 +7,32 @@ from core.ocr import extract_text
 from core.recognizer import match_template, is_btn_active
 import core.state as state
 
+def is_valid_mouse_position(pos):
+  """Check if mouse position is valid and won't trigger PyAutoGUI fail-safe"""
+  if pos is None:
+    return False
+
+  try:
+    x, y = pos
+    screen_width, screen_height = pyautogui.size()
+
+    # Check if position is within screen bounds
+    if x < 10 or y < 10 or x > screen_width - 10 or y > screen_height - 10:
+      print(f"[DEBUG] Invalid mouse position: {pos} (screen: {screen_width}x{screen_height})")
+      return False
+
+    return True
+  except (TypeError, ValueError) as e:
+    print(f"[DEBUG] Error validating mouse position {pos}: {e}")
+    return False
+
 def buy_skill():
-  pyautogui.moveTo(x=560, y=680)
+  # Move to safe position first
+  safe_pos = (560, 680)
+  if is_valid_mouse_position(safe_pos):
+    pyautogui.moveTo(x=560, y=680)
+  else:
+    print("[DEBUG] Safe position (560, 680) is invalid, skipping initial move")
   found = False
 
   for i in range(10):

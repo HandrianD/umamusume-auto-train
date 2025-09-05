@@ -1,0 +1,822 @@
+{
+  "character_id": "100901-daiwa-scarlet",
+  "scraped_at": "2025-09-06 02:34:38",
+  "summary": {
+    "english_events": 43,
+    "japanese_events": 0,
+    "combined_events": 43,
+    "english_only": 43,
+    "japanese_only": 0,
+    "both_languages": 0
+  },
+  "data": {
+    "english": {
+      "events": [
+        {
+          "name": "There Can Only Be One",
+          "type": "no_choice",
+          "effects": "Direct stat bonus (varies by event)"
+        },
+        {
+          "name": "My Number One",
+          "type": "no_choice",
+          "effects": "Direct stat bonus (varies by event)"
+        },
+        {
+          "name": "Empty Room",
+          "type": "no_choice",
+          "effects": "Direct stat bonus (varies by event)"
+        },
+        {
+          "name": "Number-One Rival",
+          "type": "no_choice",
+          "effects": "Direct stat bonus (varies by event)"
+        },
+        {
+          "name": "A Curious Rumor",
+          "type": "no_choice",
+          "effects": "Direct stat bonus (varies by event)"
+        },
+        {
+          "name": "Master Trainer",
+          "type": "no_choice",
+          "effects": "Direct stat bonus (varies by event)"
+        },
+        {
+          "name": "A Primo Connection",
+          "type": "no_choice",
+          "effects": "Direct stat bonus (varies by event)"
+        },
+        {
+          "name": "Twintail Troubles",
+          "type": "no_choice",
+          "effects": "Direct stat bonus (varies by event)"
+        },
+        {
+          "name": "My Perch",
+          "type": "no_choice",
+          "effects": "Direct stat bonus (varies by event)"
+        },
+        {
+          "name": "Enthusiastic Reading",
+          "type": "no_choice",
+          "effects": "Direct stat bonus (varies by event)"
+        },
+        {
+          "name": "The Best Pose",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Top Option",
+              "effects": "Stamina +10 Power +10"
+            },
+            {
+              "option": "Bottom Option",
+              "effects": "Wisdom +20"
+            }
+          ]
+        },
+        {
+          "name": "The Weight of Racewear",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Top Option",
+              "effects": "Speed +20"
+            },
+            {
+              "option": "Bottom Option",
+              "effects": "Guts +20"
+            }
+          ]
+        },
+        {
+          "name": "Looking Good",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Top Option",
+              "effects": "Stamina +10 Wisdom +10 (random) Get Hot Topic status"
+            },
+            {
+              "option": "Bottom Option",
+              "effects": "Speed +10 Guts +10 (random) Get Hot Topic status"
+            }
+          ]
+        },
+        {
+          "name": "Her",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Top Option",
+              "effects": "Power +5 Objective race changed to Japanese Oaks"
+            },
+            {
+              "option": "Bottom Option",
+              "effects": "Power +5 Objective race changed to Tokyo Yushun (Japanese Derby)"
+            }
+          ]
+        },
+        {
+          "name": "Recommended Restaurant",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Top Option",
+              "effects": "Speed +5 Power +5"
+            },
+            {
+              "option": "Bottom Option",
+              "effects": "Guts +5 Mood +1"
+            }
+          ]
+        },
+        {
+          "name": "Advice from an Older Student",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Top Option",
+              "effects": "Speed +10"
+            },
+            {
+              "option": "Bottom Option",
+              "effects": "Power +10"
+            }
+          ]
+        },
+        {
+          "name": "Enjoying Number One",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Top Option",
+              "effects": "Stamina +10 Skill points +15"
+            },
+            {
+              "option": "Bottom Option",
+              "effects": "Unyielding Spirit hint +1"
+            }
+          ]
+        },
+        {
+          "name": "Can't Lose Sight of Number One!",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Top Option",
+              "effects": "Energy +10 Skill points +5"
+            },
+            {
+              "option": "Bottom Option",
+              "effects": "Randomly either Randomly either Energy +30 Skill points +10 or (~10%) Energy +30 Skill points +10 Speed -5 Power +5 Get Slow Metabolism status"
+            }
+          ]
+        },
+        {
+          "name": "As a Model Student...",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Top Option",
+              "effects": "Wisdom +10"
+            },
+            {
+              "option": "Bottom Option",
+              "effects": "Skill points +30"
+            }
+          ]
+        },
+        {
+          "name": "Just a Little More",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Top Option",
+              "effects": "Skill points +30"
+            },
+            {
+              "option": "Bottom Option",
+              "effects": "Power +10"
+            }
+          ]
+        },
+        {
+          "name": "Under the Evening Star",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Top Option",
+              "effects": "Skill points +30"
+            },
+            {
+              "option": "Middle Option",
+              "effects": "Speed +5 Stamina +5"
+            },
+            {
+              "option": "Bottom Option",
+              "effects": "Power +10"
+            }
+          ]
+        },
+        {
+          "name": "Rained On",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Top Option",
+              "effects": "Guts +10"
+            },
+            {
+              "option": "Bottom Option",
+              "effects": "Wisdom +10"
+            }
+          ]
+        },
+        {
+          "name": "How to Spend a Day Off",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Top Option",
+              "effects": "Energy +10"
+            },
+            {
+              "option": "Bottom Option",
+              "effects": "Mood +1 Wisdom +5"
+            }
+          ]
+        },
+        {
+          "name": "Failed training (Get Well Soon!)",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Top Option",
+              "effects": "Mood -1 Last trained stat -5 (random) Get Practice Poor status"
+            },
+            {
+              "option": "Bottom Option",
+              "effects": "Randomly either Randomly either Mood -1 Last trained stat -10 (random) Get Practice Poor status or Get Practice Perfect ○ status"
+            }
+          ]
+        },
+        {
+          "name": "Failed training (Don't Overdo It!)",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Top Option",
+              "effects": "Energy +10 Mood -2 Last trained stat -10 2 random stats -10 (random) Get Practice Poor status"
+            },
+            {
+              "option": "Bottom Option",
+              "effects": "Randomly either Randomly either Mood -3 Last trained stat -10 2 random stats -10 Get Practice Poor status or Energy +10 Get Practice Perfect ○ status"
+            }
+          ]
+        },
+        {
+          "name": "Extra Training",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Top Option",
+              "effects": "Energy -5 Last trained stat +5 (random) Heal a negative status effect Yayoi Akikawa bond +5"
+            },
+            {
+              "option": "Bottom Option",
+              "effects": "Energy +5"
+            }
+          ]
+        },
+        {
+          "name": "At Summer Camp (Year 2)",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Top Option",
+              "effects": "Power +10"
+            },
+            {
+              "option": "Bottom Option",
+              "effects": "Guts +10"
+            }
+          ]
+        },
+        {
+          "name": "Dance Lesson",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Top Option",
+              "effects": "Guts +10"
+            },
+            {
+              "option": "Bottom Option",
+              "effects": "Speed +10"
+            }
+          ]
+        },
+        {
+          "name": "New Year's Resolutions",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Top Option",
+              "effects": "Wisdom +10"
+            },
+            {
+              "option": "Middle Option",
+              "effects": "Energy +20"
+            },
+            {
+              "option": "Bottom Option",
+              "effects": "Skill points +20"
+            }
+          ]
+        },
+        {
+          "name": "New Year's Shrine Visit",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Top Option",
+              "effects": "Energy +30"
+            },
+            {
+              "option": "Middle Option",
+              "effects": "All stats +5"
+            },
+            {
+              "option": "Bottom Option",
+              "effects": "Skill points +35"
+            }
+          ]
+        },
+        {
+          "name": "Acupuncture (Just an Acupuncturist, No Worries! ☆)",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Option 1",
+              "effects": "Randomly either Randomly either All stats +20 or (~70%) Mood -2 All stats -15 Get Night Owl status"
+            },
+            {
+              "option": "Option 2",
+              "effects": "Randomly either Randomly either Obtain Corner Recovery ○ skill Obtain Straightaway Recovery skill or (~55%) Energy -20 Mood -2"
+            },
+            {
+              "option": "Option 3",
+              "effects": "Randomly either Randomly either Maximum Energy +12 Energy +40 Heal all negative status effects or (~30%) Energy -20 Mood -2 Get Practice Poor status"
+            },
+            {
+              "option": "Option 4",
+              "effects": "Randomly either Randomly either Energy +20 Mood +1 Get Charming ○ status or (~15%) Energy -10/-20 Mood -1 (random) Get Practice Poor status"
+            },
+            {
+              "option": "Option 5",
+              "effects": "Energy +10"
+            }
+          ]
+        },
+        {
+          "name": "Victory! (G1)",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Top Option",
+              "effects": "Energy -15 1 random stat +10 Skill points +45 (random) Hint for a skill related to the race"
+            },
+            {
+              "option": "Bottom Option",
+              "effects": "Energy -5/-20 1 random stat +10 Skill points +45 (random) Hint for a skill related to the race"
+            }
+          ]
+        },
+        {
+          "name": "Victory! (G2/G3)",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Top Option",
+              "effects": "Energy -15 1 random stat +8 Skill points +35 (random) Hint for a skill related to the race"
+            },
+            {
+              "option": "Bottom Option",
+              "effects": "Energy -5/-20 1 random stat +8 Skill points +35 (random) Hint for a skill related to the race"
+            }
+          ]
+        },
+        {
+          "name": "Victory! (Pre/OP)",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Top Option",
+              "effects": "Energy -15 1 random stat +5 Skill points +30 (random) Hint for a skill related to the race"
+            },
+            {
+              "option": "Bottom Option",
+              "effects": "Energy -5/-20 1 random stat +5 Skill points +30 (random) Hint for a skill related to the race"
+            }
+          ]
+        },
+        {
+          "name": "Solid Showing (G1)",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Top Option",
+              "effects": "Energy -20 1 random stat +8 Skill points +45 (random) Hint for a skill related to the race"
+            },
+            {
+              "option": "Bottom Option",
+              "effects": "Energy -10/-30 1 random stat +8 Skill points +45 (random) Hint for a skill related to the race"
+            }
+          ]
+        },
+        {
+          "name": "Solid Showing (G2/G3)",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Top Option",
+              "effects": "Energy -20 1 random stat +5 Skill points +35 (random) Hint for a skill related to the race"
+            },
+            {
+              "option": "Bottom Option",
+              "effects": "Energy -10/-30 1 random stat +5 Skill points +35 (random) Hint for a skill related to the race"
+            }
+          ]
+        },
+        {
+          "name": "Solid Showing (Pre/OP)",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Top Option",
+              "effects": "Energy -20 1 random stat +3 Skill points +30 (random) Hint for a skill related to the race"
+            },
+            {
+              "option": "Bottom Option",
+              "effects": "Energy -10/-30 1 random stat +3 Skill points +30 (random) Hint for a skill related to the race"
+            }
+          ]
+        },
+        {
+          "name": "Defeat (G1)",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Top Option",
+              "effects": "Energy -25 1 random stat +4 Skill points +25 (random) Hint for a skill related to the race"
+            },
+            {
+              "option": "Bottom Option",
+              "effects": "Energy -15/-35 1 random stat +4 Skill points +25 (random) Hint for a skill related to the race"
+            }
+          ]
+        },
+        {
+          "name": "Defeat (G2/G3)",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Top Option",
+              "effects": "Energy -25 1 random stat +3 Skill points +20 (random) Hint for a skill related to the race"
+            },
+            {
+              "option": "Bottom Option",
+              "effects": "Energy -15/-35 1 random stat +3 Skill points +20 (random) Hint for a skill related to the race"
+            }
+          ]
+        },
+        {
+          "name": "Defeat (Pre/OP)",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Top Option",
+              "effects": "Energy -25 Skill points +10 (random) Hint for a skill related to the race"
+            },
+            {
+              "option": "Bottom Option",
+              "effects": "Energy -15/-35 Skill points +10 (random) Hint for a skill related to the race"
+            }
+          ]
+        },
+        {
+          "name": "Etsuko's Exhaustive Coverage (G1)",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Top Option",
+              "effects": "Randomly either Randomly either Energy -25 Mood -1 1 random stat +4 Skill points +25 Etsuko Otonashi bond -10 or Energy -15 Mood +1 1 random stat +4 Skill points +25 Etsuko Otonashi bond +15"
+            },
+            {
+              "option": "Bottom Option",
+              "effects": "Energy -20 1 random stat +4 Skill points +25 Etsuko Otonashi bond +10"
+            }
+          ]
+        },
+        {
+          "name": "Etsuko's Exhaustive Coverage (G2/G3)",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Top Option",
+              "effects": "Randomly either Randomly either Energy -25 Mood -1 1 random stat +3 Skill points +20 Etsuko Otonashi bond -10 or Energy -15 Mood +1 1 random stat +3 Skill points +20 Etsuko Otonashi bond +15"
+            },
+            {
+              "option": "Bottom Option",
+              "effects": "Energy -20 1 random stat +3 Skill points +20 Etsuko Otonashi bond +10"
+            }
+          ]
+        },
+        {
+          "name": "Etsuko's Exhaustive Coverage (Pre/OP)",
+          "type": "with_choices",
+          "choices": [
+            {
+              "option": "Top Option",
+              "effects": "Randomly either Randomly either Energy -25 Mood -1 Skill points +10 Etsuko Otonashi bond -10 or Energy -15 Mood +1 Skill points +10 Etsuko Otonashi bond +15"
+            },
+            {
+              "option": "Bottom Option",
+              "effects": "Energy -20 Skill points +10 Etsuko Otonashi bond +10"
+            }
+          ]
+        }
+      ],
+      "total_events": 43
+    },
+    "japanese": {
+      "events": [],
+      "total_events": 0
+    },
+    "combined": {
+      "events": [
+        {
+          "name": "There Can Only Be One",
+          "english": "Direct stat bonus (varies by event)",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "My Number One",
+          "english": "Direct stat bonus (varies by event)",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "Empty Room",
+          "english": "Direct stat bonus (varies by event)",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "Number-One Rival",
+          "english": "Direct stat bonus (varies by event)",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "A Curious Rumor",
+          "english": "Direct stat bonus (varies by event)",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "Master Trainer",
+          "english": "Direct stat bonus (varies by event)",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "A Primo Connection",
+          "english": "Direct stat bonus (varies by event)",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "Twintail Troubles",
+          "english": "Direct stat bonus (varies by event)",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "My Perch",
+          "english": "Direct stat bonus (varies by event)",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "Enthusiastic Reading",
+          "english": "Direct stat bonus (varies by event)",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "The Best Pose",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "The Weight of Racewear",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "Looking Good",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "Her",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "Recommended Restaurant",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "Advice from an Older Student",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "Enjoying Number One",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "Can't Lose Sight of Number One!",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "As a Model Student...",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "Just a Little More",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "Under the Evening Star",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "Rained On",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "How to Spend a Day Off",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "Failed training (Get Well Soon!)",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "Failed training (Don't Overdo It!)",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "Extra Training",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "At Summer Camp (Year 2)",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "Dance Lesson",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "New Year's Resolutions",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "New Year's Shrine Visit",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "Acupuncture (Just an Acupuncturist, No Worries! ☆)",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "Victory! (G1)",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "Victory! (G2/G3)",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "Victory! (Pre/OP)",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "Solid Showing (G1)",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "Solid Showing (G2/G3)",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "Solid Showing (Pre/OP)",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "Defeat (G1)",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "Defeat (G2/G3)",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "Defeat (Pre/OP)",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "Etsuko's Exhaustive Coverage (G1)",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "Etsuko's Exhaustive Coverage (G2/G3)",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        },
+        {
+          "name": "Etsuko's Exhaustive Coverage (Pre/OP)",
+          "english": "",
+          "japanese": "",
+          "source": "english"
+        }
+      ],
+      "total_events": 43
+    }
+  }
+}

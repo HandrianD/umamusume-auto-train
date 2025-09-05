@@ -1,0 +1,48 @@
+{
+  "scenario_id": "uaf-ready-go",
+  "name": "U.A.F. Ready GO!",
+  "events_with_choices": [
+    {"name": "いっしょに遊ぼ！", "choices": [
+      {"option": "Top Option", "effects": ["Energy +15"]},
+      {"option": "Bottom Option", "effects": ["Power +15"]}
+    ]},
+    {"name": "さすらいの道場破ラー", "choices": [
+      {"option": "Top Option", "effects": ["Guts +15"]},
+      {"option": "Bottom Option", "effects": ["Energy +15"]}
+    ]},
+    {"name": "張り切る理由は……", "choices": [
+      {"option": "Top Option", "effects": ["Energy +15"]},
+      {"option": "Bottom Option", "effects": ["Speed +15"]}
+    ]}
+  ],
+  "events_without_choices": [
+    {"name": "ちゃっかりマーちゃん", "effects": ["Speed +15"]},
+    {"name": "ちっちゃい先輩's、がんばるっ", "effects": ["Energy +5", "Speed +10"]},
+    {"name": "土の氣、水の氣", "effects": ["Stamina +10", "Guts +5"]},
+    {"name": "やりすぎ注意！", "effects": ["Stamina +10", "Wisdom +5"]},
+    {"name": "ルールは事前に確認しましょう", "effects": ["Power +10", "Wisdom +5"]},
+    {"name": "ヒミツの全力応援", "effects": ["Power +5", "Guts +5", "Wisdom +5"]},
+    {"name": "皆それぞれの冴えたやりかた", "effects": ["Speed +5", "Guts +10"]},
+    {"name": "白黒ぼうやの大冒険", "effects": ["Guts +15"]},
+    {"name": "好きなら好きと", "effects": ["Speed +5", "Wisdom +10"]},
+    {"name": "好きこそものの", "effects": ["Stamina +5", "Wisdom +10"]},
+    {"name": "三流派、並び立つ", "effects": ["Speed +15"]},
+    {"name": "燃やせ！根性とお腹周りのアレ", "effects": ["Stamina +10", "Skill points +5"]},
+    {"name": "呼吸を整えるんですのよ～", "effects": ["Speed +5", "Stamina +10"]},
+    {"name": "ヒシアケボノ部屋の教え", "effects": ["Power +10", "Wisdom +5"]},
+    {"name": "つっぱれ！ビコーペガサス！", "effects": ["Energy +5", "Power +5", "Skill points +5"]},
+    {"name": "ふたりは名師範", "effects": ["Guts +15"]},
+    {"name": "YAWARA ROAD", "effects": ["Guts +10", "Wisdom +5"]},
+    {"name": "上様といえど構わん！", "effects": ["Speed +5", "Wisdom +10"]},
+    {"name": "とっておきの冴えた（？）やりかた", "effects": ["Speed +10", "Stamina +5"]},
+    {"name": "大切なことは！", "effects": ["Speed +10", "Guts +5"]},
+    {"name": "バクシン的特訓を、みなさんと！", "effects": ["Stamina +15"]},
+    {"name": "あたまのうえのお友だち", "effects": ["Speed +5", "Stamina +5", "Wisdom +5"]},
+    {"name": "その思考までも", "effects": ["Energy +5", "Power +5", "Guts +5"]},
+    {"name": "かっ飛べ！アオハル", "effects": ["Power +10", "Wisdom +5"]},
+    {"name": "こればっかりはどうしても", "effects": ["Guts +15"]},
+    {"name": "ゆるっと☆プール遊び", "effects": ["Stamina +5", "Guts +10"]},
+    {"name": "狼とお節介焼き", "effects": ["Guts +5", "Wisdom +10"]},
+    {"name": "弓取りの如く！", "effects": ["Power +5", "Wisdom +10"]}
+  ]
+}

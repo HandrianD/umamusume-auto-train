@@ -27,7 +27,16 @@ export function useConfigPreset() {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
       const parsed: PresetStorage = JSON.parse(saved);
-      setPresetStorage(parsed);
+      // Migrate existing presets to include scenario field if missing
+      const migratedPresets = parsed.presets.map(preset => ({
+        ...preset,
+        config: {
+          ...preset.config,
+          scenario: preset.config.scenario || null,
+        }
+      }));
+      const migrated = { ...parsed, presets: migratedPresets };
+      setPresetStorage(migrated);
       setActiveIndex(parsed.index);
     } else {
       const defaultPresets = Array.from({ length: MAX_PRESET }, (_, i) => ({

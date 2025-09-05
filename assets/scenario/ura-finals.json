@@ -1,0 +1,38 @@
+{
+  "scenario_id": "ura-finals",
+  "name": "URA Finals",
+  "events_with_choices": [
+    {
+      "name": "Exhilarating! What a Scoop!",
+      "choices": [
+        {"option": "Top Option", "effects": ["Stamina +10", "Etsuko Otonashi bond +5"]},
+        {"option": "Bottom Option", "effects": ["Guts +10", "Etsuko Otonashi bond +5"]}
+      ]
+    },
+    {
+      "name": "A Trainer's Knowledge",
+      "choices": [
+        {"option": "Top Option", "effects": ["Power +10", "Etsuko Otonashi bond +5"]},
+        {"option": "Bottom Option", "effects": ["Speed +10", "Etsuko Otonashi bond +5"]}
+      ]
+    },
+    {
+      "name": "Best Foot Forward!",
+      "note": "Can randomly have a different outcome",
+      "choices": [
+        {"option": "Top Option", "effects": ["Energy -10", "Power +20", "Guts +20", "Beeline Burst hint +1"]},
+        {"option": "Bottom Option", "effects": ["Energy +30", "Stamina +20", "Breath of Fresh Air hint +1"]}
+      ]
+    }
+  ],
+  "events_without_choices": [
+    {
+      "name": "A Three-Legged Race",
+      "conditions": ["Classic Class, Early November", "At least 50000 fans"],
+      "effects": ["Wisdom +20", "Skill points +20", "Iron Will hint +1"],
+      "linked": {"Aoi Kiryuin": ["Wisdom +20", "Skill points +20", "Iron Will hint +3"]}
+    },
+    {"name": "Happy Shoe Shopping", "effects": ["Power +10"]},
+    {"name": "Kiryuin's Day Off", "effects": ["Speed +10"]}
+  ]
+}

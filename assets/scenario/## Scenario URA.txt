@@ -1,0 +1,813 @@
+## Scenario URA
+### Events With Choices
+#Exhilarating! What a Scoop!
+Top Option	
+Stamina +10
+Etsuko Otonashi bond +5
+Bottom Option	
+Guts +10
+Etsuko Otonashi bond +5
+
+#A Trainer's Knowledge
+Top Option	
+Power +10
+Etsuko Otonashi bond +5
+Bottom Option	
+Speed +10
+Etsuko Otonashi bond +5
+
+#Best Foot Forward!
+Can randomly have a different outcome
+Top Option	
+Energy -10
+Power +20
+Guts +20
+Beeline Burst hint +1
+Bottom Option	
+Energy +30
+Stamina +20
+Breath of Fresh Air hint +1
+
+### Events Without Choices
+#A Three-Legged Race
+※ Classic Class, Early November
+※ At least 50000 fans
+
+Wisdom +20
+Skill points +20
+Iron Will hint +1
+
+※ If Aoi Kiryuin is scenario-linked:
+Wisdom +20
+Skill points +20
+Iron Will hint +3
+
+# Happy Shoe Shopping
+Power +10
+
+Kiryuin's Day Off
+Speed +10
+
+## Scenario Aoharu Hai
+### Events With Choices
+#A Team at Last
+※ You can only choose a name if the related character is scenario-linked.
+
+• HOP CHEERS (Taiki Shuttle)
+• ハレノヒ・ランナーズ [Sunny Day Runners] (Matikanefukukitaru)
+• にんじんぷりん [Carrot Pudding] (Haru Urara)
+• ブルームス [Blooms] (Rice Shower)
+• キャロッツ [Carrots]
+
+### Events Without Choices
+#A Present from Director Akikawa!
+※ After successfully finishing the training. Skill hint reward depends on the team name.
+All stats +10
+Skill points +50
+
+HOP CHEERS (Taiki Shuttle):
+Mile Maven hint +1
+
+ハレノヒ・ランナーズ (Matikanefukukitaru):
+Clairvoyance hint +1
+
+にんじんぷりん (Haru Urara):
+Indomitable hint +1
+
+ブルームス (Rice Shower):
+Cooldown hint +1
+
+キャロッツ:
+No Stopping Me! hint +1
+
+#Team Power Increased: The Greatest Gift
+※ When your overall team rank reaches S
+All stats +5
+It's On! hint +1
+
+※ When training a scenario link character:
+All stats +6
+It's On! hint +3
+
+#All Together! Say Cheese!
+Speed +10
+
+※ If Taiki Shuttle is scenario-linked:
+Speed +20
+Skill points +10
+
+#A Happy Ending for the Team
+Stamina +10
+
+※ If Rice Shower is scenario-linked:
+Stamina +20
+Skill points +10
+
+#A Cheer Song for the Team!
+Guts +10
+
+※ If Haru Urara is scenario-linked:
+Guts +20
+Skill points +10
+
+#Team Trouble?
+Wisdom +10
+
+※ If Matikanefukukitaru is scenario-linked:
+Wisdom +20
+Skill points +10
+
+#A Secret Side of Kashimoto
+Wisdom +10
+
+※ If Riko Kashimoto is scenario-linked:
+Wisdom +20
+Skill points +10
+
+#A Surprising Side of Kashimoto
+Energy +10
+
+※ If Riko Kashimoto is scenario-linked:
+Energy +15
+Mood +1
+
+## Scenario Make a New Track
+### Events With Choices
+#『全力』＆『普通』ダイエット！
+Top Option	
+Stamina +6
+Guts +6
+Bottom Option	
+Fighter hint +1
+
+#『退学』を賭けた勝負
+Top Option	
+Stamina +6
+Wisdom +6
+Bottom Option	
+Triple 7s hint +1
+
+#ふたりと宿根草
+Top Option	
+Speed +6
+Power +6
+Bottom Option	
+Standing By hint +1
+
+#ひとり暮らしの生活
+Top Option	
+Power +6
+Guts +6
+Bottom Option	
+Ramp Up hint +1
+#じいちゃん子たちの集い
+Top Option	
+Stamina +6
+Wisdom +6
+Bottom Option	
+Prepared to Pass hint +1
+#アグネスデジタル、爆発す
+Top Option	
+Mood +1
+Bottom Option	
+Uma Stan hint +1
+#アルダンからは逃げ切れない
+Top Option	
+Speed +6
+Guts +6
+Bottom Option	
+Front Runner Straightaways ○ hint +1
+#タマモのゲームセンター奮闘記
+Top Option	
+Guts +6
+Wisdom +6
+Bottom Option	
+Unyielding Spirit hint +1
+#パワフル最強シンデレラ！
+Top Option	
+Mood +1
+Bottom Option	
+Prudent Positioning hint +1
+#ヴィクトリー倶楽部、参上！
+Top Option	
+Stamina +6
+Wisdom +6
+Bottom Option	
+Sprint Straightaways ○ hint +1
+#ゴルシちゃん主催！人狼は誰だ！？
+Top Option	
+Power +6
+Wisdom +6
+Bottom Option	
+Studious hint +1
+#ドキドキフルーツフェス
+Top Option	
+Stamina +6
+Power +6
+Bottom Option	
+Front Runner Straightaways ○ hint +1
+#タイキとパールと外国語
+Top Option	
+Speed +6
+Wisdom +6
+Bottom Option	
+Sympathy hint +1
+#ブライアンがヤキモチ？
+Top Option	
+All stats +4
+Bottom Option	
+Steadfast hint +1
+#ベガとスピカ
+Top Option	
+Speed +6
+Wisdom +6
+Bottom Option	
+Fast-Paced hint +1
+#マーベラス売りの少女
+Top Option	
+Energy +10
+Bottom Option	
+Hydrate hint +1
+#マルゼンさんへの気持ち
+Top Option	
+Skill points +24
+Bottom Option	
+Shifting Gears hint +1
+#ワールドワイド・ウインディ
+Top Option	
+Speed +6
+Guts +6
+Bottom Option	
+Masterful Gambit hint +1
+#カワイイを守りたい！
+Top Option	
+Stamina +6
+Power +6
+Bottom Option	
+Trick (Front) hint +1
+#サプライズ大作戦！
+Top Option	
+Mood +1
+Bottom Option	
+Trick (Front) hint +1
+#ゴルシを治せ！？
+Top Option	
+Speed +6
+Power +6
+Bottom Option	
+Disorient hint +1
+#凸凹コンビ
+Top Option	
+Power +6
+Guts +6
+Bottom Option	
+Sprinting Gear hint +1
+#委員たちの井戸端会議
+Top Option	
+Speed +6
+Power +6
+Bottom Option	
+Passing Pro hint +1
+#家族（？）でショッピング！
+Top Option	
+Skill points +24
+Bottom Option	
+Deep Breaths hint +1
+#意外な美化委員
+Top Option	
+Power +6
+Wisdom +6
+Bottom Option	
+Pace Strategy hint +1
+#同じ傘の下で
+Top Option	
+Speed +6
+Guts +6
+Bottom Option	
+Rainy Days ○ hint +1
+#甘えたがりのお年頃
+Top Option	
+Speed +6
+Wisdom +6
+Bottom Option	
+Murmur hint +1
+#怖くないって怖いです
+Top Option	
+Stamina +6
+Guts +6
+Bottom Option	
+Levelheaded hint +1
+#名探偵のボクにお任せ！
+Top Option	
+Speed +6
+Stamina +6
+Bottom Option	
+Nimble Navigator hint +1
+#目が離せないお嬢様たち
+Top Option	
+Guts +6
+Wisdom +6
+Bottom Option	
+Go with the Flow hint +1
+#語り合いたい！
+Top Option	
+Stamina +6
+Guts +6
+Bottom Option	
+Shake It Out hint +1
+
+## scenario Grand Live
+### Events With Choices
+#提案ッ！新曲プロデュース！
+Top Option	
+Passion +20
+Yayoi Akikawa bond +10
+Bottom Option	
+Mental +20
+Yayoi Akikawa bond +10
+#集まれ！のど自慢
+Top Option	
+Energy +15
+Bottom Option	
+Passion +20
+#できることから
+Top Option	
+Energy +10
+Bottom Option	
+Guts +10
+#あなたと私をつなげるライブ
+Option 1	
+※ If Smart Falcon is scenario-linked:
+Full Speed Ahead! hint +1
+
+※ If not scenario-linked:
+At Full Speed hint +1
+Option 2	
+※ If Mihono Bourbon is scenario-linked:
+Concentration hint +1
+
+※ If not scenario-linked:
+Focus hint +1
+Option 3	
+※ If Silence Suzuka is scenario-linked:
+Trackblazer hint +1
+
+※ If not scenario-linked:
+Rosy Outlook hint +1
+Option 4	
+※ If Agnes Tachyon is scenario-linked:
+Prepared to Die hint +1
+
+※ If not scenario-linked:
+All That There Is hint +1
+Option 5	
+Lane Legerdemain hint +1
+
+## secenario Grand Masters
+### Events With Choices
+#今を駆ける者たちの祖
+Top Option	
+※ Darley Arabian
+
+All stats +10
+Skill points +40
+
+※ Wisdom Level 5
+Wisdom of the Sun hint +1
+Blessing of the Sun hint +1
+
+※ Wisdom Level 4
+Wisdom of the Sun hint +1
+
+※ Wisdom Level 3 or less
+Blessing of the Sun hint +1
+
+※ Combined Wisdom Level of all Goddesses 12 or more
+Wisdom of the Sun hint +3
+Middle Option	
+※ Godolphin Barb
+
+All stats +10
+Skill points +40
+
+※ Wisdom Level 5
+Wisdom of the Ocean hint +1
+Blessing of the Ocean hint +1
+
+※ Wisdom Level 4
+Wisdom of the Ocean hint +1
+
+※ Wisdom Level 3 or less
+Blessing of the Ocean hint +1
+
+※ Combined Wisdom Level of all Goddesses 12 or more
+Wisdom of the Ocean hint +3
+Bottom Option	
+※ Byerley Turk
+
+All stats +10
+Skill points +40
+
+※ Wisdom Level 5
+Wisdom of the Land hint +1
+Blessing of the Land hint +1
+
+※ Wisdom Level 4
+Wisdom of the Land hint +1
+
+※ Wisdom Level 3 or less
+Blessing of the Land hint +1
+
+※ Combined Wisdom Level of all Goddesses 12 or more
+Wisdom of the Land hint +3
+
+### Events Without Choices
+#グロウアップレースの後に・勝利
+Conditions:
+Win the GUR
+Reward:
+All stats +10
+Skill points +50
+Yayoi Akikawa bond +5
+
+※ Darley Arabian's Wisdom Level is at least 1
+Skill points +20
+
+※ Godolphin Barb's Wisdom Level is at least 1
+Hint for the strategy used in the race
+
+※ Byerley Turk's Wisdom Level is at least 1
+1 random stat +10
+#グロウアップレースの後に・敗北
+Conditions:
+Lose the GUR
+Reward:
+All stats +5
+Skill points +40
+#WBCの後に・勝利
+Conditions:
+Win the WBC
+Reward:
+All stats +15
+Skill points +60
+Yayoi Akikawa bond +5
+
+※ Darley Arabian's Wisdom Level is at least 2
+Skill points +30
+
+※ Godolphin Barb's Wisdom Level is at least 2
+2 hints for the strategy used in the race
+
+※ Byerley Turk's Wisdom Level is at least 2
+2 random stats +10
+#WBCの後に・敗北
+Conditions:
+Lose the WBC
+Reward:
+All stats +10
+Skill points +50
+#SWBCの後に・勝利
+Conditions:
+Win the SWBC
+Reward:
+All stats +20
+Skill points +70
+Yayoi Akikawa bond +5
+
+※ Darley Arabian's Wisdom Level is at least 3
+Skill points +45
+
+※ Godolphin Barb's Wisdom Level is at least 3
+3 hints for the strategy used in the race
+
+※ Byerley Turk's Wisdom Level is at least 3
+3 random stats +10
+
+※ Darley Arabian's Wisdom Level is at least 3
+※ Godolphin Barb's Wisdom Level is at least 3
+※ Byerley Turk's Wisdom Level is at least 3
+Good Track Demon hint +1
+
+※ Win the following races: GUR, WBC, SWBC
+In Body and Mind hint +1
+#SWBCの後に・敗北
+Conditions:
+Lose the SWBC
+Reward:
+All stats +15
+Skill points +60
+
+##  scenario Project L'Arc
+### Events With Choices
+#With
+Conditions:
+Triggers in Classic Class, January 1
+Reward:
+※ Depending on your choice, a different 'Trust ＜From X＞' event will trigger later.
+
+※ The order of choices in this event is inconsistent, so you must match by name.
+
+Mei Satake
+• Trust＜From Speed＞
+
+El Condor Pasa
+• Trust＜From Condor＞
+
+Sirius Symboli
+• Trust＜From Sirius＞
+
+Manhattan Cafe
+• Trust＜From Cafe＞
+
+Satono Diamond
+• Trust＜From Diamond＞
+
+Nakayama Festa
+• Trust＜From Festa＞
+
+Gold Ship
+• Trust＜From Ship＞
+
+Tap Dance City
+• Trust＜From Tap＞
+
+Orfevre
+• Trust＜From Orfevre＞
+
+Blast Onepiece
+• Trust＜From Blast＞
+
+## Events Without Choices
+#代表交流戦第4戦の後に・発揮
+Conditions:
+Win the 4th L'Arc Representative Exhibition Race
+Triggers in Senior Class, June 2
+Reward:
+Aptitude Points +100
+All stats +10
+Skill points +40
+Sorry, Gotta Go! hint +1
+#ロマンを求めて
+Conditions:
+Win the Prix de l'Arc de Triomphe
+Triggers in Senior Class, October 1
+Reward:
+※ Win the Prix de l'Arc de Triomphe twice
+All stats +30
+Skill points +60
+Dreaming of the Peak hint +3
+
+※ Win the Prix de l'Arc de Triomphe
+All stats +25
+Skill points +60
+Dreaming of the Peak hint +1
+#凱旋門賞の後に・勝利
+Conditions:
+Win the Prix de l'Arc de Triomphe (Year 2)
+Reward:
+Aptitude Points +80
+All stats +7
+Skill points +50
+Standard Distance ○ hint +1
+Longchamp Racecourse ○ hint +1
+Fall Runner ○ hint +1
+#フォワ賞の後に・勝利
+Conditions:
+Win the Prix Foy
+Reward:
+Aptitude Points +100
+All stats +7
+Skill points +40
+Bearer of Hope hint +1
+#Trust＜From Condor＞
+Conditions:
+Pick the respective character's choice in the 'With' event
+Triggers in Senior Class, June 2
+Reward:
+Mood +1
+All stats +10
+
+※ If El Condor Pasa is scenario-linked:
+It's On! hint +1
+
+※ In other cases
+Ramp Up hint +1
+#Trust＜From Festa＞
+Conditions:
+Pick the respective character's choice in the 'With' event
+Triggers in Senior Class, June 2
+Reward:
+Mood +1
+All stats +10
+
+※ If Nakayama Festa is scenario-linked:
+Gamester hint +1
+
+※ In other cases
+Questionable Strategy hint +1
+#Trust＜From Ship＞
+Conditions:
+Pick the respective character's choice in the 'With' event
+Triggers in Senior Class, June 2
+Reward:
+Mood +1
+All stats +10
+
+※ If Gold Ship is scenario-linked:
+Prepared to Die hint +1
+
+※ In other cases
+All That There Is hint +1
+#Trust＜From Diamond＞
+Conditions:
+Pick the respective character's choice in the 'With' event
+Triggers in Senior Class, June 2
+Reward:
+Mood +1
+All stats +10
+
+※ If Satono Diamond is scenario-linked:
+Center Stage hint +1
+
+※ In other cases
+Prudent Positioning hint +1
+#Trust＜From Cafe＞
+Conditions:
+Pick the respective character's choice in the 'With' event
+Triggers in Senior Class, June 2
+Reward:
+Mood +1
+All stats +10
+
+※ If Manhattan Cafe is scenario-linked:
+Innate Experience hint +1
+
+※ In other cases
+Inside Scoop hint +1
+#Trust＜From Sirius＞
+Conditions:
+Pick the respective character's choice in the 'With' event
+Triggers in Senior Class, June 2
+Reward:
+Mood +1
+All stats +10
+
+※ If Sirius Symboli is scenario-linked:
+Photon Flash hint +1
+
+※ In other cases
+Medium Straightaways ○ hint +1
+#Trust＜From Tap＞
+Conditions:
+Pick the respective character's choice in the 'With' event
+Triggers in Senior Class, June 2
+Reward:
+Mood +1
+All stats +10
+
+※ If Tap Dance City is scenario-linked:
+Miraculous Step hint +1
+
+※ In other cases
+Soft Step hint +1
+#Trust＜From Speed＞
+Conditions:
+Pick the respective character's choice in the 'With' event
+Triggers in Senior Class, June 2
+Reward:
+Mood +1
+All stats +10
+
+※ If Mei Satake is scenario-linked:
+Child of Longchamp hint +1
+
+※ In other cases
+Longchamp Racecourse ○ hint +1
+#Trust＜From Orfevre＞
+Conditions:
+Pick the respective character's choice in the 'With' event
+Triggers in Senior Class, June 2
+Reward:
+Mood +1
+All stats +10
+
+※ If Orfevre is scenario-linked:
+Overwhelming Pressure hint +1
+
+※ In other cases
+Pressure hint +1
+#Trust＜From Blast＞
+Conditions:
+Pick the respective character's choice in the 'With' event
+Triggers in Senior Class, June 2
+Reward:
+Mood +1
+All stats +10
+
+※ If Blast Onepiece is scenario-linked:
+Lightning Step hint +1
+
+※ In other cases
+Thunderbolt Step hint +1
+
+## scenario U.A.F. Ready GO!
+### Events With Choices 
+#いっしょに遊ぼ！
+Top Option	
+Energy +15
+Bottom Option	
+Power +15
+#さすらいの道場破ラー
+Top Option	
+Guts +15
+Bottom Option	
+Energy +15
+#張り切る理由は……
+Top Option	
+Energy +15
+Bottom Option	
+Speed +15
+
+### Events Without Choices
+#ちゃっかりマーちゃん
+Speed +15
+#ちっちゃい先輩's、がんばるっ
+Energy +5
+Speed +10
+#土の氣、水の氣
+Stamina +10
+Guts +5
+#やりすぎ注意！
+Stamina +10
+Wisdom +5
+#ルールは事前に確認しましょう
+Power +10
+Wisdom +5
+#ヒミツの全力応援
+Power +5
+Guts +5
+Wisdom +5
+#皆それぞれの冴えたやりかた
+Speed +5
+Guts +10
+#白黒ぼうやの大冒険
+Guts +15
+#好きなら好きと
+Speed +5
+Wisdom +10
+#好きこそものの
+Stamina +5
+Wisdom +10
+#三流派、並び立つ
+Speed +15
+#燃やせ！根性とお腹周りのアレ
+Stamina +10
+Skill points +5
+#呼吸を整えるんですのよ～
+Speed +5
+Stamina +10
+#ヒシアケボノ部屋の教え
+Power +10
+Wisdom +5
+#つっぱれ！ビコーペガサス！
+Energy +5
+Power +5
+Skill points +5
+#ふたりは名師範
+Guts +15
+#YAWARA ROAD
+Guts +10
+Wisdom +5
+#上様といえど構わん！
+Speed +5
+Wisdom +10
+#とっておきの冴えた（？）やりかた
+Speed +10
+Stamina +5
+#大切なことは！
+Speed +10
+Guts +5
+#バクシン的特訓を、みなさんと！
+Stamina +15
+#あたまのうえのお友だち
+Speed +5
+Stamina +5
+Wisdom +5
+#その思考までも
+Energy +5
+Power +5
+Guts +5
+#かっ飛べ！アオハル
+Power +10
+Wisdom +5
+#こればっかりはどうしても
+Guts +15
+#ゆるっと☆プール遊び
+Stamina +5
+Guts +10
+#狼とお節介焼き
+Guts +5
+Wisdom +10
+#弓取りの如く！
+Power +5
+Wisdom +10

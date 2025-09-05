@@ -1,0 +1,22 @@
+{
+  "scenario_id": "grand-masters",
+  "name": "Grand Masters",
+  "events_with_choices": [
+    {
+      "name": "今を駆ける者たちの祖",
+      "choices": [
+        {"option": "Top Option (Darley Arabian)", "effects": ["All stats +10", "Skill points +40", "If Wisdom Level 5: Wisdom of the Sun hint +1, Blessing of the Sun hint +1", "If Wisdom Level 4: Wisdom of the Sun hint +1", "If Wisdom Level 3 or less: Blessing of the Sun hint +1", "If Combined Wisdom Level of all Goddesses 12 or more: Wisdom of the Sun hint +3"]},
+        {"option": "Middle Option (Godolphin Barb)", "effects": ["All stats +10", "Skill points +40", "If Wisdom Level 5: Wisdom of the Ocean hint +1, Blessing of the Ocean hint +1", "If Wisdom Level 4: Wisdom of the Ocean hint +1", "If Wisdom Level 3 or less: Blessing of the Ocean hint +1", "If Combined Wisdom Level of all Goddesses 12 or more: Wisdom of the Ocean hint +3"]},
+        {"option": "Bottom Option (Byerley Turk)", "effects": ["All stats +10", "Skill points +40", "If Wisdom Level 5: Wisdom of the Land hint +1, Blessing of the Land hint +1", "If Wisdom Level 4: Wisdom of the Land hint +1", "If Wisdom Level 3 or less: Blessing of the Land hint +1", "If Combined Wisdom Level of all Goddesses 12 or more: Wisdom of the Land hint +3"]}
+      ]
+    }
+  ],
+  "events_without_choices": [
+    {"name": "グロウアップレースの後に・勝利", "conditions": ["Win the GUR"], "effects": ["All stats +10", "Skill points +50", "Yayoi Akikawa bond +5", "If Darley Arabian's Wisdom Level is at least 1: Skill points +20", "If Godolphin Barb's Wisdom Level is at least 1: Hint for the strategy used in the race", "If Byerley Turk's Wisdom Level is at least 1: 1 random stat +10"]},
+    {"name": "グロウアップレースの後に・敗北", "conditions": ["Lose the GUR"], "effects": ["All stats +5", "Skill points +40"]},
+    {"name": "WBCの後に・勝利", "conditions": ["Win the WBC"], "effects": ["All stats +15", "Skill points +60", "Yayoi Akikawa bond +5", "If Darley Arabian's Wisdom Level is at least 2: Skill points +30", "If Godolphin Barb's Wisdom Level is at least 2: 2 hints for the strategy used in the race", "If Byerley Turk's Wisdom Level is at least 2: 2 random stats +10"]},
+    {"name": "WBCの後に・敗北", "conditions": ["Lose the WBC"], "effects": ["All stats +10", "Skill points +50"]},
+    {"name": "SWBCの後に・勝利", "conditions": ["Win the SWBC"], "effects": ["All stats +20", "Skill points +70", "Yayoi Akikawa bond +5", "If Darley Arabian's Wisdom Level is at least 3: Skill points +45", "If Godolphin Barb's Wisdom Level is at least 3: 3 hints for the strategy used in the race", "If Byerley Turk's Wisdom Level is at least 3: 3 random stats +10", "If all three Wisdom Levels are at least 3: Good Track Demon hint +1", "If Win the following races: GUR, WBC, SWBC: In Body and Mind hint +1"]},
+    {"name": "SWBCの後に・敗北", "conditions": ["Lose the SWBC"], "effects": ["All stats +15", "Skill points +60"]}
+  ]
+}

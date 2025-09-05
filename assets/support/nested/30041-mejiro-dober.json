@@ -1,0 +1,186 @@
+{
+  "support_id": "30041-mejiro-dober",
+  "scraped_at": "2025-09-06 02:54:57",
+  "summary": {
+    "english_events": 5,
+    "japanese_events": 5,
+    "combined_events": 5,
+    "total_categories": 2
+  },
+  "data": {
+    "english": {
+      "events": [
+        {
+          "category": "Chain Events",
+          "events": [
+            {
+              "name": "(❯) One Step Forward",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Energy -10 Skill points +15/+45 Mejiro Dober bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Guts +5 Wisdom +5 Mejiro Dober bond +5"
+                }
+              ]
+            },
+            {
+              "name": "(❯❯) Two Steps Up",
+              "type": "no_choice",
+              "effects": "Guts +3\nWisdom +3\nSkill points +5"
+            },
+            {
+              "name": "(❯❯❯) Three Steps Forward, Two Steps Back",
+              "type": "no_choice",
+              "effects": "Energy -10\nGuts +5\nWisdom +5\nThe Bigger Picture hint +1"
+            }
+          ]
+        },
+        {
+          "category": "Random Events",
+          "events": [
+            {
+              "name": "Give It a Try",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Energy +15 Mejiro Dober bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Mood +1 Skill points +15 Mejiro Dober bond +5"
+                }
+              ]
+            },
+            {
+              "name": "Hope She'll Like It...",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Skill points +45 Mejiro Dober bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Unyielding Spirit hint +1 Mejiro Dober bond +5"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "total_events": 5
+    },
+    "japanese": {
+      "events": [
+        {
+          "category": "Chain Events",
+          "events": [
+            {
+              "name": "(❯) One Step Forward",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Energy -10 Skill points +15/+45 Mejiro Dober bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Guts +5 Wisdom +5 Mejiro Dober bond +5"
+                }
+              ]
+            },
+            {
+              "name": "(❯❯) Two Steps Up",
+              "type": "no_choice",
+              "effects": "Guts +3\nWisdom +3\nSkill points +5"
+            },
+            {
+              "name": "(❯❯❯) Three Steps Forward, Two Steps Back",
+              "type": "no_choice",
+              "effects": "Energy -10\nGuts +5\nWisdom +5\nThe Bigger Picture hint +1"
+            }
+          ]
+        },
+        {
+          "category": "Random Events",
+          "events": [
+            {
+              "name": "Give It a Try",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Energy +15 Mejiro Dober bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Mood +1 Skill points +15 Mejiro Dober bond +5"
+                }
+              ]
+            },
+            {
+              "name": "Hope She'll Like It...",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Skill points +45 Mejiro Dober bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Unyielding Spirit hint +1 Mejiro Dober bond +5"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "total_events": 5
+    },
+    "combined": {
+      "events": [
+        {
+          "category": "Chain Events",
+          "events": [
+            {
+              "name": "(❯) One Step Forward",
+              "effects": [],
+              "options": []
+            },
+            {
+              "name": "(❯❯) Two Steps Up",
+              "effects": "Guts +3\nWisdom +3\nSkill points +5",
+              "options": []
+            },
+            {
+              "name": "(❯❯❯) Three Steps Forward, Two Steps Back",
+              "effects": "Energy -10\nGuts +5\nWisdom +5\nThe Bigger Picture hint +1",
+              "options": []
+            }
+          ]
+        },
+        {
+          "category": "Random Events",
+          "events": [
+            {
+              "name": "Give It a Try",
+              "effects": [],
+              "options": []
+            },
+            {
+              "name": "Hope She'll Like It...",
+              "effects": [],
+              "options": []
+            }
+          ]
+        }
+      ],
+      "total_events": 5
+    }
+  }
+}
