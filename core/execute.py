@@ -1986,7 +1986,8 @@ def career_lobby():
           db_choices = state.get_event_choices_from_database(cleaned_event_text, event_type)
           if db_choices and len(db_choices) > 1:
             # Database has choices, get optimal choice
-            optimal_choice, from_database = state.get_optimal_event_choice_from_database(cleaned_event_text, event_type)
+            optimal_choice_tuple = state.get_optimal_event_choice_from_database(cleaned_event_text, event_type)
+            optimal_choice, from_database = optimal_choice_tuple
             print(f"[EVENT] Database suggests choice {optimal_choice} for '{cleaned_event_text[:50]}...'")
           else:
             # No database info, let learning system decide

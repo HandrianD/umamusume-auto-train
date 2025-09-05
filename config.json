@@ -17,8 +17,8 @@
       "name": "Manhattan Cafe"
     },
     {
-      "id": "30016",
-      "name": "Super Creek"
+      "id": "30039",
+      "name": "Kawakami Princess"
     },
     {
       "id": "30025",
@@ -41,7 +41,13 @@
     "guts"
   ],
   "priority_weight": "MEDIUM",
-  "priority_weights": [1.0, 0.8, 0.6, 0.4, 0.2],
+  "priority_weights": [
+    1,
+    0.8,
+    0.6,
+    0.5,
+    0.4
+  ],
   "minimum_mood": "GOOD",
   "maximum_failure": 25,
   "prioritize_g1_race": false,
@@ -66,7 +72,7 @@
   },
   "energy_management": {
     "enabled": true,
-    "never_rest_energy": 70,
+    "never_rest_energy": 60,
     "skip_training_energy": 30,
     "skip_infirmary_unless_missing_energy": true
   },
@@ -94,6 +100,6 @@
       "smart_defaults": true,
       "minimum_importance_threshold": 3
     },
-    "user_intervention_timeout": 10
+    "user_intervention_timeout": 20
   }
 }

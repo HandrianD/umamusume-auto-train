@@ -68,10 +68,55 @@
       "event_type": "character",
       "user_intervention": true,
       "outcome": {}
+    },
+    {
+      "session_id": "5aa606fc",
+      "timestamp": "2025-09-06T05:00:38.488038",
+      "event_text": "URA Finale\" A Reporter's Duty",
+      "detected_choices": [],
+      "choice_made": 4,
+      "character": "Daiwa Scarlet",
+      "support_cards": [],
+      "current_stats": {},
+      "current_mood": "Normal",
+      "current_year": "1st",
+      "event_type": "character",
+      "user_intervention": true,
+      "outcome": {}
+    },
+    {
+      "session_id": "46b9b22b",
+      "timestamp": "2025-09-06T05:07:53.582839",
+      "event_text": "What Im Destined Forat",
+      "detected_choices": [],
+      "choice_made": 5,
+      "character": "Daiwa Scarlet",
+      "support_cards": [],
+      "current_stats": {},
+      "current_mood": "Normal",
+      "current_year": "1st",
+      "event_type": "support",
+      "user_intervention": true,
+      "outcome": {}
+    },
+    {
+      "session_id": "ff4b11d8",
+      "timestamp": "2025-09-06T05:18:58.791113",
+      "event_text": "Urara's * Shot Dashl Long",
+      "detected_choices": [],
+      "choice_made": 5,
+      "character": "Daiwa Scarlet",
+      "support_cards": [],
+      "current_stats": {},
+      "current_mood": "Normal",
+      "current_year": "1st",
+      "event_type": "character",
+      "user_intervention": true,
+      "outcome": {}
     }
   ],
   "metadata": {
-    "total_events": 5,
-    "last_updated": "2025-09-06T01:54:14.254005"
+    "total_events": 8,
+    "last_updated": "2025-09-06T05:18:58.799600"
   }
 }

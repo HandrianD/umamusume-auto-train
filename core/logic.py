@@ -201,12 +201,12 @@ def do_something(results):
     print("[INFO] All stats capped or no valid training.")
     return None
 
-  # Use priority weight system if enabled
+  # Use priority weight system if enabled (regardless of year)
   if state.PRIORITY_WEIGHT != "NONE":
     print(f"\n[INFO] Using priority weight system (Level: {state.PRIORITY_WEIGHT})")
     return weighted_training_decision(filtered)
 
-  # Original logic for when priority weights are disabled
+  # Original logic for when priority weights are disabled  
   if "Junior Year" in year:
     return most_support_card(filtered)
   else:

@@ -143,8 +143,9 @@ const PriorityWeights: React.FC<PriorityWeightsProps> = ({
           <div className="bg-blue-50 p-3 rounded-md text-sm">
             <p className="text-blue-800 font-medium mb-1">How it works:</p>
             <p className="text-blue-700 text-xs">
-              Each stat gets multiplied by its priority weight during training decisions. 
-              Higher weights make that priority position more attractive for training.
+            The Order of this is based on your priority stat order in the settings.
+            Each stat gets multiplied by its priority weight during training decisions. 
+            Higher weights make that priority position more attractive for training.
             </p>
           </div>
         </>

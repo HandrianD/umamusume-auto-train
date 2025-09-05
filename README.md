@@ -191,8 +191,8 @@ The bot evaluates each training option based on:
 
 - **Special Event Characters** - Some Uma with unique events/goals (e.g., Restricted Train Goldship, 2 G1 Race Oguri Cap) may not work optimally
 - **OCR Misreading** - Failure chance might be misread (e.g., 33% read as 3%), causing the bot to proceed with risky training
-- **Chain Event Handling** - Automatically picks the top option during chain events; be careful with Acupuncture events
 - **Friend Support Cards** - During recreation, the bot cannot decide between dating friend support cards vs. the Uma character
+- **Cant use Claw Machine** - The bot cannot utilize the claw machine mini-game for item acquisition
 - **G1 Race Priority Override** - When `prioritize_g1_race` is enabled, the bot prioritizes racing even with low energy or after 3+ consecutive races
 
 ## 🎯 Roadmap & TODO
@@ -204,18 +204,25 @@ The bot evaluates each training option based on:
 - ~~Web interface with visual selectors~~
 - ~~Event data collection and learning~~
 - ~~Modular scraping system~~
+- ~~Advanced failure rate calculations~~
+- ~~Dynamic training logic switching~~
+- ~~Comprehensive error handling~~
+- ~~Support card event handling~~
+- ~~Energy management improvements~~
+- ~~Mood management and thresholds~~
+- ~~Energy level detection and management~~
 
 ### 🔄 In Progress
-- Energy level detection and management
 - Race position selection by race type
 - Priority weight system for stats
 - Enhanced failure rate algorithms
 
 ### 📝 Future Plans
 - **Claw Machine Automation** - Automate claw machine mini-games
-- **Advanced Event Prediction** - ML-based event outcome prediction
-- **Multi-scenario Optimization** - Scenario-specific training strategies
 - **Performance Analytics** - Training session analysis and reporting
+- **Date Event Handling** - Intelligent dating event decisions
+- **Goals detection and adaptation** - Adjust training based on changing goals
+- **Retry Race on Failures** - Implement logic to retry races upon failure
 
 ## 🤝 Contributing
 

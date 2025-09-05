@@ -1,6 +1,6 @@
 {
-  "support_id": "30025-special-week",
-  "scraped_at": "2025-09-06 05:32:31",
+  "support_id": "30039-kawakami-princess",
+  "scraped_at": "2025-09-06 05:42:53",
   "summary": {
     "english_events": 5,
     "japanese_events": 5,
@@ -14,35 +14,35 @@
           "category": "Chain Events",
           "events": [
             {
-              "name": "(❯) Someday, I'll Be Just Like Her!",
-              "type": "no_choice",
-              "effects": "Energy +10\nSpeed +5"
-            },
-            {
-              "name": "(❯❯) Just a Little Closer",
+              "name": "(❯) Modestly! Boldly!",
               "type": "with_choices",
               "choices": [
                 {
                   "option": "Top Option",
-                  "effects": "Energy -10 Speed +15 Special Week bond +5"
-                },
-                {
-                  "option": "Middle Option",
-                  "effects": "Energy -10 Skill points +20 Special Week bond +5"
+                  "effects": "Mood +1 Speed +5 Kawakami Princess bond +5"
                 },
                 {
                   "option": "Bottom Option",
-                  "effects": "Energy -10 Shake It Out hint +1 Special Week bond +5"
+                  "effects": "Skill points +10 Tether hint +1 Kawakami Princess bond +5"
                 }
               ]
             },
             {
-              "name": "(❯❯❯) Forms of Aspiration",
+              "name": "(❯❯) Princess Power ☆ to the Max!",
+              "type": "no_choice",
+              "effects": "Speed +5\nGuts +5"
+            },
+            {
+              "name": "(❯❯❯) Hit It! Princess Road!",
               "type": "with_choices",
               "choices": [
                 {
-                  "option": "or",
-                  "effects": "Energy +10 Speed +10 Skill points +10 Gourmand hint +3"
+                  "option": "Top Option",
+                  "effects": "Speed +15 Guts +15 Center Stage hint +1 Kawakami Princess bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Energy +25 Skill points +25"
                 }
               ]
             }
@@ -52,30 +52,30 @@
           "category": "Random Events",
           "events": [
             {
-              "name": "Watch Where You're Going!",
+              "name": "Princess Punch!",
               "type": "with_choices",
               "choices": [
                 {
                   "option": "Top Option",
-                  "effects": "Extra Tank hint +1 Special Week bond +5"
+                  "effects": "Guts +10 Kawakami Princess bond +5"
                 },
                 {
                   "option": "Bottom Option",
-                  "effects": "Guts +15 Special Week bond +5"
+                  "effects": "Mood +1 Kawakami Princess bond +5"
                 }
               ]
             },
             {
-              "name": "So Many Options!",
+              "name": "Princess Escape!",
               "type": "with_choices",
               "choices": [
                 {
                   "option": "Top Option",
-                  "effects": "Energy +10 Mood +1 Special Week bond +5"
+                  "effects": "Energy +10 Kawakami Princess bond +5"
                 },
                 {
                   "option": "Bottom Option",
-                  "effects": "Energy -10 Stamina +15 Skill points +15 Special Week bond +5"
+                  "effects": "Steadfast hint +1 Kawakami Princess bond +5"
                 }
               ]
             }
@@ -90,35 +90,35 @@
           "category": "Chain Events",
           "events": [
             {
-              "name": "(❯) Someday, I'll Be Just Like Her!",
-              "type": "no_choice",
-              "effects": "Energy +10\nSpeed +5"
-            },
-            {
-              "name": "(❯❯) Just a Little Closer",
+              "name": "(❯) Modestly! Boldly!",
               "type": "with_choices",
               "choices": [
                 {
                   "option": "Top Option",
-                  "effects": "Energy -10 Speed +15 Special Week bond +5"
-                },
-                {
-                  "option": "Middle Option",
-                  "effects": "Energy -10 Skill points +20 Special Week bond +5"
+                  "effects": "Mood +1 Speed +5 Kawakami Princess bond +5"
                 },
                 {
                   "option": "Bottom Option",
-                  "effects": "Energy -10 Shake It Out hint +1 Special Week bond +5"
+                  "effects": "Skill points +10 Tether hint +1 Kawakami Princess bond +5"
                 }
               ]
             },
             {
-              "name": "(❯❯❯) Forms of Aspiration",
+              "name": "(❯❯) Princess Power ☆ to the Max!",
+              "type": "no_choice",
+              "effects": "Speed +5\nGuts +5"
+            },
+            {
+              "name": "(❯❯❯) Hit It! Princess Road!",
               "type": "with_choices",
               "choices": [
                 {
-                  "option": "or",
-                  "effects": "Energy +10 Speed +10 Skill points +10 Gourmand hint +3"
+                  "option": "Top Option",
+                  "effects": "Speed +15 Guts +15 Center Stage hint +1 Kawakami Princess bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Energy +25 Skill points +25"
                 }
               ]
             }
@@ -128,30 +128,30 @@
           "category": "Random Events",
           "events": [
             {
-              "name": "Watch Where You're Going!",
+              "name": "Princess Punch!",
               "type": "with_choices",
               "choices": [
                 {
                   "option": "Top Option",
-                  "effects": "Extra Tank hint +1 Special Week bond +5"
+                  "effects": "Guts +10 Kawakami Princess bond +5"
                 },
                 {
                   "option": "Bottom Option",
-                  "effects": "Guts +15 Special Week bond +5"
+                  "effects": "Mood +1 Kawakami Princess bond +5"
                 }
               ]
             },
             {
-              "name": "So Many Options!",
+              "name": "Princess Escape!",
               "type": "with_choices",
               "choices": [
                 {
                   "option": "Top Option",
-                  "effects": "Energy +10 Mood +1 Special Week bond +5"
+                  "effects": "Energy +10 Kawakami Princess bond +5"
                 },
                 {
                   "option": "Bottom Option",
-                  "effects": "Energy -10 Stamina +15 Skill points +15 Special Week bond +5"
+                  "effects": "Steadfast hint +1 Kawakami Princess bond +5"
                 }
               ]
             }
@@ -166,12 +166,12 @@
           "category": "Random Events",
           "events": [
             {
-              "name": "Watch Where You're Going!",
+              "name": "Princess Punch!",
               "effects": [],
               "options": []
             },
             {
-              "name": "So Many Options!",
+              "name": "Princess Escape!",
               "effects": [],
               "options": []
             }
@@ -181,17 +181,17 @@
           "category": "Chain Events",
           "events": [
             {
-              "name": "(❯) Someday, I'll Be Just Like Her!",
-              "effects": "Energy +10\nSpeed +5",
-              "options": []
-            },
-            {
-              "name": "(❯❯) Just a Little Closer",
+              "name": "(❯) Modestly! Boldly!",
               "effects": [],
               "options": []
             },
             {
-              "name": "(❯❯❯) Forms of Aspiration",
+              "name": "(❯❯) Princess Power ☆ to the Max!",
+              "effects": "Speed +5\nGuts +5",
+              "options": []
+            },
+            {
+              "name": "(❯❯❯) Hit It! Princess Road!",
               "effects": [],
               "options": []
             }

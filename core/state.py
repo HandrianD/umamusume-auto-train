@@ -1265,6 +1265,174 @@ def analyze_choice_content(choices):
 
   return 1, False  # Default to first choice as absolute fallback
 
+def parse_choice_effects(effects_text):
+  """Parse choice effects text and extract stat changes, returns dict with effect types and values"""
+  effects = {
+    'energy': 0,
+    'stats': {},
+    'skill_points': 0,
+    'mood': 0,
+    'other': []
+  }
+  
+  if not effects_text:
+    return effects
+    
+  # Parse energy changes
+  import re
+  energy_match = re.search(r'Energy\s*([+-]\d+)', effects_text)
+  if energy_match:
+    effects['energy'] = int(energy_match.group(1))
+    
+  # Parse skill points
+  skill_match = re.search(r'Skill\s*points?\s*([+-]\d+)', effects_text)
+  if skill_match:
+    effects['skill_points'] = int(skill_match.group(1))
+    
+  # Parse mood changes
+  mood_match = re.search(r'Mood\s*([+-]\d+)', effects_text)
+  if mood_match:
+    effects['mood'] = int(mood_match.group(1))
+    
+  # Parse stat changes
+  stats = ['Speed', 'Stamina', 'Power', 'Guts', 'Wisdom', 'All stats']
+  for stat in stats:
+    stat_match = re.search(f'{stat}\\s*([+-]\\d+)', effects_text)
+    if stat_match:
+      if stat == 'All stats':
+        value = int(stat_match.group(1))
+        effects['stats']['spd'] = value
+        effects['stats']['sta'] = value  
+        effects['stats']['pwr'] = value
+        effects['stats']['guts'] = value
+        effects['stats']['wit'] = value
+      else:
+        stat_key = stat.lower()[:3] if stat != 'Wisdom' else 'wit'
+        effects['stats'][stat_key] = int(stat_match.group(1))
+  
+  return effects
+
+def intelligent_event_choice(choices_data, current_energy_percent=None):
+  """
+  Make intelligent event choices based on energy level and effect priorities.
+  
+  Rules:
+  1. If any choice has +10 or more energy:
+     - If current energy < 80%: Choose energy option
+     - If current energy >= 90%: Choose stats option instead
+  2. General priorities:
+     - Ignore energy penalties if there are stat/skill gains
+     - Ignore skill points if there are higher stat gains available
+     
+  Returns: choice_index (1-based) or None if no good choice
+  """
+  if not choices_data or len(choices_data) == 0:
+    return None
+    
+  if current_energy_percent is None:
+    try:
+      current_energy_percent = get_current_energy_level()
+    except:
+      current_energy_percent = 50  # Default fallback
+    
+  # Analyze all choices
+  choice_effects = []
+  for i, choice in enumerate(choices_data):
+    effects_text = choice.get('effects', '')
+    effects = parse_choice_effects(effects_text)
+    choice_effects.append({
+      'index': i + 1,
+      'effects': effects,
+      'original': choice
+    })
+    
+  # Check if any choice offers +10 or more energy
+  energy_choices = [c for c in choice_effects if c['effects']['energy'] >= 10]
+  stat_choices = [c for c in choice_effects if sum(c['effects']['stats'].values()) > 0]
+  
+  print(f"[CHOICE] Current energy: {current_energy_percent}%")
+  print(f"[CHOICE] Energy options (+10 or more): {len(energy_choices)} choices")
+  print(f"[CHOICE] Stat gain options: {len(stat_choices)} choices")
+  
+  # Energy-based logic (only if there are significant energy options)
+  if energy_choices:
+    if current_energy_percent < 80:
+      # Low energy: prioritize energy restoration
+      best_energy = max(energy_choices, key=lambda x: x['effects']['energy'])
+      print(f"[CHOICE] Low energy ({current_energy_percent}%) - choosing energy option: +{best_energy['effects']['energy']} energy")
+      return best_energy['index']
+    elif current_energy_percent >= 90:
+      # High energy: prefer stats over energy
+      if stat_choices:
+        best_stats = max(stat_choices, key=lambda x: sum(x['effects']['stats'].values()))
+        total_stats = sum(best_stats['effects']['stats'].values())
+        print(f"[CHOICE] High energy ({current_energy_percent}%) - choosing stats over energy: +{total_stats} total stats")
+        return best_stats['index']
+  
+  # General priority logic
+  # 1. Calculate choice scores based on priorities
+  choice_scores = []
+  for choice in choice_effects:
+    score = 0
+    effects = choice['effects']
+    
+    # Stats are highest priority (weighted by priority system if available)
+    total_stat_gain = sum(effects['stats'].values())
+    score += total_stat_gain * 10  # Stats worth 10 points each
+    
+    # Energy is valuable but less than stats (unless critically low)
+    if current_energy_percent < 50 and effects['energy'] > 0:
+      score += effects['energy'] * 5  # Energy worth 5 points each when low
+    elif effects['energy'] > 0:
+      score += effects['energy'] * 2  # Energy worth 2 points each when normal
+    
+    # Skill points are least priority
+    if effects['skill_points'] > 0 and total_stat_gain == 0:
+      score += effects['skill_points'] * 1  # Only value skill points if no stats
+      
+    # Mood bonus
+    score += effects['mood'] * 3
+    
+    # Penalty for energy loss (but ignore if there are significant gains)
+    if effects['energy'] < 0 and (total_stat_gain > 0 or effects['skill_points'] > 0):
+      # Ignore energy penalty if there are other gains
+      pass
+    elif effects['energy'] < 0:
+      score += effects['energy'] * 3  # Energy loss is bad
+      
+    choice_scores.append({
+      'index': choice['index'], 
+      'score': score,
+      'effects': effects
+    })
+    
+    print(f"[CHOICE] Option {choice['index']}: Score={score} (Stats: +{total_stat_gain}, Energy: {effects['energy']:+d}, Skills: +{effects['skill_points']})")
+  
+  # Choose best option
+  if choice_scores:
+    best_choice = max(choice_scores, key=lambda x: x['score'])
+    if best_choice['score'] > 0:
+      print(f"[CHOICE] Selected option {best_choice['index']} with score {best_choice['score']}")
+      return best_choice['index']
+  
+  print("[CHOICE] No good choice found, defaulting to option 1")
+  return 1
+
+def get_current_energy_level():
+  """Get current energy level from OCR or return estimated value"""
+  try:
+    # Try to get energy from the recognizer
+    from core.recognizer import get_energy_level
+    energy = get_energy_level()
+    if energy is not None:
+      return energy
+  except:
+    pass
+    
+  # Fallback: return estimated energy based on recent activity
+  # This is a placeholder - you might want to implement actual energy tracking
+  return 50
+
 def _log_event_to_database(event_text, choice_made, character, support_cards,
                           pre_stats, pre_mood, pre_year, event_type):
   """Log event to JSON file for learning"""
@@ -1604,7 +1772,8 @@ def get_optimal_event_choice_from_database(event_text, event_type):
 
     if not events:
       print("[EVENT] No event data available, using fallback logic")
-      return get_optimal_event_choice(None, event_type), False
+      fallback_choice, _ = get_optimal_event_choice(None, event_type)
+      return fallback_choice, False
 
     # Find similar events
     similar_events = []
@@ -1614,14 +1783,16 @@ def get_optimal_event_choice_from_database(event_text, event_type):
 
     if not similar_events:
       print("[EVENT] No similar events found, using fallback logic")
-      return get_optimal_event_choice(None, event_type), False
+      fallback_choice, _ = get_optimal_event_choice(None, event_type)
+      return fallback_choice, False
 
     # Analyze choice success rates
     choice_stats = _analyze_choice_success_rates(similar_events)
 
     if not choice_stats:
       print("[EVENT] Insufficient data for analysis, using fallback logic")
-      return get_optimal_event_choice(None, event_type), False
+      fallback_choice, _ = get_optimal_event_choice(None, event_type)
+      return fallback_choice, False
 
     # Find best choice based on average score instead of success rate
     best_choice = max(choice_stats.items(), key=lambda x: x[1]['avg_score'])
@@ -1637,12 +1808,15 @@ def get_optimal_event_choice_from_database(event_text, event_type):
       return choice_num, True
 
     print("[EVENT] Insufficient event data, using fallback logic")
+    fallback_choice, _ = get_optimal_event_choice(None, event_type)
+    return fallback_choice, False
 
   except Exception as e:
     print(f"[EVENT] JSON data query error: {e}, using fallback logic")
 
   # Fallback to basic choice selection
-  return get_optimal_event_choice(None, event_type), False
+  fallback_choice, _ = get_optimal_event_choice(None, event_type)
+  return fallback_choice, False
 
 def _events_are_similar(event1, event2):
   """Check if two events are similar based on text matching"""

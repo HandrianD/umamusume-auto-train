@@ -1,6 +1,6 @@
 {
   "support_id": "20023-sweep-tosho",
-  "scraped_at": "2025-09-06 02:37:49",
+  "scraped_at": "2025-09-06 05:33:06",
   "summary": {
     "english_events": 4,
     "japanese_events": 4,
@@ -15,16 +15,30 @@
           "events": [
             {
               "name": "(❯) Some Very Green Friends",
-              "effects": [
-                "Top Option: Speed +5 Skill points +10 Lucky Seven hint +1 Sweep Tosho bond +5",
-                "Bottom Option: Mood -1 Maverick ○ hint +5"
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Speed +5 Skill points +10 Lucky Seven hint +1 Sweep Tosho bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Mood -1 Maverick ○ hint +5"
+                }
               ]
             },
             {
               "name": "(❯❯) Premeditated Mischief",
-              "effects": [
-                "Top Option: Speed +10 Skill points +20 Levelheaded hint +1 Sweep Tosho bond +5",
-                "Bottom Option: Mood -1 Lone Wolf hint +1"
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Speed +10 Skill points +20 Levelheaded hint +1 Sweep Tosho bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Mood -1 Lone Wolf hint +1"
+                }
               ]
             }
           ]
@@ -34,16 +48,30 @@
           "events": [
             {
               "name": "Miracle ☆ Escape!",
-              "effects": [
-                "Top Option: Energy +10 Speed +5 Sweep Tosho bond +5",
-                "Bottom Option: Energy -10 Speed +20 Sweep Tosho bond +5"
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Energy +10 Speed +5 Sweep Tosho bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Energy -10 Speed +20 Sweep Tosho bond +5"
+                }
               ]
             },
             {
               "name": "Wonderful ☆ Mistake!",
-              "effects": [
-                "Top Option: Randomly either Energy -15 Skill points +40 or Energy -20 Skill points +40 Sweep Tosho bond +5",
-                "Bottom Option: Get Charming ○ status Sweep Tosho bond +5"
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Randomly either Energy -15 Skill points +40 or Energy -20 Skill points +40 Sweep Tosho bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Get Charming ○ status Sweep Tosho bond +5"
+                }
               ]
             }
           ]
@@ -58,16 +86,30 @@
           "events": [
             {
               "name": "(❯) Some Very Green Friends",
-              "options": [
-                "Top Option: Speed +5 Skill points +10 Lucky Seven hint +1 Sweep Tosho bond +5",
-                "Bottom Option: Mood -1 Maverick ○ hint +5"
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Speed +5 Skill points +10 Lucky Seven hint +1 Sweep Tosho bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Mood -1 Maverick ○ hint +5"
+                }
               ]
             },
             {
               "name": "(❯❯) Premeditated Mischief",
-              "options": [
-                "Top Option: Speed +10 Skill points +20 Levelheaded hint +1 Sweep Tosho bond +5",
-                "Bottom Option: Mood -1 Lone Wolf hint +1"
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Speed +10 Skill points +20 Levelheaded hint +1 Sweep Tosho bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Mood -1 Lone Wolf hint +1"
+                }
               ]
             }
           ]
@@ -77,16 +119,30 @@
           "events": [
             {
               "name": "Miracle ☆ Escape!",
-              "options": [
-                "Top Option: Energy +10 Speed +5 Sweep Tosho bond +5",
-                "Bottom Option: Energy -10 Speed +20 Sweep Tosho bond +5"
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Energy +10 Speed +5 Sweep Tosho bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Energy -10 Speed +20 Sweep Tosho bond +5"
+                }
               ]
             },
             {
               "name": "Wonderful ☆ Mistake!",
-              "options": [
-                "Top Option: Randomly either Energy -15 Skill points +40 or Energy -20 Skill points +40 Sweep Tosho bond +5",
-                "Bottom Option: Get Charming ○ status Sweep Tosho bond +5"
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Randomly either Energy -15 Skill points +40 or Energy -20 Skill points +40 Sweep Tosho bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Get Charming ○ status Sweep Tosho bond +5"
+                }
               ]
             }
           ]
@@ -97,56 +153,32 @@
     "combined": {
       "events": [
         {
-          "category": "Chain Events",
-          "events": [
-            {
-              "name": "(❯) Some Very Green Friends",
-              "effects": [
-                "Top Option: Speed +5 Skill points +10 Lucky Seven hint +1 Sweep Tosho bond +5",
-                "Bottom Option: Mood -1 Maverick ○ hint +5"
-              ],
-              "options": [
-                "Top Option: Speed +5 Skill points +10 Lucky Seven hint +1 Sweep Tosho bond +5",
-                "Bottom Option: Mood -1 Maverick ○ hint +5"
-              ]
-            },
-            {
-              "name": "(❯❯) Premeditated Mischief",
-              "effects": [
-                "Top Option: Speed +10 Skill points +20 Levelheaded hint +1 Sweep Tosho bond +5",
-                "Bottom Option: Mood -1 Lone Wolf hint +1"
-              ],
-              "options": [
-                "Top Option: Speed +10 Skill points +20 Levelheaded hint +1 Sweep Tosho bond +5",
-                "Bottom Option: Mood -1 Lone Wolf hint +1"
-              ]
-            }
-          ]
-        },
-        {
           "category": "Random Events",
           "events": [
             {
               "name": "Miracle ☆ Escape!",
-              "effects": [
-                "Top Option: Energy +10 Speed +5 Sweep Tosho bond +5",
-                "Bottom Option: Energy -10 Speed +20 Sweep Tosho bond +5"
-              ],
-              "options": [
-                "Top Option: Energy +10 Speed +5 Sweep Tosho bond +5",
-                "Bottom Option: Energy -10 Speed +20 Sweep Tosho bond +5"
-              ]
+              "effects": [],
+              "options": []
             },
             {
               "name": "Wonderful ☆ Mistake!",
-              "effects": [
-                "Top Option: Randomly either Energy -15 Skill points +40 or Energy -20 Skill points +40 Sweep Tosho bond +5",
-                "Bottom Option: Get Charming ○ status Sweep Tosho bond +5"
-              ],
-              "options": [
-                "Top Option: Randomly either Energy -15 Skill points +40 or Energy -20 Skill points +40 Sweep Tosho bond +5",
-                "Bottom Option: Get Charming ○ status Sweep Tosho bond +5"
-              ]
+              "effects": [],
+              "options": []
+            }
+          ]
+        },
+        {
+          "category": "Chain Events",
+          "events": [
+            {
+              "name": "(❯) Some Very Green Friends",
+              "effects": [],
+              "options": []
+            },
+            {
+              "name": "(❯❯) Premeditated Mischief",
+              "effects": [],
+              "options": []
             }
           ]
         }

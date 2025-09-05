@@ -1,6 +1,6 @@
 {
   "support_id": "30028-kitasan-black",
-  "scraped_at": "2025-09-06 02:35:18",
+  "scraped_at": "2025-09-06 05:31:49",
   "summary": {
     "english_events": 5,
     "japanese_events": 5,
@@ -15,21 +15,31 @@
           "events": [
             {
               "name": "(❯) Chasing Brilliance",
-              "effects": [
-                "Mood +1\nSpeed +2\nPower +2\nWisdom +2\nKitasan Black bond +5"
-              ]
+              "type": "no_choice",
+              "effects": "Mood +1\nSpeed +2\nPower +2\nWisdom +2\nKitasan Black bond +5"
             },
             {
               "name": "(❯❯) Paying It Forward",
-              "effects": [
-                "Top Option: Energy +10 Mood +1 Kitasan Black bond +5",
-                "Bottom Option: Speed +5/+10 Straightaway Adept hint +1/+3 Kitasan Black bond +5"
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Energy +10 Mood +1 Kitasan Black bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Speed +5/+10 Straightaway Adept hint +1/+3 Kitasan Black bond +5"
+                }
               ]
             },
             {
               "name": "(❯❯❯) We Walk Together",
-              "effects": [
-                "or: Speed +10 Power +10 Kitasan Black bond +5 Professor of Curvature hint +3"
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "or",
+                  "effects": "Speed +10 Power +10 Kitasan Black bond +5 Professor of Curvature hint +3"
+                }
               ]
             }
           ]
@@ -39,16 +49,30 @@
           "events": [
             {
               "name": "Ah, Friendship",
-              "effects": [
-                "Top Option: Mood +1 Power +5 Kitasan Black bond +5",
-                "Bottom Option: Energy +10 Kitasan Black bond +5"
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Mood +1 Power +5 Kitasan Black bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Energy +10 Kitasan Black bond +5"
+                }
               ]
             },
             {
               "name": "Ah, Home Sweet Home",
-              "effects": [
-                "Top Option: Speed +5 Power +10 Kitasan Black bond +5",
-                "Bottom Option: Get Practice Perfect ○ status Kitasan Black bond +5"
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Speed +5 Power +10 Kitasan Black bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Get Practice Perfect ○ status Kitasan Black bond +5"
+                }
               ]
             }
           ]
@@ -63,21 +87,31 @@
           "events": [
             {
               "name": "(❯) Chasing Brilliance",
-              "options": [
-                "Mood +1\nSpeed +2\nPower +2\nWisdom +2\nKitasan Black bond +5"
-              ]
+              "type": "no_choice",
+              "effects": "Mood +1\nSpeed +2\nPower +2\nWisdom +2\nKitasan Black bond +5"
             },
             {
               "name": "(❯❯) Paying It Forward",
-              "options": [
-                "Top Option: Energy +10 Mood +1 Kitasan Black bond +5",
-                "Bottom Option: Speed +5/+10 Straightaway Adept hint +1/+3 Kitasan Black bond +5"
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Energy +10 Mood +1 Kitasan Black bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Speed +5/+10 Straightaway Adept hint +1/+3 Kitasan Black bond +5"
+                }
               ]
             },
             {
               "name": "(❯❯❯) We Walk Together",
-              "options": [
-                "or: Speed +10 Power +10 Kitasan Black bond +5 Professor of Curvature hint +3"
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "or",
+                  "effects": "Speed +10 Power +10 Kitasan Black bond +5 Professor of Curvature hint +3"
+                }
               ]
             }
           ]
@@ -87,16 +121,30 @@
           "events": [
             {
               "name": "Ah, Friendship",
-              "options": [
-                "Top Option: Mood +1 Power +5 Kitasan Black bond +5",
-                "Bottom Option: Energy +10 Kitasan Black bond +5"
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Mood +1 Power +5 Kitasan Black bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Energy +10 Kitasan Black bond +5"
+                }
               ]
             },
             {
               "name": "Ah, Home Sweet Home",
-              "options": [
-                "Top Option: Speed +5 Power +10 Kitasan Black bond +5",
-                "Bottom Option: Get Practice Perfect ○ status Kitasan Black bond +5"
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Speed +5 Power +10 Kitasan Black bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Get Practice Perfect ○ status Kitasan Black bond +5"
+                }
               ]
             }
           ]
@@ -107,63 +155,37 @@
     "combined": {
       "events": [
         {
-          "category": "Chain Events",
-          "events": [
-            {
-              "name": "(❯) Chasing Brilliance",
-              "effects": [
-                "Mood +1\nSpeed +2\nPower +2\nWisdom +2\nKitasan Black bond +5"
-              ],
-              "options": [
-                "Mood +1\nSpeed +2\nPower +2\nWisdom +2\nKitasan Black bond +5"
-              ]
-            },
-            {
-              "name": "(❯❯) Paying It Forward",
-              "effects": [
-                "Top Option: Energy +10 Mood +1 Kitasan Black bond +5",
-                "Bottom Option: Speed +5/+10 Straightaway Adept hint +1/+3 Kitasan Black bond +5"
-              ],
-              "options": [
-                "Top Option: Energy +10 Mood +1 Kitasan Black bond +5",
-                "Bottom Option: Speed +5/+10 Straightaway Adept hint +1/+3 Kitasan Black bond +5"
-              ]
-            },
-            {
-              "name": "(❯❯❯) We Walk Together",
-              "effects": [
-                "or: Speed +10 Power +10 Kitasan Black bond +5 Professor of Curvature hint +3"
-              ],
-              "options": [
-                "or: Speed +10 Power +10 Kitasan Black bond +5 Professor of Curvature hint +3"
-              ]
-            }
-          ]
-        },
-        {
           "category": "Random Events",
           "events": [
             {
               "name": "Ah, Friendship",
-              "effects": [
-                "Top Option: Mood +1 Power +5 Kitasan Black bond +5",
-                "Bottom Option: Energy +10 Kitasan Black bond +5"
-              ],
-              "options": [
-                "Top Option: Mood +1 Power +5 Kitasan Black bond +5",
-                "Bottom Option: Energy +10 Kitasan Black bond +5"
-              ]
+              "effects": [],
+              "options": []
             },
             {
               "name": "Ah, Home Sweet Home",
-              "effects": [
-                "Top Option: Speed +5 Power +10 Kitasan Black bond +5",
-                "Bottom Option: Get Practice Perfect ○ status Kitasan Black bond +5"
-              ],
-              "options": [
-                "Top Option: Speed +5 Power +10 Kitasan Black bond +5",
-                "Bottom Option: Get Practice Perfect ○ status Kitasan Black bond +5"
-              ]
+              "effects": [],
+              "options": []
+            }
+          ]
+        },
+        {
+          "category": "Chain Events",
+          "events": [
+            {
+              "name": "(❯) Chasing Brilliance",
+              "effects": "Mood +1\nSpeed +2\nPower +2\nWisdom +2\nKitasan Black bond +5",
+              "options": []
+            },
+            {
+              "name": "(❯❯) Paying It Forward",
+              "effects": [],
+              "options": []
+            },
+            {
+              "name": "(❯❯❯) We Walk Together",
+              "effects": [],
+              "options": []
             }
           ]
         }
