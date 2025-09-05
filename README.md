@@ -23,10 +23,10 @@ Use responsibly and at your own discretion.
 
 ## ✨ **Exclusive Advanced Features**
 
-### � **AI-Like Event Intelligence** (Not available in original!)
-- **🎯 Intelligent Event Choice System** - Energy-based logic that automatically picks option 1 when energy < 80%
+### 🤖 **AI-Like Event Intelligence** (Not available in original!)
+- **🎯 Intelligent Event Choice System** - Energy-based logic that automatically picks option with energy when energy < 80%
 - **📚 Personal Learning System** - Learns from your manual choices and builds personal preferences
-- **⏱️ User Intervention Timeout** - 20-second countdown for manual event decisions with real-time feedback
+- **⏱️ User Intervention Timeout** - 20-second countdown for manual event decisions with real-time feedback (can be changed in web UI)
 - **🔄 Session-based Learning** - Remembers your choices across multiple bot sessions
 - **📊 Advanced Event Logging** - Comprehensive JSON logging with metadata, timestamps, and context tracking
 - **🎲 Smart Defaults** - Intelligent fallback choices when no personal preference exists
