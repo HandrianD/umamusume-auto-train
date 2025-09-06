@@ -1,24 +1,19 @@
 import { Input } from "./ui/input";
 
+import type { Stat } from '../types';
+
 type Props = {
-  statCaps: {
-    spd: number;
-    sta: number;
-    pwr: number;
-    guts: number;
-    wit: number;
-  };
-  setStatCaps: (keys: string, value: number) => void;
+  statCaps: Stat;
+  setStatCaps: (stat: string, field: 'min' | 'max', value: number) => void;
 };
 
+
 export default function StatCaps({ statCaps, setStatCaps }: Props) {
-  const handleChange = (stat: string) => (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (stat: string, field: 'min' | 'max') => (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     const numValue = value === '' ? 0 : parseInt(value, 10);
-
-    // Only update if it's a valid number
     if (!isNaN(numValue) && numValue >= 0) {
-      setStatCaps(stat, numValue);
+      setStatCaps(stat, field, numValue);
     }
   };
 
@@ -27,15 +22,29 @@ export default function StatCaps({ statCaps, setStatCaps }: Props) {
       <p className="text-xl">Stat Caps</p>
       <div className="flex flex-col gap-2">
         {Object.entries(statCaps).map(([stat, val]) => (
-          <label key={stat} className="flex items-center gap-4">
+          <div key={stat} className="flex items-center gap-4">
             <span className="inline-block w-16">{stat.toUpperCase()}</span>
-            <Input
-              type="number"
-              value={val}
-              min={0}
-              onChange={handleChange(stat)}
-            />
-          </label>
+            <label className="flex items-center gap-1">
+              <span className="text-xs text-gray-500">Min</span>
+              <Input
+                type="number"
+                value={val.min}
+                min={0}
+                onChange={handleChange(stat, 'min')}
+                className="w-20"
+              />
+            </label>
+            <label className="flex items-center gap-1">
+              <span className="text-xs text-gray-500">Max</span>
+              <Input
+                type="number"
+                value={val.max}
+                min={0}
+                onChange={handleChange(stat, 'max')}
+                className="w-20"
+              />
+            </label>
+          </div>
         ))}
       </div>
     </div>

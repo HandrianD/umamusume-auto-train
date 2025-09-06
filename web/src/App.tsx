@@ -23,11 +23,43 @@ import type { Character, SupportCard, Scenario } from "./types";
 function App() {
   const { config } = useConfig(defaultConfig);
   const { activeIndex, activeConfig, presets, setActiveIndex, savePreset } = useConfigPreset();
+  
+  // Helper function to normalize stat caps
+  const normalizeStatCaps = (caps: any) => {
+    const defaultCaps = {
+      spd: { min: 0, max: 1200 },
+      sta: { min: 0, max: 800 },
+      pwr: { min: 0, max: 800 },
+      guts: { min: 0, max: 350 },
+      wit: { min: 0, max: 400 }
+    };
+    
+    if (!caps || typeof caps !== 'object') return defaultCaps;
+    
+    const result: any = {};
+    ['spd', 'sta', 'pwr', 'guts', 'wit'].forEach(stat => {
+      const val = caps[stat];
+      if (typeof val === 'object' && val !== null) {
+        const typedVal = val as { min?: number, max?: number };
+        result[stat] = { 
+          min: typedVal.min ?? 0, 
+          max: typedVal.max ?? defaultCaps[stat as keyof typeof defaultCaps].max 
+        };
+      } else if (typeof val === 'number') {
+        result[stat] = { min: val, max: defaultCaps[stat as keyof typeof defaultCaps].max };
+      } else {
+        result[stat] = defaultCaps[stat as keyof typeof defaultCaps];
+      }
+    });
+    
+    return result;
+  };
+  
   const [selectedCharacter, setSelectedCharacter] = useState<Character | null>(null);
   const [selectedScenario, setSelectedScenario] = useState<Scenario | null>(null);
   const [selectedSupportCards, setSelectedSupportCards] = useState<(SupportCard | null)[]>(Array(6).fill(null));
   const [priorityStat, setPriorityStat] = useState<string[]>(activeConfig?.priority_stat || config.priority_stat || []);
-  const [statCaps, setStatCaps] = useState(activeConfig?.stat_caps || config.stat_caps || { spd: 0, sta: 0, pwr: 0, guts: 0, wit: 0 });
+  const [statCaps, setStatCaps] = useState(normalizeStatCaps(activeConfig?.stat_caps || config.stat_caps));
   const [minimumMood, setMinimumMood] = useState(activeConfig?.minimum_mood || config.minimum_mood || "GOOD");
   const [maximumFailure, setMaximumFailure] = useState(activeConfig?.maximum_failure || config.maximum_failure || 25);
   const [prioritizeG1, setPrioritizeG1] = useState(activeConfig?.prioritize_g1_race || config.prioritize_g1_race || false);
@@ -90,7 +122,7 @@ function App() {
   useEffect(() => {
     if (activeConfig) {
       setPriorityStat(activeConfig.priority_stat || []);
-      setStatCaps(activeConfig.stat_caps || { spd: 0, sta: 0, pwr: 0, guts: 0, wit: 0 });
+      setStatCaps(normalizeStatCaps(activeConfig.stat_caps));
       setMinimumMood(activeConfig.minimum_mood || "GOOD");
       setMaximumFailure(activeConfig.maximum_failure || 25);
       setPrioritizeG1(activeConfig.prioritize_g1_race || false);
@@ -143,8 +175,14 @@ function App() {
     setSelectedSupportCards(newCards);
   };
 
-  const handleSetStatCaps = (stat: string, value: number) => {
-    setStatCaps(prev => ({ ...prev, [stat]: value }));
+  const handleSetStatCaps = (stat: string, field: 'min' | 'max', value: number) => {
+    setStatCaps((prev: any) => ({
+      ...prev,
+      [stat as keyof typeof prev]: {
+        ...prev[stat as keyof typeof prev],
+        [field]: value,
+      },
+    }));
   };
 
   const handleAddSkill = (skillName: string) => {
@@ -155,12 +193,46 @@ function App() {
     setSkillList(prev => prev.filter(skill => skill !== skillName));
   };
 
+  const ensureStatCapsObject = (caps: any) => {
+    // Ensure all stats are objects with min/max
+    const defaultMax = { spd: 1200, sta: 800, pwr: 800, guts: 350, wit: 400 };
+    const defaultCaps = {
+      spd: { min: 0, max: 1200 },
+      sta: { min: 0, max: 800 },
+      pwr: { min: 0, max: 800 },
+      guts: { min: 0, max: 350 },
+      wit: { min: 0, max: 400 }
+    };
+    
+    const result: any = {};
+    
+    // Ensure all required stats are present
+    ['spd', 'sta', 'pwr', 'guts', 'wit'].forEach(stat => {
+      const val = caps[stat];
+      if (typeof val === 'object' && val !== null) {
+        const typedVal = val as { min?: number, max?: number };
+        result[stat] = { 
+          min: typedVal.min ?? 0, 
+          max: typedVal.max ?? defaultMax[stat as keyof typeof defaultMax] 
+        };
+      } else if (typeof val === 'number') {
+        // If only a number, treat as min, use default max
+        result[stat] = { min: val, max: defaultMax[stat as keyof typeof defaultMax] };
+      } else {
+        // fallback to defaults
+        result[stat] = defaultCaps[stat as keyof typeof defaultCaps];
+      }
+    });
+    
+    return result;
+  };
+
   const handleSavePreset = async () => {
     // Create simplified config for saving to server (only essential data)
     const serverConfig = {
       ...config,
       priority_stat: priorityStat,
-      stat_caps: statCaps,
+      stat_caps: ensureStatCapsObject(statCaps),
       minimum_mood: minimumMood,
       maximum_failure: maximumFailure,
       prioritize_g1_race: prioritizeG1,
@@ -190,7 +262,7 @@ function App() {
     const fullConfig = {
       ...config,
       priority_stat: priorityStat,
-      stat_caps: statCaps,
+      stat_caps: ensureStatCapsObject(statCaps),
       minimum_mood: minimumMood,
       maximum_failure: maximumFailure,
       prioritize_g1_race: prioritizeG1,
@@ -207,7 +279,7 @@ function App() {
       priority_weight: priorityWeight,
       priority_weights: priorityWeights,
     };
-    savePreset(fullConfig);
+    savePreset(fullConfig as any);
     
     // Save simplified config to server config.json
     try {

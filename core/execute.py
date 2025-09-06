@@ -2103,11 +2103,14 @@ def career_lobby():
       race_day()
       continue
 
-    # Mood check
+    # Mood check with energy consideration
     if mood_index < minimum_mood:
-      print("[INFO] Mood is low, trying recreation to increase mood")
-      do_recreation()
-      continue
+      if state.ENERGY_DETECTION_ENABLED and energy_numeric > state.NEVER_REST_ENERGY:
+        print(f"[INFO] Mood is low, but energy is high ({energy_numeric}%), proceeding to training instead of recreation")
+      else:
+        print("[INFO] Mood is low, trying recreation to increase mood")
+        do_recreation()
+        continue
 
     # Check if goals is not met criteria AND it is not Pre-Debut AND turn is less than 10 AND Goal is already achieved
     if criteria.split(" ")[0] != "criteria" and year != "Junior Year Pre-Debut" and turn < 10 and criteria != "Goal Achievedl":

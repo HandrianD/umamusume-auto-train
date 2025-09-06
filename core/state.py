@@ -2,8 +2,11 @@ import re
 import json
 import glob
 import os
+import cv2
+import numpy as np
 from datetime import datetime
 from typing import Dict, Any, Optional
+from PIL import Image
 
 from utils.screenshot import capture_region, enhanced_screenshot
 from core.ocr import extract_text, extract_number
@@ -380,19 +383,170 @@ def check_mood():
   print(f"[WARNING] Mood not recognized: {mood_text}")
   return "UNKNOWN"
 
+def detect_energy_by_color():
+  """
+  REVERSE ENERGY DETECTION: Count dark grey pixels and invert
+  When energy decreases, right side becomes dark grey
+  Energy = 100% - (grey_pixels / total_pixels)
+  This is more reliable than trying to detect varying energy colors
+  """
+  try:
+    # Capture the energy region
+    energy_img = capture_region(ENERGY_REGION)
+    
+    # Convert PIL Image to OpenCV format
+    energy_cv = cv2.cvtColor(np.array(energy_img), cv2.COLOR_RGB2BGR)
+    
+    # Convert to HSV for better color detection
+    energy_hsv = cv2.cvtColor(energy_cv, cv2.COLOR_BGR2HSV)
+    
+    total_pixels = energy_hsv.shape[0] * energy_hsv.shape[1]
+    
+    # Debug: Show average colors for troubleshooting
+    avg_color_rgb = np.mean(np.array(energy_img).reshape(-1, 3), axis=0)
+    avg_hsv = cv2.cvtColor(np.uint8([[avg_color_rgb[::-1]]]), cv2.COLOR_BGR2HSV)[0][0]
+    print(f"   Average RGB: ({avg_color_rgb[0]:.0f}, {avg_color_rgb[1]:.0f}, {avg_color_rgb[2]:.0f})")
+    print(f"   Average HSV: ({avg_hsv[0]}, {avg_hsv[1]}, {avg_hsv[2]})")
+    
+    # Define dark grey range for "empty" energy areas
+    # When energy decreases, these areas become dark grey
+    # Adjust range based on what dark grey looks like in your energy bar
+    grey_lower = np.array([0, 0, 30])      # Any hue, no saturation, dark
+    grey_upper = np.array([180, 60, 120])  # Any hue, low saturation, medium brightness
+    
+    # Count dark grey (empty) pixels
+    grey_mask = cv2.inRange(energy_hsv, grey_lower, grey_upper)
+    grey_pixels = np.sum(grey_mask > 0)
+    grey_percentage = (grey_pixels / total_pixels) * 100
+    
+    print(f"   Dark grey pixels: {grey_pixels}/{total_pixels} ({grey_percentage:.1f}%)")
+    
+    # REVERSE CALCULATION: Energy = 100% - percentage of dark grey
+    energy_percentage = max(0, min(100, 100 - grey_percentage))
+    
+    print(f"   Reverse calculated energy: {energy_percentage:.0f}%")
+    
+    # Convert percentage to energy level categories
+    if energy_percentage >= 90:
+      energy_level = "FULL"
+    elif energy_percentage >= 70:
+      energy_level = "HIGH"
+    elif energy_percentage >= 40:
+      energy_level = "NORMAL"
+    elif energy_percentage >= 20:
+      energy_level = "LOW"
+    else:
+      energy_level = "EMPTY"
+    
+    # Calculate confidence based on how well we can distinguish the pattern
+    if grey_percentage > 20:  # Significant grey = partial energy, high confidence
+      confidence = min(95, 70 + grey_percentage * 0.5)
+    elif grey_percentage < 5:  # Very little grey = likely full energy
+      confidence = 85  # Full energy, high confidence
+    else:  # Medium grey levels
+      confidence = 75  # Good confidence for edge cases
+    
+    print(f"[ENERGY] Reverse detection: {grey_percentage:.1f}% grey -> {energy_level} ({energy_percentage:.0f}%) - confidence: {confidence:.1f}%")
+    return energy_level, energy_percentage, confidence
+      
+  except Exception as e:
+    print(f"[ERROR] Color-based energy detection failed: {e}")
+    return None, None, 0
+
+def analyze_energy_bar_gradient():
+  """
+  Advanced energy detection by analyzing color gradient across the energy bar
+  This method analyzes the horizontal gradient to estimate fill level more precisely
+  """
+  try:
+    # Capture the energy region
+    energy_img = capture_region(ENERGY_REGION)
+    
+    # Convert to OpenCV format
+    energy_cv = cv2.cvtColor(np.array(energy_img), cv2.COLOR_RGB2BGR)
+    energy_hsv = cv2.cvtColor(energy_cv, cv2.COLOR_BGR2HSV)
+    
+    # Get image dimensions
+    height, width = energy_hsv.shape[:2]
+    
+    # Sample horizontal strips to analyze gradient
+    middle_strip = energy_hsv[height//3:2*height//3, :]  # Middle third of the bar
+    
+    # Analyze color progression from left to right
+    strip_width = width // 10  # Divide into 10 sections
+    energy_percentage = 0
+    
+    for i in range(10):
+      start_x = i * strip_width
+      end_x = min((i + 1) * strip_width, width)
+      section = middle_strip[:, start_x:end_x]
+      
+      # Check for "filled" vs "empty" colors in this section
+      # Filled colors: blue, aqua, green, yellow, orange
+      filled_lower = np.array([0, 50, 50])  # Broader range for any energy color
+      filled_upper = np.array([180, 255, 255])
+      
+      # Empty colors: gray, dark, very low saturation
+      empty_lower = np.array([0, 0, 0])
+      empty_upper = np.array([180, 50, 100])  # Low saturation = empty
+      
+      filled_mask = cv2.inRange(section, filled_lower, filled_upper)
+      empty_mask = cv2.inRange(section, empty_lower, empty_upper)
+      
+      filled_ratio = np.sum(filled_mask) / (255 * section.shape[0] * section.shape[1])
+      
+      # If this section is more than 30% filled, count it as active
+      if filled_ratio > 0.3:
+        energy_percentage = (i + 1) * 10  # Each section represents 10%
+    
+    # Classify energy level based on percentage
+    if energy_percentage >= 90:
+      energy_level = "FULL"
+    elif energy_percentage >= 70:
+      energy_level = "HIGH"
+    elif energy_percentage >= 50:
+      energy_level = "NORMAL"
+    elif energy_percentage >= 20:
+      energy_level = "LOW"
+    else:
+      energy_level = "EMPTY"
+    
+    print(f"[ENERGY] Gradient analysis: {energy_level} (~{energy_percentage}% filled)")
+    return energy_level, energy_percentage, 85  # High confidence for gradient method
+    
+  except Exception as e:
+    print(f"[ERROR] Gradient energy analysis failed: {e}")
+    return None, None, 0
+
 def check_energy():
   """
-  Detect current energy level of the character
-  Returns energy level as a string and numeric value (0-100)
+  Enhanced energy detection using multiple methods:
+  1. Color-based detection (primary)
+  2. Gradient analysis (secondary) 
+  3. OCR text detection (fallback)
+  4. Numeric extraction (fallback)
+  
+  Returns energy level as string and numeric value (0-100)
   """
   if not ENERGY_DETECTION_ENABLED:
     return "UNKNOWN", 50  # Default to middle value if detection disabled
     
   try:
+    # Method 1: Color-based detection (most reliable for energy bars)
+    color_level, color_numeric, color_confidence = detect_energy_by_color()
+    if color_level and color_confidence > 25:  # Lowered threshold for gradient energy bars
+      return color_level, color_numeric
+    
+    # Method 2: Gradient analysis (good for partially filled bars)
+    gradient_level, gradient_numeric, gradient_confidence = analyze_energy_bar_gradient()
+    if gradient_level and gradient_confidence > 60:
+      return gradient_level, gradient_numeric
+    
+    # Method 3 & 4: Fall back to original OCR/numeric detection
     energy_img = capture_region(ENERGY_REGION)
     energy_text = extract_text(energy_img).upper()
     
-    # Try to extract numeric energy value first
+    # Try to extract numeric energy value
     energy_number = extract_number(energy_img)
     if energy_number is not None and 0 <= energy_number <= 100:
       # Classify energy level based on numeric value
@@ -407,7 +561,7 @@ def check_energy():
       else:
         energy_level = "EMPTY"
       
-      print(f"[ENERGY] Detected energy: {energy_level} ({energy_number}%)")
+      print(f"[ENERGY] Detected energy (numeric): {energy_level} ({energy_number}%)")
       return energy_level, energy_number
     
     # Fallback to text-based detection
@@ -418,10 +572,15 @@ def check_energy():
           "FULL": 90, "HIGH": 70, "NORMAL": 50, "LOW": 30, "EMPTY": 10, "UNKNOWN": 50
         }.get(known_energy, 50)
         
-        print(f"[ENERGY] Detected energy (text): {known_energy} (~{energy_numeric}%)")
+        print(f"[ENERGY] Detected energy (text fallback): {known_energy} (~{energy_numeric}%)")
         return known_energy, energy_numeric
     
-    print(f"[WARNING] Energy not recognized: {energy_text}")
+    # If all methods failed, try to use color detection with lower confidence
+    if color_level and color_confidence > 30:  # Lower threshold as last resort
+      print(f"[ENERGY] Using color detection with low confidence: {color_level} ({color_numeric}%)")
+      return color_level, color_numeric
+    
+    print(f"[WARNING] All energy detection methods failed. Text found: '{energy_text}'")
     return "UNKNOWN", 50
     
   except Exception as e:
@@ -1417,21 +1576,6 @@ def intelligent_event_choice(choices_data, current_energy_percent=None):
   
   print("[CHOICE] No good choice found, defaulting to option 1")
   return 1
-
-def get_current_energy_level():
-  """Get current energy level from OCR or return estimated value"""
-  try:
-    # Try to get energy from the recognizer
-    from core.recognizer import get_energy_level
-    energy = get_energy_level()
-    if energy is not None:
-      return energy
-  except:
-    pass
-    
-  # Fallback: return estimated energy based on recent activity
-  # This is a placeholder - you might want to implement actual energy tracking
-  return 50
 
 def _log_event_to_database(event_text, choice_made, character, support_cards,
                           pre_stats, pre_mood, pre_year, event_type):

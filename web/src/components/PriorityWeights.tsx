@@ -73,6 +73,7 @@ const PriorityWeights: React.FC<PriorityWeightsProps> = ({
         <div className="bg-gray-100 p-3 rounded-md">
           <p className="text-sm text-gray-600">
             Priority weight system is disabled. Enable it on the left to configure custom weights.
+            In disabled mode weight is auto calculated based on priority position and balanced stats gain.
           </p>
         </div>
       )}

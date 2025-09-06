@@ -1,0 +1,153 @@
+{
+  "support_id": "20020-king-halo",
+  "scraped_at": "2025-09-06 19:31:42",
+  "summary": {
+    "english_events": 4,
+    "japanese_events": 4,
+    "combined_events": 4,
+    "total_categories": 2
+  },
+  "data": {
+    "english": {
+      "events": [
+        {
+          "category": "Chain Events",
+          "events": [
+            {
+              "name": "(❯) First-Rate Coaching",
+              "type": "no_choice",
+              "effects": "Speed +10"
+            },
+            {
+              "name": "(❯❯) First-Rate Advice",
+              "type": "no_choice",
+              "effects": "Speed +15\nSkill points +15"
+            }
+          ]
+        },
+        {
+          "category": "Random Events",
+          "events": [
+            {
+              "name": "You May Socialize With Me!",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Energy -20 Speed +10 Power +10 Wisdom +5 King Halo bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Mood -1 Guts +25 King Halo bond +5"
+                }
+              ]
+            },
+            {
+              "name": "You May Advise Me!",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Guts +10 Wisdom +5 King Halo bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Homestretch Haste hint +1 King Halo bond +5"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "total_events": 4
+    },
+    "japanese": {
+      "events": [
+        {
+          "category": "Chain Events",
+          "events": [
+            {
+              "name": "(❯) First-Rate Coaching",
+              "type": "no_choice",
+              "effects": "Speed +10"
+            },
+            {
+              "name": "(❯❯) First-Rate Advice",
+              "type": "no_choice",
+              "effects": "Speed +15\nSkill points +15"
+            }
+          ]
+        },
+        {
+          "category": "Random Events",
+          "events": [
+            {
+              "name": "You May Socialize With Me!",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Energy -20 Speed +10 Power +10 Wisdom +5 King Halo bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Mood -1 Guts +25 King Halo bond +5"
+                }
+              ]
+            },
+            {
+              "name": "You May Advise Me!",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Guts +10 Wisdom +5 King Halo bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Homestretch Haste hint +1 King Halo bond +5"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "total_events": 4
+    },
+    "combined": {
+      "events": [
+        {
+          "category": "Chain Events",
+          "events": [
+            {
+              "name": "(❯) First-Rate Coaching",
+              "effects": "Speed +10",
+              "options": []
+            },
+            {
+              "name": "(❯❯) First-Rate Advice",
+              "effects": "Speed +15\nSkill points +15",
+              "options": []
+            }
+          ]
+        },
+        {
+          "category": "Random Events",
+          "events": [
+            {
+              "name": "You May Socialize With Me!",
+              "effects": [],
+              "options": []
+            },
+            {
+              "name": "You May Advise Me!",
+              "effects": [],
+              "options": []
+            }
+          ]
+        }
+      ],
+      "total_events": 4
+    }
+  }
+}

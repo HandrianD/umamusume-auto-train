@@ -1,0 +1,153 @@
+{
+  "support_id": "20015-marvelous-sunday",
+  "scraped_at": "2025-09-06 21:40:05",
+  "summary": {
+    "english_events": 4,
+    "japanese_events": 4,
+    "combined_events": 4,
+    "total_categories": 2
+  },
+  "data": {
+    "english": {
+      "events": [
+        {
+          "category": "Chain Events",
+          "events": [
+            {
+              "name": "(❯) Marvelous World Plan ☆",
+              "type": "no_choice",
+              "effects": "Guts +5\nWisdom +5"
+            },
+            {
+              "name": "(❯❯) Marvelously Marvelous ☆",
+              "type": "no_choice",
+              "effects": "Guts +15\nWisdom +15"
+            }
+          ]
+        },
+        {
+          "category": "Random Events",
+          "events": [
+            {
+              "name": "Marvelous, No Question ☆",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Energy +10 Speed +5 Marvelous Sunday bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Mood +1 Speed +5 Marvelous Sunday bond +5"
+                }
+              ]
+            },
+            {
+              "name": "How To Be More Marvelous ☆",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Energy +10 Mood +1 Marvelous Sunday bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Hanshin Racecourse ○ hint +1 Marvelous Sunday bond +5"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "total_events": 4
+    },
+    "japanese": {
+      "events": [
+        {
+          "category": "Chain Events",
+          "events": [
+            {
+              "name": "(❯) Marvelous World Plan ☆",
+              "type": "no_choice",
+              "effects": "Guts +5\nWisdom +5"
+            },
+            {
+              "name": "(❯❯) Marvelously Marvelous ☆",
+              "type": "no_choice",
+              "effects": "Guts +15\nWisdom +15"
+            }
+          ]
+        },
+        {
+          "category": "Random Events",
+          "events": [
+            {
+              "name": "Marvelous, No Question ☆",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Energy +10 Speed +5 Marvelous Sunday bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Mood +1 Speed +5 Marvelous Sunday bond +5"
+                }
+              ]
+            },
+            {
+              "name": "How To Be More Marvelous ☆",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Energy +10 Mood +1 Marvelous Sunday bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Hanshin Racecourse ○ hint +1 Marvelous Sunday bond +5"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "total_events": 4
+    },
+    "combined": {
+      "events": [
+        {
+          "category": "Random Events",
+          "events": [
+            {
+              "name": "Marvelous, No Question ☆",
+              "effects": [],
+              "options": []
+            },
+            {
+              "name": "How To Be More Marvelous ☆",
+              "effects": [],
+              "options": []
+            }
+          ]
+        },
+        {
+          "category": "Chain Events",
+          "events": [
+            {
+              "name": "(❯) Marvelous World Plan ☆",
+              "effects": "Guts +5\nWisdom +5",
+              "options": []
+            },
+            {
+              "name": "(❯❯) Marvelously Marvelous ☆",
+              "effects": "Guts +15\nWisdom +15",
+              "options": []
+            }
+          ]
+        }
+      ],
+      "total_events": 4
+    }
+  }
+}

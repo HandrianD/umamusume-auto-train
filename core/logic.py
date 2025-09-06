@@ -11,12 +11,41 @@ def get_weighted_stat_priority(stat_key: str) -> float:
   Get weighted priority for training decisions using priority weight system.
   Returns a multiplier based on stat priority and weight configuration.
   Higher values indicate higher priority.
+  If stat is below min cap, boost weight.
   """
+  # Get current stats for min cap logic
+  try:
+    from core.state import stat_state
+    current_stats = stat_state()
+  except Exception:
+    current_stats = {}
+  
+  stat_caps = state.STAT_CAPS.get(stat_key, {})
+  min_cap = 0
+  max_cap = 1200  # default
+  if isinstance(stat_caps, dict):
+    min_cap = stat_caps.get("min", 0)
+    max_cap = stat_caps.get("max", 1200)
+  current = current_stats.get(stat_key, 0)
+  
+  # If below min cap, boost weight (e.g. x2)
+  if current < min_cap:
+    return 2.0
+    
+  # Normal weighting with auto-balancing
   priority_index = get_stat_priority(stat_key)
   if priority_index >= len(state.PRIORITY_EFFECTS_LIST):
     return 0.1  # Very low priority for stats not in priority list
   
-  return state.PRIORITY_EFFECTS_LIST[priority_index]
+  base_weight = state.PRIORITY_EFFECTS_LIST[priority_index]
+  
+  # Auto-balance: higher weight for stats closer to min, lower for those near max
+  if max_cap > min_cap:
+    balance_factor = (max_cap - current) / (max_cap - min_cap)  # 1.0 at min, 0.0 at max
+  else:
+    balance_factor = 1.0  # if min == max, no balance
+  
+  return base_weight * (1.0 + balance_factor)
 
 # Calculate training score with priority weights
 def calculate_training_score(stat_key: str, stat_gain: int, support_count: int = 0) -> float:
@@ -119,10 +148,24 @@ def rainbow_training(results):
   return best_key
 
 def filter_by_stat_caps(results, current_stats):
-  return {
-    stat: data for stat, data in results.items()
-    if current_stats.get(stat, 0) < state.STAT_CAPS.get(stat, 1200)
-  }
+  filtered = {}
+  for stat, data in results.items():
+    # Support new min/max cap structure
+    stat_caps = state.STAT_CAPS.get(stat, {})
+    if isinstance(stat_caps, dict):
+      max_cap = stat_caps.get("max", 1200)
+    else:
+      max_cap = stat_caps  # fallback for old config
+    current = current_stats.get(stat, 0)
+    
+    # Ensure max_cap is a number
+    if isinstance(max_cap, dict):
+      max_cap = max_cap.get("max", 1200)  # Handle nested dict case
+    
+    if current < max_cap:
+      filtered[stat] = data
+  return filtered
+  # ...existing code...
 
 # Enhanced weighted training decision using priority weights
 def weighted_training_decision(results):
@@ -131,8 +174,40 @@ def weighted_training_decision(results):
   Calculates weighted scores for each training option.
   """
   energy_level = get_current_energy_level()
-  
   # Filter out unsafe trainings
+  safe_trainings = {
+    k: v for k, v in results.items() 
+    if int(v["failure"]) <= state.MAX_FAILURE
+  }
+  if not safe_trainings:
+    print("\n[INFO] No safe training found with priority weight system.")
+    return None
+  # Calculate weighted scores for each training
+  training_scores = {}
+  for stat_key, training_data in safe_trainings.items():
+    # Get expected stat gain (use a reasonable estimate if not available)
+    stat_gain = training_data.get("stat_gain", 10)  # Default estimate
+    support_count = training_data.get("total_support", 0)
+    # Calculate weighted score
+    score = calculate_training_score(stat_key, stat_gain, support_count)
+    training_scores[stat_key] = {
+      "score": score,
+      "data": training_data,
+      "priority_weight": get_weighted_stat_priority(stat_key)
+    }
+    print(f"[WEIGHT] {stat_key.upper()}: Score={score:.2f} (Weight={get_weighted_stat_priority(stat_key):.2f}, Supports={support_count}, Failure={training_data['failure']}%)")
+  # Special handling for WIT training (needs at least 2 supports)
+  if "wit" in training_scores:
+    wit_data = training_scores["wit"]["data"]
+    if wit_data["total_support"] < 2 and len([k for k in training_scores.keys() if k != "wit"]) > 0:
+      print(f"[WEIGHT] WIT has insufficient supports ({wit_data['total_support']}), reducing score")
+      training_scores["wit"]["score"] *= 0.5
+  # Find best training by weighted score
+  best_stat = max(training_scores.items(), key=lambda x: x[1]["score"])
+  best_key = best_stat[0]
+  best_info = best_stat[1]
+  print(f"\n[WEIGHT] Best weighted training: {best_key.upper()} (Score: {best_info['score']:.2f}, Weight: {best_info['priority_weight']:.2f})")
+  return best_key
   safe_trainings = {
     k: v for k, v in results.items() 
     if int(v["failure"]) <= state.MAX_FAILURE
@@ -202,7 +277,7 @@ def do_something(results):
     return None
 
   # Use priority weight system if enabled (regardless of year)
-  if state.PRIORITY_WEIGHT != "NONE":
+  if state.PRIORITY_WEIGHT != "DISABLED":
     print(f"\n[INFO] Using priority weight system (Level: {state.PRIORITY_WEIGHT})")
     return weighted_training_decision(filtered)
 

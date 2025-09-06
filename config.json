@@ -1,7 +1,7 @@
 {
   "character": {
-    "id": "100901",
-    "name": "Daiwa Scarlet"
+    "id": "101801",
+    "name": "Air Groove"
   },
   "scenario": {
     "id": "ura-finals",
@@ -13,20 +13,20 @@
       "name": "Kitasan Black"
     },
     {
-      "id": "20008",
-      "name": "Manhattan Cafe"
-    },
-    {
       "id": "30039",
       "name": "Kawakami Princess"
     },
     {
-      "id": "30025",
-      "name": "Special Week"
+      "id": "20020",
+      "name": "King Halo"
     },
     {
-      "id": "20023",
-      "name": "Sweep Tosho"
+      "id": "20015",
+      "name": "Marvelous Sunday"
+    },
+    {
+      "id": "20016",
+      "name": "Matikanefukukitaru"
     },
     {
       "id": "30041",
@@ -35,12 +35,12 @@
   ],
   "priority_stat": [
     "spd",
-    "sta",
-    "pwr",
     "wit",
+    "pwr",
+    "sta",
     "guts"
   ],
-  "priority_weight": "MEDIUM",
+  "priority_weight": "NONE",
   "priority_weights": [
     1,
     0.8,
@@ -53,11 +53,26 @@
   "prioritize_g1_race": false,
   "cancel_consecutive_race": true,
   "stat_caps": {
-    "spd": 1200,
-    "sta": 800,
-    "pwr": 800,
-    "guts": 350,
-    "wit": 400
+    "spd": {
+      "min": 600,
+      "max": 1150
+    },
+    "sta": {
+      "min": 400,
+      "max": 700
+    },
+    "pwr": {
+      "min": 350,
+      "max": 800
+    },
+    "guts": {
+      "min": 200,
+      "max": 300
+    },
+    "wit": {
+      "min": 250,
+      "max": 1150
+    }
   },
   "skill": {
     "is_auto_buy_skill": false,

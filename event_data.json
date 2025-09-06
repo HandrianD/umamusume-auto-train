@@ -113,10 +113,85 @@
       "event_type": "character",
       "user_intervention": true,
       "outcome": {}
+    },
+    {
+      "session_id": "ca55a69e",
+      "timestamp": "2025-09-06T20:44:42.982738",
+      "event_text": "Enthusiastic Pair",
+      "detected_choices": [],
+      "choice_made": 4,
+      "character": "Air Groove",
+      "support_cards": [],
+      "current_stats": {},
+      "current_mood": "Normal",
+      "current_year": "1st",
+      "event_type": "support",
+      "user_intervention": true,
+      "outcome": {}
+    },
+    {
+      "session_id": "f93716b6",
+      "timestamp": "2025-09-06T21:24:50.154277",
+      "event_text": "Princess Escapel",
+      "detected_choices": [],
+      "choice_made": 4,
+      "character": "Air Groove",
+      "support_cards": [],
+      "current_stats": {},
+      "current_mood": "Normal",
+      "current_year": "1st",
+      "event_type": "support",
+      "user_intervention": true,
+      "outcome": {}
+    },
+    {
+      "session_id": "8c263a39",
+      "timestamp": "2025-09-06T21:26:39.055817",
+      "event_text": "#BFF #Partyl",
+      "detected_choices": [],
+      "choice_made": 4,
+      "character": "Air Groove",
+      "support_cards": [],
+      "current_stats": {},
+      "current_mood": "Normal",
+      "current_year": "1st",
+      "event_type": "support",
+      "user_intervention": true,
+      "outcome": {}
+    },
+    {
+      "session_id": "ff7117f4",
+      "timestamp": "2025-09-06T21:42:52.027581",
+      "event_text": "Get Well Soonl",
+      "detected_choices": [],
+      "choice_made": 4,
+      "character": "Air Groove",
+      "support_cards": [],
+      "current_stats": {},
+      "current_mood": "Normal",
+      "current_year": "1st",
+      "event_type": "character",
+      "user_intervention": true,
+      "outcome": {}
+    },
+    {
+      "session_id": "db185d61",
+      "timestamp": "2025-09-06T21:47:32.612154",
+      "event_text": "Modestlyl Boldlyl",
+      "detected_choices": [],
+      "choice_made": 5,
+      "character": "Air Groove",
+      "support_cards": [],
+      "current_stats": {},
+      "current_mood": "Normal",
+      "current_year": "1st",
+      "event_type": "support",
+      "user_intervention": true,
+      "outcome": {}
     }
   ],
   "metadata": {
-    "total_events": 8,
-    "last_updated": "2025-09-06T05:18:58.799600"
+    "total_events": 13,
+    "last_updated": "2025-09-06T21:47:32.621816"
   }
 }

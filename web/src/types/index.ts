@@ -1,9 +1,28 @@
+export type StatCap = {
+  min: number;
+  max?: number;
+};
+
+// For config loading, where max might be missing
+export type StatCapInput = {
+  min?: number;
+  max?: number;
+} | number;
+
+export type StatInput = {
+  spd: StatCapInput;
+  sta: StatCapInput;
+  pwr: StatCapInput;
+  guts: StatCapInput;
+  wit: StatCapInput;
+};
+
 export type Stat = {
-  spd: number;
-  sta: number;
-  pwr: number;
-  guts: number;
-  wit: number;
+  spd: StatCap;
+  sta: StatCap;
+  pwr: StatCap;
+  guts: StatCap;
+  wit: StatCap;
 };
 
 export type Skill = {
@@ -77,7 +96,7 @@ export type Config = {
   maximum_failure: number;
   prioritize_g1_race: boolean;
   cancel_consecutive_race: boolean;
-  stat_caps: Stat;
+  stat_caps: StatInput; // Use StatInput for loading raw configs
   skill: Skill;
   support_cards: (ConfigSupportCard | null)[]; // Simplified for config storage
   character: ConfigCharacter | null; // Simplified for config storage

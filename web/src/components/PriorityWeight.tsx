@@ -13,7 +13,7 @@ const PriorityWeight: React.FC<PriorityWeightProps> = ({
   onPriorityWeightChange
 }) => {
   const weightDescriptions = {
-    NONE: "Disabled - Use original training logic",
+    NONE: "Disabled - Use original training logic with auto balanced stats gain",
     LIGHT: "Subtle priority weighting (1.2x, 1.1x, 1.0x, 0.9x, 0.8x)",
     MEDIUM: "Moderate priority weighting - Uses custom weights",
     HEAVY: "Strong priority weighting (1.5x, 1.2x, 1.0x, 0.7x, 0.4x)"

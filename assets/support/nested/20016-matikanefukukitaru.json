@@ -1,0 +1,171 @@
+{
+  "support_id": "20016-matikanefukukitaru",
+  "scraped_at": "2025-09-06 21:40:46",
+  "summary": {
+    "english_events": 4,
+    "japanese_events": 4,
+    "combined_events": 4,
+    "total_categories": 2
+  },
+  "data": {
+    "english": {
+      "events": [
+        {
+          "category": "Chain Events",
+          "events": [
+            {
+              "name": "(❯) Spirits' Lost and Found",
+              "type": "no_choice",
+              "effects": "Energy +5\nMood +1\nSkill points +15\nMatikanefukukitaru bond +5"
+            },
+            {
+              "name": "(❯❯) Guidance and Friends",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Skill points +45 Matikanefukukitaru bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Randomly either Energy +10 Mood +1 Right-Handed ○ hint +3 Matikanefukukitaru bond +5 or Energy -20 Right-Handed ○ hint +1 Matikanefukukitaru bond +5"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category": "Random Events",
+          "events": [
+            {
+              "name": "Maximum Spirituality",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Wisdom +5 Skill points +15 Matikanefukukitaru bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Energy -10 Speed +5 Stamina +5 Power +5 Matikanefukukitaru bond +5"
+                }
+              ]
+            },
+            {
+              "name": "When Piety and Kindness Intersect",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Skill points +30 Matikanefukukitaru bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Energy +20 Matikanefukukitaru bond +5"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "total_events": 4
+    },
+    "japanese": {
+      "events": [
+        {
+          "category": "Chain Events",
+          "events": [
+            {
+              "name": "(❯) Spirits' Lost and Found",
+              "type": "no_choice",
+              "effects": "Energy +5\nMood +1\nSkill points +15\nMatikanefukukitaru bond +5"
+            },
+            {
+              "name": "(❯❯) Guidance and Friends",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Skill points +45 Matikanefukukitaru bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Randomly either Energy +10 Mood +1 Right-Handed ○ hint +3 Matikanefukukitaru bond +5 or Energy -20 Right-Handed ○ hint +1 Matikanefukukitaru bond +5"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category": "Random Events",
+          "events": [
+            {
+              "name": "Maximum Spirituality",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Wisdom +5 Skill points +15 Matikanefukukitaru bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Energy -10 Speed +5 Stamina +5 Power +5 Matikanefukukitaru bond +5"
+                }
+              ]
+            },
+            {
+              "name": "When Piety and Kindness Intersect",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Skill points +30 Matikanefukukitaru bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Energy +20 Matikanefukukitaru bond +5"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "total_events": 4
+    },
+    "combined": {
+      "events": [
+        {
+          "category": "Random Events",
+          "events": [
+            {
+              "name": "Maximum Spirituality",
+              "effects": [],
+              "options": []
+            },
+            {
+              "name": "When Piety and Kindness Intersect",
+              "effects": [],
+              "options": []
+            }
+          ]
+        },
+        {
+          "category": "Chain Events",
+          "events": [
+            {
+              "name": "(❯) Spirits' Lost and Found",
+              "effects": "Energy +5\nMood +1\nSkill points +15\nMatikanefukukitaru bond +5",
+              "options": []
+            },
+            {
+              "name": "(❯❯) Guidance and Friends",
+              "effects": [],
+              "options": []
+            }
+          ]
+        }
+      ],
+      "total_events": 4
+    }
+  }
+}

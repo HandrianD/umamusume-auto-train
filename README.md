@@ -222,6 +222,7 @@ The bot evaluates each training option based on:
 - **Friend Support Cards** - During recreation, the bot cannot decide between dating friend support cards vs. the Uma character
 - **Cant use Claw Machine** - The bot cannot utilize the claw machine mini-game for item acquisition
 - **G1 Race Priority Override** - When `prioritize_g1_race` is enabled, the bot prioritizes racing even with low energy or after 3+ consecutive races
+- **Cant Scrape Support Cards** - If support card is Friend or Special, the bot cannot scrape its data
 
 ## 🎯 Roadmap & TODO
 
