@@ -4,8 +4,13 @@ import { Input } from "./ui/input";
 import { useEffect, useMemo, useState } from "react";
 
 type Skill = {
+  id: string;
   name: string;
+  name_jp: string;
   description: string;
+  icon_url: string;
+  scraped_at: string;
+  source: string;
 };
 
 type Props = {
@@ -21,11 +26,33 @@ export default function SkillList({ list, addSkillList, deleteSkillList }: Props
   useEffect(() => {
     const getSkillData = async () => {
       try {
-        const res = await fetch("https://raw.githubusercontent.com/samsulpanjul/umamusume-auto-train/refs/heads/dev/data/skills.json");
-        const skills: Skill[] = await res.json();
+        // Try simple server first
+        const res = await fetch("/skills");
+        const skillResponse = await res.json();
+        const skills: Skill[] = skillResponse.skills || [];
         setData(skills);
+        console.log(`Loaded ${skills.length} skills from simple server`);
       } catch (error) {
-        console.error("Failed to fetch skills:", error);
+        console.error("Failed to fetch skills from simple server:", error);
+        // Fallback to GitHub if server fails
+        try {
+          const res = await fetch("https://raw.githubusercontent.com/samsulpanjul/umamusume-auto-train/refs/heads/dev/data/skills.json");
+          const skills: any[] = await res.json();
+          // Transform old format to new format
+          const transformedSkills: Skill[] = skills.map(skill => ({
+            id: "",
+            name: skill.name || "",
+            name_jp: "",
+            description: skill.description || "",
+            icon_url: "",
+            scraped_at: "",
+            source: "fallback"
+          }));
+          setData(transformedSkills);
+          console.log(`Loaded ${transformedSkills.length} skills from GitHub fallback`);
+        } catch (fallbackError) {
+          console.error("Failed to fetch skills from fallback:", fallbackError);
+        }
       }
     };
 
@@ -33,7 +60,16 @@ export default function SkillList({ list, addSkillList, deleteSkillList }: Props
   }, []);
 
   const filtered = useMemo(() => {
-    return data.filter((skill) => skill.name.toLowerCase().includes(search.toLowerCase()) || skill.description.toLowerCase().includes(search.toLowerCase()));
+    if (!search.trim()) {
+      return data;
+    }
+
+    // Use local filtering for client-side search
+    return data.filter((skill) =>
+      skill.name.toLowerCase().includes(search.toLowerCase()) ||
+      skill.name_jp.toLowerCase().includes(search.toLowerCase()) ||
+      skill.description.toLowerCase().includes(search.toLowerCase())
+    );
   }, [data, search]);
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -42,7 +78,7 @@ export default function SkillList({ list, addSkillList, deleteSkillList }: Props
 
   return (
     <div>
-      <p className="text-xl mb-4">Select skill you want to buy</p>
+      <p className="text-m mb-4">Select skill you want to auto buy.</p>
       <Dialog>
         <DialogTrigger asChild>
           <Button className="cursor-pointer font-semibold">Open</Button>

@@ -1,0 +1,153 @@
+{
+  "support_id": "20007-mayano-top-gun",
+  "scraped_at": "2025-09-07 01:20:28",
+  "summary": {
+    "english_events": 4,
+    "japanese_events": 4,
+    "combined_events": 4,
+    "total_categories": 2
+  },
+  "data": {
+    "english": {
+      "events": [
+        {
+          "category": "Chain Events",
+          "events": [
+            {
+              "name": "(❯) Still Taxiing?",
+              "type": "no_choice",
+              "effects": "Skill points +30\nMayano Top Gun bond +5"
+            },
+            {
+              "name": "(❯❯) Take Off toward Trendy ♪",
+              "type": "no_choice",
+              "effects": "Stamina +10\nSkill points +15\nFocus hint +1\nMayano Top Gun bond +5"
+            }
+          ]
+        },
+        {
+          "category": "Random Events",
+          "events": [
+            {
+              "name": "Snack Advice for Mayano!",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Stamina +5 Guts +5 Mayano Top Gun bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Stamina +10 Mayano Top Gun bond +5"
+                }
+              ]
+            },
+            {
+              "name": "Fashion Advice for Mayano!",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Straightaway Adept hint +1 Mayano Top Gun bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Stamina +10 Mayano Top Gun bond +5"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "total_events": 4
+    },
+    "japanese": {
+      "events": [
+        {
+          "category": "Chain Events",
+          "events": [
+            {
+              "name": "(❯) Still Taxiing?",
+              "type": "no_choice",
+              "effects": "Skill points +30\nMayano Top Gun bond +5"
+            },
+            {
+              "name": "(❯❯) Take Off toward Trendy ♪",
+              "type": "no_choice",
+              "effects": "Stamina +10\nSkill points +15\nFocus hint +1\nMayano Top Gun bond +5"
+            }
+          ]
+        },
+        {
+          "category": "Random Events",
+          "events": [
+            {
+              "name": "Snack Advice for Mayano!",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Stamina +5 Guts +5 Mayano Top Gun bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Stamina +10 Mayano Top Gun bond +5"
+                }
+              ]
+            },
+            {
+              "name": "Fashion Advice for Mayano!",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Straightaway Adept hint +1 Mayano Top Gun bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Stamina +10 Mayano Top Gun bond +5"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "total_events": 4
+    },
+    "combined": {
+      "events": [
+        {
+          "category": "Random Events",
+          "events": [
+            {
+              "name": "Snack Advice for Mayano!",
+              "effects": [],
+              "options": []
+            },
+            {
+              "name": "Fashion Advice for Mayano!",
+              "effects": [],
+              "options": []
+            }
+          ]
+        },
+        {
+          "category": "Chain Events",
+          "events": [
+            {
+              "name": "(❯) Still Taxiing?",
+              "effects": "Skill points +30\nMayano Top Gun bond +5",
+              "options": []
+            },
+            {
+              "name": "(❯❯) Take Off toward Trendy ♪",
+              "effects": "Stamina +10\nSkill points +15\nFocus hint +1\nMayano Top Gun bond +5",
+              "options": []
+            }
+          ]
+        }
+      ],
+      "total_events": 4
+    }
+  }
+}

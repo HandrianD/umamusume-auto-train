@@ -816,103 +816,579 @@ def combine_and_save_data(character_url, english_events, japanese_events):
 
     return combined_data
 
-def scrape_character_complete(character_url):
-    """Main function to scrape both English and Japanese data"""
+def scrape_skill_data():
+    """Main function to scrape Uma Musume skill data"""
+    print("🎯 Starting Uma Musume Skill Data Scraper")
+    print("=" * 60)
+
     driver = None
+    all_skills = []
 
     try:
         driver = setup_driver()
 
-        # First, extract English events with tooltips
-        print("\n🔍 Phase 1: Extracting English events with tooltips...")
-        character_id = character_url.split('/')[-1]
-        english_events = extract_english_events_with_tooltips(character_id, character_id, driver)
+        # Scrape skills from the main skills page
+        skills_url = "https://gametora.com/umamusume/skills"
+        print(f"📡 Loading skills page: {skills_url}")
 
-        # Then, get Japanese data as fallback
-        print("\n🔍 Phase 2: Extracting Japanese events from JSON...")
-        japanese_events = extract_japanese_events_from_json(character_url)
+        driver.get(skills_url)
+        time.sleep(3)  # Wait for page to load
 
-        # Combine and save data
-        combined_data = combine_and_save_data(character_url, english_events, japanese_events)
+        # Apply ad blocking
+        apply_ad_blocking(driver)
 
-        print("\n🎉 SUCCESS! Complete scraping finished!")
-        print(f"📊 Total events: {len(english_events) + len(japanese_events)}")
-        print(f"   • English with effects: {len(english_events)}")
-        print(f"   • Japanese fallback: {len(japanese_events)}")
+        # Extract skill data
+        skills_data = extract_skill_data(driver)
+        all_skills.extend(skills_data)
 
-        return combined_data
+        print(f"✅ Successfully scraped {len(all_skills)} skills")
+
+        # Save to skill/nested/skill_data.json
+        save_skill_data(all_skills)
+
+        return all_skills
 
     except Exception as e:
-        print(f"❌ Error during scraping: {e}")
-        return None
+        print(f"❌ Error during skill scraping: {e}")
+        return []
 
     finally:
         if driver:
             driver.quit()
 
-def bulk_scrape_all_characters():
-    """Scrape all characters from gametora.com"""
-    print("🚀 Starting bulk scraping of all characters...")
+def extract_skill_data(driver):
+    """Extract skill data from the skills page"""
+    skills = []
 
-    # Get all character URLs
-    character_urls = get_all_character_urls()
+    try:
+        # Wait for page to load
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.TAG_NAME, "table"))
+        )
 
-    if not character_urls:
-        print("❌ No character URLs found. Aborting bulk scrape.")
-        return
+        # Try to find skills in table format first
+        print("🔍 Looking for skills in table format...")
+        table_skills = extract_skills_from_table(driver)
+        if table_skills:
+            skills.extend(table_skills)
+            print(f"✅ Found {len(table_skills)} skills from table")
+        else:
+            print("⚠️ No skills found in table format, trying alternative methods...")
 
-    print(f"📋 Will scrape {len(character_urls)} characters")
-    print("⚠️  This will take a while. Press Ctrl+C to stop at any time.\n")
+        # If no table skills found, try the original element-based approach
+        if not skills:
+            # Wait for skill elements to load
+            try:
+                WebDriverWait(driver, 5).until(
+                    EC.presence_of_element_located((By.CLASS_NAME, "skill-item"))
+                )
+            except:
+                pass  # Continue if no skill-item elements found
 
-    successful = 0
-    failed = 0
+            # Find all skill items
+            skill_elements = driver.find_elements(By.CLASS_NAME, "skill-item")
 
-    for i, url in enumerate(character_urls):
-        try:
-            character_id = url.split('/')[-1]
-            print(f"\n{'='*60}")
-            print(f"🎯 Character {i+1}/{len(character_urls)}: {character_id}")
-            print(f"{'='*60}")
+            print(f"📊 Found {len(skill_elements)} skill elements")
 
-            result = scrape_character_complete(url)
+            for i, skill_elem in enumerate(skill_elements):
+                try:
+                    skill_data = extract_single_skill_data(skill_elem)
+                    if skill_data:
+                        skills.append(skill_data)
+                        print(f"✅ Skill {i+1}: {skill_data.get('name', 'Unknown')}")
 
-            if result:
-                successful += 1
-                print(f"✅ {character_id}: SUCCESS")
-            else:
-                failed += 1
-                print(f"❌ {character_id}: FAILED")
+                    # Progress indicator
+                    if (i + 1) % 10 == 0:
+                        print(f"📈 Progress: {i+1}/{len(skill_elements)} skills processed")
 
-            # Add a small delay between characters to be respectful
-            time.sleep(2)
+                except Exception as e:
+                    print(f"❌ Error extracting skill {i+1}: {e}")
+                    continue
 
-        except KeyboardInterrupt:
-            print("\n⏹️  Bulk scraping interrupted by user")
-            break
-        except Exception as e:
-            failed += 1
-            print(f"❌ Error scraping {url}: {e}")
-            continue
+        # If still no skills, try alternative selectors
+        if not skills:
+            print("🔄 Trying alternative skill selectors...")
+            alternative_selectors = [
+                ".skill-card",
+                ".skill-entry",
+                "[data-skill]",
+                ".skill-list-item",
+                ".skill-row",
+                "[data-skill-name]"
+            ]
 
-    print(f"\n{'='*60}")
-    print("🎉 BULK SCRAPING COMPLETE!")
-    print(f"📊 Results: {successful} successful, {failed} failed")
-    print(f"📁 Data saved to: assets/character/")
-    print(f"   • English data: assets/character/english/")
-    print(f"   • Japanese data: assets/character/japanese/")
-    print(f"   • Combined data: assets/character/combined/")
+            for selector in alternative_selectors:
+                try:
+                    alt_elements = driver.find_elements(By.CSS_SELECTOR, selector)
+                    if alt_elements:
+                        print(f"📊 Found {len(alt_elements)} skills with selector: {selector}")
+                        for j, elem in enumerate(alt_elements):
+                            try:
+                                skill_data = extract_single_skill_data(elem)
+                                if skill_data:
+                                    skills.append(skill_data)
+                                    print(f"✅ Alt Skill {j+1}: {skill_data.get('name', 'Unknown')}")
+                            except Exception as e:
+                                continue
+                        break
+                except Exception as e:
+                    continue
+
+        # If still no skills, try to extract from page text
+        if not skills:
+            print("🔄 Attempting text-based extraction...")
+            page_text = driver.find_element(By.TAG_NAME, "body").text
+            skills = extract_skills_from_text(page_text)
+
+    except Exception as e:
+        print(f"❌ Error extracting skill data: {e}")
+
+    return skills
+
+def extract_skills_from_table(driver):
+    """Extract skills from table format on gametora skills page"""
+    skills = []
+
+    try:
+        # First, try to extract skills directly from the page text
+        # since the table might be dynamically generated
+        print("🔍 Attempting direct text extraction from page...")
+        page_text = driver.find_element(By.TAG_NAME, "body").text
+
+        # Split the text into lines and look for skill patterns
+        lines = page_text.split('\n')
+        current_skill = None
+        skill_description = ""
+
+        for line in lines:
+            line = line.strip()
+            if not line:
+                continue
+
+            # Look for skill names (contain rarity symbols or specific patterns)
+            if ('◎' in line or '○' in line) and len(line) > 3:
+                # Save previous skill if exists
+                if current_skill and skill_description:
+                    skill_data = create_skill_data_from_text(current_skill, skill_description)
+                    if skill_data:
+                        skills.append(skill_data)
+
+                # Start new skill
+                current_skill = line
+                skill_description = ""
+            elif current_skill and line and len(line) > 10:
+                # This might be the description
+                if not skill_description:
+                    skill_description = line
+                elif 'More' in line:
+                    # "More" indicates end of description
+                    pass
+                else:
+                    # Additional description line
+                    skill_description += " " + line
+
+        # Don't forget the last skill
+        if current_skill and skill_description:
+            skill_data = create_skill_data_from_text(current_skill, skill_description)
+            if skill_data:
+                skills.append(skill_data)
+
+        print(f"✅ Extracted {len(skills)} skills from page text")
+
+        # If text extraction didn't work well, try table parsing
+        if len(skills) < 5:
+            print("🔄 Text extraction found few skills, trying table parsing...")
+            table_skills = extract_skills_from_html_table(driver)
+            if table_skills:
+                skills.extend(table_skills)
+
+    except Exception as e:
+        print(f"❌ Error extracting skills from table: {e}")
+
+    return skills
+
+def create_skill_data_from_text(skill_name, description):
+    """Create skill data dictionary from text extraction"""
+    try:
+        # Determine skill type from name
+        skill_type = "Unknown"
+        if 'handed' in skill_name.lower():
+            skill_type = "Track"
+        elif 'track' in skill_name.lower():
+            skill_type = "Track"
+        elif 'recovery' in skill_name.lower():
+            skill_type = "Recovery"
+        elif 'acceleration' in skill_name.lower():
+            skill_type = "Acceleration"
+        elif 'toughness' in skill_name.lower():
+            skill_type = "Toughness"
+        elif 'speed' in skill_name.lower():
+            skill_type = "Speed"
+        elif 'stamina' in skill_name.lower():
+            skill_type = "Stamina"
+        elif 'power' in skill_name.lower():
+            skill_type = "Power"
+        elif 'guts' in skill_name.lower():
+            skill_type = "Guts"
+        elif 'wisdom' in skill_name.lower():
+            skill_type = "Wisdom"
+
+        # Determine rarity from symbols
+        skill_rarity = "Normal"
+        if '◎' in skill_name:
+            skill_rarity = "Unique"
+        elif '○' in skill_name:
+            skill_rarity = "Rare"
+
+        # Extract effects from description
+        effects = extract_skill_effects_from_text(description)
+
+        skill_data = {
+            'name': skill_name.replace('◎', '').replace('○', '').strip(),
+            'description': description,
+            'type': skill_type,
+            'rarity': skill_rarity,
+            'effects': effects,
+            'requirements': 'No specific requirements',
+            'source': 'gametora.com'
+        }
+
+        return skill_data
+
+    except Exception as e:
+        print(f"❌ Error creating skill data from text: {e}")
+        return None
+
+def extract_skills_from_html_table(driver):
+    """Extract skills from HTML table elements"""
+    skills = []
+
+    try:
+        # Find all tables on the page
+        tables = driver.find_elements(By.TAG_NAME, "table")
+
+        for table in tables:
+            try:
+                rows = table.find_elements(By.TAG_NAME, "tr")
+
+                for row in rows:
+                    cells = row.find_elements(By.TAG_NAME, "td")
+                    if len(cells) >= 2:
+                        skill_name = cells[0].text.strip()
+                        skill_desc = cells[1].text.strip() if len(cells) > 1 else ""
+
+                        if skill_name and len(skill_name) > 3:
+                            skill_data = create_skill_data_from_text(skill_name, skill_desc)
+                            if skill_data:
+                                skills.append(skill_data)
+
+            except Exception as e:
+                continue
+
+    except Exception as e:
+        print(f"❌ Error extracting from HTML table: {e}")
+
+    return skills
+
+def extract_skill_effects_from_text(text):
+    """Extract skill effects from text description"""
+    effects = {}
+
+    try:
+        # Look for stat bonuses
+        stat_patterns = {
+            'speed': r'Speed\s*([+-]\d+)',
+            'stamina': r'Stamina\s*([+-]\d+)',
+            'power': r'Power\s*([+-]\d+)',
+            'guts': r'Guts\s*([+-]\d+)',
+            'wisdom': r'Wisdom\s*([+-]\d+)'
+        }
+
+        for stat, pattern in stat_patterns.items():
+            match = re.search(pattern, text, re.IGNORECASE)
+            if match:
+                effects[stat] = int(match.group(1))
+
+        # Look for special effects
+        special_effects = []
+        if 'recovery' in text.lower():
+            special_effects.append('recovery')
+        if 'acceleration' in text.lower():
+            special_effects.append('acceleration')
+        if 'toughness' in text.lower():
+            special_effects.append('toughness')
+        if 'track' in text.lower():
+            special_effects.append('track_adaptation')
+
+        if special_effects:
+            effects['special'] = special_effects
+
+        # Look for performance modifiers
+        if 'increase' in text.lower() or 'boost' in text.lower():
+            effects['performance_modifier'] = 'positive'
+        elif 'decrease' in text.lower() or 'reduce' in text.lower():
+            effects['performance_modifier'] = 'negative'
+
+    except Exception as e:
+        print(f"⚠️ Error extracting skill effects from text: {e}")
+
+    return effects
+
+def extract_single_skill_data(skill_element):
+    """Extract data from a single skill element"""
+    skill_data = {}
+
+    try:
+        # Extract skill name
+        name_selectors = ["h3", ".skill-name", ".name", "[data-name]"]
+        for selector in name_selectors:
+            try:
+                name_elem = skill_element.find_element(By.CSS_SELECTOR, selector)
+                skill_data['name'] = name_elem.text.strip()
+                break
+            except:
+                continue
+
+        # Extract skill description/effect
+        desc_selectors = [".skill-description", ".description", ".effect", "p"]
+        for selector in desc_selectors:
+            try:
+                desc_elem = skill_element.find_element(By.CSS_SELECTOR, selector)
+                skill_data['description'] = desc_elem.text.strip()
+                break
+            except:
+                continue
+
+        # Extract skill type/category
+        type_selectors = [".skill-type", ".type", ".category", "[data-type]"]
+        for selector in type_selectors:
+            try:
+                type_elem = skill_element.find_element(By.CSS_SELECTOR, selector)
+                skill_data['type'] = type_elem.text.strip()
+                break
+            except:
+                continue
+
+        # Extract skill stats/effects
+        skill_data['effects'] = extract_skill_effects(skill_element)
+
+        # Extract skill requirements/level info
+        req_selectors = [".requirements", ".level", ".unlock", "[data-requirements]"]
+        for selector in req_selectors:
+            try:
+                req_elem = skill_element.find_element(By.CSS_SELECTOR, selector)
+                skill_data['requirements'] = req_elem.text.strip()
+                break
+            except:
+                continue
+
+        # Set default values if not found
+        if not skill_data.get('name'):
+            return None
+
+        skill_data.setdefault('description', 'No description available')
+        skill_data.setdefault('type', 'Unknown')
+        skill_data.setdefault('effects', {})
+        skill_data.setdefault('requirements', 'No requirements specified')
+
+        return skill_data
+
+    except Exception as e:
+        print(f"❌ Error extracting single skill data: {e}")
+        return None
+
+def extract_skill_effects(skill_element):
+    """Extract skill effects/stats from skill element"""
+    effects = {}
+
+    try:
+        # Look for stat bonuses
+        stat_patterns = {
+            'speed': r'Speed\s*([+-]\d+)',
+            'stamina': r'Stamina\s*([+-]\d+)',
+            'power': r'Power\s*([+-]\d+)',
+            'guts': r'Guts\s*([+-]\d+)',
+            'wisdom': r'Wisdom\s*([+-]\d+)'
+        }
+
+        skill_text = skill_element.text
+
+        for stat, pattern in stat_patterns.items():
+            match = re.search(pattern, skill_text, re.IGNORECASE)
+            if match:
+                effects[stat] = int(match.group(1))
+
+        # Look for special effects
+        special_effects = []
+        if 'recovery' in skill_text.lower():
+            special_effects.append('recovery')
+        if 'acceleration' in skill_text.lower():
+            special_effects.append('acceleration')
+        if 'toughness' in skill_text.lower():
+            special_effects.append('toughness')
+
+        if special_effects:
+            effects['special'] = special_effects
+
+    except Exception as e:
+        print(f"⚠️ Error extracting skill effects: {e}")
+
+    return effects
+
+def extract_skills_from_text(page_text):
+    """Fallback method to extract skills from page text"""
+    skills = []
+
+    try:
+        # Split text into lines and look for skill-like patterns
+        lines = page_text.split('\n')
+
+        current_skill = {}
+        for line in lines:
+            line = line.strip()
+            if not line:
+                continue
+
+            # Check if this line looks like a skill name
+            if (len(line) > 3 and len(line) < 50 and
+                not any(char.isdigit() for char in line) and
+                line[0].isupper()):
+
+                # Save previous skill if it exists
+                if current_skill.get('name'):
+                    skills.append(current_skill)
+
+                # Start new skill
+                current_skill = {
+                    'name': line,
+                    'description': 'Extracted from page text',
+                    'type': 'Unknown',
+                    'effects': {},
+                    'requirements': 'Unknown'
+                }
+
+            elif current_skill.get('name') and line.startswith(('Increases', 'Boosts', 'Recovers', 'Reduces')):
+                # This might be a skill effect
+                current_skill['description'] = line
+
+        # Don't forget the last skill
+        if current_skill.get('name'):
+            skills.append(current_skill)
+
+    except Exception as e:
+        print(f"❌ Error in text-based skill extraction: {e}")
+
+    return skills
+
+def save_skill_data(skills):
+    """Save skill data to skill/nested/skill_data.json"""
+    try:
+        # Create directory if it doesn't exist
+        os.makedirs("skill/nested", exist_ok=True)
+
+        # Prepare data structure
+        skill_data = {
+            "metadata": {
+                "total_skills": len(skills),
+                "scraped_at": time.strftime("%Y-%m-%d %H:%M:%S"),
+                "source": "gametora.com",
+                "version": "1.0"
+            },
+            "skills": skills
+        }
+
+        # Save to JSON file
+        filepath = "skill/nested/skill_data.json"
+        with open(filepath, "w", encoding="utf-8") as f:
+            json.dump(skill_data, f, ensure_ascii=False, indent=2)
+
+        print(f"💾 Skill data saved to: {filepath}")
+        print(f"📊 Total skills saved: {len(skills)}")
+
+        # Print summary
+        skill_types = {}
+        for skill in skills:
+            skill_type = skill.get('type', 'Unknown')
+            skill_types[skill_type] = skill_types.get(skill_type, 0) + 1
+
+        print("📈 Skill Type Summary:")
+        for skill_type, count in skill_types.items():
+            print(f"   • {skill_type}: {count} skills")
+
+    except Exception as e:
+        print(f"❌ Error saving skill data: {e}")
+
+def test_skill_scraping():
+    """Test function to scrape a few skills and show results"""
+    print("🧪 Testing skill scraping...")
+
+    driver = None
+    try:
+        driver = setup_driver()
+        skills_url = "https://gametora.com/umamusume/skills"
+        driver.get(skills_url)
+        time.sleep(3)
+
+        apply_ad_blocking(driver)
+
+        # Try to find skill elements
+        skill_selectors = [
+            ".skill-item",
+            ".skill-card",
+            ".skill-entry",
+            "[data-skill]",
+            ".skill-list-item"
+        ]
+
+        for selector in skill_selectors:
+            try:
+                elements = driver.find_elements(By.CSS_SELECTOR, selector)
+                if elements:
+                    print(f"✅ Found {len(elements)} skills with selector: {selector}")
+
+                    # Show first few skills as examples
+                    for i, elem in enumerate(elements[:3]):
+                        try:
+                            text = elem.text[:100] if elem.text else "No text"
+                            print(f"   Skill {i+1}: {text}...")
+                        except:
+                            print(f"   Skill {i+1}: Could not extract text")
+
+                    break
+            except Exception as e:
+                print(f"❌ Selector {selector} failed: {e}")
+                continue
+
+        # If no skills found, show page structure
+        if not any(driver.find_elements(By.CSS_SELECTOR, selector) for selector in skill_selectors):
+            print("🔍 No skills found with standard selectors. Page structure:")
+            try:
+                body_text = driver.find_element(By.TAG_NAME, "body").text[:500]
+                print(f"Page text preview: {body_text}...")
+            except:
+                print("Could not extract page text")
+
+    except Exception as e:
+        print(f"❌ Test failed: {e}")
+
+    finally:
+        if driver:
+            driver.quit()
 
 if __name__ == "__main__":
     import sys
 
     print(f"🔍 Command line arguments: {sys.argv}")
 
-    if len(sys.argv) > 1 and sys.argv[1] == "bulk":
-        print("🚀 Bulk mode detected - starting bulk scraping...")
-        # Bulk scrape all characters
-        bulk_scrape_all_characters()
+    if len(sys.argv) > 1:
+        if sys.argv[1] == "test":
+            print("🧪 Test mode - testing skill scraping...")
+            test_skill_scraping()
+        elif sys.argv[1] == "skills":
+            print("🎯 Skills mode - scraping skill data...")
+            scrape_skill_data()
+        else:
+            print("❓ Unknown mode. Use 'test' or 'skills'")
     else:
-        print("📝 Single mode - scraping Maruzensky...")
-        # Test with Maruzensky (default)
-        character_url = "https://gametora.com/umamusume/characters/100401-maruzensky"
-        scrape_character_complete(character_url)
+        print("🎯 Default mode - scraping skill data...")
+        scrape_skill_data()

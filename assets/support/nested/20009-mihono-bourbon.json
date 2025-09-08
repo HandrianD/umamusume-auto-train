@@ -1,0 +1,171 @@
+{
+  "support_id": "20009-mihono-bourbon",
+  "scraped_at": "2025-09-07 00:59:33",
+  "summary": {
+    "english_events": 4,
+    "japanese_events": 4,
+    "combined_events": 4,
+    "total_categories": 2
+  },
+  "data": {
+    "english": {
+      "events": [
+        {
+          "category": "Chain Events",
+          "events": [
+            {
+              "name": "(❯) I'm Not a Cyborg",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Guts +10 Skill points +15 Mihono Bourbon bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Energy -10 Corner Recovery ○ hint +1 (random) Mihono Bourbon bond -5 Event chain ended"
+                }
+              ]
+            },
+            {
+              "name": "(❯❯) New Values Installed",
+              "type": "no_choice",
+              "effects": "Energy -10\nPower +5\nGuts +5\nFront Runner Straightaways ○ hint +1\nMihono Bourbon bond +5"
+            }
+          ]
+        },
+        {
+          "category": "Random Events",
+          "events": [
+            {
+              "name": "Do No Harm",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Energy -10 Stamina +5 Power +15 Mihono Bourbon bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Energy +10 Wisdom +5 Mihono Bourbon bond +5"
+                }
+              ]
+            },
+            {
+              "name": "Orders Must Be Followed",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Focus hint +1 Mihono Bourbon bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Speed +10 Skill points +15 Mihono Bourbon bond +5"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "total_events": 4
+    },
+    "japanese": {
+      "events": [
+        {
+          "category": "Chain Events",
+          "events": [
+            {
+              "name": "(❯) I'm Not a Cyborg",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Guts +10 Skill points +15 Mihono Bourbon bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Energy -10 Corner Recovery ○ hint +1 (random) Mihono Bourbon bond -5 Event chain ended"
+                }
+              ]
+            },
+            {
+              "name": "(❯❯) New Values Installed",
+              "type": "no_choice",
+              "effects": "Energy -10\nPower +5\nGuts +5\nFront Runner Straightaways ○ hint +1\nMihono Bourbon bond +5"
+            }
+          ]
+        },
+        {
+          "category": "Random Events",
+          "events": [
+            {
+              "name": "Do No Harm",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Energy -10 Stamina +5 Power +15 Mihono Bourbon bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Energy +10 Wisdom +5 Mihono Bourbon bond +5"
+                }
+              ]
+            },
+            {
+              "name": "Orders Must Be Followed",
+              "type": "with_choices",
+              "choices": [
+                {
+                  "option": "Top Option",
+                  "effects": "Focus hint +1 Mihono Bourbon bond +5"
+                },
+                {
+                  "option": "Bottom Option",
+                  "effects": "Speed +10 Skill points +15 Mihono Bourbon bond +5"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "total_events": 4
+    },
+    "combined": {
+      "events": [
+        {
+          "category": "Random Events",
+          "events": [
+            {
+              "name": "Do No Harm",
+              "effects": [],
+              "options": []
+            },
+            {
+              "name": "Orders Must Be Followed",
+              "effects": [],
+              "options": []
+            }
+          ]
+        },
+        {
+          "category": "Chain Events",
+          "events": [
+            {
+              "name": "(❯) I'm Not a Cyborg",
+              "effects": [],
+              "options": []
+            },
+            {
+              "name": "(❯❯) New Values Installed",
+              "effects": "Energy -10\nPower +5\nGuts +5\nFront Runner Straightaways ○ hint +1\nMihono Bourbon bond +5",
+              "options": []
+            }
+          ]
+        }
+      ],
+      "total_events": 4
+    }
+  }
+}

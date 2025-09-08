@@ -1,0 +1,4 @@
+{
+  "positions": ["front", "pace", "late", "end"],
+  "race_types": ["sprint", "mile", "medium", "long"]
+}

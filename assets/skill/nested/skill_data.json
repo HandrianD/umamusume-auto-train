@@ -1,0 +1,3601 @@
+{
+  "metadata": {
+    "total_skills": 399,
+    "scraped_at": "2025-09-07 23:14:47",
+    "source": "gametora.com",
+    "version": "1.0"
+  },
+  "skills": [
+    {
+      "id": "10011",
+      "icon_url": "assets/skill/image/utx_ico_skill_10011.png",
+      "name_jp": "Right-Handed ◎",
+      "description_en": "Increase performance on right-handed tracks.",
+      "name_en": "Right-Handed ◎",
+      "scraped_at": "2025-09-07 23:14:05",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10011",
+      "icon_url": "assets/skill/image/utx_ico_skill_10011.png",
+      "name_jp": "Right-Handed ○",
+      "description_en": "Moderately increase performance on right-handed tracks.",
+      "name_en": "Right-Handed ○",
+      "scraped_at": "2025-09-07 23:14:05",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10011",
+      "icon_url": "assets/skill/image/utx_ico_skill_10011.png",
+      "name_jp": "Left-Handed ◎",
+      "description_en": "Increase performance on left-handed tracks.",
+      "name_en": "Left-Handed ◎",
+      "scraped_at": "2025-09-07 23:14:05",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10011",
+      "icon_url": "assets/skill/image/utx_ico_skill_10011.png",
+      "name_jp": "Left-Handed ○",
+      "description_en": "Moderately increase performance on left-handed tracks.",
+      "name_en": "Left-Handed ○",
+      "scraped_at": "2025-09-07 23:14:05",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10011",
+      "icon_url": "assets/skill/image/utx_ico_skill_10011.png",
+      "name_jp": "Spring Runner ◎",
+      "description_en": "Increase performance in spring.",
+      "name_en": "Spring Runner ◎",
+      "scraped_at": "2025-09-07 23:14:05",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10011",
+      "icon_url": "assets/skill/image/utx_ico_skill_10011.png",
+      "name_jp": "Spring Runner ○",
+      "description_en": "Moderately increase performance in spring.",
+      "name_en": "Spring Runner ○",
+      "scraped_at": "2025-09-07 23:14:05",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10011",
+      "icon_url": "assets/skill/image/utx_ico_skill_10011.png",
+      "name_jp": "Summer Runner ◎",
+      "description_en": "Increase performance in summer.",
+      "name_en": "Summer Runner ◎",
+      "scraped_at": "2025-09-07 23:14:05",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10011",
+      "icon_url": "assets/skill/image/utx_ico_skill_10011.png",
+      "name_jp": "Summer Runner ○",
+      "description_en": "Moderately increase performance in summer.",
+      "name_en": "Summer Runner ○",
+      "scraped_at": "2025-09-07 23:14:05",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10011",
+      "icon_url": "assets/skill/image/utx_ico_skill_10011.png",
+      "name_jp": "Fall Runner ◎",
+      "description_en": "Increase performance in fall.",
+      "name_en": "Fall Runner ◎",
+      "scraped_at": "2025-09-07 23:14:05",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10011",
+      "icon_url": "assets/skill/image/utx_ico_skill_10011.png",
+      "name_jp": "Fall Runner ○",
+      "description_en": "Moderately increase performance in fall.",
+      "name_en": "Fall Runner ○",
+      "scraped_at": "2025-09-07 23:14:05",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10011",
+      "icon_url": "assets/skill/image/utx_ico_skill_10011.png",
+      "name_jp": "Winter Runner ◎",
+      "description_en": "Increase performance in winter.",
+      "name_en": "Winter Runner ◎",
+      "scraped_at": "2025-09-07 23:14:05",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10011",
+      "icon_url": "assets/skill/image/utx_ico_skill_10011.png",
+      "name_jp": "Winter Runner ○",
+      "description_en": "Moderately increase performance in winter.",
+      "name_en": "Winter Runner ○",
+      "scraped_at": "2025-09-07 23:14:05",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10011",
+      "icon_url": "assets/skill/image/utx_ico_skill_10011.png",
+      "name_jp": "Outer Post Proficiency ◎",
+      "description_en": "Increase performance in brackets 6–8.",
+      "name_en": "Outer Post Proficiency ◎",
+      "scraped_at": "2025-09-07 23:14:05",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10011",
+      "icon_url": "assets/skill/image/utx_ico_skill_10011.png",
+      "name_jp": "Outer Post Proficiency ○",
+      "description_en": "Moderately increase performance in brackets 6–8.",
+      "name_en": "Outer Post Proficiency ○",
+      "scraped_at": "2025-09-07 23:14:05",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10011",
+      "icon_url": "assets/skill/image/utx_ico_skill_10011.png",
+      "name_jp": "Maverick ◎",
+      "description_en": "Increase performance when no other runners are using the same strategy.",
+      "name_en": "Maverick ◎",
+      "scraped_at": "2025-09-07 23:14:05",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10011",
+      "icon_url": "assets/skill/image/utx_ico_skill_10011.png",
+      "name_jp": "Maverick ○",
+      "description_en": "Moderately increase performance when no other runners are using the same strategy.",
+      "name_en": "Maverick ○",
+      "scraped_at": "2025-09-07 23:14:05",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10011",
+      "icon_url": "assets/skill/image/utx_ico_skill_10011.png",
+      "name_jp": "Long Shot ◎",
+      "description_en": "Increase performance when 4th favorite or below.",
+      "name_en": "Long Shot ◎",
+      "scraped_at": "2025-09-07 23:14:05",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10011",
+      "icon_url": "assets/skill/image/utx_ico_skill_10011.png",
+      "name_jp": "Long Shot ○",
+      "description_en": "Moderately increase performance when 4th favorite or below.",
+      "name_en": "Long Shot ○",
+      "scraped_at": "2025-09-07 23:14:05",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10011",
+      "icon_url": "assets/skill/image/utx_ico_skill_10011.png",
+      "name_jp": "Sympathy",
+      "description_en": "Moderately increase performance when many runners share a sympathetic heart.",
+      "name_en": "Sympathy",
+      "scraped_at": "2025-09-07 23:14:05",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10011",
+      "icon_url": "assets/skill/image/utx_ico_skill_10011.png",
+      "name_jp": "Lone Wolf",
+      "description_en": "Moderately increase performance when no other runners have the heart of a lone wolf.",
+      "name_en": "Lone Wolf",
+      "scraped_at": "2025-09-07 23:14:05",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10012",
+      "icon_url": "assets/skill/image/utx_ico_skill_10012.png",
+      "name_jp": "Unchanging",
+      "description_en": "Greatly increase performance with the same ambition of days past.",
+      "name_en": "Unchanging",
+      "scraped_at": "2025-09-07 23:14:05",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10014",
+      "icon_url": "assets/skill/image/utx_ico_skill_10014.png",
+      "name_jp": "Right-Handed ×",
+      "description_en": "Moderately decrease performance on right-handed tracks.",
+      "name_en": "Right-Handed ×",
+      "scraped_at": "2025-09-07 23:14:06",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10014",
+      "icon_url": "assets/skill/image/utx_ico_skill_10014.png",
+      "name_jp": "Left-Handed ×",
+      "description_en": "Moderately decrease performance on left-handed tracks.",
+      "name_en": "Left-Handed ×",
+      "scraped_at": "2025-09-07 23:14:06",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10014",
+      "icon_url": "assets/skill/image/utx_ico_skill_10014.png",
+      "name_jp": "Spring Runner ×",
+      "description_en": "Moderately decrease performance in spring.",
+      "name_en": "Spring Runner ×",
+      "scraped_at": "2025-09-07 23:14:06",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10014",
+      "icon_url": "assets/skill/image/utx_ico_skill_10014.png",
+      "name_jp": "Summer Runner ×",
+      "description_en": "Moderately decrease performance in summer.",
+      "name_en": "Summer Runner ×",
+      "scraped_at": "2025-09-07 23:14:06",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10014",
+      "icon_url": "assets/skill/image/utx_ico_skill_10014.png",
+      "name_jp": "Fall Runner ×",
+      "description_en": "Moderately decrease performance in fall.",
+      "name_en": "Fall Runner ×",
+      "scraped_at": "2025-09-07 23:14:06",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10014",
+      "icon_url": "assets/skill/image/utx_ico_skill_10014.png",
+      "name_jp": "Winter Runner ×",
+      "description_en": "Moderately decrease performance in winter.",
+      "name_en": "Winter Runner ×",
+      "scraped_at": "2025-09-07 23:14:06",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10014",
+      "icon_url": "assets/skill/image/utx_ico_skill_10014.png",
+      "name_jp": "Outer Post Averseness",
+      "description_en": "Moderately decrease performance in brackets 6–8.",
+      "name_en": "Outer Post Averseness",
+      "scraped_at": "2025-09-07 23:14:06",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10014",
+      "icon_url": "assets/skill/image/utx_ico_skill_10014.png",
+      "name_jp": "G1 Averseness",
+      "description_en": "Moderately decrease performance in G1 or otherwise important races.",
+      "name_en": "G1 Averseness",
+      "scraped_at": "2025-09-07 23:14:06",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10021",
+      "icon_url": "assets/skill/image/utx_ico_skill_10021.png",
+      "name_jp": "Tokyo Racecourse ◎",
+      "description_en": "Increase performance at Tokyo Racecourse.",
+      "name_en": "Tokyo Racecourse ◎",
+      "scraped_at": "2025-09-07 23:14:07",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10021",
+      "icon_url": "assets/skill/image/utx_ico_skill_10021.png",
+      "name_jp": "Tokyo Racecourse ○",
+      "description_en": "Moderately increase performance at Tokyo Racecourse.",
+      "name_en": "Tokyo Racecourse ○",
+      "scraped_at": "2025-09-07 23:14:07",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10021",
+      "icon_url": "assets/skill/image/utx_ico_skill_10021.png",
+      "name_jp": "Nakayama Racecourse ◎",
+      "description_en": "Increase performance at Nakayama Racecourse.",
+      "name_en": "Nakayama Racecourse ◎",
+      "scraped_at": "2025-09-07 23:14:07",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10021",
+      "icon_url": "assets/skill/image/utx_ico_skill_10021.png",
+      "name_jp": "Nakayama Racecourse ○",
+      "description_en": "Moderately increase performance at Nakayama Racecourse.",
+      "name_en": "Nakayama Racecourse ○",
+      "scraped_at": "2025-09-07 23:14:07",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10021",
+      "icon_url": "assets/skill/image/utx_ico_skill_10021.png",
+      "name_jp": "Hanshin Racecourse ◎",
+      "description_en": "Increase performance at Hanshin Racecourse.",
+      "name_en": "Hanshin Racecourse ◎",
+      "scraped_at": "2025-09-07 23:14:07",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10021",
+      "icon_url": "assets/skill/image/utx_ico_skill_10021.png",
+      "name_jp": "Hanshin Racecourse ○",
+      "description_en": "Moderately increase performance at Hanshin Racecourse.",
+      "name_en": "Hanshin Racecourse ○",
+      "scraped_at": "2025-09-07 23:14:07",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10021",
+      "icon_url": "assets/skill/image/utx_ico_skill_10021.png",
+      "name_jp": "Kyoto Racecourse ◎",
+      "description_en": "Increase performance at Kyoto Racecourse.",
+      "name_en": "Kyoto Racecourse ◎",
+      "scraped_at": "2025-09-07 23:14:07",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10021",
+      "icon_url": "assets/skill/image/utx_ico_skill_10021.png",
+      "name_jp": "Kyoto Racecourse ○",
+      "description_en": "Moderately increase performance at Kyoto Racecourse.",
+      "name_en": "Kyoto Racecourse ○",
+      "scraped_at": "2025-09-07 23:14:07",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10021",
+      "icon_url": "assets/skill/image/utx_ico_skill_10021.png",
+      "name_jp": "Chukyo Racecourse ◎",
+      "description_en": "Increase performance at Chukyo Racecourse.",
+      "name_en": "Chukyo Racecourse ◎",
+      "scraped_at": "2025-09-07 23:14:07",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10021",
+      "icon_url": "assets/skill/image/utx_ico_skill_10021.png",
+      "name_jp": "Chukyo Racecourse ○",
+      "description_en": "Moderately increase performance at Chukyo Racecourse.",
+      "name_en": "Chukyo Racecourse ○",
+      "scraped_at": "2025-09-07 23:14:07",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10021",
+      "icon_url": "assets/skill/image/utx_ico_skill_10021.png",
+      "name_jp": "Sapporo Racecourse ◎",
+      "description_en": "Increase performance at Sapporo Racecourse.",
+      "name_en": "Sapporo Racecourse ◎",
+      "scraped_at": "2025-09-07 23:14:07",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10021",
+      "icon_url": "assets/skill/image/utx_ico_skill_10021.png",
+      "name_jp": "Sapporo Racecourse ○",
+      "description_en": "Moderately increase performance at Sapporo Racecourse.",
+      "name_en": "Sapporo Racecourse ○",
+      "scraped_at": "2025-09-07 23:14:07",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10021",
+      "icon_url": "assets/skill/image/utx_ico_skill_10021.png",
+      "name_jp": "Hakodate Racecourse ◎",
+      "description_en": "Increase performance at Hakodate Racecourse.",
+      "name_en": "Hakodate Racecourse ◎",
+      "scraped_at": "2025-09-07 23:14:07",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10021",
+      "icon_url": "assets/skill/image/utx_ico_skill_10021.png",
+      "name_jp": "Hakodate Racecourse ○",
+      "description_en": "Moderately increase performance at Hakodate Racecourse.",
+      "name_en": "Hakodate Racecourse ○",
+      "scraped_at": "2025-09-07 23:14:07",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10021",
+      "icon_url": "assets/skill/image/utx_ico_skill_10021.png",
+      "name_jp": "Fukushima Racecourse ◎",
+      "description_en": "Increase performance at Fukushima Racecourse.",
+      "name_en": "Fukushima Racecourse ◎",
+      "scraped_at": "2025-09-07 23:14:07",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10021",
+      "icon_url": "assets/skill/image/utx_ico_skill_10021.png",
+      "name_jp": "Fukushima Racecourse ○",
+      "description_en": "Moderately increase performance at Fukushima Racecourse.",
+      "name_en": "Fukushima Racecourse ○",
+      "scraped_at": "2025-09-07 23:14:07",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10021",
+      "icon_url": "assets/skill/image/utx_ico_skill_10021.png",
+      "name_jp": "Niigata Racecourse ◎",
+      "description_en": "Increase performance at Niigata Racecourse.",
+      "name_en": "Niigata Racecourse ◎",
+      "scraped_at": "2025-09-07 23:14:07",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10021",
+      "icon_url": "assets/skill/image/utx_ico_skill_10021.png",
+      "name_jp": "Niigata Racecourse ○",
+      "description_en": "Moderately increase performance at Niigata Racecourse.",
+      "name_en": "Niigata Racecourse ○",
+      "scraped_at": "2025-09-07 23:14:07",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10021",
+      "icon_url": "assets/skill/image/utx_ico_skill_10021.png",
+      "name_jp": "Kokura Racecourse ◎",
+      "description_en": "Increase performance at Kokura Racecourse.",
+      "name_en": "Kokura Racecourse ◎",
+      "scraped_at": "2025-09-07 23:14:07",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10021",
+      "icon_url": "assets/skill/image/utx_ico_skill_10021.png",
+      "name_jp": "Kokura Racecourse ○",
+      "description_en": "Moderately increase performance at Kokura Racecourse.",
+      "name_en": "Kokura Racecourse ○",
+      "scraped_at": "2025-09-07 23:14:07",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10021",
+      "icon_url": "assets/skill/image/utx_ico_skill_10021.png",
+      "name_jp": "Standard Distance ◎",
+      "description_en": "Increase performance over standard distances (multiples of 400m).",
+      "name_en": "Standard Distance ◎",
+      "scraped_at": "2025-09-07 23:14:07",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10021",
+      "icon_url": "assets/skill/image/utx_ico_skill_10021.png",
+      "name_jp": "Standard Distance ○",
+      "description_en": "Moderately increase performance over standard distances (multiples of 400m).",
+      "name_en": "Standard Distance ○",
+      "scraped_at": "2025-09-07 23:14:07",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10021",
+      "icon_url": "assets/skill/image/utx_ico_skill_10021.png",
+      "name_jp": "Non-Standard Distance ◎",
+      "description_en": "Increase performance over non-standard distances (non-multiples of 400m).",
+      "name_en": "Non-Standard Distance ◎",
+      "scraped_at": "2025-09-07 23:14:07",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10021",
+      "icon_url": "assets/skill/image/utx_ico_skill_10021.png",
+      "name_jp": "Non-Standard Distance ○",
+      "description_en": "Moderately increase performance over non-standard distances (non-multiples of 400m).",
+      "name_en": "Non-Standard Distance ○",
+      "scraped_at": "2025-09-07 23:14:07",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10021",
+      "icon_url": "assets/skill/image/utx_ico_skill_10021.png",
+      "name_jp": "Oi Racecourse ◎",
+      "description_en": "Increase performance at Oi Racecourse.",
+      "name_en": "Oi Racecourse ◎",
+      "scraped_at": "2025-09-07 23:14:07",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10021",
+      "icon_url": "assets/skill/image/utx_ico_skill_10021.png",
+      "name_jp": "Oi Racecourse ○",
+      "description_en": "Moderately increase performance at Oi Racecourse.",
+      "name_en": "Oi Racecourse ○",
+      "scraped_at": "2025-09-07 23:14:07",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10021",
+      "icon_url": "assets/skill/image/utx_ico_skill_10021.png",
+      "name_jp": "Unquenched Thirst",
+      "description_en": "Moderately increase performance with the desire to race.",
+      "name_en": "Unquenched Thirst",
+      "scraped_at": "2025-09-07 23:14:07",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10024",
+      "icon_url": "assets/skill/image/utx_ico_skill_10024.png",
+      "name_jp": "Tokyo Racecourse ×",
+      "description_en": "Moderately decrease performance at Tokyo Racecourse.",
+      "name_en": "Tokyo Racecourse ×",
+      "scraped_at": "2025-09-07 23:14:08",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10024",
+      "icon_url": "assets/skill/image/utx_ico_skill_10024.png",
+      "name_jp": "Nakayama Racecourse ×",
+      "description_en": "Moderately decrease performance at Nakayama Racecourse.",
+      "name_en": "Nakayama Racecourse ×",
+      "scraped_at": "2025-09-07 23:14:08",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10024",
+      "icon_url": "assets/skill/image/utx_ico_skill_10024.png",
+      "name_jp": "Hanshin Racecourse ×",
+      "description_en": "Moderately decrease performance at Hanshin Racecourse.",
+      "name_en": "Hanshin Racecourse ×",
+      "scraped_at": "2025-09-07 23:14:08",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10024",
+      "icon_url": "assets/skill/image/utx_ico_skill_10024.png",
+      "name_jp": "Kyoto Racecourse ×",
+      "description_en": "Moderately decrease performance at Kyoto Racecourse.",
+      "name_en": "Kyoto Racecourse ×",
+      "scraped_at": "2025-09-07 23:14:08",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10024",
+      "icon_url": "assets/skill/image/utx_ico_skill_10024.png",
+      "name_jp": "Chukyo Racecourse ×",
+      "description_en": "Moderately decrease performance at Chukyo Racecourse.",
+      "name_en": "Chukyo Racecourse ×",
+      "scraped_at": "2025-09-07 23:14:08",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10024",
+      "icon_url": "assets/skill/image/utx_ico_skill_10024.png",
+      "name_jp": "Sapporo Racecourse ×",
+      "description_en": "Moderately decrease performance at Sapporo Racecourse.",
+      "name_en": "Sapporo Racecourse ×",
+      "scraped_at": "2025-09-07 23:14:08",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10024",
+      "icon_url": "assets/skill/image/utx_ico_skill_10024.png",
+      "name_jp": "Hakodate Racecourse ×",
+      "description_en": "Moderately decrease performance at Hakodate Racecourse.",
+      "name_en": "Hakodate Racecourse ×",
+      "scraped_at": "2025-09-07 23:14:08",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10024",
+      "icon_url": "assets/skill/image/utx_ico_skill_10024.png",
+      "name_jp": "Fukushima Racecourse ×",
+      "description_en": "Moderately decrease performance at Fukushima Racecourse.",
+      "name_en": "Fukushima Racecourse ×",
+      "scraped_at": "2025-09-07 23:14:08",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10024",
+      "icon_url": "assets/skill/image/utx_ico_skill_10024.png",
+      "name_jp": "Niigata Racecourse ×",
+      "description_en": "Moderately decrease performance at Niigata Racecourse.",
+      "name_en": "Niigata Racecourse ×",
+      "scraped_at": "2025-09-07 23:14:08",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10024",
+      "icon_url": "assets/skill/image/utx_ico_skill_10024.png",
+      "name_jp": "Kokura Racecourse ×",
+      "description_en": "Moderately decrease performance at Kokura Racecourse.",
+      "name_en": "Kokura Racecourse ×",
+      "scraped_at": "2025-09-07 23:14:08",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10024",
+      "icon_url": "assets/skill/image/utx_ico_skill_10024.png",
+      "name_jp": "Standard Distance ×",
+      "description_en": "Moderately decrease performance over standard distances (multiples of 400m).",
+      "name_en": "Standard Distance ×",
+      "scraped_at": "2025-09-07 23:14:08",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10024",
+      "icon_url": "assets/skill/image/utx_ico_skill_10024.png",
+      "name_jp": "Non-Standard Distance ×",
+      "description_en": "Moderately decrease performance over non-standard distances (non-multiples of 400m).",
+      "name_en": "Non-Standard Distance ×",
+      "scraped_at": "2025-09-07 23:14:08",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10024",
+      "icon_url": "assets/skill/image/utx_ico_skill_10024.png",
+      "name_jp": "Paddock Fright",
+      "description_en": "Moderately decrease performance when the favorite.",
+      "name_en": "Paddock Fright",
+      "scraped_at": "2025-09-07 23:14:08",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10024",
+      "icon_url": "assets/skill/image/utx_ico_skill_10024.png",
+      "name_jp": "Oi Racecourse ×",
+      "description_en": "Moderately decrease performance at Oi Racecourse.",
+      "name_en": "Oi Racecourse ×",
+      "scraped_at": "2025-09-07 23:14:08",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10031",
+      "icon_url": "assets/skill/image/utx_ico_skill_10031.png",
+      "name_jp": "Firm Conditions ◎",
+      "description_en": "Increase performance on firm ground.",
+      "name_en": "Firm Conditions ◎",
+      "scraped_at": "2025-09-07 23:14:08",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10031",
+      "icon_url": "assets/skill/image/utx_ico_skill_10031.png",
+      "name_jp": "Firm Conditions ○",
+      "description_en": "Moderately increase performance on firm ground.",
+      "name_en": "Firm Conditions ○",
+      "scraped_at": "2025-09-07 23:14:08",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10031",
+      "icon_url": "assets/skill/image/utx_ico_skill_10031.png",
+      "name_jp": "Wet Conditions ◎",
+      "description_en": "Increase performance on good, soft, and heavy ground.",
+      "name_en": "Wet Conditions ◎",
+      "scraped_at": "2025-09-07 23:14:08",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10031",
+      "icon_url": "assets/skill/image/utx_ico_skill_10031.png",
+      "name_jp": "Wet Conditions ○",
+      "description_en": "Moderately increase performance on good, soft, and heavy ground.",
+      "name_en": "Wet Conditions ○",
+      "scraped_at": "2025-09-07 23:14:08",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10031",
+      "icon_url": "assets/skill/image/utx_ico_skill_10031.png",
+      "name_jp": "Competitive Spirit ◎",
+      "description_en": "Increase performance when at least 5 other runners are using the same strategy.",
+      "name_en": "Competitive Spirit ◎",
+      "scraped_at": "2025-09-07 23:14:08",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10031",
+      "icon_url": "assets/skill/image/utx_ico_skill_10031.png",
+      "name_jp": "Competitive Spirit ○",
+      "description_en": "Moderately increase performance when at least 5 other runners are using the same strategy.",
+      "name_en": "Competitive Spirit ○",
+      "scraped_at": "2025-09-07 23:14:08",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10034",
+      "icon_url": "assets/skill/image/utx_ico_skill_10034.png",
+      "name_jp": "Firm Conditions ×",
+      "description_en": "Moderately decrease performance on firm ground.",
+      "name_en": "Firm Conditions ×",
+      "scraped_at": "2025-09-07 23:14:08",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10034",
+      "icon_url": "assets/skill/image/utx_ico_skill_10034.png",
+      "name_jp": "Wet Conditions ×",
+      "description_en": "Moderately decrease performance on good, soft, and heavy ground.",
+      "name_en": "Wet Conditions ×",
+      "scraped_at": "2025-09-07 23:14:08",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10034",
+      "icon_url": "assets/skill/image/utx_ico_skill_10034.png",
+      "name_jp": "Wallflower",
+      "description_en": "Moderately decrease performance when at least 5 other runners are using the same strategy.",
+      "name_en": "Wallflower",
+      "scraped_at": "2025-09-07 23:14:08",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10041",
+      "icon_url": "assets/skill/image/utx_ico_skill_10041.png",
+      "name_jp": "Sunny Days ◎",
+      "description_en": "Increase performance in sunny weather.",
+      "name_en": "Sunny Days ◎",
+      "scraped_at": "2025-09-07 23:14:09",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10041",
+      "icon_url": "assets/skill/image/utx_ico_skill_10041.png",
+      "name_jp": "Sunny Days ○",
+      "description_en": "Moderately increase performance in sunny weather.",
+      "name_en": "Sunny Days ○",
+      "scraped_at": "2025-09-07 23:14:09",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10041",
+      "icon_url": "assets/skill/image/utx_ico_skill_10041.png",
+      "name_jp": "Cloudy Days ◎",
+      "description_en": "Increase performance in cloudy weather.",
+      "name_en": "Cloudy Days ◎",
+      "scraped_at": "2025-09-07 23:14:09",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10041",
+      "icon_url": "assets/skill/image/utx_ico_skill_10041.png",
+      "name_jp": "Cloudy Days ○",
+      "description_en": "Moderately increase performance in cloudy weather.",
+      "name_en": "Cloudy Days ○",
+      "scraped_at": "2025-09-07 23:14:09",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10041",
+      "icon_url": "assets/skill/image/utx_ico_skill_10041.png",
+      "name_jp": "Rainy Days ◎",
+      "description_en": "Increase performance in rainy weather.",
+      "name_en": "Rainy Days ◎",
+      "scraped_at": "2025-09-07 23:14:09",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10041",
+      "icon_url": "assets/skill/image/utx_ico_skill_10041.png",
+      "name_jp": "Rainy Days ○",
+      "description_en": "Moderately increase performance in rainy weather.",
+      "name_en": "Rainy Days ○",
+      "scraped_at": "2025-09-07 23:14:09",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10041",
+      "icon_url": "assets/skill/image/utx_ico_skill_10041.png",
+      "name_jp": "Snowy Days ◎",
+      "description_en": "Increase performance in snowy weather.",
+      "name_en": "Snowy Days ◎",
+      "scraped_at": "2025-09-07 23:14:09",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10041",
+      "icon_url": "assets/skill/image/utx_ico_skill_10041.png",
+      "name_jp": "Snowy Days ○",
+      "description_en": "Moderately increase performance in snowy weather.",
+      "name_en": "Snowy Days ○",
+      "scraped_at": "2025-09-07 23:14:09",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10041",
+      "icon_url": "assets/skill/image/utx_ico_skill_10041.png",
+      "name_jp": "Target in Sight ◎",
+      "description_en": "Increase performance when the favorite is using the same strategy.",
+      "name_en": "Target in Sight ◎",
+      "scraped_at": "2025-09-07 23:14:09",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10041",
+      "icon_url": "assets/skill/image/utx_ico_skill_10041.png",
+      "name_jp": "Target in Sight ○",
+      "description_en": "Moderately increase performance when the favorite is using the same strategy.",
+      "name_en": "Target in Sight ○",
+      "scraped_at": "2025-09-07 23:14:09",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10044",
+      "icon_url": "assets/skill/image/utx_ico_skill_10044.png",
+      "name_jp": "Rainy Days ×",
+      "description_en": "Moderately decrease performance in rainy weather.",
+      "name_en": "Rainy Days ×",
+      "scraped_at": "2025-09-07 23:14:09",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10051",
+      "icon_url": "assets/skill/image/utx_ico_skill_10051.png",
+      "name_jp": "Inner Post Proficiency ◎",
+      "description_en": "Increase performance in brackets 1–3.",
+      "name_en": "Inner Post Proficiency ◎",
+      "scraped_at": "2025-09-07 23:14:09",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10051",
+      "icon_url": "assets/skill/image/utx_ico_skill_10051.png",
+      "name_jp": "Inner Post Proficiency ○",
+      "description_en": "Moderately increase performance in brackets 1–3.",
+      "name_en": "Inner Post Proficiency ○",
+      "scraped_at": "2025-09-07 23:14:09",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10051",
+      "icon_url": "assets/skill/image/utx_ico_skill_10051.png",
+      "name_jp": "Front Runner Savvy ◎",
+      "description_en": "Increase ability to get into a good position. (Front Runner)",
+      "name_en": "Front Runner Savvy ◎",
+      "scraped_at": "2025-09-07 23:14:09",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10051",
+      "icon_url": "assets/skill/image/utx_ico_skill_10051.png",
+      "name_jp": "Front Runner Savvy ○",
+      "description_en": "Moderately increase ability to get into a good position. (Front Runner)",
+      "name_en": "Front Runner Savvy ○",
+      "scraped_at": "2025-09-07 23:14:09",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10051",
+      "icon_url": "assets/skill/image/utx_ico_skill_10051.png",
+      "name_jp": "Pace Chaser Savvy ◎",
+      "description_en": "Increase ability to get into a good position. (Pace Chaser)",
+      "name_en": "Pace Chaser Savvy ◎",
+      "scraped_at": "2025-09-07 23:14:09",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10051",
+      "icon_url": "assets/skill/image/utx_ico_skill_10051.png",
+      "name_jp": "Pace Chaser Savvy ○",
+      "description_en": "Moderately increase ability to get into a good position. (Pace Chaser)",
+      "name_en": "Pace Chaser Savvy ○",
+      "scraped_at": "2025-09-07 23:14:09",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10051",
+      "icon_url": "assets/skill/image/utx_ico_skill_10051.png",
+      "name_jp": "Late Surger Savvy ◎",
+      "description_en": "Increase ability to get into a good position. (Late Surger)",
+      "name_en": "Late Surger Savvy ◎",
+      "scraped_at": "2025-09-07 23:14:09",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10051",
+      "icon_url": "assets/skill/image/utx_ico_skill_10051.png",
+      "name_jp": "Late Surger Savvy ○",
+      "description_en": "Moderately increase ability to get into a good position. (Late Surger)",
+      "name_en": "Late Surger Savvy ○",
+      "scraped_at": "2025-09-07 23:14:09",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10051",
+      "icon_url": "assets/skill/image/utx_ico_skill_10051.png",
+      "name_jp": "End Closer Savvy ◎",
+      "description_en": "Increase ability to get into a good position. (End Closer)",
+      "name_en": "End Closer Savvy ◎",
+      "scraped_at": "2025-09-07 23:14:09",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10051",
+      "icon_url": "assets/skill/image/utx_ico_skill_10051.png",
+      "name_jp": "End Closer Savvy ○",
+      "description_en": "Moderately increase ability to get into a good position. (End Closer)",
+      "name_en": "End Closer Savvy ○",
+      "scraped_at": "2025-09-07 23:14:09",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10054",
+      "icon_url": "assets/skill/image/utx_ico_skill_10054.png",
+      "name_jp": "Inner Post Averseness",
+      "description_en": "Moderately decrease performance in brackets 1–3.",
+      "name_en": "Inner Post Averseness",
+      "scraped_at": "2025-09-07 23:14:09",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10061",
+      "icon_url": "assets/skill/image/utx_ico_skill_10061.png",
+      "name_jp": "Lucky Seven",
+      "description_en": "Moderately good things may happen when in bracket 7.",
+      "name_en": "Lucky Seven",
+      "scraped_at": "2025-09-07 23:14:09",
+      "source": "gametora.com"
+    },
+    {
+      "id": "10062",
+      "icon_url": "assets/skill/image/utx_ico_skill_10062.png",
+      "name_jp": "Super Lucky Seven",
+      "description_en": "Good things may happen when in bracket 7.",
+      "name_en": "Super Lucky Seven",
+      "scraped_at": "2025-09-07 23:14:09",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20023",
+      "icon_url": "assets/skill/image/utx_ico_skill_20023.png",
+      "name_jp": "Introduction to Physiology",
+      "description_en": "Moderately recover endurance when conserving energy on a corner in the second half of the race.\nAgnes Tachyon (Original)'s unique",
+      "name_en": "Introduction to Physiology",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20023",
+      "icon_url": "assets/skill/image/utx_ico_skill_20023.png",
+      "name_jp": "Clear Heart",
+      "description_en": "Moderately recover endurance when well-positioned mid-race.\nSuper Creek (Original)'s unique",
+      "name_en": "Clear Heart",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20023",
+      "icon_url": "assets/skill/image/utx_ico_skill_20023.png",
+      "name_jp": "Super-Duper Stoked",
+      "description_en": "Moderately recover endurance with a glance at nearby runners when positioned toward the back on the final corner.\nHaru Urara (Original)'s unique",
+      "name_en": "Super-Duper Stoked",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20023",
+      "icon_url": "assets/skill/image/utx_ico_skill_20023.png",
+      "name_jp": "U=ma2",
+      "description_en": "Recover endurance when conserving energy on a corner in the second half of the race.\nAgnes Tachyon (Original)'s unique",
+      "name_en": "U=ma2",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20023",
+      "icon_url": "assets/skill/image/utx_ico_skill_20023.png",
+      "name_jp": "Pure Heart",
+      "description_en": "Recover endurance when well-positioned mid-race.\nSuper Creek (Original)'s unique",
+      "name_en": "Pure Heart",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20023",
+      "icon_url": "assets/skill/image/utx_ico_skill_20023.png",
+      "name_jp": "Super-Duper Climax",
+      "description_en": "Recover endurance with a glance at nearby runners when positioned toward the back on the final corner.\nHaru Urara (Original)'s unique",
+      "name_en": "Super-Duper Climax",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20022",
+      "icon_url": "assets/skill/image/utx_ico_skill_20022.png",
+      "name_jp": "Swinging Maestro",
+      "description_en": "Recover endurance on a corner with efficient turning.",
+      "name_en": "Swinging Maestro",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20021",
+      "icon_url": "assets/skill/image/utx_ico_skill_20021.png",
+      "name_jp": "Corner Recovery ○",
+      "description_en": "Slightly recover endurance on a corner with efficient turning.",
+      "name_en": "Corner Recovery ○",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20024",
+      "icon_url": "assets/skill/image/utx_ico_skill_20024.png",
+      "name_jp": "Corner Recovery ×",
+      "description_en": "Moderately lose endurance on a corner with inefficient turning.",
+      "name_en": "Corner Recovery ×",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20022",
+      "icon_url": "assets/skill/image/utx_ico_skill_20022.png",
+      "name_jp": "Breath of Fresh Air",
+      "description_en": "Recover endurance on a straight.",
+      "name_en": "Breath of Fresh Air",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20021",
+      "icon_url": "assets/skill/image/utx_ico_skill_20021.png",
+      "name_jp": "Straightaway Recovery",
+      "description_en": "Slightly recover endurance on a straight.",
+      "name_en": "Straightaway Recovery",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20024",
+      "icon_url": "assets/skill/image/utx_ico_skill_20024.png",
+      "name_jp": "Ramp Revulsion",
+      "description_en": "Moderately increase fatigue on an uphill.",
+      "name_en": "Ramp Revulsion",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20024",
+      "icon_url": "assets/skill/image/utx_ico_skill_20024.png",
+      "name_jp": "Packphobia",
+      "description_en": "Moderately lose endurance when surrounded.",
+      "name_en": "Packphobia",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20022",
+      "icon_url": "assets/skill/image/utx_ico_skill_20022.png",
+      "name_jp": "Iron Will",
+      "description_en": "Recover endurance when the way ahead is jammed early-race.",
+      "name_en": "Iron Will",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20021",
+      "icon_url": "assets/skill/image/utx_ico_skill_20021.png",
+      "name_jp": "Lay Low",
+      "description_en": "Slightly recover endurance when the way ahead is jammed early-race.",
+      "name_en": "Lay Low",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20022",
+      "icon_url": "assets/skill/image/utx_ico_skill_20022.png",
+      "name_jp": "Indomitable",
+      "description_en": "Recover endurance when passed by another runner mid-race.",
+      "name_en": "Indomitable",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20021",
+      "icon_url": "assets/skill/image/utx_ico_skill_20021.png",
+      "name_jp": "Pace Strategy",
+      "description_en": "Slightly recover endurance when passed by another runner mid-race.",
+      "name_en": "Pace Strategy",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20022",
+      "icon_url": "assets/skill/image/utx_ico_skill_20022.png",
+      "name_jp": "Unruffled",
+      "description_en": "Recover endurance when surrounded mid-race.",
+      "name_en": "Unruffled",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20021",
+      "icon_url": "assets/skill/image/utx_ico_skill_20021.png",
+      "name_jp": "Calm in a Crowd",
+      "description_en": "Slightly recover endurance when surrounded mid-race.",
+      "name_en": "Calm in a Crowd",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20024",
+      "icon_url": "assets/skill/image/utx_ico_skill_20024.png",
+      "name_jp": "Running Idle",
+      "description_en": "Moderately increase fatigue when in the lead by too large of a margin.",
+      "name_en": "Running Idle",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20022",
+      "icon_url": "assets/skill/image/utx_ico_skill_20022.png",
+      "name_jp": "Calm and Collected",
+      "description_en": "Decrease fatigue early-race. (Pace Chaser)",
+      "name_en": "Calm and Collected",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20021",
+      "icon_url": "assets/skill/image/utx_ico_skill_20021.png",
+      "name_jp": "Stamina to Spare",
+      "description_en": "Slightly decrease fatigue early-race. (Pace Chaser)",
+      "name_en": "Stamina to Spare",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20022",
+      "icon_url": "assets/skill/image/utx_ico_skill_20022.png",
+      "name_jp": "Race Planner",
+      "description_en": "Decrease fatigue mid-race. (Pace Chaser)",
+      "name_en": "Race Planner",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20021",
+      "icon_url": "assets/skill/image/utx_ico_skill_20021.png",
+      "name_jp": "Preferred Position",
+      "description_en": "Slightly decrease fatigue mid-race. (Pace Chaser)",
+      "name_en": "Preferred Position",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20022",
+      "icon_url": "assets/skill/image/utx_ico_skill_20022.png",
+      "name_jp": "Sleeping Lion",
+      "description_en": "Decrease fatigue mid-race. (End Closer)",
+      "name_en": "Sleeping Lion",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20021",
+      "icon_url": "assets/skill/image/utx_ico_skill_20021.png",
+      "name_jp": "Standing By",
+      "description_en": "Slightly decrease fatigue mid-race. (End Closer)",
+      "name_en": "Standing By",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20021",
+      "icon_url": "assets/skill/image/utx_ico_skill_20021.png",
+      "name_jp": "Wait-and-See",
+      "description_en": "Slightly decrease fatigue when positioned toward the back mid-race. (Sprint)",
+      "name_en": "Wait-and-See",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20022",
+      "icon_url": "assets/skill/image/utx_ico_skill_20022.png",
+      "name_jp": "Keen Eye",
+      "description_en": "Decrease fatigue when positioned toward the back early-race. (Mile)",
+      "name_en": "Keen Eye",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20021",
+      "icon_url": "assets/skill/image/utx_ico_skill_20021.png",
+      "name_jp": "Watchful Eye",
+      "description_en": "Slightly decrease fatigue when positioned toward the back early-race. (Mile)",
+      "name_en": "Watchful Eye",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20022",
+      "icon_url": "assets/skill/image/utx_ico_skill_20022.png",
+      "name_jp": "Trackblazer",
+      "description_en": "Decrease fatigue when in the lead mid-race. (Medium)",
+      "name_en": "Trackblazer",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20021",
+      "icon_url": "assets/skill/image/utx_ico_skill_20021.png",
+      "name_jp": "Rosy Outlook",
+      "description_en": "Slightly decrease fatigue when in the lead mid-race. (Medium)",
+      "name_en": "Rosy Outlook",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20022",
+      "icon_url": "assets/skill/image/utx_ico_skill_20022.png",
+      "name_jp": "Cooldown",
+      "description_en": "Decrease fatigue by taking a breather upon entering a straight. (Long)",
+      "name_en": "Cooldown",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20021",
+      "icon_url": "assets/skill/image/utx_ico_skill_20021.png",
+      "name_jp": "Deep Breaths",
+      "description_en": "Slightly decrease fatigue by taking a breather upon entering a straight. (Long)",
+      "name_en": "Deep Breaths",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20022",
+      "icon_url": "assets/skill/image/utx_ico_skill_20022.png",
+      "name_jp": "Adrenaline Rush",
+      "description_en": "Regain the energy to run after exhausting strength. (Long)",
+      "name_en": "Adrenaline Rush",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20021",
+      "icon_url": "assets/skill/image/utx_ico_skill_20021.png",
+      "name_jp": "Extra Tank",
+      "description_en": "Slightly regain the energy to run after exhausting strength. (Long)",
+      "name_en": "Extra Tank",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20022",
+      "icon_url": "assets/skill/image/utx_ico_skill_20022.png",
+      "name_jp": "Miraculous Step",
+      "description_en": "Decrease fatigue when moving sideways. (Medium)",
+      "name_en": "Miraculous Step",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20021",
+      "icon_url": "assets/skill/image/utx_ico_skill_20021.png",
+      "name_jp": "Soft Step",
+      "description_en": "Slightly decrease fatigue when moving sideways. (Medium)",
+      "name_en": "Soft Step",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20021",
+      "icon_url": "assets/skill/image/utx_ico_skill_20021.png",
+      "name_jp": "Passing Pro",
+      "description_en": "Slightly decrease fatigue when determined to pass another runner. (Long)",
+      "name_en": "Passing Pro",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20022",
+      "icon_url": "assets/skill/image/utx_ico_skill_20022.png",
+      "name_jp": "Restless",
+      "description_en": "Reduce fatigue on an uphill. (Front Runner)",
+      "name_en": "Restless",
+      "scraped_at": "2025-09-07 23:14:10",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20021",
+      "icon_url": "assets/skill/image/utx_ico_skill_20021.png",
+      "name_jp": "Moxie",
+      "description_en": "Slightly reduce fatigue on an uphill. (Front Runner)",
+      "name_en": "Moxie",
+      "scraped_at": "2025-09-07 23:14:11",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20022",
+      "icon_url": "assets/skill/image/utx_ico_skill_20022.png",
+      "name_jp": "Gourmand",
+      "description_en": "Recover endurance mid-race. (Pace Chaser)",
+      "name_en": "Gourmand",
+      "scraped_at": "2025-09-07 23:14:11",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20021",
+      "icon_url": "assets/skill/image/utx_ico_skill_20021.png",
+      "name_jp": "Hydrate",
+      "description_en": "Slightly recover endurance mid-race. (Pace Chaser)",
+      "name_en": "Hydrate",
+      "scraped_at": "2025-09-07 23:14:11",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20022",
+      "icon_url": "assets/skill/image/utx_ico_skill_20022.png",
+      "name_jp": "Relax",
+      "description_en": "Recover endurance late-race. (Late Surger)",
+      "name_en": "Relax",
+      "scraped_at": "2025-09-07 23:14:11",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20021",
+      "icon_url": "assets/skill/image/utx_ico_skill_20021.png",
+      "name_jp": "A Small Breather",
+      "description_en": "Slightly recover endurance late-race. (Late Surger)",
+      "name_en": "A Small Breather",
+      "scraped_at": "2025-09-07 23:14:11",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20022",
+      "icon_url": "assets/skill/image/utx_ico_skill_20022.png",
+      "name_jp": "Go-Home Specialist",
+      "description_en": "Reduce fatigue on a downhill. (End Closer)",
+      "name_en": "Go-Home Specialist",
+      "scraped_at": "2025-09-07 23:14:11",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20021",
+      "icon_url": "assets/skill/image/utx_ico_skill_20021.png",
+      "name_jp": "After-School Stroll",
+      "description_en": "Slightly reduce fatigue on a downhill. (End Closer)",
+      "name_en": "After-School Stroll",
+      "scraped_at": "2025-09-07 23:14:11",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20022",
+      "icon_url": "assets/skill/image/utx_ico_skill_20022.png",
+      "name_jp": "Serenity",
+      "description_en": "Regain composure by calming down when the way ahead is jammed. (End Closer)",
+      "name_en": "Serenity",
+      "scraped_at": "2025-09-07 23:14:11",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20021",
+      "icon_url": "assets/skill/image/utx_ico_skill_20021.png",
+      "name_jp": "Levelheaded",
+      "description_en": "Slightly regain composure by calming down when the way ahead is jammed. (End Closer)",
+      "name_en": "Levelheaded",
+      "scraped_at": "2025-09-07 23:14:11",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20021",
+      "icon_url": "assets/skill/image/utx_ico_skill_20021.png",
+      "name_jp": "Triple 7s",
+      "description_en": "Slightly gain energy with 777m remaining.",
+      "name_en": "Triple 7s",
+      "scraped_at": "2025-09-07 23:14:11",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20021",
+      "icon_url": "assets/skill/image/utx_ico_skill_20021.png",
+      "name_jp": "Shake It Out",
+      "description_en": "Slightly recover endurance after activating many skills late-race.",
+      "name_en": "Shake It Out",
+      "scraped_at": "2025-09-07 23:14:11",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20023",
+      "icon_url": "assets/skill/image/utx_ico_skill_20023.png",
+      "name_jp": "Superior Heal",
+      "description_en": "Recover endurance with a gentle light when dropping down toward the back mid-race.\nGrass Wonder (Fantasy)'s unique",
+      "name_en": "Superior Heal",
+      "scraped_at": "2025-09-07 23:14:11",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20023",
+      "icon_url": "assets/skill/image/utx_ico_skill_20023.png",
+      "name_jp": "Dazzl'n ♪ Diver",
+      "description_en": "Recover endurance by relaxing after activating 2 skills mid-race.\nSpecial Week (Summer)'s unique",
+      "name_en": "Dazzl'n ♪ Diver",
+      "scraped_at": "2025-09-07 23:14:11",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Corner Adept ○",
+      "description_en": "Slightly increase velocity on a corner with skilled turning.",
+      "name_en": "Corner Adept ○",
+      "scraped_at": "2025-09-07 23:14:13",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Straightaway Adept",
+      "description_en": "Slightly increase velocity on a straight.",
+      "name_en": "Straightaway Adept",
+      "scraped_at": "2025-09-07 23:14:13",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Ramp Up",
+      "description_en": "Slightly increase velocity when passing another runner mid-race.",
+      "name_en": "Ramp Up",
+      "scraped_at": "2025-09-07 23:14:13",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Homestretch Haste",
+      "description_en": "Slightly increase velocity in the last spurt.",
+      "name_en": "Homestretch Haste",
+      "scraped_at": "2025-09-07 23:14:13",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Fast-Paced",
+      "description_en": "Slightly increase ability to go to the front mid-race. (Front Runner)",
+      "name_en": "Fast-Paced",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Prepared to Pass",
+      "description_en": "Slightly increase ability to break out of the pack on the final corner. (Pace Chaser)",
+      "name_en": "Prepared to Pass",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Position Pilfer",
+      "description_en": "Slightly increase velocity mid-race. (Late Surger)",
+      "name_en": "Position Pilfer",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Outer Swell",
+      "description_en": "Slightly increase velocity when passing another runner on the outside on the final corner. (Late Surger)",
+      "name_en": "Outer Swell",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Masterful Gambit",
+      "description_en": "Slightly move up in preparation to close the gap late-race. (End Closer)",
+      "name_en": "Masterful Gambit",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Gap Closer",
+      "description_en": "Slightly increase spurting ability when positioned toward the back late-race. (Sprint)",
+      "name_en": "Gap Closer",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Productive Plan",
+      "description_en": "Slightly widen the margin when in the lead early-race. (Mile)",
+      "name_en": "Productive Plan",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Up-Tempo",
+      "description_en": "Slightly increase positioning ability when positioned toward the front mid-race. (Medium)",
+      "name_en": "Up-Tempo",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Steadfast",
+      "description_en": "Slightly increase ability to fight back when passed by another runner on the final corner. (Medium)",
+      "name_en": "Steadfast",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Inside Scoop",
+      "description_en": "Slightly increase velocity when near the inner rail on the final corner. (Long)",
+      "name_en": "Inside Scoop",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Sprint Straightaways ◎",
+      "description_en": "Moderately increase velocity on a straight. (Sprint)",
+      "name_en": "Sprint Straightaways ◎",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Sprint Straightaways ○",
+      "description_en": "Slightly increase velocity on a straight. (Sprint)",
+      "name_en": "Sprint Straightaways ○",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Sprint Corners ◎",
+      "description_en": "Moderately increase velocity on a corner. (Sprint)",
+      "name_en": "Sprint Corners ◎",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Sprint Corners ○",
+      "description_en": "Slightly increase velocity on a corner. (Sprint)",
+      "name_en": "Sprint Corners ○",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Huge Lead",
+      "description_en": "Slightly increase ability to maintain the lead when leading by a large margin mid-race. (Sprint)",
+      "name_en": "Huge Lead",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Mile Straightaways ◎",
+      "description_en": "Moderately increase velocity on a straight. (Mile)",
+      "name_en": "Mile Straightaways ◎",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Mile Straightaways ○",
+      "description_en": "Slightly increase velocity on a straight. (Mile)",
+      "name_en": "Mile Straightaways ○",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Mile Corners ◎",
+      "description_en": "Moderately increase velocity on a corner. (Mile)",
+      "name_en": "Mile Corners ◎",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Mile Corners ○",
+      "description_en": "Slightly increase velocity on a corner. (Mile)",
+      "name_en": "Mile Corners ○",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Shifting Gears",
+      "description_en": "Slightly increase passing ability when positioned toward the front mid-race. (Mile)",
+      "name_en": "Shifting Gears",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Unyielding Spirit",
+      "description_en": "Slightly increase passing ability. (Mile)",
+      "name_en": "Unyielding Spirit",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Medium Straightaways ◎",
+      "description_en": "Moderately increase velocity on a straight. (Medium)",
+      "name_en": "Medium Straightaways ◎",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Medium Straightaways ○",
+      "description_en": "Slightly increase velocity on a straight. (Medium)",
+      "name_en": "Medium Straightaways ○",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Medium Corners ◎",
+      "description_en": "Moderately increase velocity on a corner. (Medium)",
+      "name_en": "Medium Corners ◎",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Medium Corners ○",
+      "description_en": "Slightly increase velocity on a corner. (Medium)",
+      "name_en": "Medium Corners ○",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Long Straightaways ◎",
+      "description_en": "Moderately increase velocity on a straight. (Long)",
+      "name_en": "Long Straightaways ◎",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Long Straightaways ○",
+      "description_en": "Slightly increase velocity on a straight. (Long)",
+      "name_en": "Long Straightaways ○",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Long Corners ◎",
+      "description_en": "Moderately increase velocity on a corner. (Long)",
+      "name_en": "Long Corners ◎",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Long Corners ○",
+      "description_en": "Slightly increase velocity on a corner. (Long)",
+      "name_en": "Long Corners ○",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Keeping the Lead",
+      "description_en": "Slightly increase ability to maintain the lead when leading by a large margin mid-race. (Long)",
+      "name_en": "Keeping the Lead",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Pressure",
+      "description_en": "Slightly increase velocity when passing another runner late-race. (Long)",
+      "name_en": "Pressure",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Front Runner Straightaways ◎",
+      "description_en": "Moderately increase velocity on a straight. (Front Runner)",
+      "name_en": "Front Runner Straightaways ◎",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Front Runner Straightaways ○",
+      "description_en": "Slightly increase velocity on a straight. (Front Runner)",
+      "name_en": "Front Runner Straightaways ○",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Front Runner Corners ◎",
+      "description_en": "Moderately increase velocity on a corner. (Front Runner)",
+      "name_en": "Front Runner Corners ◎",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Front Runner Corners ○",
+      "description_en": "Slightly increase velocity on a corner. (Front Runner)",
+      "name_en": "Front Runner Corners ○",
+      "scraped_at": "2025-09-07 23:14:14",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Leader's Pride",
+      "description_en": "Slightly avoid being passed early-race. (Front Runner)",
+      "name_en": "Leader's Pride",
+      "scraped_at": "2025-09-07 23:14:15",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Pace Chaser Straightaways ◎",
+      "description_en": "Moderately increase velocity on a straight. (Pace Chaser)",
+      "name_en": "Pace Chaser Straightaways ◎",
+      "scraped_at": "2025-09-07 23:14:15",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Pace Chaser Straightaways ○",
+      "description_en": "Slightly increase velocity on a straight. (Pace Chaser)",
+      "name_en": "Pace Chaser Straightaways ○",
+      "scraped_at": "2025-09-07 23:14:15",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Pace Chaser Corners ◎",
+      "description_en": "Moderately increase velocity on a corner. (Pace Chaser)",
+      "name_en": "Pace Chaser Corners ◎",
+      "scraped_at": "2025-09-07 23:14:15",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Pace Chaser Corners ○",
+      "description_en": "Slightly increase velocity on a corner. (Pace Chaser)",
+      "name_en": "Pace Chaser Corners ○",
+      "scraped_at": "2025-09-07 23:14:15",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Late Surger Straightaways ◎",
+      "description_en": "Moderately increase velocity on a straight. (Late Surger)",
+      "name_en": "Late Surger Straightaways ◎",
+      "scraped_at": "2025-09-07 23:14:15",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Late Surger Straightaways ○",
+      "description_en": "Slightly increase velocity on a straight. (Late Surger)",
+      "name_en": "Late Surger Straightaways ○",
+      "scraped_at": "2025-09-07 23:14:15",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Later Surger Corners ◎",
+      "description_en": "Moderately increase velocity on a corner. (Late Surger)",
+      "name_en": "Later Surger Corners ◎",
+      "scraped_at": "2025-09-07 23:14:15",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Late Surger Corners ○",
+      "description_en": "Slightly increase velocity on a corner. (Late Surger)",
+      "name_en": "Late Surger Corners ○",
+      "scraped_at": "2025-09-07 23:14:15",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "1,500,000 CC",
+      "description_en": "Slightly increase velocity on an uphill. (Late Surger)",
+      "name_en": "1,500,000 CC",
+      "scraped_at": "2025-09-07 23:14:15",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "End Closer Straightaways ◎",
+      "description_en": "Moderately increase velocity on a straight. (End Closer)",
+      "name_en": "End Closer Straightaways ◎",
+      "scraped_at": "2025-09-07 23:14:15",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "End Closer Straightaways ○",
+      "description_en": "Slightly increase velocity on a straight. (End Closer)",
+      "name_en": "End Closer Straightaways ○",
+      "scraped_at": "2025-09-07 23:14:15",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "End Closer Corners ◎",
+      "description_en": "Moderately increase velocity on a corner. (End Closer)",
+      "name_en": "End Closer Corners ◎",
+      "scraped_at": "2025-09-07 23:14:15",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "End Closer Corners ○",
+      "description_en": "Slightly increase velocity on a corner. (End Closer)",
+      "name_en": "End Closer Corners ○",
+      "scraped_at": "2025-09-07 23:14:15",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Uma Stan",
+      "description_en": "Slightly increase velocity when close to many runners.",
+      "name_en": "Uma Stan",
+      "scraped_at": "2025-09-07 23:14:15",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Tail Held High",
+      "description_en": "Slightly increase velocity after activating many skills mid-race.",
+      "name_en": "Tail Held High",
+      "scraped_at": "2025-09-07 23:14:15",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Slipstream",
+      "description_en": "Slightly decrease wind resistance when following directly behind another runner.",
+      "name_en": "Slipstream",
+      "scraped_at": "2025-09-07 23:14:15",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Playtime's Over!",
+      "description_en": "Slightly increase velocity when followed by another runner directly behind for a long time.",
+      "name_en": "Playtime's Over!",
+      "scraped_at": "2025-09-07 23:14:15",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20011",
+      "icon_url": "assets/skill/image/utx_ico_skill_20011.png",
+      "name_jp": "Top Pick",
+      "description_en": "Slightly increase velocity when engaged in a challenge mid-race. (Dirt)",
+      "name_en": "Top Pick",
+      "scraped_at": "2025-09-07 23:14:15",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20012",
+      "icon_url": "assets/skill/image/utx_ico_skill_20012.png",
+      "name_jp": "Professor of Curvature",
+      "description_en": "Increase velocity on a corner with skilled turning.",
+      "name_en": "Professor of Curvature",
+      "scraped_at": "2025-09-07 23:14:18",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20012",
+      "icon_url": "assets/skill/image/utx_ico_skill_20012.png",
+      "name_jp": "Beeline Burst",
+      "description_en": "Increase velocity on a straight.",
+      "name_en": "Beeline Burst",
+      "scraped_at": "2025-09-07 23:14:18",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20012",
+      "icon_url": "assets/skill/image/utx_ico_skill_20012.png",
+      "name_jp": "It's On!",
+      "description_en": "Increase velocity when passing another runner mid-race.",
+      "name_en": "It's On!",
+      "scraped_at": "2025-09-07 23:14:18",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20012",
+      "icon_url": "assets/skill/image/utx_ico_skill_20012.png",
+      "name_jp": "In Body and Mind",
+      "description_en": "Increase velocity in the last spurt.",
+      "name_en": "In Body and Mind",
+      "scraped_at": "2025-09-07 23:14:18",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20012",
+      "icon_url": "assets/skill/image/utx_ico_skill_20012.png",
+      "name_jp": "Escape Artist",
+      "description_en": "Increase ability to go to the front mid-race. (Front Runner)",
+      "name_en": "Escape Artist",
+      "scraped_at": "2025-09-07 23:14:18",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20012",
+      "icon_url": "assets/skill/image/utx_ico_skill_20012.png",
+      "name_jp": "Speed Star",
+      "description_en": "Increase ability to break out of the pack on the final corner. (Pace Chaser)",
+      "name_en": "Speed Star",
+      "scraped_at": "2025-09-07 23:14:18",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20012",
+      "icon_url": "assets/skill/image/utx_ico_skill_20012.png",
+      "name_jp": "Fast & Furious",
+      "description_en": "Increase velocity mid-race. (Late Surger)",
+      "name_en": "Fast & Furious",
+      "scraped_at": "2025-09-07 23:14:18",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20012",
+      "icon_url": "assets/skill/image/utx_ico_skill_20012.png",
+      "name_jp": "Rising Dragon",
+      "description_en": "Increase velocity when passing another runner on the outside on the final corner. (Late Surger)",
+      "name_en": "Rising Dragon",
+      "scraped_at": "2025-09-07 23:14:18",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20012",
+      "icon_url": "assets/skill/image/utx_ico_skill_20012.png",
+      "name_jp": "Sturm und Drang",
+      "description_en": "Move up in preparation to close the gap late-race. (End Closer)",
+      "name_en": "Sturm und Drang",
+      "scraped_at": "2025-09-07 23:14:18",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20012",
+      "icon_url": "assets/skill/image/utx_ico_skill_20012.png",
+      "name_jp": "Blinding Flash",
+      "description_en": "Increase spurting ability when positioned toward the back late-race. (Sprint)",
+      "name_en": "Blinding Flash",
+      "scraped_at": "2025-09-07 23:14:18",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20012",
+      "icon_url": "assets/skill/image/utx_ico_skill_20012.png",
+      "name_jp": "Mile Maven",
+      "description_en": "Widen the margin when in the lead early-race. (Mile)",
+      "name_en": "Mile Maven",
+      "scraped_at": "2025-09-07 23:14:18",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20012",
+      "icon_url": "assets/skill/image/utx_ico_skill_20012.png",
+      "name_jp": "Killer Tunes",
+      "description_en": "Increase positioning ability when positioned toward the front mid-race. (Medium)",
+      "name_en": "Killer Tunes",
+      "scraped_at": "2025-09-07 23:14:19",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20012",
+      "icon_url": "assets/skill/image/utx_ico_skill_20012.png",
+      "name_jp": "Unyielding",
+      "description_en": "Increase ability to fight back when passed by another runner on the final corner. (Medium)",
+      "name_en": "Unyielding",
+      "scraped_at": "2025-09-07 23:14:19",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20012",
+      "icon_url": "assets/skill/image/utx_ico_skill_20012.png",
+      "name_jp": "Innate Experience",
+      "description_en": "Increase velocity when near the inner rail on the final corner. (Long)",
+      "name_en": "Innate Experience",
+      "scraped_at": "2025-09-07 23:14:19",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20012",
+      "icon_url": "assets/skill/image/utx_ico_skill_20012.png",
+      "name_jp": "Staggering Lead",
+      "description_en": "Increase ability to maintain the lead when leading by a large margin mid-race. (Sprint)",
+      "name_en": "Staggering Lead",
+      "scraped_at": "2025-09-07 23:14:19",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20012",
+      "icon_url": "assets/skill/image/utx_ico_skill_20012.png",
+      "name_jp": "Changing Gears",
+      "description_en": "Increase passing ability when positioned toward the front mid-race. (Mile)",
+      "name_en": "Changing Gears",
+      "scraped_at": "2025-09-07 23:14:19",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20012",
+      "icon_url": "assets/skill/image/utx_ico_skill_20012.png",
+      "name_jp": "Big-Sisterly",
+      "description_en": "Increase passing ability. (Mile)",
+      "name_en": "Big-Sisterly",
+      "scraped_at": "2025-09-07 23:14:19",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20012",
+      "icon_url": "assets/skill/image/utx_ico_skill_20012.png",
+      "name_jp": "Vanguard Spirit",
+      "description_en": "Increase ability to maintain the lead when leading by a large margin mid-race. (Long)",
+      "name_en": "Vanguard Spirit",
+      "scraped_at": "2025-09-07 23:14:19",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20012",
+      "icon_url": "assets/skill/image/utx_ico_skill_20012.png",
+      "name_jp": "Overwhelming Pressure",
+      "description_en": "Increase velocity when passing another runner late-race. (Long)",
+      "name_en": "Overwhelming Pressure",
+      "scraped_at": "2025-09-07 23:14:19",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20012",
+      "icon_url": "assets/skill/image/utx_ico_skill_20012.png",
+      "name_jp": "15,000,000 CC",
+      "description_en": "Increase velocity on an uphill. (Late Surger)",
+      "name_en": "15,000,000 CC",
+      "scraped_at": "2025-09-07 23:14:19",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20012",
+      "icon_url": "assets/skill/image/utx_ico_skill_20012.png",
+      "name_jp": "Trending in the Charts!",
+      "description_en": "Increase velocity when engaged in a challenge mid-race. (Dirt)",
+      "name_en": "Trending in the Charts!",
+      "scraped_at": "2025-09-07 23:14:19",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Certain Victory",
+      "description_en": "Increase velocity with an indomitable fighting spirit when on the heels of another runner toward the front on the final straight.\nTokai Teio (Anime Collab)'s unique",
+      "name_en": "Certain Victory",
+      "scraped_at": "2025-09-07 23:14:22",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Legacy of the Strong",
+      "description_en": "Increase velocity when pressured by another runner and running out of energy toward the front on the final corner or later.\nMejiro McQueen (Anime Collab)'s unique",
+      "name_en": "Legacy of the Strong",
+      "scraped_at": "2025-09-07 23:14:22",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Warning Shot!",
+      "description_en": "Slightly increase velocity with a long spurt starting halfway through the race.\nGold Ship (Original)'s unique",
+      "name_en": "Warning Shot!",
+      "scraped_at": "2025-09-07 23:14:22",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Xceleration",
+      "description_en": "Become stronger at challenging rivals and moderately increase velocity when positioned toward the front with 200m or less remaining.\nVodka (Original)'s unique",
+      "name_en": "Xceleration",
+      "scraped_at": "2025-09-07 23:14:22",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Red Ace",
+      "description_en": "Slightly swell with the determination to stay number one in the second half of the race.\nDaiwa Scarlet (Original)'s unique",
+      "name_en": "Red Ace",
+      "scraped_at": "2025-09-07 23:14:22",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Focused Mind",
+      "description_en": "Moderately increase velocity with a strong turn of foot when passing another runner toward the back on the final straight.\nGrass Wonder (Original)'s unique",
+      "name_en": "Focused Mind",
+      "scraped_at": "2025-09-07 23:14:22",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Corazón ☆ Ardiente",
+      "description_en": "Slightly hang on to the advantage when positioned toward the front with energy to spare on the final straight.\nEl Condor Pasa (Original)'s unique",
+      "name_en": "Corazón ☆ Ardiente",
+      "scraped_at": "2025-09-07 23:14:22",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Empress's Pride",
+      "description_en": "Moderately increase velocity with the stride of an empress when passing another runner toward the back on the final corner.\nAir Groove (Original)'s unique",
+      "name_en": "Empress's Pride",
+      "scraped_at": "2025-09-07 23:14:22",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "1st Place Kiss☆",
+      "description_en": "Slightly increase ability to break out of the pack on the straight after engaging in a challenge toward the front on the final corner.\nMayano Top Gun (Original)'s unique",
+      "name_en": "1st Place Kiss☆",
+      "scraped_at": "2025-09-07 23:14:22",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "V Is for Victory!",
+      "description_en": "Refuse to back down from a challenge, moderately increasing velocity on the final straight.\nWinning Ticket (Original)'s unique",
+      "name_en": "V Is for Victory!",
+      "scraped_at": "2025-09-07 23:14:22",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Class Rep + Speed = Bakushin",
+      "description_en": "Moderately increase velocity with BAKUSHIN power when engaged in a challenge toward the front in the second half of the race.\nSakura Bakushin O (Original)'s unique",
+      "name_en": "Class Rep + Speed = Bakushin",
+      "scraped_at": "2025-09-07 23:14:22",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Luck Be with Me!",
+      "description_en": "Moderately clear a path forward with the power of divination when the way ahead is jammed late-race.\nMatikanefukukitaru (Original)'s unique",
+      "name_en": "Luck Be with Me!",
+      "scraped_at": "2025-09-07 23:14:22",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "I Can Win Sometimes, Right?",
+      "description_en": "Moderately increase velocity with an arousal of fighting spirit when positioned 3rd and about to lose late-race.\nNice Nature (Original)'s unique",
+      "name_en": "I Can Win Sometimes, Right?",
+      "scraped_at": "2025-09-07 23:14:22",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Call Me King",
+      "description_en": "Increase velocity in a true display of skill with 200m remaining after racing calmly.\nKing Halo (Original)'s unique",
+      "name_en": "Call Me King",
+      "scraped_at": "2025-09-07 23:14:22",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Shooting Star",
+      "description_en": "Ride the momentum and increase velocity after passing another runner toward the front late-race.\nSpecial Week (Original)'s unique",
+      "name_en": "Shooting Star",
+      "scraped_at": "2025-09-07 23:14:22",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "The View from the Lead Is Mine!",
+      "description_en": "Increase velocity by drawing on all remaining strength when in the lead by a fair margin on the final straight.\nSilence Suzuka (Original)'s unique",
+      "name_en": "The View from the Lead Is Mine!",
+      "scraped_at": "2025-09-07 23:14:22",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Sky-High Teio Step",
+      "description_en": "Greatly increase velocity with flashy footwork when closing the gap to runners ahead on the final straight.\nTokai Teio (Original)'s unique",
+      "name_en": "Sky-High Teio Step",
+      "scraped_at": "2025-09-07 23:14:22",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Triumphant Pulse",
+      "description_en": "Greatly increase ability to break out of the pack by opening up a path when positioned toward the front with 200m remaining.\nOguri Cap (Original)'s unique",
+      "name_en": "Triumphant Pulse",
+      "scraped_at": "2025-09-07 23:14:22",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Anchors Aweigh!",
+      "description_en": "Moderately increase velocity steadily with a long spurt starting halfway through the race.\nGold Ship (Original)'s unique",
+      "name_en": "Anchors Aweigh!",
+      "scraped_at": "2025-09-07 23:14:22",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Cut and Drive!",
+      "description_en": "Become stronger at challenging rivals and increase velocity when positioned toward the front with 200m or less remaining.\nVodka (Original)'s unique",
+      "name_en": "Cut and Drive!",
+      "scraped_at": "2025-09-07 23:14:22",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Resplendent Red Ace",
+      "description_en": "Swell with the determination to stay number one in the second half of the race.\nDaiwa Scarlet (Original)'s unique",
+      "name_en": "Resplendent Red Ace",
+      "scraped_at": "2025-09-07 23:14:22",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Where There's a Will, There's a Way",
+      "description_en": "Increase velocity with a strong turn of foot when passing another runner toward the back on the final straight.\nGrass Wonder (Original)'s unique",
+      "name_en": "Where There's a Will, There's a Way",
+      "scraped_at": "2025-09-07 23:14:22",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "The Duty of Dignity Calls",
+      "description_en": "Increase velocity with the determination to not be overtaken when positioned toward the front on the final corner.\nMejiro McQueen (Original)'s unique",
+      "name_en": "The Duty of Dignity Calls",
+      "scraped_at": "2025-09-07 23:14:22",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Victoria por plancha ☆",
+      "description_en": "Hang onto the advantage when positioned toward the front with energy to spare on the final straight.\nEl Condor Pasa (Original)'s unique",
+      "name_en": "Victoria por plancha ☆",
+      "scraped_at": "2025-09-07 23:14:22",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "This Dance Is for Vittoria!",
+      "description_en": "Increase velocity with royal brilliance when engaged in a challenge toward the front on the final corner.\nTM Opera O (Original)'s unique",
+      "name_en": "This Dance Is for Vittoria!",
+      "scraped_at": "2025-09-07 23:14:22",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Behold Thine Emperor's Divine Might",
+      "description_en": "Greatly increase velocity on the final straight after passing another runner 3 times late-race.\nSymboli Rudolf (Original)'s unique",
+      "name_en": "Behold Thine Emperor's Divine Might",
+      "scraped_at": "2025-09-07 23:14:22",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Blazing Pride",
+      "description_en": "Increase velocity with the stride of an empress when passing another runner toward the back on the final corner.\nAir Groove (Original)'s unique",
+      "name_en": "Blazing Pride",
+      "scraped_at": "2025-09-07 23:14:22",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "∴win Q.E.D.",
+      "description_en": "Increase velocity by deriving the winning equation when passing another runner toward the front on the final corner.\nBiwa Hayahide (Original)'s unique",
+      "name_en": "∴win Q.E.D.",
+      "scraped_at": "2025-09-07 23:14:23",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Flashy☆Landing",
+      "description_en": "Increase ability to break out of the pack on the straight after engaging in a challenge toward the front on the final corner.\nMayano Top Gun (Original)'s unique",
+      "name_en": "Flashy☆Landing",
+      "scraped_at": "2025-09-07 23:14:23",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "G00 1st. F∞;",
+      "description_en": "Increase velocity when positioned toward the front after making it to the final straight without faltering.\nMihono Bourbon (Original)'s unique",
+      "name_en": "G00 1st. F∞;",
+      "scraped_at": "2025-09-07 23:14:23",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Blue Rose Closer",
+      "description_en": "Increase velocity with strong willpower when breaking out of the pack on the final straight.\nRice Shower (Original)'s unique",
+      "name_en": "Blue Rose Closer",
+      "scraped_at": "2025-09-07 23:14:23",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Our Ticket to Win!",
+      "description_en": "Refuse to back down from a challenge, increasing velocity on the final straight.\nWinning Ticket (Original)'s unique",
+      "name_en": "Our Ticket to Win!",
+      "scraped_at": "2025-09-07 23:14:23",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Genius x Bakushin = Victory",
+      "description_en": "Increase velocity with BAKUSHIN power when engaged in a challenge toward the front in the second half of the race.\nSakura Bakushin O (Original)'s unique",
+      "name_en": "Genius x Bakushin = Victory",
+      "scraped_at": "2025-09-07 23:14:23",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "I See Victory in My Future!",
+      "description_en": "Clear a path forward with the power of divination when the way ahead is jammed late-race.\nMatikanefukukitaru (Original)'s unique",
+      "name_en": "I See Victory in My Future!",
+      "scraped_at": "2025-09-07 23:14:23",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Just a Little Farther!",
+      "description_en": "Increase velocity with flaring fighting spirit when positioned 3rd and about to lose late-race.\nNice Nature (Original)'s unique",
+      "name_en": "Just a Little Farther!",
+      "scraped_at": "2025-09-07 23:14:23",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Prideful King",
+      "description_en": "Greatly increase velocity in a true display of skill with 200m remaining after racing calmly.\nKing Halo (Original)'s unique",
+      "name_en": "Prideful King",
+      "scraped_at": "2025-09-07 23:14:23",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "#LookatCurren",
+      "description_en": "Gain momentum and begin to advance when passing another runner while well-positioned around halfway through the race.\nCurren Chan (Original)'s unique",
+      "name_en": "#LookatCurren",
+      "scraped_at": "2025-09-07 23:14:23",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Nemesis",
+      "description_en": "Increase velocity with smoldering ambition when moving up from a position toward the back of the pack on the final corner.\nNarita Taishin (Original)'s unique",
+      "name_en": "Nemesis",
+      "scraped_at": "2025-09-07 23:14:23",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "SPARKLY☆STARDOM",
+      "description_en": "Become empowered against ceding the spotlight when about to lose the lead on a straight mid-race.\nSmart Falcon (Original)'s unique",
+      "name_en": "SPARKLY☆STARDOM",
+      "scraped_at": "2025-09-07 23:14:23",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Shadow Break",
+      "description_en": "Increase velocity with beastly strength when passing another runner on the outside on the final corner or later.\nNarita Brian (Original)'s unique",
+      "name_en": "Shadow Break",
+      "scraped_at": "2025-09-07 23:14:23",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Eternal Moments",
+      "description_en": "Increase velocity when starting to make a move from a position toward the front mid-race.\nAir Groove (Wedding)'s unique",
+      "name_en": "Eternal Moments",
+      "scraped_at": "2025-09-07 23:14:23",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Flowery☆Maneuver",
+      "description_en": "Increase velocity when passing another runner toward the front on the final corner. If passing toward the back, increase acceleration instead.\nMayano Top Gun (Wedding)'s unique",
+      "name_en": "Flowery☆Maneuver",
+      "scraped_at": "2025-09-07 23:14:23",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "You and Me! One-on-One!",
+      "description_en": "Increase velocity when passing another runner on the outside toward the back on the final straight.\nHishi Amazon (Original)'s unique",
+      "name_en": "You and Me! One-on-One!",
+      "scraped_at": "2025-09-07 23:14:23",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Lights of Vaudeville",
+      "description_en": "Greatly increase velocity with a dazzling display when just breaking out of the pack toward the front on the final straight.\nFuji Kiseki (Original)'s unique",
+      "name_en": "Lights of Vaudeville",
+      "scraped_at": "2025-09-07 23:14:23",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "KEEP IT REAL.",
+      "description_en": "Moderately increase acceleration steadily with a wink when starting to make a move from midpack in the second half of the race.\nGold City (Original)'s unique",
+      "name_en": "KEEP IT REAL.",
+      "scraped_at": "2025-09-07 23:14:23",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "A Kiss for Courage",
+      "description_en": "Increase velocity with an enthusiastic \"Lets go!\" when positioned toward the front in the second half of the race after recovering endurance with a skill.\nMaruzensky (Summer)'s unique",
+      "name_en": "A Kiss for Courage",
+      "scraped_at": "2025-09-07 23:14:23",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "I Never Goof Up!",
+      "description_en": "Aim for the front with unwavering determination when passing another runner from midpack or further back on a corner late-race.\nMeisho Doto (Original)'s unique",
+      "name_en": "I Never Goof Up!",
+      "scraped_at": "2025-09-07 23:14:23",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Schwarzes Schwert",
+      "description_en": "Increase velocity in a dash for the lead after running calmly and according to plan up until the final straight.\nEishin Flash (Original)'s unique",
+      "name_en": "Schwarzes Schwert",
+      "scraped_at": "2025-09-07 23:14:23",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20013",
+      "icon_url": "assets/skill/image/utx_ico_skill_20013.png",
+      "name_jp": "Bountiful Harvest",
+      "description_en": "Increase velocity with a surge of great fortune when pressured by another runner toward the back in the second half of the race.\nMatikanefukukitaru (Full Armor)'s unique",
+      "name_en": "Bountiful Harvest",
+      "scraped_at": "2025-09-07 23:14:23",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20014",
+      "icon_url": "assets/skill/image/utx_ico_skill_20014.png",
+      "name_jp": "Corner Adept ×",
+      "description_en": "Moderately decrease velocity on a corner with clumsy turning.",
+      "name_en": "Corner Adept ×",
+      "scraped_at": "2025-09-07 23:14:27",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20014",
+      "icon_url": "assets/skill/image/utx_ico_skill_20014.png",
+      "name_jp": "Defeatist",
+      "description_en": "Moderately increase urge to give up when positioned around the very back on the final straight.",
+      "name_en": "Defeatist",
+      "scraped_at": "2025-09-07 23:14:27",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20014",
+      "icon_url": "assets/skill/image/utx_ico_skill_20014.png",
+      "name_jp": "Reckless",
+      "description_en": "Moderately increase carelessness when in the lead with around 200m remaining.",
+      "name_en": "Reckless",
+      "scraped_at": "2025-09-07 23:14:27",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20041",
+      "icon_url": "assets/skill/image/utx_ico_skill_20041.png",
+      "name_jp": "Corner Acceleration ○",
+      "description_en": "Slightly increase acceleration on a corner with masterful turning.",
+      "name_en": "Corner Acceleration ○",
+      "scraped_at": "2025-09-07 23:14:34",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20041",
+      "icon_url": "assets/skill/image/utx_ico_skill_20041.png",
+      "name_jp": "Straightaway Acceleration",
+      "description_en": "Slightly increase acceleration on a straight.",
+      "name_en": "Straightaway Acceleration",
+      "scraped_at": "2025-09-07 23:14:34",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20041",
+      "icon_url": "assets/skill/image/utx_ico_skill_20041.png",
+      "name_jp": "Nimble Navigator",
+      "description_en": "Slightly increase maneuverability when the way ahead is blocked in the last spurt.",
+      "name_en": "Nimble Navigator",
+      "scraped_at": "2025-09-07 23:14:34",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20041",
+      "icon_url": "assets/skill/image/utx_ico_skill_20041.png",
+      "name_jp": "Early Lead",
+      "description_en": "Slightly increase ability to go to the front early-race. (Front Runner)",
+      "name_en": "Early Lead",
+      "scraped_at": "2025-09-07 23:14:34",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20041",
+      "icon_url": "assets/skill/image/utx_ico_skill_20041.png",
+      "name_jp": "Final Push",
+      "description_en": "Slightly increase ability to keep the lead on the final corner. (Front Runner)",
+      "name_en": "Final Push",
+      "scraped_at": "2025-09-07 23:14:34",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20041",
+      "icon_url": "assets/skill/image/utx_ico_skill_20041.png",
+      "name_jp": "Slick Surge",
+      "description_en": "Slightly increase acceleration late-race. (Late Surger)",
+      "name_en": "Slick Surge",
+      "scraped_at": "2025-09-07 23:14:35",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20041",
+      "icon_url": "assets/skill/image/utx_ico_skill_20041.png",
+      "name_jp": "Straightaway Spurt",
+      "description_en": "Slightly increase acceleration on a straight in the last spurt. (End Closer)",
+      "name_en": "Straightaway Spurt",
+      "scraped_at": "2025-09-07 23:14:35",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20041",
+      "icon_url": "assets/skill/image/utx_ico_skill_20041.png",
+      "name_jp": "Sprinting Gear",
+      "description_en": "Slightly increase acceleration on a straight. (Sprint)",
+      "name_en": "Sprinting Gear",
+      "scraped_at": "2025-09-07 23:14:35",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20041",
+      "icon_url": "assets/skill/image/utx_ico_skill_20041.png",
+      "name_jp": "Updrafters",
+      "description_en": "Slightly increase passing ability when positioned toward the back late-race. (Mile)",
+      "name_en": "Updrafters",
+      "scraped_at": "2025-09-07 23:14:35",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20041",
+      "icon_url": "assets/skill/image/utx_ico_skill_20041.png",
+      "name_jp": "Countermeasure",
+      "description_en": "Slightly increase passing ability when positioned toward the front mid-race. (Sprint)",
+      "name_en": "Countermeasure",
+      "scraped_at": "2025-09-07 23:14:35",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20041",
+      "icon_url": "assets/skill/image/utx_ico_skill_20041.png",
+      "name_jp": "Acceleration",
+      "description_en": "Slightly increase acceleration when passing another runner mid-race. (Mile)",
+      "name_en": "Acceleration",
+      "scraped_at": "2025-09-07 23:14:35",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20041",
+      "icon_url": "assets/skill/image/utx_ico_skill_20041.png",
+      "name_jp": "Second Wind",
+      "description_en": "Slightly increase acceleration when positioned toward the back mid-race. (Front Runner)",
+      "name_en": "Second Wind",
+      "scraped_at": "2025-09-07 23:14:35",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20041",
+      "icon_url": "assets/skill/image/utx_ico_skill_20041.png",
+      "name_jp": "Shrewd Step",
+      "description_en": "Slightly increase ability to navigate smoothly. (Pace Chaser)",
+      "name_en": "Shrewd Step",
+      "scraped_at": "2025-09-07 23:14:35",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20041",
+      "icon_url": "assets/skill/image/utx_ico_skill_20041.png",
+      "name_jp": "Straight Descent",
+      "description_en": "Slightly improve running on a downhill. (Pace Chaser)",
+      "name_en": "Straight Descent",
+      "scraped_at": "2025-09-07 23:14:35",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20041",
+      "icon_url": "assets/skill/image/utx_ico_skill_20041.png",
+      "name_jp": "Tactical Tweak",
+      "description_en": "Slightly increase acceleration when positioned toward the back mid-race. (Pace Chaser)",
+      "name_en": "Tactical Tweak",
+      "scraped_at": "2025-09-07 23:14:35",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20041",
+      "icon_url": "assets/skill/image/utx_ico_skill_20041.png",
+      "name_jp": "Fighter",
+      "description_en": "Slightly increase passing ability. (Late Surger)",
+      "name_en": "Fighter",
+      "scraped_at": "2025-09-07 23:14:35",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20041",
+      "icon_url": "assets/skill/image/utx_ico_skill_20041.png",
+      "name_jp": "Highlander",
+      "description_en": "Slightly improve running on an uphill.",
+      "name_en": "Highlander",
+      "scraped_at": "2025-09-07 23:14:35",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20041",
+      "icon_url": "assets/skill/image/utx_ico_skill_20041.png",
+      "name_jp": "Groundwork",
+      "description_en": "Slightly increase acceleration after activating many skills early-race.",
+      "name_en": "Groundwork",
+      "scraped_at": "2025-09-07 23:14:35",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20042",
+      "icon_url": "assets/skill/image/utx_ico_skill_20042.png",
+      "name_jp": "Corner Connoisseur",
+      "description_en": "Increase acceleration on a corner with masterful turning.",
+      "name_en": "Corner Connoisseur",
+      "scraped_at": "2025-09-07 23:14:36",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20042",
+      "icon_url": "assets/skill/image/utx_ico_skill_20042.png",
+      "name_jp": "Rushing Gale!",
+      "description_en": "Increase acceleration on a straight.",
+      "name_en": "Rushing Gale!",
+      "scraped_at": "2025-09-07 23:14:36",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20042",
+      "icon_url": "assets/skill/image/utx_ico_skill_20042.png",
+      "name_jp": "No Stopping Me!",
+      "description_en": "Increase maneuverability when the way ahead is blocked in the last spurt.",
+      "name_en": "No Stopping Me!",
+      "scraped_at": "2025-09-07 23:14:36",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20042",
+      "icon_url": "assets/skill/image/utx_ico_skill_20042.png",
+      "name_jp": "Taking the Lead",
+      "description_en": "Increase ability to go to the front early-race. (Front Runner)",
+      "name_en": "Taking the Lead",
+      "scraped_at": "2025-09-07 23:14:36",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20042",
+      "icon_url": "assets/skill/image/utx_ico_skill_20042.png",
+      "name_jp": "Unrestrained",
+      "description_en": "Increase ability to keep the lead on the final corner. (Front Runner)",
+      "name_en": "Unrestrained",
+      "scraped_at": "2025-09-07 23:14:36",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20042",
+      "icon_url": "assets/skill/image/utx_ico_skill_20042.png",
+      "name_jp": "On Your Left!",
+      "description_en": "Increase acceleration late-race. (Late Surger)",
+      "name_en": "On Your Left!",
+      "scraped_at": "2025-09-07 23:14:36",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20042",
+      "icon_url": "assets/skill/image/utx_ico_skill_20042.png",
+      "name_jp": "Encroaching Shadow",
+      "description_en": "Increase acceleration on a straight in the last spurt. (End Closer)",
+      "name_en": "Encroaching Shadow",
+      "scraped_at": "2025-09-07 23:14:36",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20042",
+      "icon_url": "assets/skill/image/utx_ico_skill_20042.png",
+      "name_jp": "Turbo Sprint",
+      "description_en": "Increase acceleration on a straight. (Sprint)",
+      "name_en": "Turbo Sprint",
+      "scraped_at": "2025-09-07 23:14:36",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20042",
+      "icon_url": "assets/skill/image/utx_ico_skill_20042.png",
+      "name_jp": "Furious Feat",
+      "description_en": "Increase passing ability when positioned toward the back late-race. (Mile)",
+      "name_en": "Furious Feat",
+      "scraped_at": "2025-09-07 23:14:36",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20042",
+      "icon_url": "assets/skill/image/utx_ico_skill_20042.png",
+      "name_jp": "Plan X",
+      "description_en": "Increase passing ability when positioned toward the front mid-race. (Sprint)",
+      "name_en": "Plan X",
+      "scraped_at": "2025-09-07 23:14:36",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20042",
+      "icon_url": "assets/skill/image/utx_ico_skill_20042.png",
+      "name_jp": "Step on the Gas!",
+      "description_en": "Increase acceleration when passing another runner mid-race. (Mile)",
+      "name_en": "Step on the Gas!",
+      "scraped_at": "2025-09-07 23:14:36",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20042",
+      "icon_url": "assets/skill/image/utx_ico_skill_20042.png",
+      "name_jp": "Reignition",
+      "description_en": "Increase acceleration when positioned toward the back mid-race. (Front Runner)",
+      "name_en": "Reignition",
+      "scraped_at": "2025-09-07 23:14:36",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20042",
+      "icon_url": "assets/skill/image/utx_ico_skill_20042.png",
+      "name_jp": "Technician",
+      "description_en": "Moderately increase ability to navigate smoothly. (Pace Chaser)",
+      "name_en": "Technician",
+      "scraped_at": "2025-09-07 23:14:36",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20042",
+      "icon_url": "assets/skill/image/utx_ico_skill_20042.png",
+      "name_jp": "Determined Descent",
+      "description_en": "Moderately improve running on a downhill. (Pace Chaser)",
+      "name_en": "Determined Descent",
+      "scraped_at": "2025-09-07 23:14:36",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20042",
+      "icon_url": "assets/skill/image/utx_ico_skill_20042.png",
+      "name_jp": "Shatterproof",
+      "description_en": "Moderately increase acceleration when positioned toward the back mid-race. (Pace Chaser)",
+      "name_en": "Shatterproof",
+      "scraped_at": "2025-09-07 23:14:36",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20042",
+      "icon_url": "assets/skill/image/utx_ico_skill_20042.png",
+      "name_jp": "Hard Worker",
+      "description_en": "Moderately increase passing ability. (Late Surger)",
+      "name_en": "Hard Worker",
+      "scraped_at": "2025-09-07 23:14:36",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20043",
+      "icon_url": "assets/skill/image/utx_ico_skill_20043.png",
+      "name_jp": "Feel the Burn!",
+      "description_en": "Moderately increase acceleration in an attempt to move up on a corner late-race.\nMejiro Ryan (Original)'s unique",
+      "name_en": "Feel the Burn!",
+      "scraped_at": "2025-09-07 23:14:37",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20043",
+      "icon_url": "assets/skill/image/utx_ico_skill_20043.png",
+      "name_jp": "Red Shift/LP1211-M",
+      "description_en": "Increase acceleration by shifting gears when positioned toward the front on the final corner or later.\nMaruzensky (Original)'s unique",
+      "name_en": "Red Shift/LP1211-M",
+      "scraped_at": "2025-09-07 23:14:37",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20043",
+      "icon_url": "assets/skill/image/utx_ico_skill_20043.png",
+      "name_jp": "Shooting for Victory!",
+      "description_en": "Increase acceleration with a pow, a wow, and a bang when well-positioned on the final corner.\nTaiki Shuttle (Original)'s unique",
+      "name_en": "Shooting for Victory!",
+      "scraped_at": "2025-09-07 23:14:37",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20043",
+      "icon_url": "assets/skill/image/utx_ico_skill_20043.png",
+      "name_jp": "Let's Pump Some Iron!",
+      "description_en": "Increase acceleration in an attempt to move up on a corner late-race.\nMejiro Ryan (Original)'s unique",
+      "name_en": "Let's Pump Some Iron!",
+      "scraped_at": "2025-09-07 23:14:37",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20043",
+      "icon_url": "assets/skill/image/utx_ico_skill_20043.png",
+      "name_jp": "Angling and Scheming",
+      "description_en": "Increase acceleration at an opportune moment when in the lead on a corner late-race.\nSeiun Sky (Original)'s unique",
+      "name_en": "Angling and Scheming",
+      "scraped_at": "2025-09-07 23:14:37",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20043",
+      "icon_url": "assets/skill/image/utx_ico_skill_20043.png",
+      "name_jp": "Condor's Fury",
+      "description_en": "Increase acceleration with blazing passion when aiming for the front from midpack on the final corner.\nEl Condor Pasa (Fantasy)'s unique",
+      "name_en": "Condor's Fury",
+      "scraped_at": "2025-09-07 23:14:37",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20044",
+      "icon_url": "assets/skill/image/utx_ico_skill_20044.png",
+      "name_jp": "Corner Acceleration ×",
+      "description_en": "Moderately decrease acceleration on a corner with awkward turning.",
+      "name_en": "Corner Acceleration ×",
+      "scraped_at": "2025-09-07 23:14:37",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20051",
+      "icon_url": "assets/skill/image/utx_ico_skill_20051.png",
+      "name_jp": "Prudent Positioning",
+      "description_en": "Moderately increase navigation early-race.",
+      "name_en": "Prudent Positioning",
+      "scraped_at": "2025-09-07 23:14:40",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20051",
+      "icon_url": "assets/skill/image/utx_ico_skill_20051.png",
+      "name_jp": "Go with the Flow",
+      "description_en": "Moderately increase navigation late-race.",
+      "name_en": "Go with the Flow",
+      "scraped_at": "2025-09-07 23:14:40",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20051",
+      "icon_url": "assets/skill/image/utx_ico_skill_20051.png",
+      "name_jp": "Meticulous Measures",
+      "description_en": "Moderately prepare to make for the finish line mid-race. (Sprint)",
+      "name_en": "Meticulous Measures",
+      "scraped_at": "2025-09-07 23:14:40",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20051",
+      "icon_url": "assets/skill/image/utx_ico_skill_20051.png",
+      "name_jp": "Thunderbolt Step",
+      "description_en": "Moderately avoid becoming surrounded when positioned toward the back mid-race. (Medium)",
+      "name_en": "Thunderbolt Step",
+      "scraped_at": "2025-09-07 23:14:40",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20051",
+      "icon_url": "assets/skill/image/utx_ico_skill_20051.png",
+      "name_jp": "Dodging Danger",
+      "description_en": "Moderately avoid becoming surrounded early-race. (Front Runner)",
+      "name_en": "Dodging Danger",
+      "scraped_at": "2025-09-07 23:14:40",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20052",
+      "icon_url": "assets/skill/image/utx_ico_skill_20052.png",
+      "name_jp": "Center Stage",
+      "description_en": "Increase navigation early-race.",
+      "name_en": "Center Stage",
+      "scraped_at": "2025-09-07 23:14:40",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20052",
+      "icon_url": "assets/skill/image/utx_ico_skill_20052.png",
+      "name_jp": "Lane Legerdemain",
+      "description_en": "Increase navigation late-race.",
+      "name_en": "Lane Legerdemain",
+      "scraped_at": "2025-09-07 23:14:40",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20052",
+      "icon_url": "assets/skill/image/utx_ico_skill_20052.png",
+      "name_jp": "Perfect Prep!",
+      "description_en": "Prepare to make for the finish line mid-race. (Sprint)",
+      "name_en": "Perfect Prep!",
+      "scraped_at": "2025-09-07 23:14:40",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20052",
+      "icon_url": "assets/skill/image/utx_ico_skill_20052.png",
+      "name_jp": "Lightning Step",
+      "description_en": "Avoid becoming surrounded when positioned toward the back mid-race. (Medium)",
+      "name_en": "Lightning Step",
+      "scraped_at": "2025-09-07 23:14:40",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20052",
+      "icon_url": "assets/skill/image/utx_ico_skill_20052.png",
+      "name_jp": "Sixth Sense",
+      "description_en": "Avoid becoming surrounded early-race. (Front Runner)",
+      "name_en": "Sixth Sense",
+      "scraped_at": "2025-09-07 23:14:40",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20061",
+      "icon_url": "assets/skill/image/utx_ico_skill_20061.png",
+      "name_jp": "Focus",
+      "description_en": "Slightly decrease time lost to slow starts.",
+      "name_en": "Focus",
+      "scraped_at": "2025-09-07 23:14:40",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20062",
+      "icon_url": "assets/skill/image/utx_ico_skill_20062.png",
+      "name_jp": "Concentration",
+      "description_en": "Decrease time lost to slow starts.",
+      "name_en": "Concentration",
+      "scraped_at": "2025-09-07 23:14:40",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20064",
+      "icon_url": "assets/skill/image/utx_ico_skill_20064.png",
+      "name_jp": "Gatekept",
+      "description_en": "Moderately increase time lost to slow starts.",
+      "name_en": "Gatekept",
+      "scraped_at": "2025-09-07 23:14:40",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20091",
+      "icon_url": "assets/skill/image/utx_ico_skill_20091.png",
+      "name_jp": "Hawkeye",
+      "description_en": "Moderately widen field of view with heightened observation early-race. (Medium)",
+      "name_en": "Hawkeye",
+      "scraped_at": "2025-09-07 23:14:40",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20091",
+      "icon_url": "assets/skill/image/utx_ico_skill_20091.png",
+      "name_jp": "Studious",
+      "description_en": "Slightly widen field of view with heightened observation mid-race. (Late Surger)",
+      "name_en": "Studious",
+      "scraped_at": "2025-09-07 23:14:40",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20091",
+      "icon_url": "assets/skill/image/utx_ico_skill_20091.png",
+      "name_jp": "I Can See Right Through You",
+      "description_en": "Slightly widen field of view with situational awareness when moving sideways. (End Closer)",
+      "name_en": "I Can See Right Through You",
+      "scraped_at": "2025-09-07 23:14:40",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20091",
+      "icon_url": "assets/skill/image/utx_ico_skill_20091.png",
+      "name_jp": "Strategist",
+      "description_en": "Slightly widen field of view when positioned toward the back late-race. (End Closer)",
+      "name_en": "Strategist",
+      "scraped_at": "2025-09-07 23:14:40",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20092",
+      "icon_url": "assets/skill/image/utx_ico_skill_20092.png",
+      "name_jp": "Clairvoyance",
+      "description_en": "Widen field of view with heightened observation early-race. (Medium)",
+      "name_en": "Clairvoyance",
+      "scraped_at": "2025-09-07 23:14:41",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20092",
+      "icon_url": "assets/skill/image/utx_ico_skill_20092.png",
+      "name_jp": "The Bigger Picture",
+      "description_en": "Widen field of view with heightened observation mid-race. (Late Surger)",
+      "name_en": "The Bigger Picture",
+      "scraped_at": "2025-09-07 23:14:41",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20092",
+      "icon_url": "assets/skill/image/utx_ico_skill_20092.png",
+      "name_jp": "The Coast Is Clear!",
+      "description_en": "Moderately widen field of view with situational awareness when moving sideways. (End Closer)",
+      "name_en": "The Coast Is Clear!",
+      "scraped_at": "2025-09-07 23:14:41",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20092",
+      "icon_url": "assets/skill/image/utx_ico_skill_20092.png",
+      "name_jp": "Crusader",
+      "description_en": "Widen field of view when positioned toward the back late-race. (End Closer)",
+      "name_en": "Crusader",
+      "scraped_at": "2025-09-07 23:14:41",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20101",
+      "icon_url": "assets/skill/image/utx_ico_skill_20101.png",
+      "name_jp": "Ignited Spirit SPD",
+      "description_en": "Burn bright with team spirit, slightly increasing velocity in proportion to the total Speed of racing team members mid-race.",
+      "name_en": "Ignited Spirit SPD",
+      "scraped_at": "2025-09-07 23:14:41",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20101",
+      "icon_url": "assets/skill/image/utx_ico_skill_20101.png",
+      "name_jp": "Ignited Spirit GUTS",
+      "description_en": "Burn bright with team spirit, very slightly increasing vigor in proportion to the total Guts of racing team members late-race.",
+      "name_en": "Ignited Spirit GUTS",
+      "scraped_at": "2025-09-07 23:14:41",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20102",
+      "icon_url": "assets/skill/image/utx_ico_skill_20102.png",
+      "name_jp": "Burning Spirit SPD",
+      "description_en": "Burn bright with team spirit, increasing velocity in proportion to the total Speed of racing team members mid-race.",
+      "name_en": "Burning Spirit SPD",
+      "scraped_at": "2025-09-07 23:14:41",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20102",
+      "icon_url": "assets/skill/image/utx_ico_skill_20102.png",
+      "name_jp": "Burning Spirit GUTS",
+      "description_en": "Burn bright with team spirit, increasing vigor in proportion to the total Guts of racing team members late-race.",
+      "name_en": "Burning Spirit GUTS",
+      "scraped_at": "2025-09-07 23:14:41",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20111",
+      "icon_url": "assets/skill/image/utx_ico_skill_20111.png",
+      "name_jp": "Ignited Spirit STA",
+      "description_en": "Burn bright with team spirit, slightly recovering endurance in proportion to the total Stamina of racing team members mid-race.",
+      "name_en": "Ignited Spirit STA",
+      "scraped_at": "2025-09-07 23:14:41",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20112",
+      "icon_url": "assets/skill/image/utx_ico_skill_20112.png",
+      "name_jp": "Burning Spirit STA",
+      "description_en": "Burn bright with team spirit, recovering endurance in proportion to the total Stamina of racing team members mid-race.",
+      "name_en": "Burning Spirit STA",
+      "scraped_at": "2025-09-07 23:14:41",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20121",
+      "icon_url": "assets/skill/image/utx_ico_skill_20121.png",
+      "name_jp": "Ignited Spirit PWR",
+      "description_en": "Burn bright with team spirit, slightly increasing acceleration in proportion to the total Power of racing team members late-race.",
+      "name_en": "Ignited Spirit PWR",
+      "scraped_at": "2025-09-07 23:14:41",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20122",
+      "icon_url": "assets/skill/image/utx_ico_skill_20122.png",
+      "name_jp": "Burning Spirit PWR",
+      "description_en": "Burn bright with team spirit, increasing acceleration in proportion to the total Power of racing team members late-race.",
+      "name_en": "Burning Spirit PWR",
+      "scraped_at": "2025-09-07 23:14:41",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20131",
+      "icon_url": "assets/skill/image/utx_ico_skill_20131.png",
+      "name_jp": "Ignited Spirit WIT",
+      "description_en": "Burn bright with team spirit, slightly increasing strategic navigation in proportion to the total Wit of racing team members early-race.",
+      "name_en": "Ignited Spirit WIT",
+      "scraped_at": "2025-09-07 23:14:41",
+      "source": "gametora.com"
+    },
+    {
+      "id": "20132",
+      "icon_url": "assets/skill/image/utx_ico_skill_20132.png",
+      "name_jp": "Burning Spirit WIT",
+      "description_en": "Burn bright with team spirit, increasing strategic navigation in proportion to the total Wit of racing team members early-race.",
+      "name_en": "Burning Spirit WIT",
+      "scraped_at": "2025-09-07 23:14:41",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30011",
+      "icon_url": "assets/skill/image/utx_ico_skill_30011.png",
+      "name_jp": "Hesitant Front Runners",
+      "description_en": "Slightly decrease velocity of front runners late-race.",
+      "name_en": "Hesitant Front Runners",
+      "scraped_at": "2025-09-07 23:14:43",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30011",
+      "icon_url": "assets/skill/image/utx_ico_skill_30011.png",
+      "name_jp": "Hesitant Pace Chasers",
+      "description_en": "Slightly decrease velocity of pace chasers late-race.",
+      "name_en": "Hesitant Pace Chasers",
+      "scraped_at": "2025-09-07 23:14:43",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30011",
+      "icon_url": "assets/skill/image/utx_ico_skill_30011.png",
+      "name_jp": "Hesitant Late Surgers",
+      "description_en": "Slightly decrease velocity of late surgers late-race.",
+      "name_en": "Hesitant Late Surgers",
+      "scraped_at": "2025-09-07 23:14:43",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30011",
+      "icon_url": "assets/skill/image/utx_ico_skill_30011.png",
+      "name_jp": "Hesitant End Closers",
+      "description_en": "Slightly decrease velocity of end closers late-race.",
+      "name_en": "Hesitant End Closers",
+      "scraped_at": "2025-09-07 23:14:43",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30011",
+      "icon_url": "assets/skill/image/utx_ico_skill_30011.png",
+      "name_jp": "Intimidate",
+      "description_en": "Moderately intimidate runners behind when positioned toward the front early-race. (Sprint)",
+      "name_en": "Intimidate",
+      "scraped_at": "2025-09-07 23:14:43",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30011",
+      "icon_url": "assets/skill/image/utx_ico_skill_30011.png",
+      "name_jp": "Speed Eater",
+      "description_en": "Slightly steal velocity from runners behind when in the lead mid-race. (Mile)",
+      "name_en": "Speed Eater",
+      "scraped_at": "2025-09-07 23:14:43",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30011",
+      "icon_url": "assets/skill/image/utx_ico_skill_30011.png",
+      "name_jp": "Tether",
+      "description_en": "Slightly decrease velocity of runners ahead when positioned toward the back late-race. (Medium)",
+      "name_en": "Tether",
+      "scraped_at": "2025-09-07 23:14:43",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30011",
+      "icon_url": "assets/skill/image/utx_ico_skill_30011.png",
+      "name_jp": "Intense Gaze",
+      "description_en": "Slightly unnerve runners in focus late-race. (End Closer)",
+      "name_en": "Intense Gaze",
+      "scraped_at": "2025-09-07 23:14:43",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30012",
+      "icon_url": "assets/skill/image/utx_ico_skill_30012.png",
+      "name_jp": "Greed for Speed",
+      "description_en": "Moderately steal velocity from runners behind when in the lead mid-race. (Mile)",
+      "name_en": "Greed for Speed",
+      "scraped_at": "2025-09-07 23:14:43",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30012",
+      "icon_url": "assets/skill/image/utx_ico_skill_30012.png",
+      "name_jp": "Dominator",
+      "description_en": "Decrease velocity of runners ahead when positioned toward the back late-race. (Medium)",
+      "name_en": "Dominator",
+      "scraped_at": "2025-09-07 23:14:43",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30012",
+      "icon_url": "assets/skill/image/utx_ico_skill_30012.png",
+      "name_jp": "Petrifying Gaze",
+      "description_en": "Unnerve runners in focus late-race. (End Closer)",
+      "name_en": "Petrifying Gaze",
+      "scraped_at": "2025-09-07 23:14:43",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30012",
+      "icon_url": "assets/skill/image/utx_ico_skill_30012.png",
+      "name_jp": "Adored by All",
+      "description_en": "Intimidate runners behind when positioned toward the front early-race. (Sprint)",
+      "name_en": "Adored by All",
+      "scraped_at": "2025-09-07 23:14:43",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30021",
+      "icon_url": "assets/skill/image/utx_ico_skill_30021.png",
+      "name_jp": "Opening Gambit",
+      "description_en": "Slightly dull movement for runners ahead when positioned toward the back early-race. (Mile)",
+      "name_en": "Opening Gambit",
+      "scraped_at": "2025-09-07 23:14:43",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30021",
+      "icon_url": "assets/skill/image/utx_ico_skill_30021.png",
+      "name_jp": "Restart",
+      "description_en": "Slightly startle runners ahead when failing to get a lead early-race. (Front Runner)",
+      "name_en": "Restart",
+      "scraped_at": "2025-09-07 23:14:43",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30022",
+      "icon_url": "assets/skill/image/utx_ico_skill_30022.png",
+      "name_jp": "Battle Formation",
+      "description_en": "Dull movement for runners ahead when positioned toward the back early-race. (Mile)",
+      "name_en": "Battle Formation",
+      "scraped_at": "2025-09-07 23:14:43",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30041",
+      "icon_url": "assets/skill/image/utx_ico_skill_30041.png",
+      "name_jp": "Frenzied Front Runners",
+      "description_en": "Increase time needed for front runners to calm down when they become rushed.",
+      "name_en": "Frenzied Front Runners",
+      "scraped_at": "2025-09-07 23:14:43",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30041",
+      "icon_url": "assets/skill/image/utx_ico_skill_30041.png",
+      "name_jp": "Frenzied Pace Chasers",
+      "description_en": "Increase time needed for pace chasers to calm down when they become rushed.",
+      "name_en": "Frenzied Pace Chasers",
+      "scraped_at": "2025-09-07 23:14:43",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30041",
+      "icon_url": "assets/skill/image/utx_ico_skill_30041.png",
+      "name_jp": "Frenzied Late Surgers",
+      "description_en": "Increase time needed for late surgers to calm down when they become rushed.",
+      "name_en": "Frenzied Late Surgers",
+      "scraped_at": "2025-09-07 23:14:43",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30041",
+      "icon_url": "assets/skill/image/utx_ico_skill_30041.png",
+      "name_jp": "Frenzied End Closers",
+      "description_en": "Increase time needed for end closers to calm down when they become rushed.",
+      "name_en": "Frenzied End Closers",
+      "scraped_at": "2025-09-07 23:14:43",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30051",
+      "icon_url": "assets/skill/image/utx_ico_skill_30051.png",
+      "name_jp": "Trick (Front)",
+      "description_en": "Slightly increase fatigue for rushed runners behind when positioned toward the front mid-race.",
+      "name_en": "Trick (Front)",
+      "scraped_at": "2025-09-07 23:14:43",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30051",
+      "icon_url": "assets/skill/image/utx_ico_skill_30051.png",
+      "name_jp": "Trick (Rear)",
+      "description_en": "Slightly increase fatigue for rushed runners ahead when positioned toward the back mid-race.",
+      "name_en": "Trick (Rear)",
+      "scraped_at": "2025-09-07 23:14:43",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30051",
+      "icon_url": "assets/skill/image/utx_ico_skill_30051.png",
+      "name_jp": "Subdued Front Runners",
+      "description_en": "Slightly increase fatigue for front runners early-race.",
+      "name_en": "Subdued Front Runners",
+      "scraped_at": "2025-09-07 23:14:43",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30051",
+      "icon_url": "assets/skill/image/utx_ico_skill_30051.png",
+      "name_jp": "Flustered Front Runners",
+      "description_en": "Slightly increase fatigue for front runners mid-race.",
+      "name_en": "Flustered Front Runners",
+      "scraped_at": "2025-09-07 23:14:43",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30051",
+      "icon_url": "assets/skill/image/utx_ico_skill_30051.png",
+      "name_jp": "Subdued Pace Chasers",
+      "description_en": "Slightly increase fatigue for pace chasers early-race.",
+      "name_en": "Subdued Pace Chasers",
+      "scraped_at": "2025-09-07 23:14:43",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30051",
+      "icon_url": "assets/skill/image/utx_ico_skill_30051.png",
+      "name_jp": "Flustered Pace Chasers",
+      "description_en": "Slightly increase fatigue for pace chasers mid-race.",
+      "name_en": "Flustered Pace Chasers",
+      "scraped_at": "2025-09-07 23:14:43",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30051",
+      "icon_url": "assets/skill/image/utx_ico_skill_30051.png",
+      "name_jp": "Subdued Late Surgers",
+      "description_en": "Slightly increase fatigue for late surgers early-race.",
+      "name_en": "Subdued Late Surgers",
+      "scraped_at": "2025-09-07 23:14:43",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30051",
+      "icon_url": "assets/skill/image/utx_ico_skill_30051.png",
+      "name_jp": "Flustered Late Surgers",
+      "description_en": "Slightly increase fatigue for late surgers mid-race.",
+      "name_en": "Flustered Late Surgers",
+      "scraped_at": "2025-09-07 23:14:43",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30051",
+      "icon_url": "assets/skill/image/utx_ico_skill_30051.png",
+      "name_jp": "Subdued End Closers",
+      "description_en": "Slightly increase fatigue for end closers early-race.",
+      "name_en": "Subdued End Closers",
+      "scraped_at": "2025-09-07 23:14:43",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30051",
+      "icon_url": "assets/skill/image/utx_ico_skill_30051.png",
+      "name_jp": "Flustered End Closers",
+      "description_en": "Slightly increase fatigue for end closers mid-race.",
+      "name_en": "Flustered End Closers",
+      "scraped_at": "2025-09-07 23:14:44",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30051",
+      "icon_url": "assets/skill/image/utx_ico_skill_30051.png",
+      "name_jp": "Stop Right There!",
+      "description_en": "Slightly cause panic in runners ahead when positioned toward the back early-race. (Sprint)",
+      "name_en": "Stop Right There!",
+      "scraped_at": "2025-09-07 23:14:44",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30051",
+      "icon_url": "assets/skill/image/utx_ico_skill_30051.png",
+      "name_jp": "Murmur",
+      "description_en": "Slightly disturb runners directly ahead mid-race. (Medium)",
+      "name_en": "Murmur",
+      "scraped_at": "2025-09-07 23:14:44",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30051",
+      "icon_url": "assets/skill/image/utx_ico_skill_30051.png",
+      "name_jp": "Stamina Eater",
+      "description_en": "Very slightly steal endurance from runners ahead when positioned toward the back mid-race. (Long)",
+      "name_en": "Stamina Eater",
+      "scraped_at": "2025-09-07 23:14:44",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30051",
+      "icon_url": "assets/skill/image/utx_ico_skill_30051.png",
+      "name_jp": "Sharp Gaze",
+      "description_en": "Slightly startle other runners late-race. (Late Surger)",
+      "name_en": "Sharp Gaze",
+      "scraped_at": "2025-09-07 23:14:44",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30052",
+      "icon_url": "assets/skill/image/utx_ico_skill_30052.png",
+      "name_jp": "You've Got No Shot",
+      "description_en": "Cause panic in runners ahead when positioned toward the back early-race. (Sprint)",
+      "name_en": "You've Got No Shot",
+      "scraped_at": "2025-09-07 23:14:44",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30052",
+      "icon_url": "assets/skill/image/utx_ico_skill_30052.png",
+      "name_jp": "Mystifying Murmur",
+      "description_en": "Disturb runners directly ahead mid-race. (Medium)",
+      "name_en": "Mystifying Murmur",
+      "scraped_at": "2025-09-07 23:14:44",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30052",
+      "icon_url": "assets/skill/image/utx_ico_skill_30052.png",
+      "name_jp": "Stamina Siphon",
+      "description_en": "Moderately steal endurance from runners ahead when positioned toward the back mid-race. (Long)",
+      "name_en": "Stamina Siphon",
+      "scraped_at": "2025-09-07 23:14:44",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30052",
+      "icon_url": "assets/skill/image/utx_ico_skill_30052.png",
+      "name_jp": "All-Seeing Eyes",
+      "description_en": "Startle other runners late-race. (Late Surger)",
+      "name_en": "All-Seeing Eyes",
+      "scraped_at": "2025-09-07 23:14:44",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30071",
+      "icon_url": "assets/skill/image/utx_ico_skill_30071.png",
+      "name_jp": "Smoke Screen",
+      "description_en": "Moderately narrow the field of view for runners ahead late-race. (Long)",
+      "name_en": "Smoke Screen",
+      "scraped_at": "2025-09-07 23:14:44",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30071",
+      "icon_url": "assets/skill/image/utx_ico_skill_30071.png",
+      "name_jp": "Disorient",
+      "description_en": "Slightly narrow the field of view for runners behind when positioned toward the front late-race. (Pace Chaser)",
+      "name_en": "Disorient",
+      "scraped_at": "2025-09-07 23:14:44",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30072",
+      "icon_url": "assets/skill/image/utx_ico_skill_30072.png",
+      "name_jp": "Illusionist",
+      "description_en": "Narrow the field of view for runners ahead late-race. (Long)",
+      "name_en": "Illusionist",
+      "scraped_at": "2025-09-07 23:14:44",
+      "source": "gametora.com"
+    },
+    {
+      "id": "30072",
+      "icon_url": "assets/skill/image/utx_ico_skill_30072.png",
+      "name_jp": "Dazzling Disorientation",
+      "description_en": "Moderately narrow the field of view for runners behind when positioned toward the front late-race. (Pace Chaser)",
+      "name_en": "Dazzling Disorientation",
+      "scraped_at": "2025-09-07 23:14:44",
+      "source": "gametora.com"
+    }
+  ]
+}

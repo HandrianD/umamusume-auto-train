@@ -246,6 +246,108 @@ def get_scenarios():
     print(f"Error loading scenarios: {e}")
     return {"scenarios": []}
 
+@app.get("/skills")
+def get_skills():
+  """Get list of all available skills with enhanced data"""
+  try:
+    with open("assets/skill/nested/skill_data.json", 'r', encoding='utf-8') as f:
+      skill_data = json.load(f)
+
+    skills = skill_data.get("skills", [])
+
+    # Transform skills to include local icon paths and both English and Japanese names
+    enhanced_skills = []
+    for skill in skills:
+      enhanced_skill = {
+        "id": skill.get("id", ""),
+        "name": skill.get("name_en", ""),  # Primary name for frontend
+        "name_jp": skill.get("name_jp", ""),  # Japanese name
+        "description": skill.get("description_en", ""),
+        "icon_url": skill.get("icon_url", "").replace("assets/skill/image/", "/static/skill/image/"),
+        "scraped_at": skill.get("scraped_at", ""),
+        "source": skill.get("source", "")
+      }
+      enhanced_skills.append(enhanced_skill)
+
+    print(f"[API] Returning {len(enhanced_skills)} skills from nested skill data")
+    return {"skills": enhanced_skills}
+
+  except Exception as e:
+    print(f"Error loading skills: {e}")
+    # Fallback to old method if new file doesn't exist
+    try:
+      with open("data/skills.json", 'r', encoding='utf-8') as f:
+        old_skills = json.load(f)
+
+      # Transform old format to new format
+      enhanced_skills = []
+      for skill in old_skills:
+        enhanced_skill = {
+          "id": "",
+          "name": skill.get("name", ""),
+          "name_jp": "",
+          "description": skill.get("description", ""),
+          "icon_url": "",
+          "scraped_at": "",
+          "source": "fallback"
+        }
+        enhanced_skills.append(enhanced_skill)
+
+      print(f"[API] Using fallback skills: {len(enhanced_skills)} skills from data/skills.json")
+      return {"skills": enhanced_skills}
+
+    except Exception as e2:
+      print(f"Error loading fallback skills: {e2}")
+      return {"skills": [], "error": "No skill data available"}
+
+@app.get("/skills/search")
+def search_skills(query: str = "", limit: int = 50):
+  """Search skills by name or description"""
+  try:
+    with open("assets/skill/nested/skill_data.json", 'r', encoding='utf-8') as f:
+      skill_data = json.load(f)
+
+    skills = skill_data.get("skills", [])
+    query_lower = query.lower()
+
+    if not query:
+      # Return first N skills if no query
+      results = skills[:limit]
+    else:
+      # Filter skills by query
+      results = []
+      for skill in skills:
+        name_en = skill.get("name_en", "").lower()
+        name_jp = skill.get("name_jp", "").lower()
+        description = skill.get("description_en", "").lower()
+
+        if (query_lower in name_en or
+            query_lower in name_jp or
+            query_lower in description):
+          results.append(skill)
+          if len(results) >= limit:
+            break
+
+    # Transform results
+    enhanced_results = []
+    for skill in results:
+      enhanced_skill = {
+        "id": skill.get("id", ""),
+        "name": skill.get("name_en", ""),
+        "name_jp": skill.get("name_jp", ""),
+        "description": skill.get("description_en", ""),
+        "icon_url": skill.get("icon_url", "").replace("assets/skill/image/", "/static/skill/image/"),
+        "scraped_at": skill.get("scraped_at", ""),
+        "source": skill.get("source", "")
+      }
+      enhanced_results.append(enhanced_skill)
+
+    return {"skills": enhanced_results, "query": query, "total": len(enhanced_results)}
+
+  except Exception as e:
+    print(f"Error searching skills: {e}")
+    return {"skills": [], "error": str(e)}
+
 PATH = "web/dist"
 
 @app.get("/")

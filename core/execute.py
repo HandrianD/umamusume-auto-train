@@ -1,15 +1,25 @@
 import pyautogui
 import time
 from PIL import ImageGrab
+import numpy as np
+import easyocr
 
 pyautogui.useImageNotFoundException(False)
 
+# Initialize OCR reader
+reader = easyocr.Reader(['en'], gpu=False)
+
+import re
 import core.state as state
-from core.state import check_support_card, check_failure, check_turn, check_mood, check_current_year, check_criteria, check_skill_pts, check_energy, get_current_energy_level
+from core.state import check_support_card, check_failure, check_turn, check_mood, check_current_year, check_criteria, check_skill_pts, check_energy, get_current_energy_level, stat_state, stat_state, get_race_type
 from core.logic import do_something
 from core.ocr import extract_text
-from utils.constants import MOOD_LIST, SCREEN_BOTTOM_REGION, CHOICE_AREA_REGION
+from utils.constants import MOOD_LIST, SCREEN_BOTTOM_REGION, CHOICE_AREA_REGION, SCREEN_MIDDLE_REGION, SCREEN_TOP_REGION, SKIP_BTN_BIG_REGION
 from utils.screenshot import enhanced_screenshot
+from core.recognizer import is_btn_active, match_template, multi_match_templates
+
+# Global variable for race position selection
+PREFERRED_POSITION_SET = False
 
 def is_valid_mouse_position(pos):
   """Check if mouse position is valid and won't trigger PyAutoGUI fail-safe"""
@@ -873,7 +883,7 @@ templates = {
   "retry": "assets/buttons/retry_btn.png"
 }
 
-def click(img: str = None, confidence: float = 0.8, minSearch:float = 2, click: int = 1, text: str = "", boxes = None):
+def click(img: str = None, confidence: float = 0.8, minSearch:float = 2, click: int = 1, text: str = "", boxes = None, region=None):
   if not state.is_bot_running:
     return False
 
@@ -889,54 +899,31 @@ def click(img: str = None, confidence: float = 0.8, minSearch:float = 2, click: 
       print(text)
     x, y, w, h = box
     center = (x + w // 2, y + h // 2)
-    print(f"[DEBUG] Clicking at center: {center} from box: {box}")
-    
-    # Check if the button area looks clickable (not grayed out)
-    try:
-      button_region = (x, y, w, h)
-      button_screenshot = pyautogui.screenshot(region=button_region)
-      # Convert to grayscale and check average brightness
-      grayscale = button_screenshot.convert('L')
-      pixels = list(grayscale.getdata())
-      avg_brightness = sum(pixels) / len(pixels)
-      print(f"[DEBUG] Button area average brightness: {avg_brightness:.1f}")
-      
-      if avg_brightness < 100:
-        print("[DEBUG] Button appears dark/disabled - may not be clickable")
-      elif avg_brightness > 200:
-        print("[DEBUG] Button appears bright/active - should be clickable")
-      else:
-        print("[DEBUG] Button brightness is moderate")
-    except Exception as e:
-      print(f"[DEBUG] Error checking button appearance: {e}")
-    
-    # Try multiple click attempts with slight variations
-    for attempt in range(3):
-      try:
-        if attempt == 0:
-          # First attempt: exact center
-          click_x, click_y = center
-        elif attempt == 1:
-          # Second attempt: slightly offset
-          click_x, click_y = center[0] + 10, center[1] + 5
-        else:
-          # Third attempt: slightly offset in other direction
-          click_x, click_y = center[0] - 10, center[1] - 5
-        
-        pyautogui.moveTo(click_x, click_y, duration=0.1)
-        pyautogui.click(clicks=click)
-        print(f"[DEBUG] Click attempt {attempt + 1} at ({click_x}, {click_y})")
-        time.sleep(0.2)  # Brief pause between attempts
-      except Exception as e:
-        print(f"[DEBUG] Click attempt {attempt + 1} failed: {e}")
-    
+    pyautogui.moveTo(center[0], center[1], duration=0.225)
+    pyautogui.click(clicks=click)
     return True
 
   if img is None:
     return False
 
+  if region:
+    btn = pyautogui.locateCenterOnScreen(img, confidence=confidence, minSearchTime=minSearch, region=region)
+  else:
+    btn = pyautogui.locateCenterOnScreen(img, confidence=confidence, minSearchTime=minSearch)
+  if btn:
+    if text:
+      print(text)
+    pyautogui.moveTo(btn, duration=0.225)
+    pyautogui.click(clicks=click)
+    return True
+  
+  return False
+
   print(f"[DEBUG] Looking for image: {img}")
-  btn = pyautogui.locateCenterOnScreen(img, confidence=confidence, minSearchTime=minSearch)
+  if region is not None:
+    btn = pyautogui.locateCenterOnScreen(img, confidence=confidence, minSearchTime=minSearch, region=region)
+  else:
+    btn = pyautogui.locateCenterOnScreen(img, confidence=confidence, minSearchTime=minSearch)
   if btn and is_valid_mouse_position(btn):
     if text:
       print(text)
@@ -1069,7 +1056,7 @@ def do_race(prioritize_g1 = False):
     return False
 
   race_prep()
-  time.sleep(0.3)
+  time.sleep(1)
   after_race()
   return True
 
@@ -1084,7 +1071,7 @@ def race_day():
     time.sleep(0.5)
 
   race_prep()
-  time.sleep(0.3)
+  time.sleep(1)
   after_race()
 
 def race_select(prioritize_g1 = False):
@@ -1138,20 +1125,217 @@ def race_select(prioritize_g1 = False):
     
     return False
 
-def race_prep():
-  view_result_btn = pyautogui.locateCenterOnScreen("assets/buttons/view_results.png", confidence=0.8, minSearchTime=10)
-  if view_result_btn:
-    pyautogui.click(view_result_btn)
-    time.sleep(0.5)
-    for i in range(3):
-      pyautogui.tripleClick(interval=0.2)
+def select_race_position():
+  """
+  Select starting position based on configuration or character stats.
+  Two modes:
+  1. Manual mode (using config): Uses preferred position settings from UI
+  2. Auto mode (using stats): Speed > 800: Inside, Stamina > 800: Outside, Else: Middle
+  """
+  try:
+    from core.state import is_position_selection_enabled, get_race_position_for_type, ENABLE_POSITIONS_BY_RACE, PREFERRED_POSITION
+    
+    # Check if position selection is enabled in config
+    if is_position_selection_enabled():
+      # Manual mode: Use configuration settings
+      print("[RACE] Using manual position selection from config")
+      
+      # For now, we'll use the preferred position since we don't know the exact race type here
+      # You could enhance this by detecting race type from screen or passing it as parameter
+      preferred_pos = PREFERRED_POSITION
+      
+      # Map position names to button indices
+      position_mapping = {
+        "front": 1,    # Inside position
+        "pace": 2,     # Middle position  
+        "late": 2,     # Middle position
+        "end": 3       # Outside position
+      }
+      
+      position = position_mapping.get(preferred_pos, 2)  # Default to middle
+      print(f"[RACE] Using configured position: {preferred_pos} (button {position})")
+      
+    else:
+      # Auto mode: Use stat-based selection (original logic)
+      print("[RACE] Using automatic position selection based on stats")
+      
+      # Get current stats
+      current_stats = stat_state()
+      speed = current_stats.get('spd', 0)
+      stamina = current_stats.get('sta', 0)
+      
+      if speed > 800:
+        position = 1  # Inside
+        print("[RACE] Selecting inside position (speed-focused)")
+      elif stamina > 800:
+        position = 3  # Outside
+        print("[RACE] Selecting outside position (stamina-focused)")
+      else:
+        position = 2  # Middle
+        print("[RACE] Selecting middle position (balanced)")
+    
+    # Click the selected position button
+    # Detect position buttons (adjust regions based on your screen)
+    positions = [
+      (400, 500),  # Inside
+      (600, 500),  # Middle
+      (800, 500)   # Outside
+    ]
+    
+    if position <= len(positions):
+      pos = positions[position - 1]
+      pyautogui.moveTo(pos, duration=0.2)
+      pyautogui.click()
       time.sleep(0.5)
+      print(f"[RACE] Position {position} selected")
+    else:
+      print("[RACE] Position selection failed")
+  
+  except Exception as e:
+    print(f"[RACE] Error selecting position: {e}")
+
+def race_prep():
+
+  global PREFERRED_POSITION_SET
+
+  if state.POSITION_SELECTION_ENABLED:
+    # these two are mutually exclusive, so we only use preferred position if positions by race is not enabled.
+    if state.ENABLE_POSITIONS_BY_RACE:
+      click(img="assets/buttons/info_btn.png", minSearch=5, region=SCREEN_TOP_REGION)
+      time.sleep(0.5)
+      #find race text, get part inside parentheses using regex, strip whitespaces and make it lowercase for our usage
+      race_info_text = get_race_type()
+      match_race_type = re.search(r"\(([^)]+)\)", race_info_text)
+      race_type = match_race_type.group(1).strip().lower() if match_race_type else None
+      click(img="assets/buttons/close_btn.png", minSearch=2, region=SCREEN_BOTTOM_REGION)
+
+      if race_type != None:
+        position_for_race = state.POSITIONS_BY_RACE[race_type]
+        print(f"Selecting position {position_for_race} based on race type {race_type}")
+        click(img="assets/buttons/change_btn.png", minSearch=4, region=SCREEN_MIDDLE_REGION)
+        click(img=f"assets/buttons/positions/{position_for_race}_position_btn.png", minSearch=2, region=SCREEN_MIDDLE_REGION)
+        click(img="assets/buttons/confirm_btn.png", minSearch=2, region=SCREEN_MIDDLE_REGION)
+    elif not PREFERRED_POSITION_SET:
+      click(img="assets/buttons/change_btn.png", minSearch=6, region=SCREEN_MIDDLE_REGION)
+      click(img=f"assets/buttons/positions/{state.PREFERRED_POSITION}_position_btn.png", minSearch=2, region=SCREEN_MIDDLE_REGION)
+      click(img="assets/buttons/confirm_btn.png", minSearch=2, region=SCREEN_MIDDLE_REGION)
+      PREFERRED_POSITION_SET = True
+
+  view_result_btn = pyautogui.locateCenterOnScreen("assets/buttons/view_results.png", confidence=0.8, minSearchTime=10, region=SCREEN_BOTTOM_REGION)
+  pyautogui.click(view_result_btn)
+  time.sleep(0.5)
+  for i in range(2):
+    pyautogui.tripleClick(interval=0.2)
+    time.sleep(0.5)
+  pyautogui.click()
+  next_button = pyautogui.locateCenterOnScreen("assets/buttons/next_btn.png", confidence=0.9, minSearchTime=4, region=SCREEN_BOTTOM_REGION)
+  if not next_button:
+    print(f"Wouldn't be able to move onto the after race since there's no next button.")
+    race_btn = pyautogui.locateCenterOnScreen("assets/buttons/race_btn.png", confidence=0.8, minSearchTime=10, region=SCREEN_BOTTOM_REGION)
+    pyautogui.click(race_btn)
+    time.sleep(2)
+    race_exclamation_btn = pyautogui.locateCenterOnScreen("assets/buttons/race_exclamation_btn.png", confidence=0.9, minSearchTime=20)
+    pyautogui.click(race_exclamation_btn)
+    time.sleep(0.5)
+    skip_btn = pyautogui.locateCenterOnScreen("assets/buttons/skip_btn.png", confidence=0.8, minSearchTime=2, region=SCREEN_BOTTOM_REGION)
+    skip_btn_big = pyautogui.locateCenterOnScreen("assets/buttons/skip_btn_big.png", confidence=0.8, minSearchTime=2, region=SKIP_BTN_BIG_REGION)
+    if not skip_btn_big and not skip_btn:
+      skip_btn = pyautogui.locateCenterOnScreen("assets/buttons/skip_btn.png", confidence=0.8, minSearchTime=10, region=SCREEN_BOTTOM_REGION)
+      skip_btn_big = pyautogui.locateCenterOnScreen("assets/buttons/skip_btn_big.png", confidence=0.8, minSearchTime=10, region=SKIP_BTN_BIG_REGION)
+    if skip_btn:
+      pyautogui.tripleClick(skip_btn, interval=0.2, duration=0.4)
+    if skip_btn_big:
+      pyautogui.tripleClick(skip_btn_big, interval=0.2, duration=0.4)
+    time.sleep(3)
+    if skip_btn:
+      pyautogui.tripleClick(skip_btn, interval=0.2, duration=0.4)
+    if skip_btn_big:
+      pyautogui.tripleClick(skip_btn_big, interval=0.2, duration=0.4)
+    time.sleep(0.5)
+    if skip_btn:
+      pyautogui.tripleClick(skip_btn, interval=0.2, duration=0.4)
+    if skip_btn_big:
+      pyautogui.tripleClick(skip_btn_big, interval=0.2, duration=0.4)
+    time.sleep(3)
+    skip_btn = pyautogui.locateCenterOnScreen("assets/buttons/skip_btn.png", confidence=0.8, minSearchTime=10, region=SCREEN_BOTTOM_REGION)
+    pyautogui.tripleClick(skip_btn, interval=0.2, duration=0.4)
+    #since we didn't get the trophy before, if we get it we close the trophy
+    close_btn = pyautogui.locateCenterOnScreen("assets/buttons/close_btn.png", confidence=0.8, minSearchTime=10)
+    pyautogui.tripleClick(close_btn, interval=0.2, duration=0.4)
 
 def after_race():
-  click(img="assets/buttons/next_btn.png", minSearch=5)
-  time.sleep(0.3)
-  pyautogui.click()
-  click(img="assets/buttons/next2_btn.png", minSearch=5)
+  """Handle post-race navigation with improved reliability"""
+  print("[RACE] Starting post-race navigation...")
+  
+  # Simple next navigation
+  found_next = click(img="assets/buttons/next_btn.png", minSearch=5)
+  if found_next:
+    print("[RACE] next_btn.png found and clicked")
+    time.sleep(0.3)
+    pyautogui.click()
+    # Always try to click next2_btn after next_btn, with retries
+    found_next2 = False
+    for attempt in range(3):
+      print(f"[RACE] Attempt {attempt+1}: Looking for next2_btn.png after next_btn...")
+      found_next2 = click(img="assets/buttons/next2_btn.png", minSearch=2)
+      if found_next2:
+        print("[RACE] next2_btn.png found and clicked after next_btn")
+        break
+      time.sleep(0.5)
+    if not found_next2:
+      print("[RACE] next2_btn.png not found after next_btn")
+  else:
+    print("[RACE] next_btn.png not found")
+    found_next2 = False
+    # Try next2_btn anyway if next_btn is missing
+    for attempt in range(3):
+      print(f"[RACE] Attempt {attempt+1}: Looking for next2_btn.png (next_btn missing)...")
+      found_next2 = click(img="assets/buttons/next2_btn.png", minSearch=2)
+      if found_next2:
+        print("[RACE] next2_btn.png found and clicked (next_btn missing)")
+        break
+      time.sleep(0.5)
+    if not found_next2:
+      print("[RACE] next2_btn.png not found (next_btn missing)")
+
+  # Fallback: if next_btn or next2_btn was not found, check for End Career and Try Again
+  if not found_next or not found_next2:
+    print("[RACE] next_btn.png or next2_btn.png not found, checking for End Career scenario...")
+    try:
+      import numpy as np
+      screen = pyautogui.screenshot()
+      screen_np = np.array(screen)
+      ocr_results = reader.readtext(screen_np)
+      print(f"[RACE] OCR Results: {[text for (_, text, _) in ocr_results]}")
+      end_career_detected = False
+      for (bbox, text, confidence) in ocr_results:
+        print(f"[RACE] OCR text: '{text}' (confidence: {confidence:.2f})")
+        if "end career" in text.lower() and confidence > 0.7:
+          print(f"[RACE] End Career detected with confidence {confidence:.2f}")
+          end_career_detected = True
+          break
+      if end_career_detected:
+        print("[RACE] End Career scenario detected - looking for Try Again button...")
+        try_again_clicked = click(img="assets/buttons/try_again_btn.png", minSearch=3)
+        if try_again_clicked:
+          print("[RACE] Try Again button found and clicked")
+          time.sleep(1.0)
+          return
+        else:
+          print("[RACE] Try Again button not found despite End Career detection")
+      else:
+        print("[RACE] End Career not detected by OCR. Trying Try Again button anyway as last resort...")
+        try_again_clicked = click(img="assets/buttons/try_again_btn.png", minSearch=3)
+        if try_again_clicked:
+          print("[RACE] Try Again button found and clicked (fallback)")
+          time.sleep(1.0)
+          return
+        else:
+          print("[RACE] Try Again button not found (fallback)")
+    except Exception as e:
+      print(f"[RACE] Error during End Career detection: {e}")
+  time.sleep(0.5)
+  print("[RACE] Post-race navigation completed")
 
 def auto_buy_skill():
   if check_skill_pts() < state.SKILL_PTS_CHECK:
@@ -1172,27 +1356,105 @@ def auto_buy_skill():
     print("[INFO] No matching skills found. Going back.")
     click(img="assets/buttons/back_btn.png")
 
+# Global variables for loop detection
+last_failed_events = {}  # Track events that failed with hardcoded coordinates
+event_retry_counts = {}  # Track how many times we've tried each event
+
 def select_event_choice(choice_index, event_text=None, event_type=None):
   """
-  Select event choice using DATABASE-FIRST approach with user wait fallback
-  Priority: Database → User Wait (20s) → Template Detection → Default Choice 1
+  Select event choice using DATABASE-FIRST approach with loop detection
+  Priority: Database → Template (if looping) → User Wait (20s) → Template Detection → Default Choice 1
   Returns True if successful, False otherwise
   """
+  global last_failed_events, event_retry_counts
+  
   if not state.is_bot_running:
     return False
 
   print(f"[EVENT] Attempting to select choice {choice_index} - DATABASE-FIRST METHOD")
+  
+  # LOOP DETECTION: Check if we've seen this event recently and failed
+  event_key = f"{event_text}_{choice_index}" if event_text else f"unknown_{choice_index}"
+  current_time = time.time()
+  
+  # Clean old entries (older than 60 seconds)
+  expired_keys = [k for k, timestamp in last_failed_events.items() if current_time - timestamp > 60]
+  for k in expired_keys:
+    del last_failed_events[k]
+    event_retry_counts.pop(k, None)
+  
+  # Check if this event failed recently
+  if event_key in last_failed_events:
+    retry_count = event_retry_counts.get(event_key, 0) + 1
+    event_retry_counts[event_key] = retry_count
+    
+    if retry_count >= 2:  # If we've failed twice, force template detection
+      print(f"[EVENT] 🔄 LOOP DETECTED: Event '{event_text[:30] if event_text else 'unknown'}...' failed {retry_count} times")
+      print(f"[EVENT] 🎯 FORCING TEMPLATE DETECTION to break the loop")
+      
+      # Force template detection immediately
+      from core.execute import detect_number_of_choices
+      detected_choices, position_mapping = detect_number_of_choices()
+      
+      if detected_choices and detected_choices > 1 and position_mapping:
+        print(f"[EVENT] ✅ TEMPLATE SUCCESS (loop breaker): Detected {detected_choices} choices")
+        choice_location = get_choice_position_by_coordinate(choice_index, detected_choices, position_mapping)
+        
+        if choice_location and is_valid_mouse_position(choice_location):
+          print(f"[EVENT] ✅ TEMPLATE CLICK (loop breaker): Clicking choice {choice_index} at {choice_location}")
+          pyautogui.moveTo(choice_location, duration=0.2)
+          pyautogui.click()
+          
+          # Clear the failed event tracking since template worked
+          last_failed_events.pop(event_key, None)
+          event_retry_counts.pop(event_key, None)
+          
+          print(f"[EVENT] ✅ Loop broken! Template detection succeeded")
+          time.sleep(0.5)
+          return True
+        else:
+          print(f"[EVENT] ❌ TEMPLATE FAILED (loop breaker): Invalid position")
+      
+      # If template also fails, try icon template as final resort
+      print(f"[EVENT] 🔍 Template failed, trying icon template as final resort")
+      icon_map = {
+        1: "assets/icons/event_choice_1.png",
+        2: "assets/icons/event_choice_2.png",
+        3: "assets/icons/event_choice_3.png",
+        4: "assets/icons/event_choice_4.png",
+        5: "assets/icons/event_choice_5.png"
+      }
+      
+      if choice_index in icon_map:
+        try:
+          location = pyautogui.locateCenterOnScreen(icon_map[choice_index], confidence=0.8, minSearchTime=1)
+          if location and is_valid_mouse_position(location):
+            print(f"[EVENT] ✅ ICON TEMPLATE SUCCESS (final resort): Choice {choice_index} at {location}")
+            pyautogui.moveTo(location, duration=0.2)
+            pyautogui.click()
+            
+            # Clear tracking
+            last_failed_events.pop(event_key, None)
+            event_retry_counts.pop(event_key, None)
+            
+            time.sleep(0.5)
+            return True
+        except Exception as e:
+          print(f"[EVENT] ❌ Icon template failed: {e}")
+    
+    print(f"[EVENT] ⚠️  Event seen {retry_count} times, will try harder fallback if this fails")
   
   num_choices = None
   position_mapping = None
   
   # STEP 1: Try database first (TOP PRIORITY)
   if event_text and event_type:
-    print(f"[EVENT] 🔍 Checking database for event choices...")
+    print(f"[EVENT] 🔍 Checking database for event: '{event_text[:50]}...'")
     db_choices = state.get_event_choices_from_database(event_text, event_type)
     if db_choices and len(db_choices) > 1:
       num_choices = len(db_choices)
-      print(f"[EVENT] ✅ DATABASE SUCCESS: Found {num_choices} choices - using database count")
+      print(f"[EVENT] ✅ DATABASE SUCCESS: Found {num_choices} choices for '{event_text[:30]}...'")
+      print(f"[EVENT] 📋 Available choices: {[choice[:30] + '...' if len(choice) > 30 else choice for choice in db_choices]}")
       
       # Check if this is a learned event with a previous choice
       learned_choice = state.get_learned_choice_for_event(event_text)
@@ -1205,7 +1467,7 @@ def select_event_choice(choice_index, event_text=None, event_type=None):
       else:
         print(f"[EVENT] 📊 Database event without learned choice - need user decision")
     else:
-      print(f"[EVENT] ❌ DATABASE EMPTY: No choice data for this event")
+      print(f"[EVENT] ❌ DATABASE EMPTY: No choice data for '{event_text[:30]}...'")
   else:
     print(f"[EVENT] ❌ NO EVENT INFO: No event text/type provided for database lookup")
   
@@ -1280,19 +1542,72 @@ def select_event_choice(choice_index, event_text=None, event_type=None):
       num_choices = 1
       choice_index = 1  # Force choice 1 as safe fallback
   
-  # STEP 4: Use coordinate-based clicking
+  # STEP 4: Use hardcoded coordinates FIRST (when we have database info)
   from core.execute import get_choice_position_by_coordinate
-  choice_location = get_choice_position_by_coordinate(choice_index, num_choices, position_mapping)
-
-  if choice_location and is_valid_mouse_position(choice_location):
-    print(f"[EVENT] 🎯 Clicking choice {choice_index} at {choice_location} (based on {num_choices} total choices)")
-    pyautogui.moveTo(choice_location, duration=0.2)
-    pyautogui.click()
-    print(f"[EVENT] ✅ Successfully selected choice {choice_index}")
-    time.sleep(0.5)
-    return True
+  
+  if num_choices:
+    print(f"[EVENT] 🎯 Using HARDCODED coordinates for {num_choices} choices (choice {choice_index})")
+    # Use hardcoded coordinates with no position_mapping (forces hardcoded fallback)
+    choice_location = get_choice_position_by_coordinate(choice_index, num_choices, None)
+    
+    if choice_location and is_valid_mouse_position(choice_location):
+      print(f"[EVENT] ✅ HARDCODED CLICK: Clicking choice {choice_index} at {choice_location} for {num_choices}-choice event")
+      pyautogui.moveTo(choice_location, duration=0.2)
+      pyautogui.click()
+      
+      # VERIFICATION: Wait a moment and check if event is still there
+      time.sleep(1.0)  # Give time for UI to update
+      
+      # Try to detect if there's still an event on screen using the same templates as main loop
+      try:
+        from PIL import ImageGrab
+        screen = ImageGrab.grab()
+        event_templates = {"event": "assets/icons/event_choice_1.png"}
+        matches = multi_match_templates(event_templates, screen=screen)
+        
+        if matches and matches.get("event"):
+          # Event is still there - our click failed!
+          print(f"[EVENT] ❌ HARDCODED FAILED: Event still detected after click - wrong coordinates!")
+          last_failed_events[event_key] = current_time
+          # Continue to template detection fallback
+        else:
+          # Event is gone - success!
+          print(f"[EVENT] ✅ HARDCODED SUCCESS: Event handled successfully")
+          # Clear any previous failure tracking
+          last_failed_events.pop(event_key, None)
+          event_retry_counts.pop(event_key, None)
+          return True
+      except Exception as e:
+        print(f"[EVENT] ⚠️  Could not verify hardcoded click result: {e}")
+        # Assume success for now but don't clear failure tracking
+        return True
+    else:
+      print(f"[EVENT] ❌ HARDCODED FAILED: Invalid position {choice_location} for choice {choice_index}")
+      last_failed_events[event_key] = current_time
   else:
-    print(f"[EVENT] ❌ Failed to get valid position for choice {choice_index}")
+    print(f"[EVENT] ⚠️  WARNING: No num_choices available, cannot use hardcoded coordinates")
+  
+  # STEP 5: Template detection fallback (only if hardcoded failed)
+  print(f"[EVENT] 🔍 Hardcoded failed, trying TEMPLATE DETECTION as fallback...")
+  from core.execute import detect_number_of_choices
+  detected_choices, position_mapping = detect_number_of_choices()
+  
+  if detected_choices and detected_choices > 1 and position_mapping:
+    print(f"[EVENT] ✅ TEMPLATE SUCCESS: Detected {detected_choices} choices with positions")
+    # Use the detected positions
+    choice_location = get_choice_position_by_coordinate(choice_index, detected_choices, position_mapping)
+    
+    if choice_location and is_valid_mouse_position(choice_location):
+      print(f"[EVENT] ✅ TEMPLATE SUCCESS: Clicking choice {choice_index} at {choice_location}")
+      pyautogui.moveTo(choice_location, duration=0.2)
+      pyautogui.click()
+      print(f"[EVENT] ✅ Successfully selected choice {choice_index}")
+      time.sleep(0.5)
+      return True
+    else:
+      print(f"[EVENT] ❌ TEMPLATE FAILED: Invalid detected position for choice {choice_index}")
+  else:
+    print(f"[EVENT] ❌ TEMPLATE FAILED: Could not detect choices or positions")
 
   # STEP 5: Final template matching fallback (last resort)
   print(f"[EVENT] 🔍 Coordinate method failed, trying template fallback for choice {choice_index}")
@@ -1319,23 +1634,71 @@ def select_event_choice(choice_index, event_text=None, event_type=None):
         # Validate position makes sense
         x, y = location
         if 200 <= x <= 1000 and 300 <= y <= 900:  # Reasonable choice area
-          print(f"[EVENT] ✅ Template fallback: found choice {choice_index} at {location}")
+          print(f"[EVENT] ✅ ICON TEMPLATE SUCCESS: found choice {choice_index} at {location}")
           pyautogui.moveTo(location, duration=0.2)
           pyautogui.click()
-          print(f"[EVENT] ✅ Successfully selected choice {choice_index} using template fallback")
+          print(f"[EVENT] ✅ Successfully selected choice {choice_index} using icon template")
           time.sleep(0.5)
           return True
         else:
-          print(f"[WARNING] Template match at {location} is outside expected choice area")
-    except:
-      pass
+          print(f"[EVENT] ❌ ICON TEMPLATE: match at {location} is outside expected choice area")
+    except Exception as e:
+      print(f"[EVENT] ❌ ICON TEMPLATE error (attempt {attempt + 1}): {e}")
 
     time.sleep(0.2)
 
+  # STEP 7: Ultimate fallback - default choice 1 (with retry limit)
+  print(f"[EVENT] 🚨 ULTIMATE FALLBACK: All methods failed, clicking default choice 1")
+  
+  # Check if we've already tried ultimate fallback too many times
+  ultimate_fallback_key = f"ultimate_{event_key}"
+  ultimate_retry_count = event_retry_counts.get(ultimate_fallback_key, 0)
+  
+  if ultimate_retry_count >= 3:
+    print(f"[EVENT] 🛑 ULTIMATE FALLBACK LIMIT REACHED: Tried {ultimate_retry_count} times, giving up on this event")
+    print(f"[EVENT] 🛑 This may be a UI state issue - bot will skip this event cycle")
+    return False
+  
+  event_retry_counts[ultimate_fallback_key] = ultimate_retry_count + 1
+  
+  # Try to click choice 1 with hardcoded coordinate as last resort
+  default_choice_1_pos = (300, 310)  # Position for 5-choice layout, choice 1
+  
+  if is_valid_mouse_position(default_choice_1_pos):
+    print(f"[EVENT] 🚨 ULTIMATE FALLBACK (attempt {ultimate_retry_count + 1}): Clicking choice 1 at {default_choice_1_pos}")
+    pyautogui.moveTo(default_choice_1_pos, duration=0.2)
+    pyautogui.click()
+    time.sleep(1.0)
+    
+    # Verify this ultimate fallback worked
+    try:
+      from PIL import ImageGrab
+      screen = ImageGrab.grab()
+      event_templates = {"event": "assets/icons/event_choice_1.png"}
+      matches = multi_match_templates(event_templates, screen=screen)
+      
+      if matches and matches.get("event"):
+        print(f"[EVENT] ❌ ULTIMATE FALLBACK FAILED: Event still detected after ultimate fallback click")
+        last_failed_events[ultimate_fallback_key] = current_time
+        return False
+      else:
+        print(f"[EVENT] ✅ ULTIMATE FALLBACK SUCCESS: Event cleared")
+        # Clear all tracking for this event
+        for key in list(event_retry_counts.keys()):
+          if event_text and event_text[:20] in key:
+            del event_retry_counts[key]
+        for key in list(last_failed_events.keys()):
+          if event_text and event_text[:20] in key:
+            del last_failed_events[key]
+        return True
+    except Exception as e:
+      print(f"[EVENT] ⚠️  Could not verify ultimate fallback result: {e}")
+      return True  # Assume success if we can't verify
+  else:
+    print(f"[EVENT] ❌ ULTIMATE FALLBACK FAILED: Even default position is invalid")
+    return False
 
-  """
-  Display detailed information about event choices including stat effects
-  """
+def display_event_choice_details(event_text, event_type):
   try:
     print(f"\n{'='*70}")
     print(f"📋 EVENT CHOICE DETAILS")

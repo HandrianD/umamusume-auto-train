@@ -1,6 +1,6 @@
 import time
 import pyautogui
-import Levenshtein
+import difflib  # Built-in Python library for string similarity
 
 from utils.screenshot import enhanced_screenshot
 from core.ocr import extract_text
@@ -60,9 +60,49 @@ def buy_skill():
 
   return found
 
+def calculate_similarity(str1: str, str2: str) -> float:
+  """Calculate similarity between two strings using built-in difflib (0.0 to 1.0)"""
+  return difflib.SequenceMatcher(None, str1.lower(), str2.lower()).ratio()
+
 def is_skill_match(text: str, skill_list: list[str], threshold: float = 0.8) -> bool:
+  """
+  Enhanced skill matching that uses both the configured skill list and the comprehensive skill database
+  """
+  text_lower = text.lower()
+
+  # First check against the configured skill list (original behavior)
   for skill in skill_list:
-    similarity = Levenshtein.ratio(text.lower(), skill.lower())
+    similarity = calculate_similarity(text_lower, skill.lower())
     if similarity >= threshold:
       return True
+
+  # If no match found, try enhanced matching with skill database
+  try:
+    import core.state as state
+    if state.SKILL_DATA:
+      for skill in state.SKILL_DATA:
+        skill_name_en = skill.get('name_en', '').lower()
+        skill_name_jp = skill.get('name_jp', '').lower()
+        skill_desc = skill.get('description_en', '').lower()
+
+        # Check exact matches first
+        if skill_name_en == text_lower or skill_name_jp == text_lower:
+          return True
+
+        # Check partial matches
+        if (skill_name_en in text_lower or
+            skill_name_jp in text_lower or
+            text_lower in skill_name_en or
+            text_lower in skill_name_jp):
+          return True
+
+        # Check description matches (lower threshold for descriptions)
+        desc_similarity = calculate_similarity(text_lower, skill_desc)
+        if desc_similarity >= (threshold - 0.1):  # Slightly lower threshold for descriptions
+          return True
+
+  except Exception as e:
+    # If enhanced matching fails, just continue with original logic
+    pass
+
   return False

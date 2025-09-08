@@ -17,16 +17,16 @@
       "name": "Kawakami Princess"
     },
     {
-      "id": "20020",
-      "name": "King Halo"
+      "id": "20008",
+      "name": "Manhattan Cafe"
     },
     {
-      "id": "20015",
-      "name": "Marvelous Sunday"
+      "id": "20007",
+      "name": "Mayano Top Gun"
     },
     {
-      "id": "20016",
-      "name": "Matikanefukukitaru"
+      "id": "30025",
+      "name": "Special Week"
     },
     {
       "id": "30041",
@@ -35,18 +35,18 @@
   ],
   "priority_stat": [
     "spd",
+    "sta",
     "wit",
     "pwr",
-    "sta",
     "guts"
   ],
   "priority_weight": "NONE",
   "priority_weights": [
+    1.2,
+    1.1,
     1,
-    0.8,
-    0.6,
-    0.5,
-    0.4
+    0.9,
+    0.8
   ],
   "minimum_mood": "GOOD",
   "maximum_failure": 25,
@@ -58,38 +58,50 @@
       "max": 1150
     },
     "sta": {
-      "min": 400,
-      "max": 700
+      "min": 450,
+      "max": 800
     },
     "pwr": {
       "min": 350,
-      "max": 800
+      "max": 900
     },
     "guts": {
       "min": 200,
-      "max": 300
+      "max": 350
     },
     "wit": {
       "min": 250,
-      "max": 1150
+      "max": 400
     }
   },
   "skill": {
     "is_auto_buy_skill": false,
     "skill_pts_check": 400,
     "skill_list": [
-      "Concentration",
-      "Red Shift/LP1211-M",
-      "U=ma2",
-      "Professor of Curvature",
-      "Swinging Maestro"
+      "Right-Handed \u25cb",
+      "Left-Handed \u25ce"
     ]
   },
+  "position_selection_enabled": true,
+  "preferred_position": "front",
+  "enable_positions_by_race": true,
+  "positions_by_race": {
+    "sprint": "front",
+    "mile": "front",
+    "medium": "front",
+    "long": "front"
+  },
+  "wanted_skills": [
+    "Right-Handed \u25ce",
+    "Left-Handed \u25ce",
+    "Right-Handed \u25cb",
+    "Spring Runner \u25ce"
+  ],
   "energy_management": {
     "enabled": true,
     "never_rest_energy": 60,
     "skip_training_energy": 30,
-    "skip_infirmary_unless_missing_energy": true
+    "skip_infirmary_unless_missing_energy": false
   },
   "event_data_collection": {
     "enabled": true,

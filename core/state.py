@@ -27,12 +27,14 @@ PRIORITY_EFFECTS_LIST = None
 MAX_FAILURE = None
 STAT_CAPS = None
 SKILL_LIST = None
+WANTED_SKILLS = None
 CANCEL_CONSECUTIVE_RACE = None
 CHARACTER_DATA = None
 SUPPORT_CARDS_DATA = None
 SCENARIO_DATA = None
 EVENT_DATA_COLLECTION = None
 USER_INTERVENTION_TIMEOUT = None
+SKILL_DATA = None
 
 # Energy Management Configuration
 NEVER_REST_ENERGY = None
@@ -40,12 +42,18 @@ SKIP_TRAINING_ENERGY = None
 SKIP_INFIRMARY_UNLESS_MISSING_ENERGY = None
 ENERGY_DETECTION_ENABLED = None
 
+# Race Position Configuration
+POSITION_SELECTION_ENABLED = None
+PREFERRED_POSITION = None
+ENABLE_POSITIONS_BY_RACE = None
+POSITIONS_BY_RACE = None
+
 def load_config():
   with open("config.json", "r", encoding="utf-8") as file:
     return json.load(file)
 
 def reload_config():
-  global PRIORITY_STAT, MINIMUM_MOOD, MAX_FAILURE, PRIORITIZE_G1_RACE, CANCEL_CONSECUTIVE_RACE, STAT_CAPS, IS_AUTO_BUY_SKILL, SKILL_PTS_CHECK, SKILL_LIST, CHARACTER_DATA, SUPPORT_CARDS_DATA, SCENARIO_DATA, EVENT_DATA_COLLECTION, USER_INTERVENTION_TIMEOUT, NEVER_REST_ENERGY, SKIP_TRAINING_ENERGY, SKIP_INFIRMARY_UNLESS_MISSING_ENERGY, ENERGY_DETECTION_ENABLED, PRIORITY_WEIGHT, PRIORITY_WEIGHTS, PRIORITY_EFFECTS_LIST
+  global PRIORITY_STAT, MINIMUM_MOOD, MAX_FAILURE, PRIORITIZE_G1_RACE, CANCEL_CONSECUTIVE_RACE, STAT_CAPS, IS_AUTO_BUY_SKILL, SKILL_PTS_CHECK, SKILL_LIST, WANTED_SKILLS, CHARACTER_DATA, SUPPORT_CARDS_DATA, SCENARIO_DATA, EVENT_DATA_COLLECTION, USER_INTERVENTION_TIMEOUT, SKILL_DATA, NEVER_REST_ENERGY, SKIP_TRAINING_ENERGY, SKIP_INFIRMARY_UNLESS_MISSING_ENERGY, ENERGY_DETECTION_ENABLED, PRIORITY_WEIGHT, PRIORITY_WEIGHTS, PRIORITY_EFFECTS_LIST, POSITION_SELECTION_ENABLED, PREFERRED_POSITION, ENABLE_POSITIONS_BY_RACE, POSITIONS_BY_RACE
   config = load_config()
 
   PRIORITY_STAT = config["priority_stat"]
@@ -57,6 +65,7 @@ def reload_config():
   IS_AUTO_BUY_SKILL = config["skill"]["is_auto_buy_skill"]
   SKILL_PTS_CHECK = config["skill"]["skill_pts_check"]
   SKILL_LIST = config["skill"]["skill_list"]
+  WANTED_SKILLS = config["skill"].get("wanted_skills", [])
 
   # Load energy management settings
   energy_config = config.get("energy_management", {})
@@ -64,6 +73,17 @@ def reload_config():
   NEVER_REST_ENERGY = energy_config.get("never_rest_energy", 70)
   SKIP_TRAINING_ENERGY = energy_config.get("skip_training_energy", 30)
   SKIP_INFIRMARY_UNLESS_MISSING_ENERGY = energy_config.get("skip_infirmary_unless_missing_energy", True)
+
+  # Load race position settings
+  POSITION_SELECTION_ENABLED = config.get("position_selection_enabled", False)
+  PREFERRED_POSITION = config.get("preferred_position", "front")
+  ENABLE_POSITIONS_BY_RACE = config.get("enable_positions_by_race", False)
+  POSITIONS_BY_RACE = config.get("positions_by_race", {
+    "sprint": "front",
+    "mile": "pace", 
+    "medium": "late",
+    "long": "end"
+  })
 
   # Load event data collection settings
   EVENT_DATA_COLLECTION = config.get("event_data_collection", {
@@ -302,11 +322,43 @@ def reload_config():
       except Exception as e:
         print(f"[ERROR] Failed to load scenario data: {e}")
 
+  # Load skill data for wanted skills matching
+  SKILL_DATA = None
+  skill_data_file = "assets/skill/nested/skill_data.json"
+  if os.path.exists(skill_data_file):
+    try:
+      with open(skill_data_file, 'r', encoding='utf-8') as f:
+        skill_data = json.load(f)
+        SKILL_DATA = skill_data.get("skills", [])
+      print(f"[CONFIG] Loaded skill data: {len(SKILL_DATA)} skills available for matching")
+    except Exception as e:
+      print(f"[ERROR] Failed to load skill data: {e}")
+  else:
+    print(f"[CONFIG] Skill data file not found: {skill_data_file}")
+
   print(f"[CONFIG] Loaded {len([c for c in SUPPORT_CARDS_DATA if c is not None])} support cards")
   print(f"[CONFIG] Character data loaded: {CHARACTER_DATA is not None}")
   print(f"[CONFIG] Support cards data loaded: {len([c for c in SUPPORT_CARDS_DATA if c is not None])} cards")
   print(f"[CONFIG] Scenario data loaded: {SCENARIO_DATA is not None}")
+  print(f"[CONFIG] Skill data loaded: {len(SKILL_DATA) if SKILL_DATA else 0} skills")
   print(f"[CONFIG] Total events available: {len(get_character_events()) + len(get_all_support_card_events()) + len(get_scenario_events_with_choices()) + len(get_scenario_events_without_choices())}")
+
+def get_race_position_for_type(race_type):
+  """
+  Get the preferred race position for a given race type.
+  Returns the position string ("front", "pace", "late", "end") based on configuration.
+  """
+  if not POSITION_SELECTION_ENABLED:
+    return None
+    
+  if ENABLE_POSITIONS_BY_RACE and race_type in POSITIONS_BY_RACE:
+    return POSITIONS_BY_RACE[race_type]
+  else:
+    return PREFERRED_POSITION
+
+def is_position_selection_enabled():
+  """Check if race position selection is enabled"""
+  return POSITION_SELECTION_ENABLED == True
 
 # Get Stat
 def stat_state():
@@ -1021,9 +1073,23 @@ def calculate_text_similarity(text1, text2):
   if not text1 or not text2:
     return 0
 
+  # Apply OCR character normalization FIRST
+  text1_normalized = text1.replace('☆', '*').replace('×', 'x').replace('X', 'x')
+  text1_normalized = text1_normalized.replace('◯', 'o').replace('○', 'o').replace('◎', 'o')
+  text1_normalized = text1_normalized.replace('！', '!').replace('？', '?')
+  
+  text2_normalized = text2.replace('☆', '*').replace('×', 'x').replace('X', 'x')
+  text2_normalized = text2_normalized.replace('◯', 'o').replace('○', 'o').replace('◎', 'o')
+  text2_normalized = text2_normalized.replace('！', '!').replace('？', '?')
+
+  # Handle common OCR errors with trailing characters
+  import re
+  text1_normalized = re.sub(r'([a-z])l([^a-z]|$)', r'\1\2', text1_normalized)  # Remove trailing 'l' after letters
+  text2_normalized = re.sub(r'([a-z])l([^a-z]|$)', r'\1\2', text2_normalized)
+
   # Convert both texts to lowercase for comparison
-  text1_lower = text1.lower()
-  text2_lower = text2.lower()
+  text1_lower = text1_normalized.lower()
+  text2_lower = text2_normalized.lower()
 
   # Try direct matching first
   words1 = set(text1_lower.split())
@@ -1037,18 +1103,41 @@ def calculate_text_similarity(text1, text2):
 
   # Calculate Jaccard similarity
   direct_similarity = len(intersection) / len(union)
+  
+  # For OCR errors, also try fuzzy word matching
+  fuzzy_matches = 0
+  for word1 in words1:
+    for word2 in words2:
+      # Check for similar words (OCR errors, character substitutions)
+      if abs(len(word1) - len(word2)) <= 2:  # Similar length
+        # Count character matches
+        min_len = min(len(word1), len(word2))
+        char_matches = sum(1 for c1, c2 in zip(word1, word2) if c1 == c2)
+        char_similarity = char_matches / min_len if min_len > 0 else 0
+        
+        # If characters match well, count as fuzzy match
+        if char_similarity >= 0.7:  # 70% character similarity
+          fuzzy_matches += 1
+          break  # Don't double-count this word
+  
+  # Calculate fuzzy similarity based on fuzzy matches
+  max_words = max(len(words1), len(words2))
+  fuzzy_similarity = fuzzy_matches / max_words if max_words > 0 else 0
+  
+  # Use the better of direct or fuzzy similarity
+  final_similarity = max(direct_similarity, fuzzy_similarity)
 
-  # If direct similarity is good enough, return it
-  if direct_similarity > 0.3:
-    return direct_similarity
+  # If similarity is good enough, return it
+  if final_similarity > 0.3:
+    return final_similarity
 
   # Try translation matching for Japanese events
   translated_similarity = calculate_translated_similarity(text1_lower, text2_lower)
-  if translated_similarity > direct_similarity:
-    print(f"[EVENT] Using translation match: {translated_similarity:.2f} vs direct: {direct_similarity:.2f}")
+  if translated_similarity > final_similarity:
+    print(f"[EVENT] Using translation match: {translated_similarity:.2f} vs direct: {final_similarity:.2f}")
     return translated_similarity
 
-  return direct_similarity
+  return final_similarity
 
 def calculate_translated_similarity(text1, text2):
   """
@@ -1181,7 +1270,7 @@ def get_optimal_event_choice(event_data, event_type):
 
 def get_event_choices_from_database(event_text, event_type, return_full_data=False):
   """
-  Get event choices from JSON database OR learned events
+  Get event choices from learned events first, then static database fallback
   Returns list of choice texts or empty list if not found
   Priority: Learned Events → Static Database → Not Found
   
@@ -1191,28 +1280,29 @@ def get_event_choices_from_database(event_text, event_type, return_full_data=Fal
     return_full_data: If True, returns full event data instead of just choices
   """
   try:
-    # STEP 1: Check learned events first (from event_data.json)
+    # STEP 1: Check learned events FIRST (from event_data.json)
     learned_choices = get_choices_from_learned_events(event_text)
     if learned_choices:
       print(f"[EVENT] ✅ Found event in LEARNED data: {len(learned_choices)} choices")
       if return_full_data:
         # Try to find the full learned event data
         try:
-          data = _load_event_data_from_json()
-          events = data.get("events", [])
-          for event in events:
-            if calculate_text_similarity(event.get('event_text', ''), event_text) > 0.8:
-              return event
+          with open('event_data.json', 'r', encoding='utf-8') as f:
+            event_data = json.load(f)
+            for event in event_data.get('events', []):
+              if _events_are_similar(event.get('event_text', ''), event_text):
+                return event
         except Exception as e:
           print(f"[DEBUG] Error loading learned event data: {e}")
         return None
       return learned_choices
 
-    # STEP 2: Check static database (assets/character/, assets/support/, etc.)
+    # STEP 2: Fallback to static database (assets/character/, assets/support/, etc.)
+    print(f"[EVENT] Not found in learned data, checking static database...")
     event_type_found, event_data, confidence = find_best_event_match(event_text)
 
     if event_data and confidence > 0.1:
-      print(f"[EVENT] Found event in static database: '{event_data.get('name', 'Unknown')}' (confidence: {confidence:.2f})")
+      print(f"[EVENT] ✅ Found event in STATIC database: '{event_data.get('name', 'Unknown')}' (confidence: {confidence:.2f})")
 
       if return_full_data:
         return event_data
@@ -1232,30 +1322,15 @@ def get_event_choices_from_database(event_text, event_type, return_full_data=Fal
           return choice_texts
 
       elif event_type_found == "support":
-        # Support card events can use "options" array or "effects" array (nested format)
-        options = event_data.get("options", [])
-        effects = event_data.get("effects", [])
-        
-        if options:
-          # Old format with options
+        # Support card events can use "choices" array (new format)
+        choices = event_data.get("choices", [])
+        if choices:
           choice_texts = []
-          for option in options:
-            if isinstance(option, dict):
-              option_text = option.get("option", option.get("text", ""))
+          for choice in choices:
+            if isinstance(choice, dict):
+              option_text = choice.get("option", "")
               if option_text:
                 choice_texts.append(option_text)
-          return choice_texts
-        elif effects:
-          # New nested format with effects - extract choice options from strings
-          choice_texts = []
-          for effect in effects:
-            if isinstance(effect, str):
-              # Parse effect strings like "Top Option: Energy -10 Speed +15"
-              if ":" in effect:
-                choice_part = effect.split(":", 1)[0].strip()
-                choice_texts.append(choice_part)
-              else:
-                choice_texts.append(f"Choice {len(choice_texts) + 1}")
           return choice_texts
 
       elif event_type_found == "scenario":
@@ -1283,7 +1358,10 @@ def get_choices_from_learned_events(event_text):
   Returns list of choice texts if found, empty list if not found
   """
   try:
-    data = _load_event_data_from_json()
+    # Load ONLY from event_data.json (learned events)
+    with open('event_data.json', 'r', encoding='utf-8') as f:
+      data = json.load(f)
+    
     events = data.get("events", [])
     
     if not events:
@@ -1295,9 +1373,17 @@ def get_choices_from_learned_events(event_text):
       if stored_event_text and _events_are_similar(event_text, stored_event_text):
         # Check if this event has detected choices (preferred)
         detected_choices = event.get('detected_choices', [])
-        if detected_choices and len(detected_choices) > 1:
-          print(f"[EVENT] 🎓 Found learned event: '{stored_event_text}' with {len(detected_choices)} choices")
-          return detected_choices
+        if detected_choices:
+          # Handle both integer and list formats for detected_choices
+          if isinstance(detected_choices, int) and detected_choices > 1:
+            print(f"[EVENT] 🎓 Found learned event: '{stored_event_text}' with {detected_choices} choices")
+            choices = [f"Choice {i+1}" for i in range(detected_choices)]
+            print(f"[EVENT] ✅ Found event in LEARNED data: {len(choices)} choices")
+            return choices
+          elif isinstance(detected_choices, list) and len(detected_choices) > 1:
+            print(f"[EVENT] 🎓 Found learned event: '{stored_event_text}' with {len(detected_choices)} choices")
+            print(f"[EVENT] ✅ Found event in LEARNED data: {len(detected_choices)} choices")
+            return detected_choices
         
         # Even if no detected_choices, we know the user made a choice
         choice_made = event.get('choice_made')
@@ -1306,11 +1392,15 @@ def get_choices_from_learned_events(event_text):
           # Return dummy choices based on the choice number (we know this choice exists)
           try:
             max_choice = int(choice_made) if isinstance(choice_made, (str, int)) else 2
-            # Ensure we have at least 2 choices if user made a choice
-            max_choice = max(max_choice, 2)
-            return [f"Choice {i+1}" for i in range(max_choice)]
+            # Ensure we have at least as many choices as the choice that was made
+            choices = [f"Choice {i+1}" for i in range(max_choice)]
+            print(f"[EVENT] ✅ Found event in LEARNED data: {len(choices)} choices")
+            return choices
           except:
             # Fallback: assume 2 choices if we can't parse choice_made
+            choices = ["Choice 1", "Choice 2"]
+            print(f"[EVENT] ✅ Found event in LEARNED data: {len(choices)} choices")
+            return choices
             return ["Choice 1", "Choice 2"]
     
     return []
@@ -1431,6 +1521,8 @@ def parse_choice_effects(effects_text):
     'stats': {},
     'skill_points': 0,
     'mood': 0,
+    'skills_obtained': 0,
+    'wanted_skills': [],
     'other': []
   }
   
@@ -1447,6 +1539,22 @@ def parse_choice_effects(effects_text):
   skill_match = re.search(r'Skill\s*points?\s*([+-]\d+)', effects_text)
   if skill_match:
     effects['skill_points'] = int(skill_match.group(1))
+    
+  # Parse actual skills obtained (not just skill points)
+  # Check for explicit skill obtain text
+  skill_obtain_match = re.search(r'Obtain\s+(.+?)\s+skill', effects_text, re.IGNORECASE)
+  if skill_obtain_match:
+    effects['skills_obtained'] = 1  # Flag that actual skills were obtained
+  # Also check for skill hints (common way skills are given)
+  elif 'hint' in effects_text.lower():
+    effects['skills_obtained'] = 1  # Skill hints also count as skill gains
+    
+  # Check for WANTED SKILLS in the effects text using improved matching
+  if WANTED_SKILLS:
+    matched_wanted_skills = find_wanted_skills_in_text(effects_text, WANTED_SKILLS)
+    effects['wanted_skills'] = matched_wanted_skills
+    if matched_wanted_skills:
+      effects['skills_obtained'] = 1  # Also mark as skills obtained
     
   # Parse mood changes
   mood_match = re.search(r'Mood\s*([+-]\d+)', effects_text)
@@ -1470,6 +1578,50 @@ def parse_choice_effects(effects_text):
         effects['stats'][stat_key] = int(stat_match.group(1))
   
   return effects
+
+def find_wanted_skills_in_text(effects_text, wanted_skills_list):
+  """
+  Use the skill database to find wanted skills in effects text with better matching.
+  Returns list of matched wanted skills.
+  """
+  if not effects_text or not wanted_skills_list or not SKILL_DATA:
+    return []
+    
+  matched_skills = []
+  effects_lower = effects_text.lower()
+  
+  for wanted_skill in wanted_skills_list:
+    wanted_lower = wanted_skill.lower()
+    
+    # First try exact match
+    if wanted_lower in effects_lower:
+      matched_skills.append(wanted_skill)
+      continue
+      
+    # Try fuzzy matching: check if any skills in database that match the wanted skill
+    # are mentioned in the effects text
+    for skill in SKILL_DATA:
+      skill_name_en = skill.get('name_en', '').lower()
+      skill_name_jp = skill.get('name_jp', '').lower()
+      skill_desc = skill.get('description_en', '').lower()
+      
+      # If this database skill matches our wanted skill
+      if (wanted_lower in skill_name_en or 
+          wanted_lower in skill_name_jp or
+          skill_name_en in wanted_lower or 
+          skill_name_jp in wanted_lower):
+        
+        # Check if this database skill is mentioned in the effects text
+        if skill_name_en in effects_lower or skill_name_jp in effects_lower:
+          matched_skills.append(wanted_skill)
+          break  # Found a match, no need to check more database skills for this wanted skill
+      
+      # Check if wanted skill is mentioned in description
+      elif wanted_lower in skill_desc:
+        matched_skills.append(wanted_skill)
+        break
+  
+  return list(set(matched_skills))  # Remove duplicates
 
 def intelligent_event_choice(choices_data, current_energy_percent=None):
   """
@@ -1515,12 +1667,12 @@ def intelligent_event_choice(choices_data, current_energy_percent=None):
   
   # Energy-based logic (only if there are significant energy options)
   if energy_choices:
-    if current_energy_percent < 80:
+    if current_energy_percent <= 80:
       # Low energy: prioritize energy restoration
       best_energy = max(energy_choices, key=lambda x: x['effects']['energy'])
       print(f"[CHOICE] Low energy ({current_energy_percent}%) - choosing energy option: +{best_energy['effects']['energy']} energy")
       return best_energy['index']
-    elif current_energy_percent >= 90:
+    elif current_energy_percent >= 95:
       # High energy: prefer stats over energy
       if stat_choices:
         best_stats = max(stat_choices, key=lambda x: sum(x['effects']['stats'].values()))
@@ -1549,8 +1701,28 @@ def intelligent_event_choice(choices_data, current_energy_percent=None):
     if effects['skill_points'] > 0 and total_stat_gain == 0:
       score += effects['skill_points'] * 1  # Only value skill points if no stats
       
-    # Mood bonus
-    score += effects['mood'] * 3
+    # Mood bonus/penalty logic
+    if effects['mood'] > 0:
+      score += effects['mood'] * 8  # Positive mood is good
+    elif effects['mood'] < 0:
+      # Ignore mood penalty if there are significant gains (stats OR actual skills)
+      if total_stat_gain > 0 or effects.get('skills_obtained', 0) > 0:
+        pass  # Ignore mood penalty for valuable gains
+      else:
+        score += effects['mood'] * 6  # Negative mood penalty (only for skill points alone)
+    
+    # WANTED SKILLS PRIORITY - Highest priority for desired skills
+    wanted_skills_found = effects.get('wanted_skills', [])
+    if wanted_skills_found:
+      score += 50  # Massive bonus for wanted skills
+      print(f"[CHOICE] 🎯 WANTED SKILL DETECTED: {', '.join(wanted_skills_found)} (+50 priority points)")
+    elif effects.get('skills_obtained', 0) > 0 and WANTED_SKILLS:
+      # Additional check using improved matching if parse_choice_effects missed something
+      effects_text = choice['original'].get('effects', '')
+      additional_matches = find_wanted_skills_in_text(effects_text, WANTED_SKILLS)
+      if additional_matches:
+        score += 50  # Massive bonus for wanted skills
+        print(f"[CHOICE] 🎯 WANTED SKILL DETECTED (additional): {', '.join(additional_matches)} (+50 priority points)")
     
     # Penalty for energy loss (but ignore if there are significant gains)
     if effects['energy'] < 0 and (total_stat_gain > 0 or effects['skill_points'] > 0):
@@ -1903,13 +2075,47 @@ def _load_event_data_from_json():
     print(f"[ERROR] Failed to load event data from combined directories: {e}")
     return {"events": [], "metadata": {"total_events": 0}}
 
+def _is_acupuncture_event(event_text):
+  """
+  Check if the event is an acupuncture event that should always choose option 4
+  Acupuncture events appear for different characters but have similar names
+  """
+  if not event_text:
+    return False
+
+  # Convert to lowercase for case-insensitive matching
+  text_lower = event_text.lower()
+
+  # Common acupuncture event patterns
+  acupuncture_patterns = [
+    'acupuncture',
+    'acupuncturist',
+    'just an acupuncturist',
+    'no worries',
+    '針治療',  # Japanese for acupuncture
+    '鍼治療'   # Alternative Japanese
+  ]
+
+  # Check if any pattern matches
+  for pattern in acupuncture_patterns:
+    if pattern in text_lower:
+      print(f"[EVENT] 🧲 Acupuncture event detected: '{event_text}'")
+      return True
+
+  return False
+
 def get_optimal_event_choice_from_database(event_text, event_type):
   """
-  Get optimal choice using JSON data learning
+  Get optimal choice using JSON data learning with ENERGY-AWARE logic
   Falls back to basic logic if no data available
   Returns (choice_index, from_database) tuple
   """
   try:
+    # SPECIAL CASE: Acupuncture events - always choose option 4
+    if _is_acupuncture_event(event_text):
+      print(f"[EVENT] 🧲 ACUPUNCTURE DETECTED: '{event_text}' - Forcing choice 4 (Energy +20 + Mood +1 + Charming OR safe fallback)")
+      return 4, True
+
     # Load event data from JSON
     data = _load_event_data_from_json()
     events = data.get("events", [])
@@ -1930,7 +2136,28 @@ def get_optimal_event_choice_from_database(event_text, event_type):
       fallback_choice, _ = get_optimal_event_choice(None, event_type)
       return fallback_choice, False
 
-    # Analyze choice success rates
+    # Check if we have event data with effects for energy-aware choices
+    full_event_data = get_event_choices_from_database(event_text, event_type, return_full_data=True)
+    if full_event_data and isinstance(full_event_data, dict):
+      choices = full_event_data.get("choices", [])
+      if choices and any(choice.get("effects") for choice in choices if isinstance(choice, dict)):
+        print(f"[EVENT] 🎯 Found event with effects data - using ENERGY-AWARE logic")
+
+        # Get current energy level
+        try:
+          current_energy = get_current_energy_level()
+          print(f"[EVENT] Current energy level: {current_energy}%")
+        except Exception as e:
+          print(f"[EVENT] Could not get energy level: {e}, using 50% default")
+          current_energy = 50
+
+        # Use intelligent energy-aware choice logic
+        intelligent_choice = intelligent_event_choice(choices, current_energy)
+        if intelligent_choice:
+          print(f"[EVENT] ⚡ ENERGY-AWARE: Selected choice {intelligent_choice} based on current energy")
+          return intelligent_choice, True
+
+    # Analyze choice success rates from learned data
     choice_stats = _analyze_choice_success_rates(similar_events)
 
     if not choice_stats:
@@ -1968,6 +2195,11 @@ def _events_are_similar(event1, event2):
 
   # Clean and normalize text
   def clean_text(text):
+    # Handle common OCR misreading issues
+    text = text.replace('☆', '*').replace('×', 'x').replace('X', 'x')
+    text = text.replace('◯', 'o').replace('○', 'o').replace('◎', 'o')
+    text = text.replace('！', '!').replace('？', '?')
+    
     # Remove punctuation and extra whitespace
     text = re.sub(r'[^\w\s]', '', text.lower())
     # Split into words
@@ -1975,6 +2207,16 @@ def _events_are_similar(event1, event2):
     # Remove common stop words that don't help with matching
     stop_words = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'event', 'trainee'}
     return [word for word in words if word not in stop_words and len(word) > 2]
+
+  # Apply normalization to both texts for comparison  
+  normalized1 = event1.replace('☆', '*').replace('×', 'x').replace('X', 'x')
+  normalized2 = event2.replace('☆', '*').replace('×', 'x').replace('X', 'x')
+  
+  # First check for exact match after normalization (ignoring punctuation)
+  clean1 = re.sub(r'[^\w\s]', '', normalized1.lower()).strip()
+  clean2 = re.sub(r'[^\w\s]', '', normalized2.lower()).strip()
+  if clean1 == clean2:
+    return True
 
   words1 = set(clean_text(event1))
   words2 = set(clean_text(event2))
@@ -2603,3 +2845,21 @@ def check_skill_pts():
     img = capture_region(SKILL_PTS_REGION)
     pts = extract_number(img)
     return pts if pts is not None else 0
+
+def get_race_type():
+    """Get race type information from screen"""
+    try:
+        from utils.constants import RACE_INFO_TEXT_REGION
+        race_info_screen = enhanced_screenshot(RACE_INFO_TEXT_REGION)
+        race_info_text = extract_text(race_info_screen)
+        print(f"[RACE] Race info text: {race_info_text}")
+        return race_info_text
+    except Exception as e:
+        print(f"[RACE] Error getting race type: {e}")
+        return ""
+
+# Initialize configuration on module load
+try:
+    reload_config()
+except Exception as e:
+    print(f"[INIT] Warning: Could not load config on module initialization: {e}")

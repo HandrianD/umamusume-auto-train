@@ -96,8 +96,18 @@ export type Config = {
   maximum_failure: number;
   prioritize_g1_race: boolean;
   cancel_consecutive_race: boolean;
+  position_selection_enabled: boolean;
+  preferred_position: string;
+  enable_positions_by_race: boolean;
+  positions_by_race: {
+    sprint: string;
+    mile: string;
+    medium: string;
+    long: string;
+  };
   stat_caps: StatInput; // Use StatInput for loading raw configs
   skill: Skill;
+  wanted_skills?: string[]; // Optional for backward compatibility
   support_cards: (ConfigSupportCard | null)[]; // Simplified for config storage
   character: ConfigCharacter | null; // Simplified for config storage
   scenario: ConfigScenario | null; // Simplified for config storage
