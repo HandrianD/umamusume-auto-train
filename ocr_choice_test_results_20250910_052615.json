@@ -1,0 +1,28 @@
+{
+  "timestamp": "2025-09-10 05:26:15",
+  "detected_choices": {},
+  "total_with_text": 0,
+  "total_positions_detected": 2,
+  "ocr_regions": {
+    "4": {
+      "top_left": [
+        260,
+        600
+      ],
+      "bottom_right": [
+        312,
+        686
+      ]
+    },
+    "5": {
+      "top_left": [
+        260,
+        714
+      ],
+      "bottom_right": [
+        312,
+        797
+      ]
+    }
+  }
+}

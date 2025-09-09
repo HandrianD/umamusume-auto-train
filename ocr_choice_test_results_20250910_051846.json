@@ -1,0 +1,58 @@
+{
+  "timestamp": "2025-09-10 05:18:46",
+  "detected_choices": {},
+  "total_detected": 0,
+  "expected_choices": 1,
+  "ocr_regions": {
+    "1": {
+      "top_left": [
+        260,
+        264
+      ],
+      "bottom_right": [
+        312,
+        350
+      ]
+    },
+    "2": {
+      "top_left": [
+        260,
+        380
+      ],
+      "bottom_right": [
+        312,
+        462
+      ]
+    },
+    "3": {
+      "top_left": [
+        260,
+        488
+      ],
+      "bottom_right": [
+        312,
+        575
+      ]
+    },
+    "4": {
+      "top_left": [
+        260,
+        600
+      ],
+      "bottom_right": [
+        312,
+        686
+      ]
+    },
+    "5": {
+      "top_left": [
+        260,
+        714
+      ],
+      "bottom_right": [
+        312,
+        797
+      ]
+    }
+  }
+}

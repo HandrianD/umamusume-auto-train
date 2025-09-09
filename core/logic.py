@@ -30,22 +30,29 @@ def get_weighted_stat_priority(stat_key: str) -> float:
   
   # If below min cap, boost weight (e.g. x2)
   if current < min_cap:
-    return 2.0
-    
-  # Normal weighting with auto-balancing
-  priority_index = get_stat_priority(stat_key)
-  if priority_index >= len(state.PRIORITY_EFFECTS_LIST):
-    return 0.1  # Very low priority for stats not in priority list
-  
-  base_weight = state.PRIORITY_EFFECTS_LIST[priority_index]
-  
-  # Auto-balance: higher weight for stats closer to min, lower for those near max
-  if max_cap > min_cap:
-    balance_factor = (max_cap - current) / (max_cap - min_cap)  # 1.0 at min, 0.0 at max
+    boost_factor = 1.0  # Additional boost for stats below minimum
+    # Get base weight for stats below minimum
+    priority_index = get_stat_priority(stat_key)
+    if priority_index >= len(state.PRIORITY_EFFECTS_LIST):
+      base_weight = 0.1
+    else:
+      base_weight = state.PRIORITY_EFFECTS_LIST[priority_index]
+    final_weight = 2.0
   else:
-    balance_factor = 1.0  # if min == max, no balance
+    boost_factor = 0.0  # No boost for stats at or above minimum
+    # Get base weight for normal stats
+    priority_index = get_stat_priority(stat_key)
+    if priority_index >= len(state.PRIORITY_EFFECTS_LIST):
+      base_weight = 0.1
+    else:
+      base_weight = state.PRIORITY_EFFECTS_LIST[priority_index]
+    final_weight = base_weight
   
-  return base_weight * (1.0 + balance_factor)
+  # Debug output for weight calculation
+  print(f"[WEIGHT_DEBUG] {stat_key.upper()}: current={current}, min_cap={min_cap}, max_cap={max_cap}")
+  print(f"[WEIGHT_DEBUG] {stat_key.upper()}: base_weight={base_weight:.2f}, boost_factor={boost_factor:.2f}, final_weight={final_weight:.2f}")
+  
+  return final_weight
 
 # Calculate training score with priority weights
 def calculate_training_score(stat_key: str, stat_gain: int, support_count: int = 0) -> float:

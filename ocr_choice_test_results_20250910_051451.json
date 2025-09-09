@@ -1,0 +1,17 @@
+{
+  "timestamp": "2025-09-10 05:14:51",
+  "detected_choices": {},
+  "total_detected": 0,
+  "choice_bounding_boxes": {
+    "1": {
+      "top_left": [
+        254,
+        600
+      ],
+      "bottom_right": [
+        321,
+        681
+      ]
+    }
+  }
+}

@@ -1310,30 +1310,58 @@ def after_race():
       end_career_detected = False
       for (bbox, text, confidence) in ocr_results:
         print(f"[RACE] OCR text: '{text}' (confidence: {confidence:.2f})")
-        if "end career" in text.lower() and confidence > 0.7:
+        # Lower confidence threshold and check for variations
+        if ("end career" in text.lower() or "end" in text.lower() and "career" in text.lower()) and confidence > 0.5:
           print(f"[RACE] End Career detected with confidence {confidence:.2f}")
           end_career_detected = True
           break
-      if end_career_detected:
-        print("[RACE] End Career scenario detected - looking for Try Again button...")
-        try_again_clicked = click(img="assets/buttons/try_again_btn.png", minSearch=3)
+      
+      # Always try Try Again button regardless of OCR detection
+      print("[RACE] Attempting to find Try Again button...")
+      try_again_buttons = [
+        "assets/buttons/try_again_btn.png"
+      ]
+      
+      try_again_clicked = False
+      for button_path in try_again_buttons:
+        print(f"[RACE] Looking for: {button_path}")
+        try_again_clicked = click(img=button_path, minSearch=5)
         if try_again_clicked:
-          print("[RACE] Try Again button found and clicked")
+          print(f"[RACE] Try Again button found and clicked: {button_path}")
           time.sleep(1.0)
           return
-        else:
-          print("[RACE] Try Again button not found despite End Career detection")
-      else:
-        print("[RACE] End Career not detected by OCR. Trying Try Again button anyway as last resort...")
-        try_again_clicked = click(img="assets/buttons/try_again_btn.png", minSearch=3)
-        if try_again_clicked:
-          print("[RACE] Try Again button found and clicked (fallback)")
-          time.sleep(1.0)
-          return
-        else:
-          print("[RACE] Try Again button not found (fallback)")
+        time.sleep(0.3)
+      
+      if not try_again_clicked:
+        print("[RACE] Try Again button not found with any template")
+        # Try clicking common retry/continue positions as last resort
+        print("[RACE] Trying common button positions...")
+        screen_width, screen_height = pyautogui.size()
+        common_positions = [
+          (screen_width // 2, screen_height - 200),  # Center bottom
+          (screen_width // 2, screen_height - 150),  # Center bottom higher
+          (screen_width // 2 + 100, screen_height - 200),  # Right of center
+          (screen_width // 2 - 100, screen_height - 200),  # Left of center
+        ]
+        for pos in common_positions:
+          if is_valid_mouse_position(pos):
+            print(f"[RACE] Clicking fallback position: {pos}")
+            pyautogui.moveTo(pos, duration=0.2)
+            pyautogui.click()
+            time.sleep(0.5)
+      
     except Exception as e:
       print(f"[RACE] Error during End Career detection: {e}")
+      # Even on error, try the fallback positions
+      try:
+        screen_width, screen_height = pyautogui.size()
+        fallback_pos = (screen_width // 2, screen_height - 200)
+        if is_valid_mouse_position(fallback_pos):
+          print(f"[RACE] Error fallback - clicking center bottom: {fallback_pos}")
+          pyautogui.moveTo(fallback_pos, duration=0.2)
+          pyautogui.click()
+      except:
+        pass
   time.sleep(0.5)
   print("[RACE] Post-race navigation completed")
 
@@ -2512,3 +2540,176 @@ def career_lobby():
     else:
       do_rest()
     time.sleep(1)
+
+# ===== AREA-BASED CHOICE DETECTION INTEGRATION =====
+
+# Hardcoded choice positions (exact bounding boxes for template detection)
+CHOICE_POSITIONS = {
+    1: {'top_left': (260, 264), 'bottom_right': (312, 350)},
+    2: {'top_left': (260, 380), 'bottom_right': (312, 462)},
+    3: {'top_left': (260, 488), 'bottom_right': (312, 575)},
+    4: {'top_left': (260, 600), 'bottom_right': (312, 686)},
+    5: {'top_left': (260, 714), 'bottom_right': (312, 797)}
+}
+
+def detect_and_count_choices(debug=True):
+    """
+    TEST FUNCTION: Detect choices by checking if templates appear within predefined CHOICE_POSITIONS areas
+    Returns (num_choices, choice_positions) based on which areas contain choice templates
+    This is integrated into the core system for testing purposes
+    """
+    if debug:
+        print("\n" + "="*60)
+        print("🧪 AREA-BASED CHOICE DETECTION TEST (CORE INTEGRATION)")
+        print("="*60)
+        print("[DETECT] Starting area-based choice detection...")
+
+    try:
+        choice_templates = [
+            "assets/icons/event_choice_1.png",
+            "assets/icons/event_choice_2.png",
+            "assets/icons/event_choice_3.png",
+            "assets/icons/event_choice_4.png",
+            "assets/icons/event_choice_5.png"
+        ]
+
+        detected_positions = {}
+
+        # Check each predefined area for choice templates
+        for position_num, bounding_box in CHOICE_POSITIONS.items():
+            top_left = bounding_box['top_left']
+            bottom_right = bounding_box['bottom_right']
+
+            # Convert to region format for pyautogui (left, top, width, height)
+            left, top = top_left
+            width = bottom_right[0] - left
+            height = bottom_right[1] - top
+            region = (left, top, width, height)
+
+            if debug:
+                print(f"[DETECT] Checking area {position_num}: {region}")
+
+            # Check if any choice template appears in this specific region
+            found_in_area = False
+            detected_location = None
+            for template in choice_templates:
+                try:
+                    # Look for template specifically within this region
+                    location = pyautogui.locateOnScreen(template, confidence=0.7, region=region)
+                    if location:
+                        if debug:
+                            print(f"[DETECT] ✅ Found {template} in area {position_num} at {location}")
+                        detected_positions[position_num] = {
+                            'bounding_box': bounding_box,
+                            'template_found': template,
+                            'detected_at': location
+                        }
+                        found_in_area = True
+                        detected_location = location
+                        break  # Found one template in this area, move to next area
+                except Exception as e:
+                    # Continue checking other templates
+                    if debug:
+                        print(f"[DETECT] Template check failed for {template}: {e}")
+                    continue
+
+            if not found_in_area and debug:
+                print(f"[DETECT] ❌ No templates found in area {position_num}")
+
+        if detected_positions:
+            num_choices = len(detected_positions)
+            if debug:
+                print(f"[DETECT] ✅ Area detection successful: {num_choices} choices found in areas {sorted(detected_positions.keys())}")
+            return num_choices, detected_positions
+        else:
+            if debug:
+                print("[DETECT] ❌ No choice templates found in any predefined areas")
+            return 0, {}
+
+    except Exception as e:
+        if debug:
+            print(f"[DETECT] Area detection failed: {e}")
+        return 0, {}
+
+def test_choice_counting_integration(debug=True):
+    """
+    TEST FUNCTION: Test the integrated choice counting system
+    This function demonstrates the choice detection working within the core system
+    """
+    if debug:
+        print("\n" + "="*60)
+        print("🎯 CHOICE COUNTING INTEGRATION TEST")
+        print("="*60)
+
+    # Detect how many choices are present using template matching
+    num_choices, choice_positions = detect_and_count_choices(debug=debug)
+
+    if not num_choices or not choice_positions:
+        if debug:
+            print("❌ Failed to detect choices on screen")
+            print("💡 Make sure you're on an event screen with choices visible")
+        return {}
+
+    if debug:
+        print(f"[TEST] Detected {num_choices} choices at positions: {sorted(choice_positions.keys())}")
+        print(f"[TEST] Processing {len(choice_positions)} choice positions...")
+
+    detected_choices = {}
+
+    for position_num in sorted(choice_positions.keys()):
+        position_data = choice_positions[position_num]
+        bounding_box = position_data['bounding_box']
+        top_left = bounding_box['top_left']
+        bottom_right = bounding_box['bottom_right']
+
+        if debug:
+            print(f"\n[TEST] Position {position_num}: Region {top_left} to {bottom_right}")
+
+        # Simple confirmation that choice is present (no OCR needed)
+        detected_choices[position_num] = {
+            'present': True,
+            'bounding_box': bounding_box,
+            'position': position_num,
+            'template_found': position_data.get('template_found', 'unknown')
+        }
+        if debug:
+            print(f"✅ Position {position_num}: CHOICE DETECTED")
+
+    # Analyze results
+    if debug:
+        print("\n" + "="*60)
+        print("📊 ANALYSIS RESULTS")
+        print("="*60)
+
+    num_detected = len(detected_choices)
+    if debug:
+        print(f"🎯 Total choices detected: {num_detected}")
+        print(f"🎯 Choice positions: {sorted(detected_choices.keys())}")
+
+        if num_detected > 0:
+            print("📍 Detected choices at positions:")
+            for pos_num in sorted(detected_choices.keys()):
+                print(f"   Position {pos_num}: ✅ Present")
+
+            # Show detection pattern
+            detected_positions = sorted(detected_choices.keys())
+            print(f"🎯 Pattern: Choices detected at positions {detected_positions}")
+
+            # Simple recommendation
+            print("\n💡 RECOMMENDATION:")
+            print(f"   Found {num_detected} choice(s) at positions {detected_positions}")
+            print("   Ready for database-driven decision making")
+        else:
+            print("❌ No choices detected")
+            print("💡 Make sure you're on an event screen with choices visible")
+
+    return detected_choices
+
+def run_choice_counting_test():
+    """
+    Convenience function to run the choice counting test from the main system
+    Can be called during development/testing to verify choice detection
+    """
+    print("\n🔧 CHOICE COUNTING TEST MODE")
+    print("Running integrated choice detection test...")
+    return test_choice_counting_integration(debug=True)

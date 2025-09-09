@@ -457,8 +457,7 @@ def detect_energy_by_color():
     # Debug: Show average colors for troubleshooting
     avg_color_rgb = np.mean(np.array(energy_img).reshape(-1, 3), axis=0)
     avg_hsv = cv2.cvtColor(np.uint8([[avg_color_rgb[::-1]]]), cv2.COLOR_BGR2HSV)[0][0]
-    print(f"   Average RGB: ({avg_color_rgb[0]:.0f}, {avg_color_rgb[1]:.0f}, {avg_color_rgb[2]:.0f})")
-    print(f"   Average HSV: ({avg_hsv[0]}, {avg_hsv[1]}, {avg_hsv[2]})")
+    # Removed verbose debug output
     
     # Define dark grey range for "empty" energy areas
     # When energy decreases, these areas become dark grey
@@ -471,12 +470,12 @@ def detect_energy_by_color():
     grey_pixels = np.sum(grey_mask > 0)
     grey_percentage = (grey_pixels / total_pixels) * 100
     
-    print(f"   Dark grey pixels: {grey_pixels}/{total_pixels} ({grey_percentage:.1f}%)")
+    # Removed verbose grey pixel debug output
     
     # REVERSE CALCULATION: Energy = 100% - percentage of dark grey
     energy_percentage = max(0, min(100, 100 - grey_percentage))
     
-    print(f"   Reverse calculated energy: {energy_percentage:.0f}%")
+    # Removed intermediate energy calculation debug output
     
     # Convert percentage to energy level categories
     if energy_percentage >= 90:

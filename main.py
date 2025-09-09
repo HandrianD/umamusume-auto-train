@@ -4,8 +4,9 @@ import threading
 import uvicorn
 import keyboard
 import pyautogui
+import sys
 
-from core.execute import career_lobby
+from core.execute import career_lobby, run_choice_counting_test
 import core.state as state
 from server.main import app
 
@@ -41,6 +42,16 @@ def focus_umamusume():
     return False
 
 def main():
+  # Check for test mode
+  if len(sys.argv) > 1 and sys.argv[1] == "test-choice":
+    print("🧪 CHOICE COUNTING TEST MODE")
+    print("Testing integrated choice detection system...")
+    if focus_umamusume():
+      run_choice_counting_test()
+    else:
+      print("❌ Failed to focus Umamusume window for testing")
+    return
+
   print("Uma Auto!")
   print("[DEBUG] Attempting to focus Umamusume window...")
   if focus_umamusume():
@@ -75,10 +86,20 @@ def start_server():
   port = 8000
   print(f"[INFO] Press '{hotkey}' to start/stop the bot.")
   print(f"[SERVER] Open http://{host}:{port} to configure the bot.")
+  print(f"[TEST] Run 'python main.py test-choice' to test choice detection.")
   config = uvicorn.Config(app, host=host, port=port, workers=1, log_level="warning")
   server = uvicorn.Server(config)
   server.run()
 
 if __name__ == "__main__":
-  threading.Thread(target=hotkey_listener, daemon=True).start()
-  start_server()
+  # Check if we're in test mode
+  if len(sys.argv) > 1 and sys.argv[1] == "test-choice":
+    print("🧪 CHOICE COUNTING TEST MODE")
+    print("Testing integrated choice detection system...")
+    if focus_umamusume():
+      run_choice_counting_test()
+    else:
+      print("❌ Failed to focus Umamusume window for testing")
+  else:
+    threading.Thread(target=hotkey_listener, daemon=True).start()
+    start_server()
